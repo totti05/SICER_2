@@ -23,8 +23,11 @@
         "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.12.1",
         "chart.js": "^2.9.3",
         "datatables.net": "^1.10.20",
-        "datatables.net-dt": "^1.10.20"
+        "datatables.net-dt": "^1.10.20",
+        "icheck-bootstrap": "^3.0.1",
+        "overlayscrollbars": "^1.11.0"
     }
 }
