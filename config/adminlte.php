@@ -31,7 +31,7 @@ return [
     */
 
     'use_ico_only' => false,
-    'use_full_favicon' => false,
+    'use_full_favicon' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -199,61 +199,43 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
+            'text'        => 'Celdas conectadas',
+            'url'         => 'celdas',
+            'icon'        => 'fa fa-table',
+            'label'       => 8,
             'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'MENU'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Evolución de línea',
+            'url'  => 'evolucion',
+            'icon' => 'fa fa-chart-line',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Celdas',
+            'url'  => 'celdas',
+            'icon' => 'fa fa-th',
         ],
         [
-            'text'    => 'multilevel',
+            'text'    => 'Fallas de anodos',
+            'url'  => 'falla_anodos',
+            'icon'    => 'fa fa-exclamation-triangle',
+         ],
+         [
+            'text'    => 'Baño electrolítico',
+            'url'  => 'baño',
+            'icon'    => 'fa fa-flask',
+         ],
+         [
+            'text'    => 'Informacion de línea ',
+            'url'  => 'infolinea',
             'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
+         ],
+         [
+            'text'    => 'Metal en Crisol',
+            'url'  => 'metal_crisol',
+            'icon'    => 'fa fa-fill-drip',
+         ],
         ['header' => 'labels'],
         [
             'text'       => 'important',
