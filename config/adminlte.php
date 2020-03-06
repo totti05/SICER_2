@@ -200,7 +200,7 @@ return [
         ],
         [
             'text'        => 'Celdas conectadas',
-            'url'         => 'celdas',
+            'url'         => 'home',
             'icon'        => 'fa fa-table',
             'label'       => 8,
             'label_color' => 'success',
@@ -208,12 +208,12 @@ return [
         ['header' => 'MENU'],
         [
             'text' => 'Evolución de línea',
-            'url'  => 'evolucion',
+            'url'  => 'evolution',
             'icon' => 'fa fa-chart-line',
         ],
         [
             'text' => 'Celdas',
-            'url'  => 'celdas',
+            'url'  => 'cells',
             'icon' => 'fa fa-th',
         ],
         [
@@ -223,12 +223,12 @@ return [
          ],
          [
             'text'    => 'Baño electrolítico',
-            'url'  => 'baño',
+            'url'  => 'bath',
             'icon'    => 'fa fa-flask',
          ],
          [
             'text'    => 'Informacion de línea ',
-            'url'  => 'infolinea',
+            'url'  => 'infoline',
             'icon'    => 'fas fa-fw fa-share',
          ],
          [

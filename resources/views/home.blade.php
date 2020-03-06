@@ -42,4 +42,6 @@
         </div>            
     </div>     
 </div>
-@endsection
+@stop
+@section('plugins.Datatables', true)
+
