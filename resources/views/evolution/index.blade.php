@@ -62,8 +62,6 @@
 <!-- /.card -->
 
 @stop
-@section('plugins.DateRangePicker', true)
-@section('plugins.Chartjs', true)
 @section('js')
   <script> 
     //Date range picker with time picker
@@ -107,6 +105,17 @@
           pointHighlightStroke: 'rgba(220,220,220,1)',
           data                : [65, 59, 80, 81, 56, 55, 40]
         },
+        {
+          label               : 'Constant',
+          backgroundColor     : 'rgba(210, 214, 222, 1)',
+          borderColor         : 'rgba(210, 214, 222, 1)',
+          pointRadius         : false,
+          pointColor          : 'rgba(210, 214, 222, 1)',
+          pointStrokeColor    : '#c1c7d1',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(220,220,220,1)',
+          data                : [50]
+        },
       ]
     }
 
@@ -119,12 +128,12 @@
       scales: {
         xAxes: [{
           gridLines : {
-            display : false,
+            display : true,
           }
         }],
         yAxes: [{
           gridLines : {
-            display : false,
+            display : true,
           }
         }]
       }
@@ -138,6 +147,7 @@
     var lineChartData = jQuery.extend(true, {}, areaChartData)
     lineChartData.datasets[0].fill = false;
     lineChartData.datasets[1].fill = false;
+    lineChartData.datasets[2].fill = true;
     lineChartOptions.datasetFill = false
 
     var lineChart = new Chart(lineChartCanvas, { 
