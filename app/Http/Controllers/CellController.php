@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cell;
+use App\User;
 use Illuminate\Http\Request;
 
 class CellController extends Controller
@@ -14,7 +15,11 @@ class CellController extends Controller
      */
     public function index()
     {
-        //
+        $users = new User();
+        $users = User::all();
+        $userx = User::find(1);
+       
+        return view('cell.index', ['users' => $users, 'userx' => $userx ]);
     }
 
     /**

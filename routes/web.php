@@ -19,3 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/evolution', 'EvolutionController');
+Route::resource('/cell', 'CellController');

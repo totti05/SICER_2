@@ -213,7 +213,7 @@ return [
         ],
         [
             'text' => 'Celdas',
-            'url'  => 'cells',
+            'url'  => 'cell',
             'icon' => 'fa fa-th',
         ],
         [
