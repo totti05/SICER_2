@@ -233,7 +233,7 @@ return [
          ],
          [
             'text'    => 'Metal en Crisol',
-            'url'  => 'metal_crisol',
+            'url'  => 'crucible',
             'icon'    => 'fa fa-fill-drip',
          ],
         ['header' => 'labels'],

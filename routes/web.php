@@ -18,6 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::resource('/evolution', 'EvolutionController');
 Route::resource('/cell', 'CellController');
 Route::resource('/fail', 'FailController');
+Route::resource('/bath', 'BathController');
+Route::resource('/infoline', 'InfolineController');
+Route::resource('/crucible', 'CrucibleController');
