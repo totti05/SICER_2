@@ -218,7 +218,7 @@ return [
         ],
         [
             'text'    => 'Fallas de anodos',
-            'url'  => 'falla_anodos',
+            'url'  => 'fail',
             'icon'    => 'fa fa-exclamation-triangle',
          ],
          [
@@ -293,17 +293,17 @@ return [
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => 'vendor/js/jquery.dataTables.min.js',
+                    'location' => 'vendor/datatables/js/jquery.dataTables.min.js',
                 ],
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => 'vendor/js/dataTables.bootstrap4.min.js',
+                    'location' => 'vendor/datatables/js/dataTables.bootstrap4.min.js',
                 ],
                 [
                     'type' => 'css',
                     'asset' => true,
-                    'location' => 'vendor/css/dataTables.bootstrap4.min.css',
+                    'location' => 'vendor/datatables/css/dataTables.bootstrap4.min.css',
                 ],
             ],
         ],
