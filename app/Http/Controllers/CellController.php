@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Cell;
+use App\Celda;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -15,11 +15,13 @@ class CellController extends Controller
      */
     public function index()
     {
-        $users = new User();
-        $users = User::all();
-        $userx = User::find(1);
+        $celdas = new Celda();
+        $celdas = Celda::whereBetween('celda', [1000,1020])
+               ->orderBy('dia', 'asc')
+               ->take(30)
+               ->get();
        
-        return view('cell.index', ['users' => $users, 'userx' => $userx ]);
+        return view('cell.index', ['celdas' => $celdas]);
     }
 
     /**

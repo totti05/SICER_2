@@ -53,29 +53,33 @@
         <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
       </div>
     </div>
-    <div class="card-body">
-      
-    <table class="table">
-                        
-                        @foreach($users as $user)
-                            <tr>
-                                <td><a href="">{{$user->id}}</a> </td>
-                                <td>{{$user->name}} </td>
-                                <td>{{$user->email}} </td>
-                                
-                               
-                            </tr>
-                        @endforeach  
-                                                            
-                    </table>
-
+    <div class="card-body"> 
+        <table class="table" id="celdas">
+          <thead>
+            <tr>
+              <th>celda</th>
+              <th>dia</th>
+              <th>volaje</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach($celdas as $celda)
+            <tr>
+                <td><a href="">{{$celda->celda}}</a> </td>
+                <td>{{$celda->dia}} </td>
+                <td>{{$celda->voltaje}} </td>
+            </tr>
+        @endforeach
+          </tbody>
+        </table>
+                     {{-- 
                     otra
                     <table class="table">
                     <tr>
                         <td><a href="">{{$userx->id}}</a> </td>    
                         <td>{{$userx->name}} </td>
                         <td>{{$userx->email}} </td>
-                    </table>
+                    </table> --}}
     </div>
     <!-- /.card-body -->
   </div>
@@ -115,7 +119,9 @@
       }
     }) 
 
-
+    $(document).ready( function () {
+    $('#celdas').DataTable();
+} );
     /* ChartJS
     * -------
     * Here we will create a few charts using ChartJS
