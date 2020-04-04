@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Celda;
 use App\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Yajra\Datatables\Datatables;
 
 class CellController extends Controller
 {
@@ -15,13 +17,9 @@ class CellController extends Controller
      */
     public function index()
     {
-        $celdas = new Celda();
-        $celdas = Celda::whereBetween('celda', [1000,1020])
-               ->orderBy('dia', 'asc')
-               ->take(30)
-               ->get();
+        
        
-        return view('cell.index', ['celdas' => $celdas]);
+        return view('cell.index');
     }
 
     /**
@@ -89,4 +87,26 @@ class CellController extends Controller
     {
         //
     }
+
+    public function CellDataChart()
+    {
+        $result = DB::connection('reduccion')->table('diariocelda')
+        ->whereBetween('celda', [1000,1001])
+        ->whereYear('dia','2018')
+        ->whereMonth('dia','05')
+        ->get();
+        return response()->json($result);
+    
+    }
+    
+    public function CellDataTable(){
+
+        $celdas = DB::connection('reduccion')->table('diariocelda')
+        ->whereBetween('celda', [1000,1001])
+        ->whereYear('dia','2018')
+        ->whereMonth('dia','05')
+        ->get();
+		return Datatables::of($celdas)->make();
+    }
+
 }

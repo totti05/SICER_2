@@ -25,3 +25,7 @@ Route::resource('/fail', 'FailController');
 Route::resource('/bath', 'BathController');
 Route::resource('/infoline', 'InfolineController');
 Route::resource('/crucible', 'CrucibleController');
+
+
+Route::get('/celldata', 'CellController@CellDataChart')->name('cell.dataChart');
+Route::get('/celldatable', 'CellController@CellDataTable')->name('cell.datatable');

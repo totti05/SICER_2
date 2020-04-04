@@ -59,17 +59,10 @@
             <tr>
               <th>celda</th>
               <th>dia</th>
-              <th>volaje</th>
             </tr>
           </thead>
           <tbody>
-            @foreach($celdas as $celda)
-            <tr>
-                <td><a href="">{{$celda->celda}}</a> </td>
-                <td>{{$celda->dia}} </td>
-                <td>{{$celda->voltaje}} </td>
-            </tr>
-        @endforeach
+           
           </tbody>
         </table>
                      {{-- 
@@ -120,88 +113,57 @@
     }) 
 
     $(document).ready( function () {
-    $('#celdas').DataTable();
+    $('#celdas').DataTable( {"serverSide": true,
+                    "ajax": "{{ route('cell.datatable') }}",
+                    "columns": [
+                        {data: 'celda'},
+                        {data: 'dia'},
+                    ]});
 } );
     /* ChartJS
     * -------
     * Here we will create a few charts using ChartJS
     */
 
-
-    var areaChartData = {
-      labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-      datasets: [
-        {
-          label               : 'Digital Goods',
-          backgroundColor     : 'rgba(60,141,188,0.9)',
-          borderColor         : 'rgba(60,141,188,0.8)',
-          pointRadius          : false,
-          pointColor          : '#3b8bba',
-          pointStrokeColor    : 'rgba(60,141,188,1)',
-          pointHighlightFill  : '#fff',
-          pointHighlightStroke: 'rgba(60,141,188,1)',
-          data                : [28, 48, 40, 19, 86, 27, 90]
-        },
-        {
-          label               : 'Electronics',
-          backgroundColor     : 'rgba(210, 214, 222, 1)',
-          borderColor         : 'rgba(210, 214, 222, 1)',
-          pointRadius         : false,
-          pointColor          : 'rgba(210, 214, 222, 1)',
-          pointStrokeColor    : '#c1c7d1',
-          pointHighlightFill  : '#fff',
-          pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : [65, 59, 80, 81, 56, 55, 40]
-        },
-        {
-          label               : 'Constant',
-          backgroundColor     : 'rgba(210, 214, 222, 1)',
-          borderColor         : 'rgba(210, 214, 222, 1)',
-          pointRadius         : false,
-          pointColor          : 'rgba(210, 214, 222, 1)',
-          pointStrokeColor    : '#c1c7d1',
-          pointHighlightFill  : '#fff',
-          pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : [50]
-        },
-      ]
-    }
-
-    var areaChartOptions = {
-      maintainAspectRatio : false,
-      responsive : true,
-      legend: {
-        display: false
-      },
-      scales: {
-        xAxes: [{
-          gridLines : {
-            display : true,
-          }
-        }],
-        yAxes: [{
-          gridLines : {
-            display : true,
-          }
-        }]
-      }
-    }
-
-    //-------------
-    //- LINE CHART -
-    //--------------
-    var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
-    var lineChartOptions = jQuery.extend(true, {}, areaChartOptions)
-    var lineChartData = jQuery.extend(true, {}, areaChartData)
-    lineChartData.datasets[0].fill = false;
-    lineChartData.datasets[1].fill = false;
-    lineChartData.datasets[2].fill = true;
-    lineChartOptions.datasetFill = false
-
-    var lineChart = new Chart(lineChartCanvas, { 
-      type: 'line',
-      data: lineChartData, 
-      options: lineChartOptions
-    })
+    var url = "{{route('cell.dataChart')}}";
+        var Dia = new Array();
+        var Celdas = new Array();
+        var Voltaje = new Array();
+        $(document).ready(function(){
+          $.get(url, function(response){
+            response.forEach(function(data){
+                Dia.push(data.dia);
+                Celdas.push(data.celdas);
+                Voltaje.push(data.voltaje);
+            });
+            var ctx = document.getElementById("lineChart").getContext('2d');
+                var myChart = new Chart(ctx, {
+                  type: 'line',
+                  data: {
+                      labels:Dia,
+                      datasets: [{
+                          label: 'Voltaje',
+                          data: Voltaje,
+                          borderWidth: 1,
+                          backgroundColor     : 'transparent',
+                          borderColor         : '#007bff',
+                          pointBorderColor    : '#007bff',
+                          pointBackgroundColor: '#007bff',
+                          fill                : false,
+                          lineTension         : 0
+                      }]
+                  },
+                  options: {
+                      scales: {
+                          yAxes: [{
+                              ticks: {
+                                  beginAtZero:false
+                              }
+                          }]
+                      }
+                  }
+              });
+          });
+        });
 </script>
 @stop
