@@ -7,6 +7,7 @@
 <div class="card">
   <div class="card-header">
     <h3 class="card-title">Formulario de consulta</h3>
+    
     <div class="card-tools">
       <!-- Buttons, labels, and many other things can be placed here! -->
       <!-- Here is a label for example -->
@@ -15,23 +16,84 @@
     <!-- /.card-tools -->
   </div>
   <!-- /.card-header -->
+  
   <div class="card-body">
-    <div class="form-group">
-      <label>Rango de fecha y hora que desea consultar:</label>
-
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"><i class="far fa-clock"></i></span>
+    <form action="" method="post">
+      <div class="form-group">
+        <label>Rango de fecha y hora que desea consultar:</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="far fa-clock"></i></span>
+          </div>
+          <input type="text" class="form-control float-right col-md-4" id="rangoFecha">
         </div>
-        <input type="text" class="form-control float-right" id="reservationtime">
+        <!-- /.input group -->
       </div>
-      <!-- /.input group -->
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
       <!-- /.form group -->
+   
+      <div class="form-group">
+          <label for="celdas">Rango de celdas</label>
+          <div class="form-row">
+              <div class="input-group col-md-2">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-th"></i></span>
+                </div>
+                  <input type="number"
+                    class="form-control" name="celda1" id="celda1" aria-describedby="helpId" placeholder="">
+              </div>
+              <!--  / input group -->
+              <span class=""> - </span>
+              <div class="input-group col-md-2">
+                  <input type="number"
+                    class="form-control" name="celda2" id="celda2" aria-describedby="helpId" placeholder="">
+              </div>
+              <!--  / input group -->
+              <small id="helpId" class="form-text text-muted">Celdas 901-1090</small>
+          </div>
+          <!-- /.form row -->
+      </div>
+      <!-- /.form group -->
+  
+      <div class="form-group col-md-4">
+        <label for="variable">Variable</label>
+        <select id="variable" class="form-control">
+          <option selected>voltaje</option>
+          <option>...</option>
+        </select>
+      </div>
+      <!-- /.form group -->
+      
+      <div class="form-group">
+        <div class="form-row ">
+            
+            <label>Minimo</label>
+            <div class="input-group col-md-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Min</span>
+              </div>
+              <input type="number" name="min" class="form-control float-right col-md-4" id="min">
+            </div>
+            <!-- /.input group -->
+          
+            <label>Maximo</label>
+            <div class="input-group col-md-3">
+             
+              <div class="input-group-prepend">
+                <span class="input-group-text">Max</span>
+              </div>
+              <input type="number" name="max" class="form-control float-right col-md-4" id="max">
+            </div>
+            <!-- /.input group -->
+       </div>
+       <!-- /.form row -->
+      </div>
+      <!-- /.form group -->   
+      <button type="submit" class="btn btn-primary">Submit</button>
 
-
+    </form>
+    <!-- /.form -->
   </div>
+    
   <!-- /.card-body -->
   <div class="card-footer">
     The footer of the card
@@ -83,770 +145,772 @@
   </div>
 <!-- /.card -->
 
-<!-- Card para las graficas-->
-<!-- Desviación de Resistencia LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">Desviación de Resistencia Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="desvResistChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-<!-- Card para las graficas-->
-<!-- Temperatura LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">Temperatura Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="temperaturatChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-<!-- Card para las graficas-->
-<!-- ACIDEZ DE BAÑO LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">ACIDEZ DE BAÑO Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="acidBanoChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-<!-- Card para las graficas-->
-<!-- CONSUMO DE AlF3 LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">CONSUMO DE AlF3 Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="consumoAlChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-<!-- Card para las graficas-->
-<!-- CONSUMO DE AlF3 MANUAL LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">CONSUMO DE AlF3 MANUAL Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="consumoAlManChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-<!-- Card para las graficas-->
-<!-- EFICIENCIA DE TRASEGADO LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">EFICIENCIA DE TRASEGADO Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="eficTrasegChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-<!-- Card para las graficas-->
-<!-- NIVEL DE METAL LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">NIVEL DE METAL Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="nivelMetalChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-<!-- Card para las graficas-->
-<!-- POTENCIA NOMINAL LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">POTENCIA NOMINAL Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="potenciaNominalChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-<!-- Card para las graficas-->
-<!-- POTENCIA NETA LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">POTENCIA NETA Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="potenciaNetaChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-
-
-
-
-<!-- Card para las graficas-->
-<!-- Aqui se deberia utilizar un ciclo para mostrar las distintas graficas con menos codigo-->
-<!-- NIVEL DE BAÑO LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">Line V Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart1" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-<!-- Card para las graficas-->
-<!-- CRIOLITA NETA LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">Voltaje PRE Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-<!-- Card para las graficas-->
-<!-- BAÑO FASE DENSA LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">Desviación de Resistencia Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-<!-- Card para las graficas-->
-<!-- HIERRO METAL CELDAS LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">Temperatura Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-<!-- Card para las graficas-->
-<!-- SILICIO METAL LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">ACIDEZ DE BAÑO Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-<!-- Card para las graficas-->
-<!-- FRECUENCIA DE DESNATADO LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">CONSUMO DE AlF3 Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-<!-- Card para las graficas-->
-<!-- CELDAS CONECTADAS LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">CONSUMO DE AlF3 MANUAL Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-<!-- Card para las graficas-->
-<!-- %CaF2  EN EL BAÑO ELECTROLÍTICO LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">EFICIENCIA DE TRASEGADO Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="eficTrasegChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-<!-- Card para las graficas-->
-<!-- EFECTOS ANÓDICOS LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">NIVEL DE METAL Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-<!-- Card para las graficas-->
-<!-- ALIMENTACIÓN ALÚMINA LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">POTENCIA NOMINAL Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-<!-- Card para las graficas-->
-<!-- DUR TRACK LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">POTENCIA NETA Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-<!-- Card para las graficas-->
-<!-- DUMP SIZE ALÚMINA LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">Line V Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-<!-- Card para las graficas-->
-<!-- TRAC CD  LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">Voltaje PRE Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+{{-- 
+
+  <!-- Card para las graficas-->
+  <!-- Desviación de Resistencia LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">Desviación de Resistencia Chart</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="desvResistChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- Temperatura LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">Temperatura Chart</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="temperaturatChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- ACIDEZ DE BAÑO LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">ACIDEZ DE BAÑO Chart</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="acidBanoChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- CONSUMO DE AlF3 LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">CONSUMO DE AlF3 Chart</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="consumoAlChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- CONSUMO DE AlF3 MANUAL LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">CONSUMO DE AlF3 MANUAL Chart</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
       </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="consumoAlManChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
       </div>
+      <!-- /.card-body -->
     </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
+  <!-- /.card -->
 
-<!-- Card para las graficas-->
-<!-- VMAX del EA LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">Desviación de Resistencia Chart</h3>
+  <!-- Card para las graficas-->
+  <!-- EFICIENCIA DE TRASEGADO LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">EFICIENCIA DE TRASEGADO Chart</h3>
 
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
       </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="eficTrasegChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
       </div>
+      <!-- /.card-body -->
     </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
+  <!-- /.card -->
 
-<!-- Card para las graficas-->
-<!-- DURACIÓN EA LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">Temperatura Chart</h3>
+  <!-- Card para las graficas-->
+  <!-- NIVEL DE METAL LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">NIVEL DE METAL Chart</h3>
 
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
       </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="nivelMetalChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
       </div>
+      <!-- /.card-body -->
     </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
+  <!-- /.card -->
 
-<!-- Card para las graficas-->
-<!--CORRIENTE DE LÍNEA LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">ACIDEZ DE BAÑO Chart</h3>
+  <!-- Card para las graficas-->
+  <!-- POTENCIA NOMINAL LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">POTENCIA NOMINAL Chart</h3>
 
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
       </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="potenciaNominalChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
       </div>
+      <!-- /.card-body -->
     </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
+  <!-- /.card -->
 
-<!-- Card para las graficas-->
-<!-- (BO+RAJ+BIM+TETAS) LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">CONSUMO DE AlF3 Chart</h3>
+  <!-- Card para las graficas-->
+  <!-- POTENCIA NETA LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">POTENCIA NETA Chart</h3>
 
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
       </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="potenciaNetaChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
       </div>
+      <!-- /.card-body -->
     </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
+  <!-- /.card -->
 
-<!-- Card para las graficas-->
-<!-- ÁNODOS B/O CAMBIO NORMAL LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">CONSUMO DE AlF3 MANUAL Chart</h3>
 
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
 
-<!-- Card para las graficas-->
-<!-- ÁNODOS BIMETÁLICOS LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">EFICIENCIA DE TRASEGADO Chart</h3>
 
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
 
-<!-- Card para las graficas-->
-<!-- ÁNODOS B/A LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">NIVEL DE METAL Chart</h3>
+  <!-- Card para las graficas-->
+  <!-- Aqui se deberia utilizar un ciclo para mostrar las distintas graficas con menos codigo-->
+  <!-- NIVEL DE BAÑO LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">Line V Chart</h3>
 
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
       </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart1" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
       </div>
+      <!-- /.card-body -->
     </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
+  <!-- /.card -->
 
-<!-- Card para las graficas-->
-<!-- Desv. Temperatura LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">POTENCIA NOMINAL Chart</h3>
+  <!-- Card para las graficas-->
+  <!-- CRIOLITA NETA LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">Voltaje PRE Chart</h3>
 
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
       </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
     </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- BAÑO FASE DENSA LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">Desviación de Resistencia Chart</h3>
 
-<!-- Card para las graficas-->
-<!-- Desv. Acidez Línea LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">POTENCIA NETA Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
       </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
     </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- HIERRO METAL CELDAS LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">Temperatura Chart</h3>
 
-<!-- Card para las graficas-->
-<!-- Desv. Nm Línea LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">EFICIENCIA DE TRASEGADO Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
       </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-<!-- Card para las graficas-->
-<!-- Desv. Nb Línea LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">NIVEL DE METAL Chart</h3>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- SILICIO METAL LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">ACIDEZ DE BAÑO Chart</h3>
 
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
       </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- FRECUENCIA DE DESNATADO LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">CONSUMO DE AlF3 Chart</h3>
 
-<!-- Card para las graficas-->
-<!-- FRECUENCIA  EFECTOS ANÓDICOS LINE CHART -->
-<div class="card card-info">
-  <div class="card-header">
-      <h3 class="card-title">POTENCIA NOMINAL Chart</h3>
-
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
       </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
-<!-- /.card -->
-
-
-VOLTAJE PRE - Línea 5 voltajeChart
-Desviación de Resistencia -Línea 5 desvResistChart
-Temperatura  Línea 5 temperaturaChart
-ACIDEZ DE BAÑO -Línea 5 acidBanoChart
-CONSUMO DE AlF3 -Línea 5 consumoAlChart
-CONSUMO DE AlF3 MANUAL -Línea 5 consumoAlManChart
-EFICIENCIA DE TRASEGADO  Línea 5 eficTrasegChart
-NIVEL DE METAL Línea 5 nivelMetalChart
-POTENCIA NOMINAL Línea 5 potenciaNominalChart
-POTENCIA NETA Línea 5 potenciaNetaChart
-NIVEL DE BAÑO  Línea  5
-CRIOLITA NETA -  Linea 5
-BAÑO FASE DENSA -  Linea 5
-HIERRO METAL CELDAS  Línea  5
-SILICIO METAL CELDAS  Línea  5
-FRECUENCIA DE DESNATADO -Línea 5
-CELDAS CONECTADAS  Línea 5
-%CaF2  EN EL BAÑO ELECTROLÍTICO- Linea 5
-EFECTOS ANÓDICOS  -Línea 5
-ALIMENTACIÓN ALÚMINA Línea 5
-DUR TRACK -Línea 5
-DUMP SIZE ALÚMINA  -Línea 5
-TRAC CD  V-L
-VMAX del EA -Línea  5
-DURACIÓN EA  Línea 5
-CORRIENTE DE LÍNEA -Línea 5
-(BO+RAJ+BIM+TETAS)  Línea 5
-ÁNODOS B/O CAMBIO NORMAL-Línea 5
-ÁNODOS BIMETÁLICOS -Línea 5
-ÁNODOS B/A -Línea 5
-Desv. Temperatura Línea  5
-Desv. Acidez Línea  5
-Desv. Nm Línea  5
-Desv. Nb Línea  5
-FRECUENCIA  EFECTOS ANÓDICOS  - LINEA 5
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- CELDAS CONECTADAS LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">CONSUMO DE AlF3 MANUAL Chart</h3>
 
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- %CaF2  EN EL BAÑO ELECTROLÍTICO LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">EFICIENCIA DE TRASEGADO Chart</h3>
 
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="eficTrasegChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- EFECTOS ANÓDICOS LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">NIVEL DE METAL Chart</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- ALIMENTACIÓN ALÚMINA LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">POTENCIA NOMINAL Chart</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- DUR TRACK LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">POTENCIA NETA Chart</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- DUMP SIZE ALÚMINA LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">Line V Chart</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- TRAC CD  LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">Voltaje PRE Chart</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- VMAX del EA LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">Desviación de Resistencia Chart</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- DURACIÓN EA LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">Temperatura Chart</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!--CORRIENTE DE LÍNEA LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">ACIDEZ DE BAÑO Chart</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- (BO+RAJ+BIM+TETAS) LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">CONSUMO DE AlF3 Chart</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- ÁNODOS B/O CAMBIO NORMAL LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">CONSUMO DE AlF3 MANUAL Chart</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- ÁNODOS BIMETÁLICOS LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">EFICIENCIA DE TRASEGADO Chart</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- ÁNODOS B/A LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">NIVEL DE METAL Chart</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- Desv. Temperatura LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">POTENCIA NOMINAL Chart</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- Desv. Acidez Línea LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">POTENCIA NETA Chart</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+
+  <!-- Card para las graficas-->
+  <!-- Desv. Nm Línea LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">EFICIENCIA DE TRASEGADO Chart</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- Desv. Nb Línea LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">NIVEL DE METAL Chart</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+  <!-- Card para las graficas-->
+  <!-- FRECUENCIA  EFECTOS ANÓDICOS LINE CHART -->
+  <div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">POTENCIA NOMINAL Chart</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  <!-- /.card -->
+
+
+  VOLTAJE PRE - Línea 5 voltajeChart
+  Desviación de Resistencia -Línea 5 desvResistChart
+  Temperatura  Línea 5 temperaturaChart
+  ACIDEZ DE BAÑO -Línea 5 acidBanoChart
+  CONSUMO DE AlF3 -Línea 5 consumoAlChart
+  CONSUMO DE AlF3 MANUAL -Línea 5 consumoAlManChart
+  EFICIENCIA DE TRASEGADO  Línea 5 eficTrasegChart
+  NIVEL DE METAL Línea 5 nivelMetalChart
+  POTENCIA NOMINAL Línea 5 potenciaNominalChart
+  POTENCIA NETA Línea 5 potenciaNetaChart
+  NIVEL DE BAÑO  Línea  5
+  CRIOLITA NETA -  Linea 5
+  BAÑO FASE DENSA -  Linea 5
+  HIERRO METAL CELDAS  Línea  5
+  SILICIO METAL CELDAS  Línea  5
+  FRECUENCIA DE DESNATADO -Línea 5
+  CELDAS CONECTADAS  Línea 5
+  %CaF2  EN EL BAÑO ELECTROLÍTICO- Linea 5
+  EFECTOS ANÓDICOS  -Línea 5
+  ALIMENTACIÓN ALÚMINA Línea 5
+  DUR TRACK -Línea 5
+  DUMP SIZE ALÚMINA  -Línea 5
+  TRAC CD  V-L
+  VMAX del EA -Línea  5
+  DURACIÓN EA  Línea 5
+  CORRIENTE DE LÍNEA -Línea 5
+  (BO+RAJ+BIM+TETAS)  Línea 5
+  ÁNODOS B/O CAMBIO NORMAL-Línea 5
+  ÁNODOS BIMETÁLICOS -Línea 5
+  ÁNODOS B/A -Línea 5
+  Desv. Temperatura Línea  5
+  Desv. Acidez Línea  5
+  Desv. Nm Línea  5
+  Desv. Nb Línea  5
+  FRECUENCIA  EFECTOS ANÓDICOS  - LINEA 5
+
+--}}
 
 @stop
 @section('js')
   <script> 
     //Date range picker with time picker
-     $('#reservationtime').daterangepicker({
+     $('#rangoFecha').daterangepicker({
       timePicker: true,
       timePickerIncrement: 30,
       locale: {
