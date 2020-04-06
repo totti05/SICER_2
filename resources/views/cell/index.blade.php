@@ -197,7 +197,7 @@
                     "url":"{{ route('cell.datatablep') }}",
                     "type" : "post",
                     "data":  formdatos,
-                    "beforeSend": $('#celdaswidget').CardWidget('expand'),
+                    "complete": $('#celdaswidget').CardWidget('expand'),
                     },
               "columns": [
                   {data: 'celda'},
