@@ -99,14 +99,33 @@ class CellController extends Controller
     
     }
     
-    public function CellDataTable(){
-
-        $celdas = DB::connection('reduccion')->table('diariocelda')
-        ->whereBetween('celda', [1000,1001])
-        ->whereYear('dia','2018')
-        ->whereMonth('dia','05')
+    public function CellDataTable(Request $request){
+        
+        if ($request->isMethod('get')) {
+           $celdas = DB::connection('reduccion')->table('diariocelda')
+        ->whereBetween('celda', [1001 ,1002])
+        ->whereYear('dia', '2018')
+        ->whereMonth('dia', '05')
         ->get();
-		return Datatables::of($celdas)->make();
+        return Datatables::of($celdas)->make();
+        }else{
+            list( $fecha1, $fecha2) = explode(' - ', $request->input('0.value'));
+            $celda1 = $request->input('1.value');
+            $celda2 = $request->input('2.value');
+            
+            $celdas = DB::connection('reduccion')->table('diariocelda')
+                        ->whereBetween('celda', [$celda1,$celda2])
+                        ->whereBetween('dia', [$fecha1,$fecha2])  
+                        ->get();
+                        return Datatables::of($celdas)->make();; 
+                        
+
+        }
+        /*
+ 
+        elseif ($request->isMethod('get')) {
+         }
+       */
     }
 
 }

@@ -16,22 +16,83 @@
   </div>
   <!-- /.card-header -->
   <div class="card-body">
-    <div class="form-group">
-      <label>Rango de fecha y hora que desea consultar:</label>
-
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"><i class="far fa-clock"></i></span>
+  <form id="formdata" >
+        
+      <div class="form-group">
+        <label>Rango de fecha y hora que desea consultar:</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="far fa-clock"></i></span>
+          </div>
+          <input type="text" class="form-control float-right col-md-4" id="rangoFecha" name="rangoFecha">
         </div>
-        <input type="text" class="form-control float-right" id="reservationtime">
+        <!-- /.input group -->
       </div>
-      <!-- /.input group -->
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
+      <!-- /.form group --> 
+   
+      <div class="form-group">
+          <label for="celdax">Rango de celdas</label>
+          <div class="form-row">
+              <div class="input-group col-md-2">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-th"></i></span>
+                </div>
+                  <input type="number"
+                    class="form-control" name="celda1" id="celda1" aria-describedby="helpId" placeholder="">
+              </div>
+              <!--  / input group -->
+              <span class=""> - </span>
+              <div class="input-group col-md-2">
+                  <input type="number"
+                    class="form-control" name="celda2" id="celda2" aria-describedby="helpId" placeholder="">
+              </div>
+              <!--  / input group -->
+              <small id="helpId" class="form-text text-muted">Celdas 901-1090</small>
+          </div>
+          <!-- /.form row -->
+      </div>
       <!-- /.form group -->
-
-
+  
+      <div class="form-group col-md-4">
+        <label for="variable">Variable</label>
+        <select id="variable" name="variable" class="form-control">
+          <option selected>voltaje</option>
+          <option>...</option>
+        </select>
+      </div>
+      <!-- /.form group -->
+      
+      <div class="form-group">
+        <div class="form-row ">
+            
+            <label>Minimo</label>
+            <div class="input-group col-md-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Min</span>
+              </div>
+              <input type="number" name="min" class="form-control float-right col-md-4" id="min">
+            </div>
+            <!-- /.input group -->
+          
+            <label>Maximo</label>
+            <div class="input-group col-md-3">
+             
+              <div class="input-group-prepend">
+                <span class="input-group-text">Max</span>
+              </div>
+              <input type="number" name="max" class="form-control float-right col-md-4" id="max">
+            </div>
+            <!-- /.input group -->
+       </div>
+       <!-- /.form row -->
+      </div>
+      <!-- /.form group -->   
+        <button id= "boton" class="btn btn-primary">Submit</button>
+    </form>
+  
+    <!-- /.form -->
   </div>
+    
   <!-- /.card-body -->
   <div class="card-footer">
     The footer of the card
@@ -42,13 +103,13 @@
 
 
 <!-- Card prueba-->
-<!-- LINE CHART -->
+<!-- tabla CHART -->
 <div class="card card-info">
   <div class="card-header">
       <h3 class="card-title">Mensaje prueba</h3>
 
       <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+        <button type="button" class="btn btn-tool" id="celdaswidget" data-card-widget="collapse"><i class="fas fa-minus"></i>
         </button>
         <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
       </div>
@@ -86,7 +147,7 @@
       <h3 class="card-title">Line Chart</h3>
 
       <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+        <button type="button" class="btn btn-tool" id="chartwidget" data-card-widget="collapse"><i class="fas fa-minus"></i>
         </button>
         <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
       </div>
@@ -104,22 +165,103 @@
 @section('js')
   <script> 
     //Date range picker with time picker
-     $('#reservationtime').daterangepicker({
+     $('#rangoFecha').daterangepicker({
       timePicker: true,
       timePickerIncrement: 30,
       locale: {
-        format: 'MM/DD/YYYY hh:mm A'
+        format: 'YYYY/MM/DD'
       }
     }) 
+    $.ajaxSetup({
+  headers: {
+    'X-CSRF-TOKEN': "{{ csrf_token() }}"
+    }
+  });
 
-    $(document).ready( function () {
-    $('#celdas').DataTable( {"serverSide": true,
-                    "ajax": "{{ route('cell.datatable') }}",
-                    "columns": [
-                        {data: 'celda'},
-                        {data: 'dia'},
-                    ]});
-} );
+    $('#celdaswidget').CardWidget('collapse'); 
+    $('#chartwidget').CardWidget('collapse'); 
+
+
+    $(document).ready(function(){
+      $('#formdata').submit(function(event){
+
+        event.preventDefault();
+        formdatos = $(this).serializeArray();
+        console.log( $( this ).serializeArray() );
+        celldestroy();
+        $('#celdas').DataTable( 
+              { 
+                "serverSide": true,
+                "processing": true,
+                "ajax": {
+                    "url":"{{ route('cell.datatablep') }}",
+                    "type" : "post",
+                    "data":  formdatos,
+                    "beforeSend": $('#celdaswidget').CardWidget('expand'),
+                    },
+              "columns": [
+                  {data: 'celda'},
+                  {data: 'dia'},
+                          ]
+                });
+
+    });
+  });
+
+    
+      const activarDataTable = () => {
+          alert("Entro en la función activardatatable");
+          const datos = $("#formdata").serialize();
+          alert(datos);
+          $('#celdas').DataTable( 
+              {"serverSide": true,
+                "processing": true,
+                "ajax": {
+                    "url":"{{ route('cell.datatablep') }}",
+                    "type" : "post",
+                    "data":  datos,
+                    "success": alert("listo")
+                    },
+              "columns": [
+                  {data: 'celda'},
+                  {data: 'dia'},
+                          ]
+                });
+              };
+          /*$(document).ready( function () {  
+      $("#boton").on('click' , (e) => {
+          celldestroy();
+          activarDataTable();
+      });
+    }); 
+*/
+    const celldestroy = () => {
+          cell = $('#celdas').DataTable();
+          cell.destroy();
+
+    }
+    const activarDataTableGet = () => { $(document).ready(function() {
+    $('#celdas').DataTable( {
+        "processing": true,
+        "serverSide": true,
+        "ajax": "{{ route('cell.datatablep') }}",
+         "columns": [
+              {data: 'celda'},
+              {data: 'dia'},
+                      ]
+    } );
+} );}
+
+  /*  $(document).ready( function () {
+      $('#celdas').DataTable( 
+        {"serverSide": true,
+         "ajax": "{{ route('cell.datatable') }}",
+         "columns": [
+            {data: 'celda'},
+            {data: 'dia'},
+                    ]
+          });
+} );*/
     /* ChartJS
     * -------
     * Here we will create a few charts using ChartJS
