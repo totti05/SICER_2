@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Celda;
+use App\User;
+use Illuminate\Support\Facades\DB;
 use App\Evolution;
 use Illuminate\Http\Request;
 
@@ -81,5 +84,28 @@ class EvolutionController extends Controller
     public function destroy(Evolution $evolution)
     {
         //
+    }
+    public function EvolutionDataChart(Request $request)
+    {
+        if ($request->isMethod('get')) {
+        $result = DB::connection('reduccion')->table('diariocelda')
+        ->whereBetween('celda', [1000,1001])
+        ->whereYear('dia','2018')
+        ->whereMonth('dia','05')
+        ->get();
+        return response()->json($result);
+        }
+        else{
+
+            list( $fecha1, $fecha2) = explode(' - ', $request->input('rangoFecha'));
+            $celda1 = $request->input('celda1');
+            $celda2 = $request->input('celda2');
+            
+            $result = DB::connection('reduccion')->table('diariocelda')
+                        ->whereBetween('celda', [$celda1,$celda2])
+                        ->whereBetween('dia', [$fecha1,$fecha2])  
+                        ->get();
+                        return response()->json($result);
+        }
     }
 }

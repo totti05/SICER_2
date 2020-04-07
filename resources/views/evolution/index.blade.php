@@ -18,14 +18,14 @@
   <!-- /.card-header -->
   
   <div class="card-body">
-    <form action="" method="post">
+    <form id="formData">
       <div class="form-group">
         <label>Rango de fecha y hora que desea consultar:</label>
         <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="far fa-clock"></i></span>
           </div>
-          <input type="text" class="form-control float-right col-md-4" id="rangoFecha">
+          <input type="text" name="rangoFecha" class="form-control float-right col-md-4" id="rangoFecha">
         </div>
         <!-- /.input group -->
       </div>
@@ -110,7 +110,7 @@
       <h3 class="card-title">Line V Chart</h3>
 
       <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+        <button type="button" id="chartwidget" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
         </button>
         <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
       </div>
@@ -131,7 +131,7 @@
       <h3 class="card-title">Voltaje PRE Chart</h3>
 
       <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+        <button type="button" id="voltajeChartwidget" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
         </button>
         <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
       </div>
@@ -909,20 +909,159 @@
 @stop
 @section('js')
   <script> 
-    //Date range picker with time picker
+     //Date range picker with time picker
      $('#rangoFecha').daterangepicker({
-      timePicker: true,
+      timePicker: false,
       timePickerIncrement: 30,
       locale: {
-        format: 'MM/DD/YYYY hh:mm A'
+        format: 'YYYY/MM/DD'
       }
     }) 
+    
+    $('#chartwidget').CardWidget('collapse'); 
+    $('#voltajeChartwidget').CardWidget('collapse'); 
 
+    $(document).ready(function(){
+      $('#formdata').submit(function(event){
+
+        event.preventDefault();
+        formdatos = $(this).serializeArray();
+        console.log( $( this ).serializeArray() );
+        
+       });
+  });
 
     /* ChartJS
     * -------
     * Here we will create a few charts using ChartJS
     */
+
+    var url = "{{route('evolution.dataChart')}}";
+        var Dia = new Array();
+        var Celdas = new Array();
+        var Voltaje = new Array();
+        $(document).ready(function(){
+          $.get(url, function(response){
+            response.forEach(function(data){
+                Dia.push(data.dia);
+                Celdas.push(data.celdas);
+                Voltaje.push(data.voltaje);
+            });
+            var ctx = document.getElementById("lineChart").getContext('2d');
+                var myChart = new Chart(ctx, {
+                  type: 'line',
+                  data: {
+                      labels:Dia,
+                      datasets: [{
+                          label: 'Voltaje',
+                          data: Voltaje,
+                          borderWidth: 1,
+                          backgroundColor     : 'transparent',
+                          borderColor         : '#007bff',
+                          pointBorderColor    : '#007bff',
+                          pointBackgroundColor: '#007bff',
+                          fill                : false,
+                          lineTension         : 0
+                      }]
+                  },
+                  options: {
+                      scales: {
+                          yAxes: [{
+                              ticks: {
+                                  beginAtZero:false
+                              }
+                          }]
+                      }
+                  }
+              });
+          });
+        });
+
+
+
+        $(document).ready(function () {
+    $("#formData").bind("submit",function(){
+        $.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': "{{ csrf_token() }}"
+          }
+        });
+        datos = $(this).serialize();
+        console.log(datos);
+        $.ajax({
+            type:"post",
+            url: "{{ route('evolution.dataChartp') }}",
+            data:$(this).serialize(),
+            beforeSend: function(){
+                /*
+                * Esta función se ejecuta durante el envió de la petición al
+                * servidor.
+                * */
+            },
+            complete:function(data){
+                /*
+                * Se ejecuta al termino de la petición
+                * */
+            },
+            success: function(response){
+                /*
+                * Se ejecuta cuando termina la petición y esta ha sido
+                * correcta
+                * */
+               console.log(response);
+                var Dia2 = new Array();
+                var Celdas2 = new Array();
+                var Voltaje2 = new Array();
+                response.forEach(function(data){
+                    Dia2.push(data.dia);
+                    Celdas2.push(data.celdas);
+                    Voltaje2.push(data.voltaje);
+                  });
+                var ctx = document.getElementById("voltajeChart").getContext('2d');
+                var voltajeChart = new Chart(ctx, {
+                  type: 'line',
+                  data: {
+                      labels:Dia2,
+                      datasets: [{
+                          label: 'Voltaje',
+                          data: Voltaje2,
+                          borderWidth: 1,
+                          backgroundColor     : 'transparent',
+                          borderColor         : '#007bff',
+                          pointBorderColor    : '#007bff',
+                          pointBackgroundColor: '#007bff',
+                          fill                : false,
+                          lineTension         : 0
+                      }]
+                  },
+                  options: {
+                    scales: {
+                          yAxes: [{
+                            ticks: {
+                                beginAtZero:false
+                                }
+                            }]
+                        }
+                      } 
+                });
+            },
+            error: function(data){
+                /*
+                * Se ejecuta si la peticón ha sido erronea
+                * */
+                alert("Problemas al tratar de enviar el formulario");
+            }
+        });
+        // Nos permite cancelar el envio del formulario
+        return false;
+    });
+});
+
+
+
+
+  /*
+
 
 
     var areaChartData = {
@@ -1201,7 +1340,7 @@
   })
 
 
-
+*/
 
 
 </script>
