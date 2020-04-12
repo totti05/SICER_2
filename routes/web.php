@@ -30,3 +30,6 @@ Route::resource('/crucible', 'CrucibleController');
 Route::get('/celldata', 'CellController@CellDataChart')->name('cell.dataChart');
 Route::get('/celldatable', 'CellController@CellDataTable')->name('cell.datatable');
 Route::post('/celldatable', 'CellController@CellDataTable')->name('cell.datatablep');
+
+Route::get('/evolutionChart', 'EvolutionController@EvolutionDataChart')->name('evolution.dataChart');
+Route::post('/evolutionChart', 'EvolutionController@EvolutionDataChart')->name('evolution.dataChartp');
