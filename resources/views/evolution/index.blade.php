@@ -56,9 +56,45 @@
   
       <div class="form-group col-md-4">
         <label for="variable">Variable</label>
-        <select id="variable" class="form-control">
-          <option selected>voltaje</option>
-          <option>...</option>
+        <select id="variable" name="variable" class="form-control">
+          <option selected>Voltaje</option>
+          <option>Efectos anodicos</option>
+          <option>Alimentacion de alumina</option>
+          <option>Temperatura de baño</option>
+          <option>Duracion del tracking</option>
+          <option>Acidez de baño</option>
+          <option>Consumo de alumina</option>
+          <option>Dump Size Alumina</option>
+          <option>Consumo AlF3</option>
+          <option>Track CD</option>
+          <option>Consumo AlF3 Manual</option>
+          <option>VMAX del Efecto Anodico</option>
+          <option>Eficiencia de Trasegado (Eficiencia de corriente)</option>
+          <option>Duracion de Efecto anódico</option>
+          <option>Nivel de Metal</option>
+          <option>Corriente de Linea</option>
+          <option>Potencia nominal</option>
+          <option>(BO+RAJ+BIM+Tetas)</option>
+          <option>Potencia Neta</option>
+          <option>Anodos B/O  cambio Normal</option>
+          <option>Nivel de Baño</option>
+          <option>Anodos Bimetalicos</option>
+          <option>Criolita Neta</option>
+          <option>Criolita de Arranque</option>
+          <option>Anodos B/A</option>
+          <option>Baño Fase Densa</option>
+          <option>Desviacion de Temperatura</option>
+          <option>Hierro Metal de Celdas </option>
+          <option>Desviacion Acidez</option>
+          <option>Silicio Metal Celdas </option>
+          <option>Desviacion Nm</option>
+          <option>Frecuencia Desnatado</option>
+          <option>Desviacion Nb</option>
+          <option>Celdas Conectadas</option>
+          <option>Frecuencia Efectos Anodicos</option>
+          <option>% CaF2 en el baño electrolitico</option>
+
+
         </select>
       </div>
       <!-- /.form group -->
@@ -911,12 +947,56 @@
   <script> 
      //Date range picker with time picker
      $('#rangoFecha').daterangepicker({
-      timePicker: false,
-      timePickerIncrement: 30,
-      locale: {
-        format: 'YYYY/MM/DD'
-      }
-    }) 
+        "showWeekNumbers": true,
+        "minYear": 2003,
+        ranges: {
+            'Hoy': [moment(), moment()],
+            'Ayer': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Últimos 7 días': [moment().subtract(6, 'days'), moment()],
+            'Últimos 30 días': [moment().subtract(29, 'days'), moment()],
+            'Este mes': [moment().startOf('month'), moment().endOf('month')],
+            'Último mes': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+          },
+        "locale": {
+              "format": "YYYY/MM/DD",
+              "separator": " - ",
+              "applyLabel": "Seleccionar",
+              "cancelLabel": "Cancelar",
+              "fromLabel": "Desde",
+              "toLabel": "Hasta",
+              "customRangeLabel": "Elegir",
+              "weekLabel": "Sem",
+              "daysOfWeek": [
+                  "Do",
+                  "Lu",
+                  "Ma",
+                  "Mi",
+                  "Ju",
+                  "Vi",
+                  "Sa"
+              ],
+              "monthNames": [
+                  "Enero",
+                  "Febrero",
+                  "Marzo",
+                  "Abril",
+                  "Mayo",
+                  "Junio",
+                  "Julio",
+                  "Agosto",
+                  "Septiembre",
+                  "Octubre",
+                  "Noviembre",
+                  "Diciembre"
+              ],
+              "firstDay": 1
+            },
+              "linkedCalendars": false,
+              "minDate": "01/01/2003",
+              "maxDate": moment()
+        }, function(start, end, label) {
+          console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+      });
     
     $('#chartwidget').CardWidget('collapse'); 
     $('#voltajeChartwidget').CardWidget('collapse'); 
@@ -937,17 +1017,17 @@
     */
 
     var url = "{{route('evolution.dataChart')}}";
-        var Dia = new Array();
-        var Celdas = new Array();
-        var Voltaje = new Array();
-        $(document).ready(function(){
-          $.get(url, function(response){
-            response.forEach(function(data){
-                Dia.push(data.dia);
-                Celdas.push(data.celdas);
-                Voltaje.push(data.voltaje);
+    var Dia = new Array();
+    var Celdas = new Array();
+    var Voltaje = new Array();
+     $(document).ready(function(){
+       $.get(url, function(response){
+          response.forEach(function(data){
+             Dia.push(data.dia);
+             Celdas.push(data.celdas);
+             Voltaje.push(data.voltaje);
             });
-            var ctx = document.getElementById("lineChart").getContext('2d');
+          var ctx = document.getElementById("lineChart").getContext('2d');
                 var myChart = new Chart(ctx, {
                   type: 'line',
                   data: {
@@ -958,11 +1038,23 @@
                           borderWidth: 1,
                           backgroundColor     : 'transparent',
                           borderColor         : '#007bff',
-                          pointBorderColor    : '#007bff',
-                          pointBackgroundColor: '#007bff',
+                          pointBorderColor    : '#f2ff03',
+                          pointBackgroundColor: '#00ff15',
                           fill                : false,
                           lineTension         : 0
-                      }]
+                      },
+                      {
+                          label: 'Volta',
+                          data: [5.5,3.4,4.4],
+                          borderWidth: 1,
+                          backgroundColor     : 'transparent',
+                          borderColor         : '#00ff15',
+                          pointBorderColor    : '#00ff15',
+                          pointBackgroundColor: '#00ff15',
+                          fill                : false,
+                          lineTension         : 0
+                      }],
+                      
                   },
                   options: {
                       scales: {
@@ -979,8 +1071,8 @@
 
 
 
-        $(document).ready(function () {
-    $("#formData").bind("submit",function(){
+    $(document).ready(function () {
+      $("#formData").bind("submit",function(){
         $.ajaxSetup({
         headers: {
           'X-CSRF-TOKEN': "{{ csrf_token() }}"
@@ -1009,22 +1101,257 @@
                 * correcta
                 * */
                console.log(response);
-                var Dia2 = new Array();
-                var Celdas2 = new Array();
-                var Voltaje2 = new Array();
-                response.forEach(function(data){
-                    Dia2.push(data.dia);
-                    Celdas2.push(data.celdas);
-                    Voltaje2.push(data.voltaje);
+                var Dia = new Array();
+                var Celdas = new Array();
+                var Datos = new Array();
+                var etiqueta = new Array();
+                var banda1 = new Array();
+                var banda2 = new Array();
+
+                    response.datos.forEach(function(data){
+                      if (response.banda1 != null) {
+                        banda1.push(response.banda1); 
+                      }
+                      if (response.banda2 != null) {
+                        banda2.push(response.banda2); 
+                      }
+                    Dia.push(data.dia);
+                    Celdas.push(data.celda);
+                    
+                    switch (response.variable) {
+                      case "Voltaje":
+                      Datos.push(data.voltaje);
+                      break;
+                      
+                      case "Efectos anodicos":
+                      Datos.push(data.numeroEA);
+                      break;
+                      
+                      case "Desviación de Resistencia":
+                      //$variableDB = 'voltaje';//falta ubicarlo en BD
+                      Datos.push(data.voltaje);
+                      break;
+                      
+                      case "Alimentacion de Alumina":
+                        Datos.push(data.voltaje);
+                        //$variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                      
+                      case "Temperatura de baño":
+                      Datos.push(data.temperatura);
+                      break;
+                      
+                      case "Duracion de Tracking":
+                        Datos.push(data.duracionTk);
+                      break;
+                      
+                      case "Acidez de Baño":
+                      Datos.push(data.acidez);
+                      
+                      break;
+                      
+                      case "Dump Size Alumina":
+                      Datos.push(data.voltaje);
+                      //    $variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                      
+                      case "Consumo AlF3":
+                      Datos.push(data.voltaje);
+                        // $variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                      
+                      case "Track CD":
+                      Datos.push(data.numeroTk);
+                      break;
+                      
+                      case "Consumo AlF3 Manual":
+                      Datos.push(data.voltaje);
+                          //$variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                      
+                      case "VMAX del Efecto Anodico":
+                      Datos.push(data.vMaxEA);
+                      break;
+                      
+                      case "Eficiencia de Trasegado (Eficiencia de corriente)":
+                      Datos.push(data.voltaje);
+                          //$variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                      
+                      case "Duracion de Efecto anódico":
+                      Datos.push(data.duracionEA);
+                      break;
+                      
+                      case "Nivel de Metal":
+                      Datos.push(data.nivelDeMetal);
+                          
+                      break;
+                      
+                      case "Corriente de Linea ":
+                      Datos.push(data.voltaje);
+                          //$variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                      
+                      case "Potencia nominal":
+                      Datos.push(data.voltaje);
+                        // $variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                      
+                      case "(BO+RAJ+BIM+Tetas)":
+                      Datos.push(data.voltaje);
+                          //$variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                      
+                      case "Potencia Neta":
+                      Datos.push(data.voltaje);
+                          //$variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                      
+                      case "Anodos B/O  cambio Normal":
+                      Datos.push(data.voltaje);
+                          //$variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                      
+                      case "Nivel de Baño":
+                      Datos.push(data.nivelDeBanio);
+                      break;
+                      
+                      case "Anodos Bimetalicos":
+                          //$variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                      
+                      case "Criolita Neta ":
+                          Datos.push(data.voltaje);
+                        // $variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                      
+                      case "Criolita de Arranque":
+                        Datos.push(data.voltaje);
+                        // $variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                      
+                      case "Anodos B/A":
+                        Datos.push(data.voltaje);
+                        // $variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                      
+                      case "Baño Fase Densa":
+                        Datos.push(data.voltaje);
+                        // $variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                      
+                      case "Desviacion de Temperatura":
+                        Datos.push(data.voltaje);
+                        // $variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                      
+                      case "Hierro Metal de Celdas ":
+                          Datos.push(data.voltaje);
+                        // $variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                      
+                      case "Desviacion Acidez":
+                        Datos.push(data.voltaje);
+                        // $variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                      
+                      case "Silicio Metal Celdas":
+                        Datos.push(data.voltaje);
+                        // $variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                      
+                      case "Desviacion Nm":
+                        Datos.push(data.voltaje);
+                        // $variableDB = 'voltaje'; //falta ubicarlo en BD
+                      break;
+                      
+                      case "Frecuencia Desnatado":
+                        Datos.push(data.voltaje);
+                        // $variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                      
+                      case "Desviacion Nb":
+                        Datos.push(data.voltaje);
+                        // $variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                      
+                      case "Celdas Conectadas":
+                        Datos.push(data.voltaje);
+                        // $variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                      
+                      case "Frecuencia Efectos Anodicos ":
+                        Datos.push(data.voltaje);
+                        // $variableDB = 'voltaje'; //falta ubicarlo en BD
+                      break;
+                      
+                      case "% CaF2 en el baño electrolitico":
+                        Datos.push(data.voltaje);
+                        // $variableDB = 'voltaje';//falta ubicarlo en BD
+                      break;
+                        
+                    } 
                   });
+                  /* var areaChartData = {
+                      labels  : Dia,
+                      datasets: [
+                        {
+                          label               : [],
+                          backgroundColor     : 'rgba(60,141,188,0.9)',
+                          borderColor         : 'rgba(60,141,188,0.8)',
+                          pointRadius          : false,
+                          pointColor          : '#3b8bba',
+                          pointStrokeColor    : 'rgba(60,141,188,1)',
+                          pointHighlightFill  : '#fff',
+                          lineTension         : 0,
+                          pointHighlightStroke: 'rgba(60,141,188,1)',
+                          data                : [28, 48, 40, 19, 86, 27, 90]
+                        },
+                        {
+                          label               : 'Electronics',
+                          backgroundColor     : 'rgba(210, 214, 222, 1)',
+                          borderColor         : 'rgba(210, 214, 222, 1)',
+                          pointRadius         : false,
+                          pointColor          : 'rgba(210, 214, 222, 1)',
+                          pointStrokeColor    : '#c1c7d1',
+                          pointHighlightFill  : '#fff',
+                          lineTension         : 0,
+                          pointHighlightStroke: 'rgba(220,220,220,1)',
+                          data                : [65, 59, 80, 81, 56, 55, 40]
+                        },
+                        {
+                          label               : 'Constant',
+                          backgroundColor     : 'rgba(210, 214, 222, 1)',
+                          borderColor         : 'rgba(210, 214, 222, 1)',
+                          pointRadius         : false,
+                          pointColor          : 'rgba(210, 214, 222, 1)',
+                          pointStrokeColor    : '#c1c7d1',
+                          pointHighlightFill  : '#fff',
+                          lineTension         : 0,
+                          pointHighlightStroke: 'rgba(220,220,220,1)',
+                          data                : [50]
+                        },
+                      ]
+                  } */
+                  console.log(etiqueta);
+                  console.log(Dia);
+                  console.log(Celdas);
+                  console.log(Datos);
+                  console.log(banda1);
+                  console.log(banda2);
+
+
+
+
                 var ctx = document.getElementById("voltajeChart").getContext('2d');
                 var voltajeChart = new Chart(ctx, {
                   type: 'line',
-                  data: {
-                      labels:Dia2,
+                      data: {
+                      labels:Dia,
                       datasets: [{
-                          label: 'Voltaje',
-                          data: Voltaje2,
+                          label: response.variable ,
+                          data: Datos,
+                          yAxisID : 'y-axis-1',
                           borderWidth: 1,
                           backgroundColor     : 'transparent',
                           borderColor         : '#007bff',
@@ -1032,17 +1359,84 @@
                           pointBackgroundColor: '#007bff',
                           fill                : false,
                           lineTension         : 0
-                      }]
+                      },
+                      {
+                          label: 'celdas',
+                          data: Celdas,
+                          yAxisID : 'y-axis-2',
+                          showLine: false,
+                          borderWidth: 1,
+                          backgroundColor     : 'transparent',
+                          borderColor         : 'green',
+                          pointStyle: 'line',
+                          fill                : false,
+                          lineTension         : 0
+                      },
+                      {
+                          label: 'banda1',
+                          data: banda1,
+                          yAxisID : 'y-axis-1',
+                          borderWidth: 1,
+                          backgroundColor     : 'transparent',
+                          borderColor         : 'red',
+                          pointStyle: 'line',
+                          fill                : false,
+                          lineTension         : 0
+                      },
+                      {
+                          label: 'banda2',
+                          data: banda2,
+                          yAxisID : 'y-axis-1',
+                          borderWidth: 1,
+                          backgroundColor     : 'transparent',
+                          borderColor         : 'yellow',
+                          pointStyle: 'line',
+                          fill                : false,
+                          lineTension         : 0
+                      }
+                      ]
                   },
                   options: {
+                    tooltips: { 
+                      mode: 'index' 
+                      },
                     scales: {
                           yAxes: [{
+                            scaleLabel: {
+                              labelString : response.ylabel,
+                              display: true}, 
+                            type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                            display: true,
+                            position: 'left',
+                            id: 'y-axis-1',
+                            ticks: {
+                              
+                              min: response.miny,
+                              max: response.maxy
+
+                            }
+                          }, {
+                            type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                            display: false,
+                            position: 'right',
+                            id: 'y-axis-2',
                             ticks: {
                                 beginAtZero:false
                                 }
-                            }]
+                            }],
+
+                            xAxes: [{
+                            scaleLabel: {
+                              labelString : response.xlabel,
+                              display: true},
+                            ticks: {
+                             // maxTicksLimit: 20
+                            }
+                          }]
+
                         }
-                      } 
+                      }
+                   
                 });
             },
             error: function(data){
@@ -1068,7 +1462,7 @@
       labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
       datasets: [
         {
-          label               : 'Digital Goods',
+          label               : 'voltaje celda 1',
           backgroundColor     : 'rgba(60,141,188,0.9)',
           borderColor         : 'rgba(60,141,188,0.8)',
           pointRadius          : false,
@@ -1080,7 +1474,7 @@
           data                : [28, 48, 40, 19, 86, 27, 90]
         },
         {
-          label               : 'Electronics',
+          label               : 'celda 2',
           backgroundColor     : 'rgba(210, 214, 222, 1)',
           borderColor         : 'rgba(210, 214, 222, 1)',
           pointRadius         : false,
