@@ -46,11 +46,11 @@ return [
     */
 
     'logo' => '<b>SICER</b>',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo_img' => 'vendor/adminlte/dist/img/venalum1.png',
     'logo_img_class' => 'brand-image-xl',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'AdminLTE',
+    'logo_img_alt' => 'Sicer Venalum',
 
     /*
     |--------------------------------------------------------------------------
@@ -189,19 +189,10 @@ return [
 
     'menu' => [
         [
-            'text' => 'search',
-            'search' => true,
-            'topnav' => true,
-        ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
             'text'        => 'Celdas conectadas',
             'url'         => 'home',
             'icon'        => 'fa fa-table',
+            'icon_color' => 'yellow',
             'label'       => 8,
             'label_color' => 'success',
         ],
@@ -210,31 +201,37 @@ return [
             'text' => 'Evolución de línea',
             'url'  => 'evolution',
             'icon' => 'fa fa-chart-line',
+            'icon_color' => 'green',
         ],
         [
             'text' => 'Celdas',
             'url'  => 'cell',
             'icon' => 'fa fa-th',
+            'icon_color' => 'orange',
         ],
         [
             'text'    => 'Fallas de anodos',
             'url'  => 'fail',
             'icon'    => 'fa fa-exclamation-triangle',
+            'icon_color' => 'red',
          ],
          [
             'text'    => 'Baño electrolítico',
             'url'  => 'bath',
             'icon'    => 'fa fa-flask',
+            'icon_color' => 'purple',
          ],
          [
             'text'    => 'Informacion de línea ',
             'url'  => 'infoline',
             'icon'    => 'fas fa-fw fa-share',
+            'icon_color' => 'blue',
          ],
          [
             'text'    => 'Metal en Crisol',
             'url'  => 'crucible',
             'icon'    => 'fa fa-fill-drip',
+            'icon_color' => 'grey',
          ],
         ['header' => 'labels'],
         [
