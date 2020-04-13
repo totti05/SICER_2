@@ -56,8 +56,44 @@
       <div class="form-group col-md-4">
         <label for="variable">Variable</label>
         <select id="variable" name="variable" class="form-control">
-          <option selected>voltaje</option>
-          <option>...</option>
+          <option selected>Voltaje</option>
+          <option>Efectos anodicos</option>
+          <option>Alimentacion de alumina</option>
+          <option>Temperatura de baño</option>
+          <option>Duracion del tracking</option>
+          <option>Acidez de baño</option>
+          <option>Consumo de alumina</option>
+          <option>Dump Size Alumina</option>
+          <option>Consumo AlF3</option>
+          <option>Track CD</option>
+          <option>Consumo AlF3 Manual</option>
+          <option>VMAX del Efecto Anodico</option>
+          <option>Eficiencia de Trasegado (Eficiencia de corriente)</option>
+          <option>Duracion de Efecto anódico</option>
+          <option>Nivel de Metal</option>
+          <option>Corriente de Linea</option>
+          <option>Potencia nominal</option>
+          <option>(BO+RAJ+BIM+Tetas)</option>
+          <option>Potencia Neta</option>
+          <option>Anodos B/O  cambio Normal</option>
+          <option>Nivel de Baño</option>
+          <option>Anodos Bimetalicos</option>
+          <option>Criolita Neta</option>
+          <option>Criolita de Arranque</option>
+          <option>Anodos B/A</option>
+          <option>Baño Fase Densa</option>
+          <option>Desviacion de Temperatura</option>
+          <option>Hierro Metal de Celdas </option>
+          <option>Desviacion Acidez</option>
+          <option>Silicio Metal Celdas </option>
+          <option>Desviacion Nm</option>
+          <option>Frecuencia Desnatado</option>
+          <option>Desviacion Nb</option>
+          <option>Celdas Conectadas</option>
+          <option>Frecuencia Efectos Anodicos</option>
+          <option>% CaF2 en el baño electrolitico</option>
+
+
         </select>
       </div>
       <!-- /.form group -->
@@ -120,6 +156,7 @@
             <tr>
               <th>celda</th>
               <th>dia</th>
+              <th id="thVariable"></th>
             </tr>
           </thead>
           <tbody>
@@ -165,13 +202,59 @@
 @section('js')
   <script> 
     //Date range picker with time picker
-     $('#rangoFecha').daterangepicker({
-      timePicker: true,
-      timePickerIncrement: 30,
-      locale: {
-        format: 'YYYY/MM/DD'
-      }
-    }) 
+    $('#rangoFecha').daterangepicker({
+        "showWeekNumbers": true,
+        "minYear": 2003,
+        ranges: {
+            'Hoy': [moment(), moment()],
+            'Ayer': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Últimos 7 días': [moment().subtract(6, 'days'), moment()],
+            'Últimos 30 días': [moment().subtract(29, 'days'), moment()],
+            'Este mes': [moment().startOf('month'), moment().endOf('month')],
+            'Último mes': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+          },
+        "locale": {
+              "format": "YYYY/MM/DD",
+              "separator": " - ",
+              "applyLabel": "Seleccionar",
+              "cancelLabel": "Cancelar",
+              "fromLabel": "Desde",
+              "toLabel": "Hasta",
+              "customRangeLabel": "Elegir",
+              "weekLabel": "Sem",
+              "daysOfWeek": [
+                  "Do",
+                  "Lu",
+                  "Ma",
+                  "Mi",
+                  "Ju",
+                  "Vi",
+                  "Sa"
+              ],
+              "monthNames": [
+                  "Enero",
+                  "Febrero",
+                  "Marzo",
+                  "Abril",
+                  "Mayo",
+                  "Junio",
+                  "Julio",
+                  "Agosto",
+                  "Septiembre",
+                  "Octubre",
+                  "Noviembre",
+                  "Diciembre"
+              ],
+              "firstDay": 1
+            },
+              "linkedCalendars": false,
+              "minDate": "01/01/2003",
+              "maxDate": moment()
+        }, function(start, end, label) {
+          console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+      });
+
+
     $.ajaxSetup({
   headers: {
     'X-CSRF-TOKEN': "{{ csrf_token() }}"
@@ -189,6 +272,164 @@
         formdatos = $(this).serializeArray();
         console.log( $( this ).serializeArray() );
         celldestroy();
+        varia = $('#variable').val();
+        varia.toString();
+        console.log(varia);
+
+        switch(varia){
+                case "Voltaje":
+                    varia = 'voltaje';
+                    
+
+                break;
+                
+                case "Efectos anodicos":
+                    varia = 'numeroEA';
+                   
+                break;
+                
+                case "Desviación de Resistencia":
+                    varia = 'voltaje';
+                break;
+                
+                case "Alimentacion de alumina":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Temperatura de baño":
+                    varia = 'temperatura';
+                break;
+                
+                case "Duracion de Tracking":
+                    varia = 'duracionTk';
+                break;
+                
+                case "Acidez de Baño":
+                    varia = 'acidez';
+                break;
+                
+                case "Dump Size Alumina":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Consumo AlF3":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Track CD":
+                    varia = 'numeroTk';
+                break;
+                
+                case "Consumo AlF3 Manual":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "VMAX del Efecto Anodico":
+                    varia = 'vMaxEA';
+                break;
+                
+                case "Eficiencia de Trasegado (Eficiencia de corriente)":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Duracion de Efecto anódico":
+                    varia = 'duracionEA';
+                break;
+                
+                case "Nivel de Metal":
+                    varia = 'nivelDeMetal';
+                break;
+                
+                case "Corriente de Linea ":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Potencia nominal":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "(BO+RAJ+BIM+Tetas)":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Potencia Neta":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Anodos B/O  cambio Normal":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Nivel de Baño":
+                    varia = 'nivelDeBanio';
+                break;
+                
+                case "Anodos Bimetalicos":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Criolita Neta ":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Criolita de Arranque":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Anodos B/A":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Baño Fase Densa":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Desviacion de Temperatura":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Hierro Metal de Celdas ":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Desviacion Acidez":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Silicio Metal Celdas":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Desviacion Nm":
+                    varia = 'voltaje'; //falta ubicarlo en BD
+                break;
+                
+                case "Frecuencia Desnatado":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Desviacion Nb":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Celdas Conectadas":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Frecuencia Efectos Anodicos ":
+                    varia = 'voltaje'; //falta ubicarlo en BD
+                break;
+                
+                case "% CaF2 en el baño electrolitico":
+                    varia = 'voltaje';//falta ubicarlo en BD
+                break;
+
+            }
+            console.log(varia);
+            $('#thVariable').text(varia);
+
+
+
         $('#celdas').DataTable( 
               { 
                 "serverSide": true,
@@ -202,6 +443,7 @@
               "columns": [
                   {data: 'celda'},
                   {data: 'dia'},
+                  {data: varia },
                           ]
                 });
 

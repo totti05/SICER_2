@@ -43,7 +43,7 @@
                                 </tr>
                                 <tr>
                                     <td>Linea 5</td>
-                                    <td>nro celdas</td>
+                                <td> {{ $celdas }}</td>
                                 </tr>
                             </tbody>
                         </table>    
