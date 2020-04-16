@@ -444,7 +444,15 @@
                   {data: 'celda'},
                   {data: 'dia'},
                   {data: varia },
-                          ]
+                          ],
+              "dom": '<"top"fl>rt<"bottom"Bip><"clear">',
+              "buttons": [
+                { extend: 'copy', text: 'copy', className: 'btn btn-primary' },
+                { extend: 'csv', text: 'csv', className: 'btn btn-primary' } ,
+                { extend: 'excel', text: 'excel', className: 'btn btn-primary', } , 
+                { extend: 'pdf', text: 'pdf', className: 'btn btn-primary' } , 
+                { extend: 'print', text: 'print', className: 'btn btn-primary' },  
+                ]
                 });
 
     });
@@ -456,7 +464,8 @@
           const datos = $("#formdata").serialize();
           alert(datos);
           $('#celdas').DataTable( 
-              {"serverSide": true,
+              {
+                "serverSide": true,
                 "processing": true,
                 "ajax": {
                     "url":"{{ route('cell.datatablep') }}",

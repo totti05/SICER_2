@@ -298,9 +298,50 @@ return [
                     'location' => 'vendor/datatables/js/dataTables.bootstrap4.min.js',
                 ],
                 [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables/js/dataTables.buttons.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables/js/jszip.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables/js/pdfmake.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables/js/vfs_fonts.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables/js/buttons.flash.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables/js/buttons.html5.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables/js/buttons.print.js',
+                ],
+               
+                [
                     'type' => 'css',
                     'asset' => true,
                     'location' => 'vendor/datatables/css/dataTables.bootstrap4.min.css',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/datatables/css/buttons.bootstrap4.css',
                 ],
             ],
         ],
