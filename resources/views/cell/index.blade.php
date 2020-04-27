@@ -62,7 +62,7 @@
           <option>Temperatura de baño</option>
           <option>Duracion del tracking</option>
           <option>Acidez de baño</option>
-          <option>Consumo de alumina</option>
+           <!-- <option>Consumo de alumina</option>  -->
           <option>Dump Size Alumina</option>
           <option>Consumo AlF3</option>
           <option>Track CD</option>
@@ -75,7 +75,7 @@
           <option>Potencia nominal</option>
           <option>(BO+RAJ+BIM+Tetas)</option>
           <option>Potencia Neta</option>
-          <option>Anodos B/O  cambio Normal</option>
+          <option>Anodos B/O cambio Normal</option>
           <option>Nivel de Baño</option>
           <option>Anodos Bimetalicos</option>
           <option>Criolita Neta</option>
@@ -104,7 +104,7 @@
             <label>Minimo</label>
             <div class="input-group col-md-3">
               <div class="input-group-prepend">
-                <span class="input-group-text">Min</span>
+                <span class="input-group-text">Min (escala)</span>
               </div>
               <input type="number" name="min" class="form-control float-right col-md-4" id="min">
             </div>
@@ -114,7 +114,7 @@
             <div class="input-group col-md-3">
              
               <div class="input-group-prepend">
-                <span class="input-group-text">Max</span>
+                <span class="input-group-text">Max (escala)</span>
               </div>
               <input type="number" name="max" class="form-control float-right col-md-4" id="max">
             </div>
@@ -191,7 +191,7 @@
     </div>
     <div class="card-body">
       <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        <canvas id="lineChart" style="display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
       </div>
     </div>
     <!-- /.card-body -->
@@ -300,11 +300,11 @@
                     varia = 'temperatura';
                 break;
                 
-                case "Duracion de Tracking":
+                case "Duracion del tracking":
                     varia = 'duracionTk';
                 break;
                 
-                case "Acidez de Baño":
+                case "Acidez de baño":
                     varia = 'acidez';
                 break;
                 
@@ -340,7 +340,7 @@
                     varia = 'nivelDeMetal';
                 break;
                 
-                case "Corriente de Linea ":
+                case "Corriente de Linea":
                     varia = 'voltaje';//falta ubicarlo en BD
                 break;
                 
@@ -356,7 +356,7 @@
                     varia = 'voltaje';//falta ubicarlo en BD
                 break;
                 
-                case "Anodos B/O  cambio Normal":
+                case "Anodos B/O cambio Normal":
                     varia = 'voltaje';//falta ubicarlo en BD
                 break;
                 
@@ -368,7 +368,7 @@
                     varia = 'voltaje';//falta ubicarlo en BD
                 break;
                 
-                case "Criolita Neta ":
+                case "Criolita Neta":
                     varia = 'voltaje';//falta ubicarlo en BD
                 break;
                 
@@ -388,7 +388,7 @@
                     varia = 'voltaje';//falta ubicarlo en BD
                 break;
                 
-                case "Hierro Metal de Celdas ":
+                case "Hierro Metal de Celdas":
                     varia = 'voltaje';//falta ubicarlo en BD
                 break;
                 
@@ -416,7 +416,7 @@
                     varia = 'voltaje';//falta ubicarlo en BD
                 break;
                 
-                case "Frecuencia Efectos Anodicos ":
+                case "Frecuencia Efectos Anodicos":
                     varia = 'voltaje'; //falta ubicarlo en BD
                 break;
                 

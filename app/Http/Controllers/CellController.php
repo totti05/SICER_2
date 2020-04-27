@@ -158,11 +158,11 @@ class CellController extends Controller
                     $variableDB = 'temperatura';
                 break;
                 
-                case "Duracion de Tracking":
+                 case "Duracion del tracking":
                     $variableDB = 'duracionTk';
                 break;
                 
-                case "Acidez de Baño":
+                case "Acidez de baño":
                     $variableDB = 'acidez';
                 break;
                 
@@ -198,7 +198,7 @@ class CellController extends Controller
                     $variableDB = 'nivelDeMetal';
                 break;
                 
-                case "Corriente de Linea ":
+                case "Corriente de Linea":
                     $variableDB = 'voltaje';//falta ubicarlo en BD
                 break;
                 
@@ -214,7 +214,7 @@ class CellController extends Controller
                     $variableDB = 'voltaje';//falta ubicarlo en BD
                 break;
                 
-                case "Anodos B/O  cambio Normal":
+                case "Anodos B/O cambio Normal":
                     $variableDB = 'voltaje';//falta ubicarlo en BD
                 break;
                 
@@ -226,7 +226,7 @@ class CellController extends Controller
                     $variableDB = 'voltaje';//falta ubicarlo en BD
                 break;
                 
-                case "Criolita Neta ":
+                case "Criolita Neta":
                     $variableDB = 'voltaje';//falta ubicarlo en BD
                 break;
                 
@@ -246,7 +246,7 @@ class CellController extends Controller
                     $variableDB = 'voltaje';//falta ubicarlo en BD
                 break;
                 
-                case "Hierro Metal de Celdas ":
+                case "Hierro Metal de Celdas":
                     $variableDB = 'voltaje';//falta ubicarlo en BD
                 break;
                 
@@ -274,7 +274,7 @@ class CellController extends Controller
                     $variableDB = 'voltaje';//falta ubicarlo en BD
                 break;
                 
-                case "Frecuencia Efectos Anodicos ":
+                case "Frecuencia Efectos Anodicos":
                     $variableDB = 'voltaje'; //falta ubicarlo en BD
                 break;
                 
