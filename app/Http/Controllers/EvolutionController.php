@@ -101,24 +101,39 @@ class EvolutionController extends Controller
             $celda1 = $request->input('celda1');
             $celda2 = $request->input('celda2');
             
-            $banda1= null;
-            $banda2= null;
             $variable = $request->input('variable');
             $variableDB = $request->input('variable');
-            $min = $request->input('min');
-            $max = $request->input('max');
+            $operador1 = $request->input('operador1');
+            $operador2 = $request->input('operador2');
+            $rangoOp1 = $request->input('rango1');
+            $rangoOp2 = $request->input('rango2');
+            
+
+            $min = $request->input('EscalaMin');
+            $max = $request->input('EscalaMax');
+            $banda1= $request->input('banda1');
+            $banda2= $request->input('banda2');
             
             switch($variableDB){
                 case "Voltaje":
                     $variableDB = 'voltaje';
                     $ylabel = 'V (voltios)'; 
                     $xlabel = 'fecha';
-                    $banda1 = 4.8;
+
+                    if($banda1 == ''){
+                        $banda1 = 4.55 ;
+                    } 
+                    if($banda2 == ''){
+                        $banda2 = 4.65;
+                    }   
+
+                    $banda1 = 4.55;
+                    $banda1 = 4.65;
                     if($min == ''){
-                        $min = 4.50;
+                        $min = 4.4;
                     } 
                     if($max == ''){
-                        $max = 5.18;
+                        $max = 5.1;
                     }   
                     
 

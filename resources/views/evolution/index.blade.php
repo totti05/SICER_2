@@ -19,51 +19,60 @@
   
   <div class="card-body">
     <form id="formData">
+      <div class="form-row">
+      <div class ="col-md-3 mr-3">
       <div class="form-group">
         <label>Rango de fecha y hora que desea consultar:</label>
         <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="far fa-clock"></i></span>
           </div>
-          <input type="text" name="rangoFecha" class="form-control float-right col-md-4" id="rangoFecha">
+          <input type="text" name="rangoFecha" class="form-control float-right " id="rangoFecha">
         </div>
         <!-- /.input group -->
       </div>
       <!-- /.form group -->
    
       <div class="form-group">
-          <label for="celdas">Rango de celdas</label>
-          <div class="form-row">
-              <div class="input-group col-md-2">
+          <label >Rango de celdas</label>
+          <div class="form-row form-inline">
+              <div class="input-group col-md-4">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fa fa-th"></i></span>
                 </div>
                   <input type="number"
-                    class="form-control" name="celda1" id="celda1" aria-describedby="helpId" placeholder="">
+                    class="form-control" name="celda1" min="901" max="1090" id="celda1" aria-describedby="helpId" placeholder="">
               </div>
               <!--  / input group -->
               <span class=""> - </span>
-              <div class="input-group col-md-2">
+              <div class="input-group col-md-3 ">
                   <input type="number"
-                    class="form-control" name="celda2" id="celda2" aria-describedby="helpId" placeholder="">
+                    class="form-control" name="celda2" min="901" max="1090" id="celda2" aria-describedby="helpId" placeholder="">
               </div>
               <!--  / input group -->
               <small id="helpId" class="form-text text-muted">Celdas 901-1090</small>
+              
           </div>
           <!-- /.form row -->
+          <div class="custom-control custom-checkbox ">
+            <input type="checkbox" name="linea" class="custom-control-input" id="checkLinea">
+            <label class="custom-control-label" for="checkLinea">Linea V</label>
+          </div>
       </div>
       <!-- /.form group -->
-  
-      <div class="form-group col-md-4">
+      </div>
+
+      <div class ="col-md-3 mr-5">
+      <div id= "formvariable" class="form-group ">
         <label for="variable">Variable</label>
         <select id="variable" name="variable" class="form-control">
-          <option selected>Voltaje</option>
+        <option selected>Voltaje</option>
           <option>Efectos anodicos</option>
           <option>Alimentacion de alumina</option>
           <option>Temperatura de baño</option>
           <option>Duracion del tracking</option>
           <option>Acidez de baño</option>
-          <option>Consumo de alumina</option>
+           <!-- <option>Consumo de alumina</option>  -->
           <option>Dump Size Alumina</option>
           <option>Consumo AlF3</option>
           <option>Track CD</option>
@@ -76,7 +85,7 @@
           <option>Potencia nominal</option>
           <option>(BO+RAJ+BIM+Tetas)</option>
           <option>Potencia Neta</option>
-          <option>Anodos B/O  cambio Normal</option>
+          <option>Anodos B/O cambio Normal</option>
           <option>Nivel de Baño</option>
           <option>Anodos Bimetalicos</option>
           <option>Criolita Neta</option>
@@ -100,30 +109,117 @@
       <!-- /.form group -->
       
       <div class="form-group">
+          <label >Rango de operacion</label>
+          <br>
+          <label>Rango 1 a consultar</label>
+          <div class="form-row form-inline">
+              <div class="input-group col-md-5 ">
+                <div class="input-group-prepend   ">
+                  <span class="input-group-text">operador</span>
+                </div>
+                <select class="custom-select  "  id="operador1" name="operador1">
+                <option selected value=""></option>
+                  <option value="mayor">></option>
+                  <option value="menor"><</option>
+                  <option value="menorigual">&le;</option>
+                  <option value="mayorigual">&ge;</option>
+                </select>
+              </div> 
+              <!--  / input group -->
+              <div class="input-group col-md-5">
+                <div class="input-group-prepend  ">
+                  <span class="input-group-text ">rango 1</span>
+                </div>
+                <input type="number" step="0.01" name="rango1" class="form-control float-right " id="rango1">
+              </div>
+              <!--  / input group -->
+            </div>  
+            <!-- /.form row -->  
+              
+            <label>Rango 2 a consultar</label>
+            <div class="form-row form-inline">
+              <div class="input-group col-md-5 ">
+                <div class="input-group-prepend   ">
+                  <span class="input-group-text">operador</span>
+                </div>
+                <select class="custom-select"  id="operador2" name="operador2">
+                <option selected value=""></option>
+                  <option value="mayor">></option>
+                  <option value="menor"><</option>
+                  <option value="menorigual">&le;</option>
+                  <option value="mayorigual">&ge;</option>
+                </select>
+              </div> 
+              <!--  / input group -->
+              <div class="input-group col-md-5">
+                <div class="input-group-prepend  ">
+                  <span class="input-group-text ">rango 2</span>
+                </div>
+                <input type="number" step="0.01" name="rango2" class="form-control float-right " id="rango2">
+              </div>
+              <!--  / input group -->
+            </div>  
+            <!-- /.form row --> 
+      </div>
+      <!-- /.form group -->
+      </div>
+      
+      <div class ="col-md-3 mr-3">
+      <label >Configuración de grafica</label>
+      <div class="form-group">
         <div class="form-row ">
             
-            <label>Minimo</label>
-            <div class="input-group col-md-3">
+            <label>Banda de control 1</label>
+            <div class="input-group  ">
               <div class="input-group-prepend">
-                <span class="input-group-text">Min</span>
+              <span class="input-group-text">Min (banda 1)</span>
               </div>
-              <input type="number" name="min" class="form-control float-right col-md-4" id="min">
+              <input type="number" step="0.01" name="banda1" class="form-control float-right col-md-3 " id="banda1">
             </div>
             <!-- /.input group -->
           
-            <label>Maximo</label>
-            <div class="input-group col-md-3">
+            <label>Banda de control 2</label>
+            <div class="input-group ">
              
               <div class="input-group-prepend">
-                <span class="input-group-text">Max</span>
+              <span class="input-group-text">Max (banda 2)</span>
               </div>
-              <input type="number" name="max" class="form-control float-right col-md-4" id="max">
+              <input type="number" step="0.01" name="banda2" class="form-control float-right col-md-3" id="banda2">
+            </div>
+            <!-- /.input group -->
+       </div>
+       <!-- /.form row -->
+      </div>
+      <!-- /.form group -->
+
+      <div class="form-group">
+        <div class="form-row ">
+            
+            <label>Minimo de la escala</label>
+            <div class="input-group ">
+              <div class="input-group-prepend">
+              <span class="input-group-text">Min (escala de grafico)</span>
+              </div>
+              <input type="number" name="EscalaMin" class="form-control float-right col-md-3 " id="EscalaMin">
+            </div>
+            <!-- /.input group -->
+          
+            <label>Maximo de la escala</label>
+            <div class="input-group">
+             
+              <div class="input-group-prepend">
+              <span class="input-group-text">Max (escala de grafico)</span>
+              </div>
+              <input type="number" name="EscalaMax" class="form-control float-right col-md-3" id="EscalaMax">
             </div>
             <!-- /.input group -->
        </div>
        <!-- /.form row -->
       </div>
       <!-- /.form group -->   
+      </div> 
+      </div>
+
       <button type="submit" class="btn btn-primary">Submit</button>
 
     </form>
@@ -153,7 +249,7 @@
     </div>
     <div class="card-body">
       <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        <canvas id="lineChart" style="display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
       </div>
     </div>
     <!-- /.card-body -->
@@ -174,7 +270,7 @@
     </div>
     <div class="card-body">
       <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="voltajeChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+        <canvas id="voltajeChart" style="display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
       </div>
     </div>
     <!-- /.card-body -->
