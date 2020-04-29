@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Support\Facades\DB;
 use App\Evolution;
 use Illuminate\Http\Request;
+use Yajra\Datatables\Datatables;
 
 class EvolutionController extends Controller
 {
@@ -103,8 +104,25 @@ class EvolutionController extends Controller
             
             $variable = $request->input('variable');
             $variableDB = $request->input('variable');
-            $operador1 = $request->input('operador1');
-            $operador2 = $request->input('operador2');
+            $operador1 = $request->input('operador');
+            switch ($operador1) {
+                case 'mayor':
+                    $operador1 = '>';
+                    break;
+                case 'menor':
+                    $operador1 = '<';
+                    break;
+                case 'mayorigual':
+                    $operador1 = '>=';
+                    break;
+                case 'menorigual':
+                    $operador1 = '<=';
+                    break;
+                    
+                    
+            }
+
+
             $rangoOp1 = $request->input('rango1');
             $rangoOp2 = $request->input('rango2');
             
@@ -127,8 +145,6 @@ class EvolutionController extends Controller
                         $banda2 = 4.65;
                     }   
 
-                    $banda1 = 4.55;
-                    $banda1 = 4.65;
                     if($min == ''){
                         $min = 4.4;
                     } 
@@ -290,12 +306,14 @@ class EvolutionController extends Controller
                 break;
 
             }
-
-            $result = DB::connection('reduccion')->table('diariocelda')
+            if ($rangoOp2 != '' ) {
+                $result = DB::connection('reduccion')->table('diariocelda')
                         ->whereBetween('celda', [$celda1,$celda2])
-                        ->whereBetween('dia', [$fecha1,$fecha2]) 
+                        ->whereBetween('dia', [$fecha1,$fecha2])
+                        ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
                         ->select('celda','dia',$variableDB) 
                         ->get();
+                        $datatable = Datatables::of($result)->make();
                         return response()->json(['datos' => $result,
                                                  'variable'=> $variable,
                                                  'varKey'=> $variableDB,
@@ -304,7 +322,45 @@ class EvolutionController extends Controller
                                                  'miny' => $min, 
                                                  'maxy' => $max,
                                                  'ylabel'=> $ylabel,
-                                                 'xlabel'=> $xlabel ]);
+                                                 'xlabel'=> $xlabel,
+                                                 'datatable' => $datatable  ]);
+            }elseif ($rangoOp1 != '' AND $rangoOp2 == ''){
+                    $result = DB::connection('reduccion')->table('diariocelda')
+                        ->whereBetween('celda', [$celda1,$celda2])
+                        ->whereBetween('dia', [$fecha1,$fecha2])
+                        ->where($variableDB, $operador1 , $rangoOp1 ) 
+                        ->select('celda','dia',$variableDB) 
+                        ->get();
+                        $datatable = Datatables::of($result)->make();
+                        return response()->json(['datos' => $result,
+                                                 'variable'=> $variable,
+                                                 'varKey'=> $variableDB,
+                                                 'banda1' => $banda1,
+                                                 'banda2' => $banda2,
+                                                 'miny' => $min, 
+                                                 'maxy' => $max,
+                                                 'ylabel'=> $ylabel,
+                                                 'xlabel'=> $xlabel,
+                                                 'datatable' => $datatable ]);
+            }else{
+                $result = DB::connection('reduccion')->table('diariocelda')
+                        ->whereBetween('celda', [$celda1,$celda2])
+                        ->whereBetween('dia', [$fecha1,$fecha2])
+                        ->select('celda','dia',$variableDB) 
+                        ->get();
+                        $datatable = Datatables::of($result)->make();
+                        return response()->json(['datos' => $result,
+                                                 'variable'=> $variable,
+                                                 'varKey'=> $variableDB,
+                                                 'banda1' => $banda1,
+                                                 'banda2' => $banda2,
+                                                 'miny' => $min, 
+                                                 'maxy' => $max,
+                                                 'ylabel'=> $ylabel,
+                                                 'xlabel'=> $xlabel,
+                                                 'datatable' => $datatable ]);
+
+            }
         }
     }
 }

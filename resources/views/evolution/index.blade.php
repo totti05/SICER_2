@@ -20,7 +20,7 @@
   <div class="card-body">
     <form id="formData">
       <div class="form-row">
-      <div class ="col-md-3 mr-3">
+      <div class ="col-md-3 mr-1">
       <div class="form-group">
         <label>Rango de fecha y hora que desea consultar:</label>
         <div class="input-group">
@@ -55,16 +55,16 @@
           </div>
           <!-- /.form row -->
           <div class="custom-control custom-checkbox ">
-            <input type="checkbox" name="linea" class="custom-control-input" id="checkLinea">
+            <input type="checkbox" name="checkLinea" class="custom-control-input" id="checkLinea">
             <label class="custom-control-label" for="checkLinea">Linea V</label>
           </div>
       </div>
       <!-- /.form group -->
       </div>
 
-      <div class ="col-md-3 mr-5">
+      <div class ="col-md-3 mr-2">
       <div id= "formvariable" class="form-group ">
-        <label for="variable">Variable</label>
+        <label for="variable">Variable 1</label>
         <select id="variable" name="variable" class="form-control">
         <option selected>Voltaje</option>
           <option>Efectos anodicos</option>
@@ -164,7 +164,105 @@
       <!-- /.form group -->
       </div>
       
-      <div class ="col-md-3 mr-3">
+
+
+
+      <div class ="col-md-3 mr-2">
+      <div id= "formvariable2" class="form-group ">
+        <label for="variable2">Variable 2</label>
+        <select id="variable2" name="variable2" class="form-control">
+        <option selected>Voltaje</option>
+          <option>Efectos anodicos</option>
+          <option>Alimentacion de alumina</option>
+          <option>Temperatura de baño</option>
+          <option>Duracion del tracking</option>
+          <option>Acidez de baño</option>
+           <!-- <option>Consumo de alumina</option>  -->
+          <option>Dump Size Alumina</option>
+          <option>Consumo AlF3</option>
+          <option>Track CD</option>
+          <option>Consumo AlF3 Manual</option>
+          <option>VMAX del Efecto Anodico</option>
+          <option>Eficiencia de Trasegado (Eficiencia de corriente)</option>
+          <option>Duracion de Efecto anódico</option>
+          <option>Nivel de Metal</option>
+          <option>Corriente de Linea</option>
+          <option>Potencia nominal</option>
+          <option>(BO+RAJ+BIM+Tetas)</option>
+          <option>Potencia Neta</option>
+          <option>Anodos B/O cambio Normal</option>
+          <option>Nivel de Baño</option>
+          <option>Anodos Bimetalicos</option>
+          <option>Criolita Neta</option>
+          <option>Criolita de Arranque</option>
+          <option>Anodos B/A</option>
+          <option>Baño Fase Densa</option>
+          <option>Desviacion de Temperatura</option>
+          <option>Hierro Metal de Celdas </option>
+          <option>Desviacion Acidez</option>
+          <option>Silicio Metal Celdas </option>
+          <option>Desviacion Nm</option>
+          <option>Frecuencia Desnatado</option>
+          <option>Desviacion Nb</option>
+          <option>Celdas Conectadas</option>
+          <option>Frecuencia Efectos Anodicos</option>
+          <option>% CaF2 en el baño electrolitico</option>
+
+
+        </select>
+      </div>
+      <!-- /.form group -->
+      
+      <div class="form-group">
+          <label >Rango de operacion</label>
+          <br>
+          <label>Rango 1 a consultar</label>
+          <div class="form-row form-inline">
+              <div class="input-group col-md-5 ">
+                <div class="input-group-prepend   ">
+                  <span class="input-group-text">operador</span>
+                </div>
+                <select class="custom-select  "  id="var2Operador" name="var2Operador">
+                <option selected value=""></option>
+                  <option value="mayor">></option>
+                  <option value="menor"><</option>
+                  <option value="menorigual">&le;</option>
+                  <option value="mayorigual">&ge;</option>
+                </select>
+              </div> 
+              <!--  / input group -->
+              <div class="input-group col-md-5">
+                <div class="input-group-prepend  ">
+                  <span class="input-group-text ">rango 1</span>
+                </div>
+                <input type="number" step="0.01" name="var2Rango1" class="form-control float-right " id="var2Rango1">
+              </div>
+              <!--  / input group -->
+            </div>  
+            <!-- /.form row -->  
+              
+            <label>Rango 2 a consultar</label>
+            <div class="form-row form-inline">
+              <div class="input-group col-md-5">
+                <div class="input-group-prepend  ">
+                  <span class="input-group-text ">rango 2</span>
+                </div>
+                <input type="number" step="0.01" name="var2Rango2" class="form-control float-right " id="var2Rango2">
+              </div>
+              <!--  / input group -->
+            </div>  
+            <!-- /.form row --> 
+            <div class="custom-control custom-checkbox ">
+            <input type="checkbox" name="checkConfig" class="custom-control-input" id="checkConfig">
+            <label class="custom-control-label" for="checkConfig">Configurar grafica</label>
+          </div>
+      </div>
+      <!-- /.form group -->
+      </div>
+
+
+
+      <div class ="col-md-3 mr-3" id="configGrafica" style= 'display:none'>
       <label >Configuración de grafica</label>
       <div class="form-group">
         <div class="form-row ">
@@ -237,7 +335,7 @@
 <!-- Card para las graficas-->
 <!-- Aqui se deberia utilizar un ciclo para mostrar las distintas graficas con menos codigo-->
 <!-- LINE CHART -->
-<div class="card card-info">
+<div class="card card-info" style= 'display:none' id="lineVChart">
   <div class="card-header">
       <h3 class="card-title">Line V Chart</h3>
 
@@ -258,7 +356,7 @@
 
 <!-- Card para las graficas-->
 <!-- voltaje LINE CHART -->
-<div class="card card-info">
+<div class="card card-info" id='cardGrafica' style= 'display:none'>
   <div class="card-header">
       <h3 class="card-title">Voltaje PRE Chart</h3>
 
@@ -276,6 +374,35 @@
     <!-- /.card-body -->
   </div>
 <!-- /.card -->
+
+
+<!-- Card para la tabla de los datos de la grafica -->
+<div class="card card-info" id="cardTablaDatos" style= 'display:none'>
+    <div class="card-header">
+        <h3 class="card-title">Tabla de datos de la grafica</h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" id="celdaswidget" data-card-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body"> 
+          <table class="table" id="celdas">
+            <thead>
+              <tr>
+                <th>celda</th>
+                <th>dia</th>
+                <th id="thVariable"></th>
+              </tr>
+            </thead>
+            <tbody>
+            
+            </tbody>
+          </table>
+      </div>
+      <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
 
 {{-- 
 
@@ -1041,6 +1168,20 @@
 @stop
 @section('js')
   <script> 
+
+    //funcion para mostrar elemento HTML
+    function mostrar(elemento){
+    $(elemento).show();
+    }
+    //funcion para ocultar elemento HTML
+    function ocultar(elemento){
+    $(elemento).hide();
+    }
+    //funcion para destruir datatable y poder repintar
+    const celldestroy = () => {
+      cell = $('#celdas').DataTable();
+      cell.destroy();
+    }
      //Date range picker with time picker
      $('#rangoFecha').daterangepicker({
         "showWeekNumbers": true,
@@ -1096,6 +1237,7 @@
     
     $('#chartwidget').CardWidget('collapse'); 
     $('#voltajeChartwidget').CardWidget('collapse'); 
+    $('#celdaswidget').CardWidget('collapse'); 
 
     $(document).ready(function(){
       $('#formdata').submit(function(event){
@@ -1116,6 +1258,29 @@
     var Dia = new Array();
     var Celdas = new Array();
     var Voltaje = new Array();
+
+    //funcion para mostrar elemento HTML cuando cambia un checkbox
+    $('#checkConfig').change(function() {
+      let estado = $('#checkConfig').is(":checked");
+      if (estado) {
+        mostrar('#configGrafica');
+      }else{
+        ocultar('#configGrafica');
+      }
+  });
+  //funcion para cambiar valor de inputs cuando cambia un checkbox
+  $('#checkLinea').change(function() {
+      let estado = $('#checkLinea').is(":checked");
+      if (estado) {
+        $('#celda1').val(901);
+        $('#celda2').val(1090);
+      }else{
+        $('#celda1').val('');
+        $('#celda2').val('');
+      }
+  });
+
+
      $(document).ready(function(){
        $.get(url, function(response){
           response.forEach(function(data){
@@ -1165,7 +1330,7 @@
           });
         });
 
-
+        //FUNCION QUE SE ESTA UTILIZANDO PARA GRAFICAR
 
     $(document).ready(function () {
       $("#formData").bind("submit",function(){
@@ -1185,6 +1350,7 @@
                 * Esta función se ejecuta durante el envió de la petición al
                 * servidor.
                 * */
+                celldestroy();
             },
             complete:function(data){
                 /*
@@ -1437,8 +1603,8 @@
                   console.log(banda2);
 
 
-
-
+                mostrar('#cardGrafica'); 
+                mostrar('#cardTablaDatos');
                 var ctx = document.getElementById("voltajeChart").getContext('2d');
                 var voltajeChart = new Chart(ctx, {
                   type: 'line',
@@ -1534,7 +1700,28 @@
                       }
                    
                 });
-            },
+                $('#voltajeChart').CardWidget('expand');
+                $('#thVariable').text(response.variable);
+                $('#celdaswidget').CardWidget('expand');
+                $('#celdas').DataTable( 
+              { 
+                'data': response.datatable.original.data,
+                "processing": true,
+                "columns": [
+                  {data: 'celda'},
+                  {data: 'dia'},
+                  {data: response.varKey },
+                          ],
+              "dom": '<"top"fl>rt<"bottom"Bip><"clear">',
+              "buttons": [
+                { extend: 'copy', text: 'copy', className: 'btn btn-primary' },
+                { extend: 'csv', text: 'csv', className: 'btn btn-primary' } ,
+                { extend: 'excel', text: 'excel', className: 'btn btn-primary', } , 
+                { extend: 'pdf', text: 'pdf', className: 'btn btn-primary' } , 
+                { extend: 'print', text: 'print', className: 'btn btn-primary' },  
+                ]
+                });
+              },
             error: function(data){
                 /*
                 * Se ejecuta si la peticón ha sido erronea
