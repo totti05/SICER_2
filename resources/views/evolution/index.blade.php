@@ -22,8 +22,8 @@
       <div class="form-row">
       <div class ="col-md-3 mr-1">
       <div class="form-group">
-        <label>Rango de fecha y hora que desea consultar:</label>
-        <div class="input-group">
+        <label>Rango de fecha y hora</label>
+        <div class="input-group ">
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="far fa-clock"></i></span>
           </div>
@@ -36,7 +36,7 @@
       <div class="form-group">
           <label >Rango de celdas</label>
           <div class="form-row form-inline">
-              <div class="input-group col-md-4">
+              <div class="input-group col-md-6">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fa fa-th"></i></span>
                 </div>
@@ -45,14 +45,15 @@
               </div>
               <!--  / input group -->
               <span class=""> - </span>
-              <div class="input-group col-md-3 ">
+              <div class="input-group col-md-5 ">
                   <input type="number"
                     class="form-control" name="celda2" min="901" max="1090" id="celda2" aria-describedby="helpId" placeholder="">
               </div>
               <!--  / input group -->
-              <small id="helpId" class="form-text text-muted">Celdas 901-1090</small>
+              
               
           </div>
+          <small id="helpId" class="form-text text-muted">Celdas 901-1090</small>
           <!-- /.form row -->
           <div class="custom-control custom-checkbox ">
             <input type="checkbox" name="checkLinea" class="custom-control-input" id="checkLinea">
@@ -62,7 +63,7 @@
       <!-- /.form group -->
       </div>
 
-      <div class ="col-md-3 mr-2">
+      <div class ="col-md-4 mr-2">
       <div id= "formvariable" class="form-group ">
         <label for="variable">Variable 1</label>
         <select id="variable" name="variable" class="form-control">
@@ -113,7 +114,7 @@
           <br>
           <label>Rango 1 a consultar</label>
           <div class="form-row form-inline">
-              <div class="input-group col-md-5 ">
+              <div class="input-group col-md-6 ">
                 <div class="input-group-prepend   ">
                   <span class="input-group-text">operador</span>
                 </div>
@@ -126,7 +127,7 @@
                 </select>
               </div> 
               <!--  / input group -->
-              <div class="input-group col-md-5">
+              <div class="input-group col-md-6">
                 <div class="input-group-prepend  ">
                   <span class="input-group-text ">rango 1</span>
                 </div>
@@ -138,20 +139,7 @@
               
             <label>Rango 2 a consultar</label>
             <div class="form-row form-inline">
-              <div class="input-group col-md-5 ">
-                <div class="input-group-prepend   ">
-                  <span class="input-group-text">operador</span>
-                </div>
-                <select class="custom-select"  id="operador2" name="operador2">
-                <option selected value=""></option>
-                  <option value="mayor">></option>
-                  <option value="menor"><</option>
-                  <option value="menorigual">&le;</option>
-                  <option value="mayorigual">&ge;</option>
-                </select>
-              </div> 
-              <!--  / input group -->
-              <div class="input-group col-md-5">
+              <div class="input-group col-md-6 offset-6">
                 <div class="input-group-prepend  ">
                   <span class="input-group-text ">rango 2</span>
                 </div>
@@ -167,7 +155,7 @@
 
 
 
-      <div class ="col-md-3 mr-2">
+      <div class ="col-md-4 mr-2">
       <div id= "formvariable2" class="form-group ">
         <label for="variable2">Variable 2</label>
         <select id="variable2" name="variable2" class="form-control">
@@ -218,7 +206,7 @@
           <br>
           <label>Rango 1 a consultar</label>
           <div class="form-row form-inline">
-              <div class="input-group col-md-5 ">
+              <div class="input-group col-md-6 ">
                 <div class="input-group-prepend   ">
                   <span class="input-group-text">operador</span>
                 </div>
@@ -231,7 +219,7 @@
                 </select>
               </div> 
               <!--  / input group -->
-              <div class="input-group col-md-5">
+              <div class="input-group col-md-6">
                 <div class="input-group-prepend  ">
                   <span class="input-group-text ">rango 1</span>
                 </div>
@@ -243,7 +231,7 @@
               
             <label>Rango 2 a consultar</label>
             <div class="form-row form-inline">
-              <div class="input-group col-md-5">
+              <div class="input-group col-md-6 offset-6">
                 <div class="input-group-prepend  ">
                   <span class="input-group-text ">rango 2</span>
                 </div>
@@ -262,7 +250,7 @@
 
 
 
-      <div class ="col-md-3 mr-3" id="configGrafica" style= 'display:none'>
+      <div class ="col-md-3 " id="configGrafica" style= 'display:none'>
       <label >Configuración de grafica</label>
       <div class="form-group">
         <div class="form-row ">
@@ -1707,6 +1695,7 @@
               { 
                 'data': response.datatable.original.data,
                 "processing": true,
+                "pagination": false, 
                 "columns": [
                   {data: 'celda'},
                   {data: 'dia'},

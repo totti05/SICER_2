@@ -104,7 +104,8 @@ class EvolutionController extends Controller
             
             $variable = $request->input('variable');
             $variableDB = $request->input('variable');
-            $operador1 = $request->input('operador');
+            $operador1 = $request->input('operador1');
+            $operador2 = $request->input('var2Operador');
             switch ($operador1) {
                 case 'mayor':
                     $operador1 = '>';
@@ -131,7 +132,7 @@ class EvolutionController extends Controller
             $max = $request->input('EscalaMax');
             $banda1= $request->input('banda1');
             $banda2= $request->input('banda2');
-            
+
             switch($variableDB){
                 case "Voltaje":
                     $variableDB = 'voltaje';
@@ -306,7 +307,209 @@ class EvolutionController extends Controller
                 break;
 
             }
-            if ($rangoOp2 != '' ) {
+            
+            $variable2 = $request->input('variable2');
+            $variableDB2 = $request->input('variable2');
+            $rangoOp1Var2 = $request->input('var2Rango1');
+            $rangoOp2Var2 = $request->input('var2Rango2');
+
+            $banda1Var2 = '';
+            $banda2Var2 = '';
+            $minVar2 = '';
+            $maxVar2 = '';
+            $ylabelVar2 = '';
+            $xlabelVar2 = '';
+
+            switch ($operador2) {
+                case 'mayor':
+                    $operador2 = '>';
+                    break;
+                case 'menor':
+                    $operador2 = '<';
+                    break;
+                case 'mayorigual':
+                    $operador2 = '>=';
+                    break;
+                case 'menorigual':
+                    $operador2 = '<=';
+                    break;       
+            }
+            switch($variableDB2){
+                case "Voltaje":
+                    $variableDB2 = 'voltaje';
+                    $ylabelVar2 = 'V (voltios)'; 
+                    $xlabelVar2 = 'fecha';
+
+                    if($banda1Var2 == ''){
+                        $banda1Var2 = 4.55 ;
+                    } 
+                    if($banda2Var2 == ''){
+                        $banda2Var2 = 4.65;
+                    }   
+
+                    if($minVar2 == ''){
+                        $minVar2 = 4.4;
+                    } 
+                    if($maxVar2 == ''){
+                        $maxVar2 = 5.1;
+                    }   
+                    
+
+                break;
+                
+                case "Efectos anodicos":
+                    $variableDB2 = 'numeroEA';
+                    $ylabelVar2 = 'EA/CD'; 
+                    $xlabelVar2 = 'fecha';
+                    $banda1Var2= 0.4;
+                    $banda2Var2= null;
+                    if($minVar2 == ''){
+                        $minVar2 = 0;
+                    } 
+                    if($maxVar2 == ''){
+                        $maxVar2 = 4;
+                    }  
+                break;
+                
+                case "Desviación de Resistencia":
+                    $variableDB2 = 'voltaje';
+                break;
+                
+                case "Alimentacion de Alumina":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Temperatura de baño":
+                    $variableDB2 = 'temperatura';
+                break;
+                
+                case "Duracion de Tracking":
+                    $variableDB2 = 'duracionTk';
+                break;
+                
+                case "Acidez de Baño":
+                    $variableDB2 = 'acidez';
+                break;
+                
+                case "Dump Size Alumina":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Consumo AlF3":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Track CD":
+                    $variableDB2 = 'numeroTk';
+                break;
+                
+                case "Consumo AlF3 Manual":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "VMAX del Efecto Anodico":
+                    $variableDB2 = 'vMaxEA';
+                break;
+                
+                case "Eficiencia de Trasegado (Eficiencia de corriente)":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Duracion de Efecto anódico":
+                    $variableDB2 = 'duracionEA';
+                break;
+                
+                case "Nivel de Metal":
+                    $variableDB2 = 'nivelDeMetal';
+                break;
+                
+                case "Corriente de Linea ":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Potencia nominal":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "(BO+RAJ+BIM+Tetas)":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Potencia Neta":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Anodos B/O  cambio Normal":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Nivel de Baño":
+                    $variableDB2 = 'nivelDeBanio';
+                break;
+                
+                case "Anodos Bimetalicos":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Criolita Neta ":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Criolita de Arranque":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Anodos B/A":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Baño Fase Densa":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Desviacion de Temperatura":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Hierro Metal de Celdas ":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Desviacion Acidez":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Silicio Metal Celdas":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Desviacion Nm":
+                    $variableDB2 = 'voltaje'; //falta ubicarlo en BD
+                break;
+                
+                case "Frecuencia Desnatado":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Desviacion Nb":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Celdas Conectadas":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+                
+                case "Frecuencia Efectos Anodicos ":
+                    $variableDB2 = 'voltaje'; //falta ubicarlo en BD
+                break;
+                
+                case "% CaF2 en el baño electrolitico":
+                    $variableDB2 = 'voltaje';//falta ubicarlo en BD
+                break;
+
+            }
+            
+            if ($rangoOp1 != '' AND $rangoOp2 != '' AND $operador1 == '' ) {
                 $result = DB::connection('reduccion')->table('diariocelda')
                         ->whereBetween('celda', [$celda1,$celda2])
                         ->whereBetween('dia', [$fecha1,$fecha2])
@@ -314,6 +517,36 @@ class EvolutionController extends Controller
                         ->select('celda','dia',$variableDB) 
                         ->get();
                         $datatable = Datatables::of($result)->make();
+                //segunda variable
+                if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
+                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                            ->whereBetween('celda', [$celda1,$celda2])
+                            ->whereBetween('dia', [$fecha1,$fecha2])
+                            ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
+                            ->select('celda','dia',$variableDB2) 
+                            ->get();
+
+                            $datatableVar2 = Datatables::of($result2)->make();
+                            
+                }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
+                        $result2 = DB::connection('reduccion')->table('diariocelda')
+                            ->whereBetween('celda', [$celda1,$celda2])
+                            ->whereBetween('dia', [$fecha1,$fecha2])
+                            ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
+                            ->select('celda','dia',$variableDB2) 
+                            ->get();
+                            $datatableVar2 = Datatables::of($result2)->make();
+                            
+                }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
+                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                            ->whereBetween('celda', [$celda1,$celda2])
+                            ->whereBetween('dia', [$fecha1,$fecha2])
+                            ->select('celda','dia',$variableDB2) 
+                            ->get();
+                            $datatableVar2 = Datatables::of($result2)->make();
+
+                }
+
                         return response()->json(['datos' => $result,
                                                  'variable'=> $variable,
                                                  'varKey'=> $variableDB,
@@ -323,8 +556,19 @@ class EvolutionController extends Controller
                                                  'maxy' => $max,
                                                  'ylabel'=> $ylabel,
                                                  'xlabel'=> $xlabel,
-                                                 'datatable' => $datatable  ]);
-            }elseif ($rangoOp1 != '' AND $rangoOp2 == ''){
+                                                 'datatable' => $datatable,
+
+                                                 'datosVar2' => $result2,
+                                                 'variableVar2'=> $variable2,
+                                                 'varKeyVar2'=> $variableDB2,
+                                                 'banda1Var2' => $banda1Var2,
+                                                 'banda2Var2' => $banda2Var2,
+                                                 'minyVar2' => $minVar2, 
+                                                 'maxyVar2' => $maxVar2,
+                                                 'ylabelVar2'=> $ylabelVar2,
+                                                 'xlabelVar2'=> $xlabelVar2,
+                                                 'datatableVar2' => $datatableVar2  ]);
+            }elseif ($rangoOp1 != '' AND $rangoOp2 == '' AND $operador1 != '' ){
                     $result = DB::connection('reduccion')->table('diariocelda')
                         ->whereBetween('celda', [$celda1,$celda2])
                         ->whereBetween('dia', [$fecha1,$fecha2])
@@ -332,6 +576,37 @@ class EvolutionController extends Controller
                         ->select('celda','dia',$variableDB) 
                         ->get();
                         $datatable = Datatables::of($result)->make();
+
+                        //segunda variable
+                        if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
+                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                    ->whereBetween('celda', [$celda1,$celda2])
+                                    ->whereBetween('dia', [$fecha1,$fecha2])
+                                    ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
+                                    ->select('celda','dia',$variableDB2) 
+                                    ->get();
+
+                                    $datatableVar2 = Datatables::of($result2)->make();
+                                    
+                        }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
+                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                    ->whereBetween('celda', [$celda1,$celda2])
+                                    ->whereBetween('dia', [$fecha1,$fecha2])
+                                    ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
+                                    ->select('celda','dia',$variableDB2) 
+                                    ->get();
+                                    $datatableVar2 = Datatables::of($result2)->make();
+                                    
+                        }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
+                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                    ->whereBetween('celda', [$celda1,$celda2])
+                                    ->whereBetween('dia', [$fecha1,$fecha2])
+                                    ->select('celda','dia',$variableDB2) 
+                                    ->get();
+                                    $datatableVar2 = Datatables::of($result2)->make();
+
+                        }
+
                         return response()->json(['datos' => $result,
                                                  'variable'=> $variable,
                                                  'varKey'=> $variableDB,
@@ -341,14 +616,56 @@ class EvolutionController extends Controller
                                                  'maxy' => $max,
                                                  'ylabel'=> $ylabel,
                                                  'xlabel'=> $xlabel,
-                                                 'datatable' => $datatable ]);
-            }else{
+                                                 'datatable' => $datatable,
+                                                 
+                                                 'datosVar2' => $result2,
+                                                 'variableVar2'=> $variable2,
+                                                 'varKeyVar2'=> $variableDB2,
+                                                 'banda1Var2' => $banda1Var2,
+                                                 'banda2Var2' => $banda2Var2,
+                                                 'minyVar2' => $minVar2, 
+                                                 'maxyVar2' => $maxVar2,
+                                                 'ylabelVar2'=> $ylabelVar2,
+                                                 'xlabelVar2'=> $xlabelVar2,
+                                                 'datatableVar2' => $datatableVar2]);
+            }elseif (($rangoOp1 == '' AND $rangoOp2 == '' AND $operador1 == '' )) {
                 $result = DB::connection('reduccion')->table('diariocelda')
                         ->whereBetween('celda', [$celda1,$celda2])
                         ->whereBetween('dia', [$fecha1,$fecha2])
                         ->select('celda','dia',$variableDB) 
                         ->get();
                         $datatable = Datatables::of($result)->make();
+
+                        //segunda variable
+                        if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
+                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                    ->whereBetween('celda', [$celda1,$celda2])
+                                    ->whereBetween('dia', [$fecha1,$fecha2])
+                                    ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
+                                    ->select('celda','dia',$variableDB2) 
+                                    ->get();
+
+                                    $datatableVar2 = Datatables::of($result2)->make();
+                                    
+                        }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
+                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                    ->whereBetween('celda', [$celda1,$celda2])
+                                    ->whereBetween('dia', [$fecha1,$fecha2])
+                                    ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
+                                    ->select('celda','dia',$variableDB2) 
+                                    ->get();
+                                    $datatableVar2 = Datatables::of($result2)->make();
+                                    
+                        }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
+                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                    ->whereBetween('celda', [$celda1,$celda2])
+                                    ->whereBetween('dia', [$fecha1,$fecha2])
+                                    ->select('celda','dia',$variableDB2) 
+                                    ->get();
+                                    $datatableVar2 = Datatables::of($result2)->make();
+
+                        }
+
                         return response()->json(['datos' => $result,
                                                  'variable'=> $variable,
                                                  'varKey'=> $variableDB,
@@ -358,9 +675,50 @@ class EvolutionController extends Controller
                                                  'maxy' => $max,
                                                  'ylabel'=> $ylabel,
                                                  'xlabel'=> $xlabel,
-                                                 'datatable' => $datatable ]);
+                                                 'datatable' => $datatable,
+                                                 
+                                                 'datosVar2' => $result2,
+                                                 'variableVar2'=> $variable2,
+                                                 'varKeyVar2'=> $variableDB2,
+                                                 'banda1Var2' => $banda1Var2,
+                                                 'banda2Var2' => $banda2Var2,
+                                                 'minyVar2' => $minVar2, 
+                                                 'maxyVar2' => $maxVar2,
+                                                 'ylabelVar2'=> $ylabelVar2,
+                                                 'xlabelVar2'=> $xlabelVar2,
+                                                 'datatableVar2' => $datatableVar2]);
 
             }
+                /* //segunda variable
+                    if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
+                        $result2 = DB::connection('reduccion')->table('diariocelda')
+                                ->whereBetween('celda', [$celda1,$celda2])
+                                ->whereBetween('dia', [$fecha1,$fecha2])
+                                ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
+                                ->select('celda','dia',$variableDB2) 
+                                ->get();
+
+                                $datatableVar2 = Datatables::of($result2)->make();
+                                
+                    }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
+                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                ->whereBetween('celda', [$celda1,$celda2])
+                                ->whereBetween('dia', [$fecha1,$fecha2])
+                                ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
+                                ->select('celda','dia',$variableDB2) 
+                                ->get();
+                                $datatableVar2 = Datatables::of($result2)->make();
+                                
+                    }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
+                        $result2 = DB::connection('reduccion')->table('diariocelda')
+                                ->whereBetween('celda', [$celda1,$celda2])
+                                ->whereBetween('dia', [$fecha1,$fecha2])
+                                ->select('celda','dia',$variableDB2) 
+                                ->get();
+                                $datatableVar2 = Datatables::of($result2)->make();
+
+                    } 
+                */
         }
     }
 }
