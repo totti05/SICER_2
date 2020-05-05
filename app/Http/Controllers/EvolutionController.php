@@ -336,7 +336,7 @@ class EvolutionController extends Controller
                     $operador2 = '<=';
                     break;       
             }
-        if($variable2 != ''){
+        if($variable2 != "" ){
             switch($variableDB2){
                 case "Voltaje":
                     $variableDB2 = 'voltaje';
