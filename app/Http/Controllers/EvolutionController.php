@@ -313,13 +313,15 @@ class EvolutionController extends Controller
             $rangoOp1Var2 = $request->input('var2Rango1');
             $rangoOp2Var2 = $request->input('var2Rango2');
 
-            $banda1Var2 = '';
-            $banda2Var2 = '';
-            $minVar2 = '';
-            $maxVar2 = '';
-            $ylabelVar2 = '';
-            $xlabelVar2 = '';
-
+            $banda1Var2 = null;
+            $banda2Var2 = null;
+            $minVar2 = null;
+            $maxVar2 = null;
+            $ylabelVar2 = null;
+            $xlabelVar2 = null;
+            $result = null;
+            $result2 = null;
+            $datatableVar2 = null;
             switch ($operador2) {
                 case 'mayor':
                     $operador2 = '>';
@@ -334,6 +336,7 @@ class EvolutionController extends Controller
                     $operador2 = '<=';
                     break;       
             }
+        if($variable2 != ''){
             switch($variableDB2){
                 case "Voltaje":
                     $variableDB2 = 'voltaje';
@@ -508,7 +511,7 @@ class EvolutionController extends Controller
                 break;
 
             }
-            
+        } 
             if ($rangoOp1 != '' AND $rangoOp2 != '' AND $operador1 == '' ) {
                 $result = DB::connection('reduccion')->table('diariocelda')
                         ->whereBetween('celda', [$celda1,$celda2])
@@ -517,34 +520,37 @@ class EvolutionController extends Controller
                         ->select('celda','dia',$variableDB) 
                         ->get();
                         $datatable = Datatables::of($result)->make();
+
                 //segunda variable
-                if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                    $result2 = DB::connection('reduccion')->table('diariocelda')
-                            ->whereBetween('celda', [$celda1,$celda2])
-                            ->whereBetween('dia', [$fecha1,$fecha2])
-                            ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
-                            ->select('celda','dia',$variableDB2) 
-                            ->get();
-
-                            $datatableVar2 = Datatables::of($result2)->make();
-                            
-                }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
+                if($variable2 != ''){
+                    if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
                         $result2 = DB::connection('reduccion')->table('diariocelda')
-                            ->whereBetween('celda', [$celda1,$celda2])
-                            ->whereBetween('dia', [$fecha1,$fecha2])
-                            ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
-                            ->select('celda','dia',$variableDB2) 
-                            ->get();
-                            $datatableVar2 = Datatables::of($result2)->make();
-                            
-                }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                    $result2 = DB::connection('reduccion')->table('diariocelda')
-                            ->whereBetween('celda', [$celda1,$celda2])
-                            ->whereBetween('dia', [$fecha1,$fecha2])
-                            ->select('celda','dia',$variableDB2) 
-                            ->get();
-                            $datatableVar2 = Datatables::of($result2)->make();
+                                ->whereBetween('celda', [$celda1,$celda2])
+                                ->whereBetween('dia', [$fecha1,$fecha2])
+                                ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
+                                ->select('celda','dia',$variableDB2) 
+                                ->get();
 
+                                $datatableVar2 = Datatables::of($result2)->make();
+                                
+                    }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
+                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                ->whereBetween('celda', [$celda1,$celda2])
+                                ->whereBetween('dia', [$fecha1,$fecha2])
+                                ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
+                                ->select('celda','dia',$variableDB2) 
+                                ->get();
+                                $datatableVar2 = Datatables::of($result2)->make();
+                                
+                    }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
+                        $result2 = DB::connection('reduccion')->table('diariocelda')
+                                ->whereBetween('celda', [$celda1,$celda2])
+                                ->whereBetween('dia', [$fecha1,$fecha2])
+                                ->select('celda','dia',$variableDB2) 
+                                ->get();
+                                $datatableVar2 = Datatables::of($result2)->make();
+
+                    }
                 }
 
                         return response()->json(['datos' => $result,
@@ -576,37 +582,37 @@ class EvolutionController extends Controller
                         ->select('celda','dia',$variableDB) 
                         ->get();
                         $datatable = Datatables::of($result)->make();
-
                         //segunda variable
-                        if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                            $result2 = DB::connection('reduccion')->table('diariocelda')
-                                    ->whereBetween('celda', [$celda1,$celda2])
-                                    ->whereBetween('dia', [$fecha1,$fecha2])
-                                    ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
-                                    ->select('celda','dia',$variableDB2) 
-                                    ->get();
-
-                                    $datatableVar2 = Datatables::of($result2)->make();
-                                    
-                        }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
+                        if($variable2 != ''){
+                            if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
                                 $result2 = DB::connection('reduccion')->table('diariocelda')
-                                    ->whereBetween('celda', [$celda1,$celda2])
-                                    ->whereBetween('dia', [$fecha1,$fecha2])
-                                    ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
-                                    ->select('celda','dia',$variableDB2) 
-                                    ->get();
-                                    $datatableVar2 = Datatables::of($result2)->make();
-                                    
-                        }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                            $result2 = DB::connection('reduccion')->table('diariocelda')
-                                    ->whereBetween('celda', [$celda1,$celda2])
-                                    ->whereBetween('dia', [$fecha1,$fecha2])
-                                    ->select('celda','dia',$variableDB2) 
-                                    ->get();
-                                    $datatableVar2 = Datatables::of($result2)->make();
+                                        ->whereBetween('celda', [$celda1,$celda2])
+                                        ->whereBetween('dia', [$fecha1,$fecha2])
+                                        ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
+                                        ->select('celda','dia',$variableDB2) 
+                                        ->get();
 
+                                        $datatableVar2 = Datatables::of($result2)->make();
+                                        
+                            }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
+                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                        ->whereBetween('celda', [$celda1,$celda2])
+                                        ->whereBetween('dia', [$fecha1,$fecha2])
+                                        ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
+                                        ->select('celda','dia',$variableDB2) 
+                                        ->get();
+                                        $datatableVar2 = Datatables::of($result2)->make();
+                                        
+                            }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
+                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                        ->whereBetween('celda', [$celda1,$celda2])
+                                        ->whereBetween('dia', [$fecha1,$fecha2])
+                                        ->select('celda','dia',$variableDB2) 
+                                        ->get();
+                                        $datatableVar2 = Datatables::of($result2)->make();
+
+                            }
                         }
-
                         return response()->json(['datos' => $result,
                                                  'variable'=> $variable,
                                                  'varKey'=> $variableDB,
@@ -635,35 +641,36 @@ class EvolutionController extends Controller
                         ->select('celda','dia',$variableDB) 
                         ->get();
                         $datatable = Datatables::of($result)->make();
-
-                        //segunda variable
-                        if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                            $result2 = DB::connection('reduccion')->table('diariocelda')
-                                    ->whereBetween('celda', [$celda1,$celda2])
-                                    ->whereBetween('dia', [$fecha1,$fecha2])
-                                    ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
-                                    ->select('celda','dia',$variableDB2) 
-                                    ->get();
-
-                                    $datatableVar2 = Datatables::of($result2)->make();
-                                    
-                        }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
+                        if($variable2 != ''){
+                            //segunda variable
+                            if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
                                 $result2 = DB::connection('reduccion')->table('diariocelda')
-                                    ->whereBetween('celda', [$celda1,$celda2])
-                                    ->whereBetween('dia', [$fecha1,$fecha2])
-                                    ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
-                                    ->select('celda','dia',$variableDB2) 
-                                    ->get();
-                                    $datatableVar2 = Datatables::of($result2)->make();
-                                    
-                        }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                            $result2 = DB::connection('reduccion')->table('diariocelda')
-                                    ->whereBetween('celda', [$celda1,$celda2])
-                                    ->whereBetween('dia', [$fecha1,$fecha2])
-                                    ->select('celda','dia',$variableDB2) 
-                                    ->get();
-                                    $datatableVar2 = Datatables::of($result2)->make();
+                                        ->whereBetween('celda', [$celda1,$celda2])
+                                        ->whereBetween('dia', [$fecha1,$fecha2])
+                                        ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
+                                        ->select('celda','dia',$variableDB2) 
+                                        ->get();
 
+                                        $datatableVar2 = Datatables::of($result2)->make();
+                                        
+                            }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
+                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                        ->whereBetween('celda', [$celda1,$celda2])
+                                        ->whereBetween('dia', [$fecha1,$fecha2])
+                                        ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
+                                        ->select('celda','dia',$variableDB2) 
+                                        ->get();
+                                        $datatableVar2 = Datatables::of($result2)->make();
+                                        
+                            }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
+                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                        ->whereBetween('celda', [$celda1,$celda2])
+                                        ->whereBetween('dia', [$fecha1,$fecha2])
+                                        ->select('celda','dia',$variableDB2) 
+                                        ->get();
+                                        $datatableVar2 = Datatables::of($result2)->make();
+
+                            }
                         }
 
                         return response()->json(['datos' => $result,

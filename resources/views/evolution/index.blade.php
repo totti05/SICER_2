@@ -1357,6 +1357,11 @@
                 var etiqueta = new Array();
                 var banda1 = new Array();
                 var banda2 = new Array();
+                var banda1Var2 = new Array();
+                var banda2Var2 = new Array();
+                var DatosVar2 = new Array();
+                var DiaVar2 = new Array();
+                var CeldasVar2 = new Array();
 
                     response.datos.forEach(function(data){
                       if (response.banda1 != null) {
@@ -1365,105 +1370,291 @@
                       if (response.banda2 != null) {
                         banda2.push(response.banda2); 
                       }
-                    Dia.push(data.dia);
-                    Celdas.push(data.celda);
+                      Dia.push(data.dia);
+                      Celdas.push(data.celda);
+                      
+                      switch (response.variable) {
+                        case "Voltaje":
+                        Datos.push(data.voltaje);
+                        break;
+                        
+                        case "Efectos anodicos":
+                        Datos.push(data.numeroEA);
+                        break;
+                        
+                        case "Desviación de Resistencia":
+                        //$variableDB = 'voltaje';//falta ubicarlo en BD
+                        Datos.push(data.voltaje);
+                        break;
+                        
+                        case "Alimentacion de Alumina":
+                          Datos.push(data.voltaje);
+                          //$variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                        
+                        case "Temperatura de baño":
+                        Datos.push(data.temperatura);
+                        break;
+                        
+                        case "Duracion de Tracking":
+                          Datos.push(data.duracionTk);
+                        break;
+                        
+                        case "Acidez de Baño":
+                        Datos.push(data.acidez);
+                        
+                        break;
+                        
+                        case "Dump Size Alumina":
+                        Datos.push(data.voltaje);
+                        //    $variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                        
+                        case "Consumo AlF3":
+                        Datos.push(data.voltaje);
+                          // $variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                        
+                        case "Track CD":
+                        Datos.push(data.numeroTk);
+                        break;
+                        
+                        case "Consumo AlF3 Manual":
+                        Datos.push(data.voltaje);
+                            //$variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                        
+                        case "VMAX del Efecto Anodico":
+                        Datos.push(data.vMaxEA);
+                        break;
+                        
+                        case "Eficiencia de Trasegado (Eficiencia de corriente)":
+                        Datos.push(data.voltaje);
+                            //$variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                        
+                        case "Duracion de Efecto anódico":
+                        Datos.push(data.duracionEA);
+                        break;
+                        
+                        case "Nivel de Metal":
+                        Datos.push(data.nivelDeMetal);
+                            
+                        break;
+                        
+                        case "Corriente de Linea ":
+                        Datos.push(data.voltaje);
+                            //$variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                        
+                        case "Potencia nominal":
+                        Datos.push(data.voltaje);
+                          // $variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                        
+                        case "(BO+RAJ+BIM+Tetas)":
+                        Datos.push(data.voltaje);
+                            //$variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                        
+                        case "Potencia Neta":
+                        Datos.push(data.voltaje);
+                            //$variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                        
+                        case "Anodos B/O  cambio Normal":
+                        Datos.push(data.voltaje);
+                            //$variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                        
+                        case "Nivel de Baño":
+                        Datos.push(data.nivelDeBanio);
+                        break;
+                        
+                        case "Anodos Bimetalicos":
+                            //$variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                        
+                        case "Criolita Neta ":
+                            Datos.push(data.voltaje);
+                          // $variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                        
+                        case "Criolita de Arranque":
+                          Datos.push(data.voltaje);
+                          // $variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                        
+                        case "Anodos B/A":
+                          Datos.push(data.voltaje);
+                          // $variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                        
+                        case "Baño Fase Densa":
+                          Datos.push(data.voltaje);
+                          // $variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                        
+                        case "Desviacion de Temperatura":
+                          Datos.push(data.voltaje);
+                          // $variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                        
+                        case "Hierro Metal de Celdas ":
+                            Datos.push(data.voltaje);
+                          // $variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                        
+                        case "Desviacion Acidez":
+                          Datos.push(data.voltaje);
+                          // $variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                        
+                        case "Silicio Metal Celdas":
+                          Datos.push(data.voltaje);
+                          // $variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                        
+                        case "Desviacion Nm":
+                          Datos.push(data.voltaje);
+                          // $variableDB = 'voltaje'; //falta ubicarlo en BD
+                        break;
+                        
+                        case "Frecuencia Desnatado":
+                          Datos.push(data.voltaje);
+                          // $variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                        
+                        case "Desviacion Nb":
+                          Datos.push(data.voltaje);
+                          // $variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                        
+                        case "Celdas Conectadas":
+                          Datos.push(data.voltaje);
+                          // $variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                        
+                        case "Frecuencia Efectos Anodicos ":
+                          Datos.push(data.voltaje);
+                          // $variableDB = 'voltaje'; //falta ubicarlo en BD
+                        break;
+                        
+                        case "% CaF2 en el baño electrolitico":
+                          Datos.push(data.voltaje);
+                          // $variableDB = 'voltaje';//falta ubicarlo en BD
+                        break;
+                          
+                      }
+                     
+                  });
+
+                  response.datosVar2.forEach(function(data){
+                      if (response.banda1Var2 != null) {
+                        banda1Var2.push(response.banda1Var2); 
+                      }
+                      if (response.banda2Var2 != null) {
+                        banda2Var2.push(response.banda2Var2); 
+                      }
+                    DiaVar2.push(data.dia);
+                    CeldasVar2.push(data.celda);
                     
-                    switch (response.variable) {
+                    switch (response.variableVar2) {
                       case "Voltaje":
-                      Datos.push(data.voltaje);
+                      DatosVar2.push(data.voltaje);
                       break;
                       
                       case "Efectos anodicos":
-                      Datos.push(data.numeroEA);
+                      DatosVar2.push(data.numeroEA);
                       break;
                       
                       case "Desviación de Resistencia":
                       //$variableDB = 'voltaje';//falta ubicarlo en BD
-                      Datos.push(data.voltaje);
+                      DatosVar2.push(data.voltaje);
                       break;
                       
                       case "Alimentacion de Alumina":
-                        Datos.push(data.voltaje);
+                        DatosVar2.push(data.voltaje);
                         //$variableDB = 'voltaje';//falta ubicarlo en BD
                       break;
                       
                       case "Temperatura de baño":
-                      Datos.push(data.temperatura);
+                      DatosVar2.push(data.temperatura);
                       break;
                       
                       case "Duracion de Tracking":
-                        Datos.push(data.duracionTk);
+                        DatosVar2.push(data.duracionTk);
                       break;
                       
                       case "Acidez de Baño":
-                      Datos.push(data.acidez);
+                      DatosVar2.push(data.acidez);
                       
                       break;
                       
                       case "Dump Size Alumina":
-                      Datos.push(data.voltaje);
+                      DatosVar2.push(data.voltaje);
                       //    $variableDB = 'voltaje';//falta ubicarlo en BD
                       break;
                       
                       case "Consumo AlF3":
-                      Datos.push(data.voltaje);
+                      DatosVar2.push(data.voltaje);
                         // $variableDB = 'voltaje';//falta ubicarlo en BD
                       break;
                       
                       case "Track CD":
-                      Datos.push(data.numeroTk);
+                      DatosVar2.push(data.numeroTk);
                       break;
                       
                       case "Consumo AlF3 Manual":
-                      Datos.push(data.voltaje);
+                      DatosVar2.push(data.voltaje);
                           //$variableDB = 'voltaje';//falta ubicarlo en BD
                       break;
                       
                       case "VMAX del Efecto Anodico":
-                      Datos.push(data.vMaxEA);
+                      DatosVar2.push(data.vMaxEA);
                       break;
                       
                       case "Eficiencia de Trasegado (Eficiencia de corriente)":
-                      Datos.push(data.voltaje);
+                      DatosVar2.push(data.voltaje);
                           //$variableDB = 'voltaje';//falta ubicarlo en BD
                       break;
                       
                       case "Duracion de Efecto anódico":
-                      Datos.push(data.duracionEA);
+                      DatosVar2.push(data.duracionEA);
                       break;
                       
                       case "Nivel de Metal":
-                      Datos.push(data.nivelDeMetal);
+                      DatosVar2.push(data.nivelDeMetal);
                           
                       break;
                       
                       case "Corriente de Linea ":
-                      Datos.push(data.voltaje);
+                      DatosVar2.push(data.voltaje);
                           //$variableDB = 'voltaje';//falta ubicarlo en BD
                       break;
                       
                       case "Potencia nominal":
-                      Datos.push(data.voltaje);
+                      DatosVar2.push(data.voltaje);
                         // $variableDB = 'voltaje';//falta ubicarlo en BD
                       break;
                       
                       case "(BO+RAJ+BIM+Tetas)":
-                      Datos.push(data.voltaje);
+                      DatosVar2.push(data.voltaje);
                           //$variableDB = 'voltaje';//falta ubicarlo en BD
                       break;
                       
                       case "Potencia Neta":
-                      Datos.push(data.voltaje);
+                      DatosVar2.push(data.voltaje);
                           //$variableDB = 'voltaje';//falta ubicarlo en BD
                       break;
                       
                       case "Anodos B/O  cambio Normal":
-                      Datos.push(data.voltaje);
+                      DatosVar2.push(data.voltaje);
                           //$variableDB = 'voltaje';//falta ubicarlo en BD
                       break;
                       
                       case "Nivel de Baño":
-                      Datos.push(data.nivelDeBanio);
+                      DatosVar2.push(data.nivelDeBanio);
                       break;
                       
                       case "Anodos Bimetalicos":
@@ -1471,76 +1662,77 @@
                       break;
                       
                       case "Criolita Neta ":
-                          Datos.push(data.voltaje);
+                          DatosVar2.push(data.voltaje);
                         // $variableDB = 'voltaje';//falta ubicarlo en BD
                       break;
                       
                       case "Criolita de Arranque":
-                        Datos.push(data.voltaje);
+                        DatosVar2.push(data.voltaje);
                         // $variableDB = 'voltaje';//falta ubicarlo en BD
                       break;
                       
                       case "Anodos B/A":
-                        Datos.push(data.voltaje);
+                        DatosVar2.push(data.voltaje);
                         // $variableDB = 'voltaje';//falta ubicarlo en BD
                       break;
                       
                       case "Baño Fase Densa":
-                        Datos.push(data.voltaje);
+                        DatosVar2.push(data.voltaje);
                         // $variableDB = 'voltaje';//falta ubicarlo en BD
                       break;
                       
                       case "Desviacion de Temperatura":
-                        Datos.push(data.voltaje);
+                        DatosVar2.push(data.voltaje);
                         // $variableDB = 'voltaje';//falta ubicarlo en BD
                       break;
                       
                       case "Hierro Metal de Celdas ":
-                          Datos.push(data.voltaje);
+                          DatosVar2.push(data.voltaje);
                         // $variableDB = 'voltaje';//falta ubicarlo en BD
                       break;
                       
                       case "Desviacion Acidez":
-                        Datos.push(data.voltaje);
+                        DatosVar2.push(data.voltaje);
                         // $variableDB = 'voltaje';//falta ubicarlo en BD
                       break;
                       
                       case "Silicio Metal Celdas":
-                        Datos.push(data.voltaje);
+                        DatosVar2.push(data.voltaje);
                         // $variableDB = 'voltaje';//falta ubicarlo en BD
                       break;
                       
                       case "Desviacion Nm":
-                        Datos.push(data.voltaje);
+                        DatosVar2.push(data.voltaje);
                         // $variableDB = 'voltaje'; //falta ubicarlo en BD
                       break;
                       
                       case "Frecuencia Desnatado":
-                        Datos.push(data.voltaje);
+                        DatosVar2.push(data.voltaje);
                         // $variableDB = 'voltaje';//falta ubicarlo en BD
                       break;
                       
                       case "Desviacion Nb":
-                        Datos.push(data.voltaje);
+                        DatosVar2.push(data.voltaje);
                         // $variableDB = 'voltaje';//falta ubicarlo en BD
                       break;
                       
                       case "Celdas Conectadas":
-                        Datos.push(data.voltaje);
+                        DatosVar2.push(data.voltaje);
                         // $variableDB = 'voltaje';//falta ubicarlo en BD
                       break;
                       
                       case "Frecuencia Efectos Anodicos ":
-                        Datos.push(data.voltaje);
+                        DatosVar2.push(data.voltaje);
                         // $variableDB = 'voltaje'; //falta ubicarlo en BD
                       break;
                       
                       case "% CaF2 en el baño electrolitico":
-                        Datos.push(data.voltaje);
+                        DatosVar2.push(data.voltaje);
                         // $variableDB = 'voltaje';//falta ubicarlo en BD
                       break;
                         
-                    } 
+                    }
+                     
                   });
                   /* var areaChartData = {
                       labels  : Dia,
@@ -1583,12 +1775,30 @@
                         },
                       ]
                   } */
+                  console.log('etiqueta');
                   console.log(etiqueta);
+                  console.log('Dia');
                   console.log(Dia);
+                  console.log('Celdas');
                   console.log(Celdas);
+                  console.log('Datos');
                   console.log(Datos);
+                  console.log('banda1');
                   console.log(banda1);
+                  console.log('banda2');
                   console.log(banda2);
+
+
+                  console.log('DiaVar2');
+                  console.log(DiaVar2);
+                  console.log('CeldasVar2');
+                  console.log(CeldasVar2);
+                  console.log('DatosVar2');
+                  console.log(DatosVar2);
+                  console.log('banda1Var2');
+                  console.log(banda1Var2);
+                  console.log('banda2Var2');
+                  console.log(banda2Var2);
 
 
                 mostrar('#cardGrafica'); 
@@ -1643,6 +1853,51 @@
                           pointStyle: 'line',
                           fill                : false,
                           lineTension         : 0
+                      },
+                      {
+                          label: response.variableVar2 ,
+                          data: DatosVar2,
+                          yAxisID : 'y-axis-2',
+                          borderWidth: 1,
+                          backgroundColor     : 'transparent',
+                          borderColor         : '#9803fc',
+                          pointBorderColor    : '#9803fc',
+                          pointBackgroundColor: '#9803fc',
+                          fill                : false,
+                          lineTension         : 0
+                      },{
+                          label: 'celdas2',
+                          data: CeldasVar2,
+                          yAxisID : 'y-axis-2',
+                          showLine: false,
+                          borderWidth: 1,
+                          backgroundColor     : 'transparent',
+                          borderColor         : 'orange',
+                          pointStyle: 'line',
+                          fill                : false,
+                          lineTension         : 0
+                      },
+                      {
+                          label: 'banda1Var2',
+                          data: banda1Var2,
+                          yAxisID : 'y-axis-2',
+                          borderWidth: 1,
+                          backgroundColor     : 'transparent',
+                          borderColor         : 'brown',
+                          pointStyle: 'line',
+                          fill                : false,
+                          lineTension         : 0
+                      },
+                      {
+                          label: 'banda2Var2',
+                          data: banda2Var2,
+                          yAxisID : 'y-axis-2',
+                          borderWidth: 1,
+                          backgroundColor     : 'transparent',
+                          borderColor         : 'black',
+                          pointStyle: 'line',
+                          fill                : false,
+                          lineTension         : 0
                       }
                       ]
                   },
@@ -1667,11 +1922,16 @@
                             }
                           }, {
                             type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                            display: false,
+                            display: true,
+                            scaleLabel: {
+                              labelString : response.ylabelVar2,
+                              display: true},
                             position: 'right',
                             id: 'y-axis-2',
                             ticks: {
-                                beginAtZero:false
+                                
+                              min: response.minyVar2,
+                              max: response.maxyVar2
                                 }
                             }],
 
