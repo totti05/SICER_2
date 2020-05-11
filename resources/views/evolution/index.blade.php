@@ -21,6 +21,14 @@
     <form id="formData">
       <div class="form-row">
       <div class ="col-md-3 mr-1">
+      <div id= "selectOrden" class="form-group " >
+        <label>Opcion eje x</label>
+        <select id="orden" name="orden" class="form-control">
+          <option selected>Fecha</option>
+          <option>Celda</option>
+        </select>
+      </div>
+          <!-- /.form group -->
       <div class="form-group">
         <label>Rango de fecha y hora</label>
         <div class="input-group ">
@@ -156,99 +164,111 @@
 
 
       <div class ="col-md-4 mr-2">
-      <div id= "formvariable2" class="form-group ">
-        <label for="variable2">Variable 2</label>
-        <select id="variable2" name="variable2" class="form-control">
-        <option selected value=""></option>
-        <option selected>Voltaje</option>
-          <option>Efectos anodicos</option>
-          <option>Alimentacion de alumina</option>
-          <option>Temperatura de baño</option>
-          <option>Duracion del tracking</option>
-          <option>Acidez de baño</option>
-           <!-- <option>Consumo de alumina</option>  -->
-          <option>Dump Size Alumina</option>
-          <option>Consumo AlF3</option>
-          <option>Track CD</option>
-          <option>Consumo AlF3 Manual</option>
-          <option>VMAX del Efecto Anodico</option>
-          <option>Eficiencia de Trasegado (Eficiencia de corriente)</option>
-          <option>Duracion de Efecto anódico</option>
-          <option>Nivel de Metal</option>
-          <option>Corriente de Linea</option>
-          <option>Potencia nominal</option>
-          <option>(BO+RAJ+BIM+Tetas)</option>
-          <option>Potencia Neta</option>
-          <option>Anodos B/O cambio Normal</option>
-          <option>Nivel de Baño</option>
-          <option>Anodos Bimetalicos</option>
-          <option>Criolita Neta</option>
-          <option>Criolita de Arranque</option>
-          <option>Anodos B/A</option>
-          <option>Baño Fase Densa</option>
-          <option>Desviacion de Temperatura</option>
-          <option>Hierro Metal de Celdas </option>
-          <option>Desviacion Acidez</option>
-          <option>Silicio Metal Celdas </option>
-          <option>Desviacion Nm</option>
-          <option>Frecuencia Desnatado</option>
-          <option>Desviacion Nb</option>
-          <option>Celdas Conectadas</option>
-          <option>Frecuencia Efectos Anodicos</option>
-          <option>% CaF2 en el baño electrolitico</option>
-
-
-        </select>
-      </div>
-      <!-- /.form group -->
-      
-      <div class="form-group">
-          <label >Rango de operacion</label>
-          <br>
-          <label>Rango 1 a consultar</label>
-          <div class="form-row form-inline">
-              <div class="input-group col-md-6 ">
-                <div class="input-group-prepend   ">
-                  <span class="input-group-text">operador</span>
-                </div>
-                <select class="custom-select  "  id="var2Operador" name="var2Operador">
-                <option selected value=""></option>
-                  <option value="mayor">></option>
-                  <option value="menor"><</option>
-                  <option value="menorigual">&le;</option>
-                  <option value="mayorigual">&ge;</option>
-                </select>
-              </div> 
-              <!--  / input group -->
-              <div class="input-group col-md-6">
-                <div class="input-group-prepend  ">
-                  <span class="input-group-text ">rango 1</span>
-                </div>
-                <input type="number" step="0.01" name="var2Rango1" class="form-control float-right " id="var2Rango1">
-              </div>
-              <!--  / input group -->
-            </div>  
-            <!-- /.form row -->  
-              
-            <label>Rango 2 a consultar</label>
-            <div class="form-row form-inline">
-              <div class="input-group col-md-6 offset-6">
-                <div class="input-group-prepend  ">
-                  <span class="input-group-text ">rango 2</span>
-                </div>
-                <input type="number" step="0.01" name="var2Rango2" class="form-control float-right " id="var2Rango2">
-              </div>
-              <!--  / input group -->
-            </div>  
-            <!-- /.form row --> 
+        <div class ="row">
+          <label for="variable2" class="mr-2">Variable 2 </label>
             <div class="custom-control custom-checkbox ">
-            <input type="checkbox" name="checkConfig" class="custom-control-input" id="checkConfig">
-            <label class="custom-control-label" for="checkConfig">Configurar grafica</label>
-          </div>
-      </div>
-      <!-- /.form group -->
-      </div>
+                <input type="checkbox" name="checkVariable2" class="custom-control-input" id="checkVariable2">
+                <label class="custom-control-label" for="checkVariable2"></label>
+              </div>
+           <label for="variable2" class="mr-2">Configurar grafica </label>   
+           <div class="custom-control custom-checkbox ">
+                <input type="checkbox" name="checkConfig" class="custom-control-input" id="checkConfig">
+                <label class="custom-control-label" for="checkConfig"></label>
+              </div>
+        </div>        
+        <div id="variable2Form" style="display:none">
+          <div id= "selectVariable2" class="form-group " >
+            
+            <select id="variable2" name="variable2" class="form-control">
+              <option value="" selected> </option>
+              <option >Voltaje</option>
+              <option>Efectos anodicos</option>
+              <option>Alimentacion de alumina</option>
+              <option>Temperatura de baño</option>
+              <option>Duracion del tracking</option>
+              <option>Acidez de baño</option>
+              <!-- <option>Consumo de alumina</option>  -->
+              <option>Dump Size Alumina</option>
+              <option>Consumo AlF3</option>
+              <option>Track CD</option>
+              <option>Consumo AlF3 Manual</option>
+              <option>VMAX del Efecto Anodico</option>
+              <option>Eficiencia de Trasegado (Eficiencia de corriente)</option>
+              <option>Duracion de Efecto anódico</option>
+              <option>Nivel de Metal</option>
+              <option>Corriente de Linea</option>
+              <option>Potencia nominal</option>
+              <option>(BO+RAJ+BIM+Tetas)</option>
+              <option>Potencia Neta</option>
+              <option>Anodos B/O cambio Normal</option>
+              <option>Nivel de Baño</option>
+              <option>Anodos Bimetalicos</option>
+              <option>Criolita Neta</option>
+              <option>Criolita de Arranque</option>
+              <option>Anodos B/A</option>
+              <option>Baño Fase Densa</option>
+              <option>Desviacion de Temperatura</option>
+              <option>Hierro Metal de Celdas </option>
+              <option>Desviacion Acidez</option>
+              <option>Silicio Metal Celdas </option>
+              <option>Desviacion Nm</option>
+              <option>Frecuencia Desnatado</option>
+              <option>Desviacion Nb</option>
+              <option>Celdas Conectadas</option>
+              <option>Frecuencia Efectos Anodicos</option>
+              <option>% CaF2 en el baño electrolitico</option>
 
+
+            </select>
+          </div>
+          <!-- /.form group -->
+          
+          <div class="form-group">
+              <label >Rango de operacion</label>
+              <br>
+              <label>Rango 1 a consultar</label>
+              <div class="form-row form-inline">
+                  <div class="input-group col-md-6 ">
+                    <div class="input-group-prepend   ">
+                      <span class="input-group-text">operador</span>
+                    </div>
+                    <select class="custom-select  "  id="var2Operador" name="var2Operador">
+                      <option selected value=""></option>
+                      <option value="mayor">></option>
+                      <option value="menor"><</option>
+                      <option value="menorigual">&le;</option>
+                      <option value="mayorigual">&ge;</option>
+                    </select>
+                  </div> 
+                  <!--  / input group -->
+                  <div class="input-group col-md-6">
+                    <div class="input-group-prepend  ">
+                      <span class="input-group-text ">rango 1</span>
+                    </div>
+                    <input type="number" step="0.01" name="var2Rango1" class="form-control float-right " id="var2Rango1">
+                  </div>
+                  <!--  / input group -->
+                </div>  
+                <!-- /.form row -->  
+                  
+                <label>Rango 2 a consultar</label>
+                <div class="form-row form-inline">
+                  <div class="input-group col-md-6 offset-6">
+                    <div class="input-group-prepend  ">
+                      <span class="input-group-text ">rango 2</span>
+                    </div>
+                    <input type="number" step="0.01" name="var2Rango2" class="form-control float-right " id="var2Rango2">
+                  </div>
+                  <!--  / input group -->
+                </div>  
+                <!-- /.form row --> 
+                
+          </div>
+          <!-- /.form group -->
+        </div>
+       
+      </div>
+      
 
 
       <div class ="col-md-3 " id="configGrafica" style= 'display:none'>
@@ -279,6 +299,26 @@
       </div>
       <!-- /.form group -->
 
+        <div id="bandaVar2" style="display:none">
+          <label>Variable 2 Banda de control 1</label>
+          <div class="input-group  ">
+            <div class="input-group-prepend">
+            <span class="input-group-text">Min (banda 1)</span>
+            </div>
+            <input type="number" step="0.01" name="banda1Var2" class="form-control float-right col-md-3 " id="banda1Var2">
+          </div>
+          <!-- /.input group -->
+        
+          <label>Variable 2 Banda de control 2</label>
+          <div class="input-group ">
+          
+            <div class="input-group-prepend">
+            <span class="input-group-text">Max (banda 2)</span>
+            </div>
+            <input type="number" step="0.01" name="banda2Var2" class="form-control float-right col-md-3" id="banda2Var2">
+          </div>
+          <!-- /.input group -->
+        </div>
       <div class="form-group">
         <div class="form-row ">
             
@@ -1169,91 +1209,98 @@
 @stop
 @section('js')
   <script> 
-
     //funcion para mostrar elemento HTML
-    function mostrar(elemento){
-    $(elemento).show();
+    function mostrar(elemento) {
+        $(elemento).show();
     }
     //funcion para ocultar elemento HTML
-    function ocultar(elemento){
-    $(elemento).hide();
+    function ocultar(elemento) {
+        $(elemento).hide();
     }
     //funcion para destruir datatable y poder repintar
-    const celldestroy = (elemento) => {
-      cell = $(elemento).DataTable();
-      cell.destroy();
-    }
+    const celldestroy = elemento => {
+        cell = $(elemento).DataTable();
+        cell.destroy();
+    };
     //funcion para destruir charts y poder repintar
-    const chartdestroy = (elemento) => {
-      cell = $(elemento).DataTable();
-      cell.destroy();
-    }
-     //Date range picker with time picker
-     $('#rangoFecha').daterangepicker({
-        "showWeekNumbers": true,
-        "minYear": 2003,
-        ranges: {
-            'Hoy': [moment(), moment()],
-            'Ayer': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-            'Últimos 7 días': [moment().subtract(6, 'days'), moment()],
-            'Últimos 30 días': [moment().subtract(29, 'days'), moment()],
-            'Este mes': [moment().startOf('month'), moment().endOf('month')],
-            'Último mes': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-          },
-        "locale": {
-              "format": "YYYY/MM/DD",
-              "separator": " - ",
-              "applyLabel": "Seleccionar",
-              "cancelLabel": "Cancelar",
-              "fromLabel": "Desde",
-              "toLabel": "Hasta",
-              "customRangeLabel": "Elegir",
-              "weekLabel": "Sem",
-              "daysOfWeek": [
-                  "Do",
-                  "Lu",
-                  "Ma",
-                  "Mi",
-                  "Ju",
-                  "Vi",
-                  "Sa"
-              ],
-              "monthNames": [
-                  "Enero",
-                  "Febrero",
-                  "Marzo",
-                  "Abril",
-                  "Mayo",
-                  "Junio",
-                  "Julio",
-                  "Agosto",
-                  "Septiembre",
-                  "Octubre",
-                  "Noviembre",
-                  "Diciembre"
-              ],
-              "firstDay": 1
+    const chartdestroy = elemento => {
+        cell = $(elemento).DataTable();
+        cell.destroy();
+    };
+    //Date range picker with time picker
+    $("#rangoFecha").daterangepicker(
+        {
+            showWeekNumbers: true,
+            minYear: 2003,
+            ranges: {
+                Hoy: [moment(), moment()],
+                Ayer: [moment().subtract(1, "days"), moment().subtract(1, "days")],
+                "Últimos 7 días": [moment().subtract(6, "days"), moment()],
+                "Últimos 30 días": [moment().subtract(29, "days"), moment()],
+                "Este mes": [moment().startOf("month"), moment().endOf("month")],
+                "Último mes": [
+                    moment()
+                        .subtract(1, "month")
+                        .startOf("month"),
+                    moment()
+                        .subtract(1, "month")
+                        .endOf("month")
+                ]
             },
-              "linkedCalendars": false,
-              "minDate": "01/01/2003",
-              "maxDate": moment()
-        }, function(start, end, label) {
-          console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
-      });
-    
-    $('#chartwidget').CardWidget('collapse'); 
-    $('#voltajeChartwidget').CardWidget('collapse'); 
-    $('#celdaswidget').CardWidget('collapse'); 
+            locale: {
+                format: "YYYY/MM/DD",
+                separator: " - ",
+                applyLabel: "Seleccionar",
+                cancelLabel: "Cancelar",
+                fromLabel: "Desde",
+                toLabel: "Hasta",
+                customRangeLabel: "Elegir",
+                weekLabel: "Sem",
+                daysOfWeek: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
+                monthNames: [
+                    "Enero",
+                    "Febrero",
+                    "Marzo",
+                    "Abril",
+                    "Mayo",
+                    "Junio",
+                    "Julio",
+                    "Agosto",
+                    "Septiembre",
+                    "Octubre",
+                    "Noviembre",
+                    "Diciembre"
+                ],
+                firstDay: 1
+            },
+            linkedCalendars: false,
+            minDate: "01/01/2003",
+            maxDate: moment()
+        },
+        function(start, end, label) {
+            console.log(
+                "New date range selected: " +
+                    start.format("YYYY-MM-DD") +
+                    " to " +
+                    end.format("YYYY-MM-DD") +
+                    " (predefined range: " +
+                    label +
+                    ")"
+            );
+        }
+    );
 
-    $(document).ready(function(){
-      $('#formdata').submit(function(event){
+    $("#chartwidget").CardWidget("collapse");
+    $("#voltajeChartwidget").CardWidget("collapse");
+    $("#celdaswidget").CardWidget("collapse");
 
-        event.preventDefault();
-        formdatos = $(this).serializeArray();
-        console.log( $( this ).serializeArray() );
-        
-       });
-  });
+    $(document).ready(function() {
+        $("#formdata").submit(function(event) {
+            event.preventDefault();
+            formdatos = $(this).serializeArray();
+            console.log($(this).serializeArray());
+        });
+    });
 
     /* ChartJS
     * -------
@@ -1264,1071 +1311,1096 @@
     var Dia = new Array();
     var Celdas = new Array();
     var Voltaje = new Array();
-    var ChartDataclear ={};
-    var ChartOptionsclear ={};  
-    var ctx = document.getElementById("voltajeChart").getContext('2d');
+    var ChartDataclear = {};
+    var ChartOptionsclear = {};
+    var ctx = document.getElementById("voltajeChart").getContext("2d");
     var varChart = new Chart(ctx, {
-      type: 'line',
-      data: ChartDataclear,
-      options: ChartOptionsclear
-        
+        type: "line",
+        data: ChartDataclear,
+        options: ChartOptionsclear
     });
 
     //funcion para mostrar elemento HTML cuando cambia un checkbox
-    $('#checkConfig').change(function() {
-      let estado = $('#checkConfig').is(":checked");
-      if (estado) {
-        mostrar('#configGrafica');
-      }else{
-        ocultar('#configGrafica');
-      }
-  });
-  //funcion para cambiar valor de inputs cuando cambia un checkbox
-  $('#checkLinea').change(function() {
-      let estado = $('#checkLinea').is(":checked");
-      if (estado) {
-        $('#celda1').val(901);
-        $('#celda2').val(1090);
-      }else{
-        $('#celda1').val('');
-        $('#celda2').val('');
-      }
-  });
+    $("#checkConfig").change(function() {
+        let estado = $("#checkConfig").is(":checked");
+        if (estado) {
+            mostrar("#configGrafica");
+        } else {
+            ocultar("#configGrafica");
+        }
+    });
+    //funcion para cambiar valor de inputs cuando cambia un checkbox
+    $("#checkLinea").change(function() {
+        let estado = $("#checkLinea").is(":checked");
+        if (estado) {
+            $("#celda1").val(901);
+            $("#celda2").val(1090);
+        } else {
+            $("#celda1").val("");
+            $("#celda2").val("");
+        }
+    });
+    //funcion para cambiar valor de inputs cuando cambia un checkbox
+    $("#checkVariable2").change(function() {
+        let estado = $("#checkVariable2").is(":checked");
+        if (estado) {
+           mostrar('#variable2Form');
+           mostrar('#bandaVar2');
+           
+        } else {
+            $("#var2Rango1").val("");
+            $("#var2Rango2").val("");
+            $("#variable2").val("");
+            $("#banda1Var2").val("");
+            $("#banda2Var2").val("");
+            ocultar('#variable2Form');
+            ocultar('#bandaVar2');
+            
+        }
+    });
 
-
-     $(document).ready(function(){
-       $.get(url, function(response){
-          response.forEach(function(data){
-             Dia.push(data.dia);
-             Celdas.push(data.celdas);
-             Voltaje.push(data.voltaje);
+    $(document).ready(function() {
+        $.get(url, function(response) {
+            response.forEach(function(data) {
+                Dia.push(data.dia);
+                Celdas.push(data.celdas);
+                Voltaje.push(data.voltaje);
             });
-          var ctx = document.getElementById("lineChart").getContext('2d');
-                var myChart = new Chart(ctx, {
-                  type: 'line',
-                  data: {
-                      labels:Dia,
-                      datasets: [{
-                          label: 'Voltaje',
-                          data: Voltaje,
-                          borderWidth: 1,
-                          backgroundColor     : 'transparent',
-                          borderColor         : '#007bff',
-                          pointBorderColor    : '#f2ff03',
-                          pointBackgroundColor: '#00ff15',
-                          fill                : false,
-                          lineTension         : 0
-                      },
-                      {
-                          label: 'Volta',
-                          data: [5.5,3.4,4.4],
-                          borderWidth: 1,
-                          backgroundColor     : 'transparent',
-                          borderColor         : '#00ff15',
-                          pointBorderColor    : '#00ff15',
-                          pointBackgroundColor: '#00ff15',
-                          fill                : false,
-                          lineTension         : 0
-                      }],
-                      
-                  },
-                  options: {
-                      scales: {
-                          yAxes: [{
-                              ticks: {
-                                  beginAtZero:false
-                              }
-                          }]
-                      }
-                  }
-              });
-          });
-        });
-
-        //FUNCION QUE SE ESTA UTILIZANDO PARA GRAFICAR
-
-    $(document).ready(function () {
-      $("#formData").bind("submit",function(){
-        $.ajaxSetup({
-        headers: {
-          'X-CSRF-TOKEN': "{{ csrf_token() }}"
-          }
-        });
-        datos = $(this).serialize();
-        console.log(datos);
-        $.ajax({
-            type:"post",
-            url: "{{ route('evolution.dataChartp') }}",
-            data:$(this).serialize(),
-            beforeSend: function(){
-                /*
-                * Esta función se ejecuta durante el envió de la petición al
-                * servidor.
-                * */
-                celldestroy('#celdas');
-                celldestroy('#celdas2');
-                
-            },
-            complete:function(data){
-                /*
-                * Se ejecuta al termino de la petición
-                * */
-            },
-            success: function(response){
-                /*
-                * Se ejecuta cuando termina la petición y esta ha sido
-                * correcta
-                * */
-               console.log(response);
-                var Dia = new Array();
-                var Celdas = new Array();
-                var Datos = new Array();
-                var etiqueta = new Array();
-                var banda1 = new Array();
-                var banda2 = new Array();
-                var banda1Var2 = new Array();
-                var banda2Var2 = new Array();
-                var DatosVar2 = new Array();
-                var DiaVar2 = new Array();
-                var CeldasVar2 = new Array();
-
-                    response.datos.forEach(function(data){
-                      if (response.banda1 != null) {
-                        banda1.push(response.banda1); 
-                      }
-                      if (response.banda2 != null) {
-                        banda2.push(response.banda2); 
-                      }
-                      Dia.push(data.dia);
-                      Celdas.push(data.celda);
-                      
-                      switch (response.variable) {
-                        case "Voltaje":
-                        Datos.push(data.voltaje);
-                        break;
-                        
-                        case "Efectos anodicos":
-                        Datos.push(data.numeroEA);
-                        break;
-                        
-                        case "Desviación de Resistencia":
-                        //$variableDB = 'voltaje';//falta ubicarlo en BD
-                        Datos.push(data.voltaje);
-                        break;
-                        
-                        case "Alimentacion de Alumina":
-                          Datos.push(data.voltaje);
-                          //$variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Temperatura de baño":
-                        Datos.push(data.temperatura);
-                        break;
-                        
-                        case "Duracion de Tracking":
-                          Datos.push(data.duracionTk);
-                        break;
-                        
-                        case "Acidez de Baño":
-                        Datos.push(data.acidez);
-                        
-                        break;
-                        
-                        case "Dump Size Alumina":
-                        Datos.push(data.voltaje);
-                        //    $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Consumo AlF3":
-                        Datos.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Track CD":
-                        Datos.push(data.numeroTk);
-                        break;
-                        
-                        case "Consumo AlF3 Manual":
-                        Datos.push(data.voltaje);
-                            //$variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "VMAX del Efecto Anodico":
-                        Datos.push(data.vMaxEA);
-                        break;
-                        
-                        case "Eficiencia de Trasegado (Eficiencia de corriente)":
-                        Datos.push(data.voltaje);
-                            //$variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Duracion de Efecto anódico":
-                        Datos.push(data.duracionEA);
-                        break;
-                        
-                        case "Nivel de Metal":
-                        Datos.push(data.nivelDeMetal);
-                            
-                        break;
-                        
-                        case "Corriente de Linea ":
-                        Datos.push(data.voltaje);
-                            //$variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Potencia nominal":
-                        Datos.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "(BO+RAJ+BIM+Tetas)":
-                        Datos.push(data.voltaje);
-                            //$variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Potencia Neta":
-                        Datos.push(data.voltaje);
-                            //$variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Anodos B/O  cambio Normal":
-                        Datos.push(data.voltaje);
-                            //$variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Nivel de Baño":
-                        Datos.push(data.nivelDeBanio);
-                        break;
-                        
-                        case "Anodos Bimetalicos":
-                            //$variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Criolita Neta ":
-                            Datos.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Criolita de Arranque":
-                          Datos.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Anodos B/A":
-                          Datos.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Baño Fase Densa":
-                          Datos.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Desviacion de Temperatura":
-                          Datos.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Hierro Metal de Celdas ":
-                            Datos.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Desviacion Acidez":
-                          Datos.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Silicio Metal Celdas":
-                          Datos.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Desviacion Nm":
-                          Datos.push(data.voltaje);
-                          // $variableDB = 'voltaje'; //falta ubicarlo en BD
-                        break;
-                        
-                        case "Frecuencia Desnatado":
-                          Datos.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Desviacion Nb":
-                          Datos.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Celdas Conectadas":
-                          Datos.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Frecuencia Efectos Anodicos ":
-                          Datos.push(data.voltaje);
-                          // $variableDB = 'voltaje'; //falta ubicarlo en BD
-                        break;
-                        
-                        case "% CaF2 en el baño electrolitico":
-                          Datos.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                          
-                      }
-                     
-                  });
-                  if (response.variableVar2 != null ) {
-                    
-                    response.datosVar2.forEach(function(data){
-                        if (response.banda1Var2 != null) {
-                          banda1Var2.push(response.banda1Var2); 
+            var ctx = document.getElementById("lineChart").getContext("2d");
+            var myChart = new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: Dia,
+                    datasets: [
+                        {
+                            label: "Voltaje",
+                            data: Voltaje,
+                            borderWidth: 1,
+                            backgroundColor: "transparent",
+                            borderColor: "#007bff",
+                            pointBorderColor: "#f2ff03",
+                            pointBackgroundColor: "#00ff15",
+                            fill: false,
+                            lineTension: 0
+                        },
+                        {
+                            label: "Volta",
+                            data: [5.5, 3.4, 4.4],
+                            borderWidth: 1,
+                            backgroundColor: "transparent",
+                            borderColor: "#00ff15",
+                            pointBorderColor: "#00ff15",
+                            pointBackgroundColor: "#00ff15",
+                            fill: false,
+                            lineTension: 0
                         }
-                        if (response.banda2Var2 != null) {
-                          banda2Var2.push(response.banda2Var2); 
-                        }
-                      DiaVar2.push(data.dia);
-                      CeldasVar2.push(data.celda);
-                      
-                      switch (response.variableVar2) {
-                        case "Voltaje":
-                        DatosVar2.push(data.voltaje);
-                        break;
-                        
-                        case "Efectos anodicos":
-                        DatosVar2.push(data.numeroEA);
-                        break;
-                        
-                        case "Desviación de Resistencia":
-                        //$variableDB = 'voltaje';//falta ubicarlo en BD
-                        DatosVar2.push(data.voltaje);
-                        break;
-                        
-                        case "Alimentacion de Alumina":
-                          DatosVar2.push(data.voltaje);
-                          //$variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Temperatura de baño":
-                        DatosVar2.push(data.temperatura);
-                        break;
-                        
-                        case "Duracion de Tracking":
-                          DatosVar2.push(data.duracionTk);
-                        break;
-                        
-                        case "Acidez de Baño":
-                        DatosVar2.push(data.acidez);
-                        
-                        break;
-                        
-                        case "Dump Size Alumina":
-                        DatosVar2.push(data.voltaje);
-                        //    $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Consumo AlF3":
-                        DatosVar2.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Track CD":
-                        DatosVar2.push(data.numeroTk);
-                        break;
-                        
-                        case "Consumo AlF3 Manual":
-                        DatosVar2.push(data.voltaje);
-                            //$variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "VMAX del Efecto Anodico":
-                        DatosVar2.push(data.vMaxEA);
-                        break;
-                        
-                        case "Eficiencia de Trasegado (Eficiencia de corriente)":
-                        DatosVar2.push(data.voltaje);
-                            //$variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Duracion de Efecto anódico":
-                        DatosVar2.push(data.duracionEA);
-                        break;
-                        
-                        case "Nivel de Metal":
-                        DatosVar2.push(data.nivelDeMetal);
-                            
-                        break;
-                        
-                        case "Corriente de Linea ":
-                        DatosVar2.push(data.voltaje);
-                            //$variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Potencia nominal":
-                        DatosVar2.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "(BO+RAJ+BIM+Tetas)":
-                        DatosVar2.push(data.voltaje);
-                            //$variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Potencia Neta":
-                        DatosVar2.push(data.voltaje);
-                            //$variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Anodos B/O  cambio Normal":
-                        DatosVar2.push(data.voltaje);
-                            //$variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Nivel de Baño":
-                        DatosVar2.push(data.nivelDeBanio);
-                        break;
-                        
-                        case "Anodos Bimetalicos":
-                            //$variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Criolita Neta ":
-                            DatosVar2.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Criolita de Arranque":
-                          DatosVar2.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Anodos B/A":
-                          DatosVar2.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Baño Fase Densa":
-                          DatosVar2.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Desviacion de Temperatura":
-                          DatosVar2.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Hierro Metal de Celdas ":
-                            DatosVar2.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Desviacion Acidez":
-                          DatosVar2.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Silicio Metal Celdas":
-                          DatosVar2.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Desviacion Nm":
-                          DatosVar2.push(data.voltaje);
-                          // $variableDB = 'voltaje'; //falta ubicarlo en BD
-                        break;
-                        
-                        case "Frecuencia Desnatado":
-                          DatosVar2.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Desviacion Nb":
-                          DatosVar2.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Celdas Conectadas":
-                          DatosVar2.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                        
-                        case "Frecuencia Efectos Anodicos ":
-                          DatosVar2.push(data.voltaje);
-                          // $variableDB = 'voltaje'; //falta ubicarlo en BD
-                        break;
-                        
-                        case "% CaF2 en el baño electrolitico":
-                          DatosVar2.push(data.voltaje);
-                          // $variableDB = 'voltaje';//falta ubicarlo en BD
-                        break;
-                          
-                      }
-                       
-                    });
-                  }
-                  /* var areaChartData = {
-                      labels  : Dia,
-                      datasets: [
-                        {
-                          label               : [],
-                          backgroundColor     : 'rgba(60,141,188,0.9)',
-                          borderColor         : 'rgba(60,141,188,0.8)',
-                          pointRadius          : false,
-                          pointColor          : '#3b8bba',
-                          pointStrokeColor    : 'rgba(60,141,188,1)',
-                          pointHighlightFill  : '#fff',
-                          lineTension         : 0,
-                          pointHighlightStroke: 'rgba(60,141,188,1)',
-                          data                : [28, 48, 40, 19, 86, 27, 90]
-                        },
-                        {
-                          label               : 'Electronics',
-                          backgroundColor     : 'rgba(210, 214, 222, 1)',
-                          borderColor         : 'rgba(210, 214, 222, 1)',
-                          pointRadius         : false,
-                          pointColor          : 'rgba(210, 214, 222, 1)',
-                          pointStrokeColor    : '#c1c7d1',
-                          pointHighlightFill  : '#fff',
-                          lineTension         : 0,
-                          pointHighlightStroke: 'rgba(220,220,220,1)',
-                          data                : [65, 59, 80, 81, 56, 55, 40]
-                        },
-                        {
-                          label               : 'Constant',
-                          backgroundColor     : 'rgba(210, 214, 222, 1)',
-                          borderColor         : 'rgba(210, 214, 222, 1)',
-                          pointRadius         : false,
-                          pointColor          : 'rgba(210, 214, 222, 1)',
-                          pointStrokeColor    : '#c1c7d1',
-                          pointHighlightFill  : '#fff',
-                          lineTension         : 0,
-                          pointHighlightStroke: 'rgba(220,220,220,1)',
-                          data                : [50]
-                        },
-                      ]
-                  } */
-                  console.log('etiqueta');
-                  console.log(etiqueta);
-                  console.log('Dia');
-                  console.log(Dia);
-                  console.log('Celdas');
-                  console.log(Celdas);
-                  console.log('Datos');
-                  console.log(Datos);
-                  console.log('banda1');
-                  console.log(banda1);
-                  console.log('banda2');
-                  console.log(banda2);
-
-
-                  console.log('DiaVar2');
-                  console.log(DiaVar2);
-                  console.log('CeldasVar2');
-                  console.log(CeldasVar2);
-                  console.log('DatosVar2');
-                  console.log(DatosVar2);
-                  console.log('banda1Var2');
-                  console.log(banda1Var2);
-                  console.log('banda2Var2');
-                  console.log(banda2Var2);
-
-
-                mostrar('#cardGrafica'); 
-                mostrar('#cardTablaDatos');
-                  if (response.variableVar2 != null) {
-                    console.log('entro');
-                    mostrar('#celdas2');
-                  }
-                
-
-                  var ChartOptions = {
-                    hovermode: 'index',
-                    tooltips: { 
-                      mode: 'index' 
-                      },
+                    ]
+                },
+                options: {
                     scales: {
-                          yAxes: [{
-                            scaleLabel: {
-                              labelString : response.ylabel,
-                              display: true}, 
-                            type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                            display: true,
-                            position: 'left',
-                            id: 'y-axis-1',
-                            ticks: {
-                              
-                              min: response.miny,
-                              max: response.maxy
-
-                            }
-                            }, {
-                            type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                            display: true,
-                            scaleLabel: {
-                              labelString : response.ylabelVar2,
-                              display: true},
-                            position: 'right',
-                            id: 'y-axis-2',
-                            ticks: {
-                                
-                              min: response.minyVar2,
-                              max: response.maxyVar2
+                        yAxes: [
+                            {
+                                ticks: {
+                                    beginAtZero: false
                                 }
-                            }],
-
-                          xAxes: [{
-                            scaleLabel: {
-                              labelString : response.xlabel,
-                              display: true},
-                            ticks: {
-                              // maxTicksLimit: 20
                             }
-                             }]
+                        ]
+                    }
+                }
+            });
+        });
+    });
 
+    //FUNCION QUE SE ESTA UTILIZANDO PARA GRAFICAR
+
+    $(document).ready(function() {
+        $("#formData").bind("submit", function() {
+            $.ajaxSetup({
+                headers: {
+                    "X-CSRF-TOKEN": "{{ csrf_token() }}"
+                }
+            });
+            datos = $(this).serialize();
+            console.log(datos);
+            $.ajax({
+                type: "post",
+                url: "{{ route('evolution.dataChartp') }}",
+                data: $(this).serialize(),
+                beforeSend: function() {
+                    /*
+                    * Esta función se ejecuta durante el envió de la petición al
+                    * servidor.
+                    * */
+                    celldestroy("#celdas");
+                    celldestroy("#celdas2");
+                },
+                complete: function(data) {
+                    /*
+                    * Se ejecuta al termino de la petición
+                    * */
+                },
+                success: function(response) {
+                    /*
+                    * Se ejecuta cuando termina la petición y esta ha sido
+                    * correcta
+                    * */
+                    console.log(response);
+                    var Dia = new Array();
+                    var Celdas = new Array();
+                    var Datos = new Array();
+                    var etiqueta = new Array();
+                    var banda1 = new Array();
+                    var banda2 = new Array();
+                    var banda1Var2 = new Array();
+                    var banda2Var2 = new Array();
+                    var DatosVar2 = new Array();
+                    var DiaVar2 = new Array();
+                    var CeldasVar2 = new Array();
+                    //obteniendo datos para variable 1    
+                    response.datos.forEach(function(data) {
+                        if (response.banda1 != null) {
+                            banda1.push(response.banda1);
                         }
-                  }
-                  var ChartData ={
-                    labels:Dia,
-                    datasets: [{
-                        label: response.variable ,
-                        data: Datos,
-                        yAxisID : 'y-axis-1',
-                        borderWidth: 1,
-                        backgroundColor     : 'transparent',
-                        borderColor         : '#007bff',
-                        pointBorderColor    : '#007bff',
-                        pointBackgroundColor: '#007bff',
-                        fill                : false,
-                        lineTension         : 0
-                        },
-                        {
-                        label: 'celdas',
-                        data: Celdas,
-                        yAxisID : 'y-axis-2',
-                        showLine: false,
-                        borderWidth: 1,
-                        backgroundColor     : 'transparent',
-                        borderColor         : 'green',
-                        pointStyle: 'line',
-                        fill                : false,
-                        lineTension         : 0
-                        },
-                        {
-                        label: 'banda1',
-                        data: banda1,
-                        yAxisID : 'y-axis-1',
-                        borderWidth: 1,
-                        backgroundColor     : 'transparent',
-                        borderColor         : 'red',
-                        pointStyle: 'line',
-                        fill                : false,
-                        lineTension         : 0
-                        },
-                        {
-                        label: 'banda2',
-                        data: banda2,
-                        yAxisID : 'y-axis-1',
-                        borderWidth: 1,
-                        backgroundColor     : 'transparent',
-                        borderColor         : 'yellow',
-                        pointStyle: 'line',
-                        fill                : false,
-                        lineTension         : 0
-                        },
-                        {
-                        label: response.variableVar2 ,
-                        data: DatosVar2,
-                        yAxisID : 'y-axis-2',
-                        borderWidth: 1,
-                        backgroundColor     : 'transparent',
-                        borderColor         : '#9803fc',
-                        pointBorderColor    : '#9803fc',
-                        pointBackgroundColor: '#9803fc',
-                        fill                : false,
-                        lineTension         : 0
-                        },
-                        {
-                        label: 'celdas2',
-                        data: CeldasVar2,
-                        yAxisID : 'y-axis-2',
-                        showLine: false,
-                        borderWidth: 1,
-                        backgroundColor     : 'transparent',
-                        borderColor         : 'orange',
-                        pointStyle: 'line',
-                        fill                : false,
-                        lineTension         : 0
-                        },
-                        {
-                        label: 'banda1Var2',
-                        data: banda1Var2,
-                        yAxisID : 'y-axis-2',
-                        borderWidth: 1,
-                        backgroundColor     : 'transparent',
-                        borderColor         : 'brown',
-                        pointStyle: 'line',
-                        fill                : false,
-                        lineTension         : 0
-                        },
-                        {
-                        label: 'banda2Var2',
-                        data: banda2Var2,
-                        yAxisID : 'y-axis-2',
-                        borderWidth: 1,
-                        backgroundColor     : 'transparent',
-                        borderColor         : 'black',
-                        pointStyle: 'line',
-                        fill                : false,
-                        lineTension         : 0
-                       }
-                      ]
+                        if (response.banda2 != null) {
+                            banda2.push(response.banda2);
+                        }
+                        Dia.push(data.dia);
+                        Celdas.push(data.celda);
 
-                  }
-               
-                
-                varChart.options= ChartOptions;
-                varChart.data= ChartData;
-                varChart.update();
-                $('#voltajeChart').CardWidget('expand');
-                $('#thVariable').text(response.variable);
-                $('#thVariable2').text(response.variableVar2);
-                $('#celdaswidget').CardWidget('expand');
-                $('#celdas').DataTable( 
-              { 
-                'data': response.datatable.original.data,
-                "processing": true,
-                "paging": false, 
-                "columns": [
-                  {data: 'celda'},
-                  {data: 'dia'},
-                  {data: response.varKey }
-                          ],
-              "dom": '<"top"fl>rt<"bottom"Bip><"clear">',
-              "buttons": [
-                { extend: 'copy', text: 'copy', className: 'btn btn-primary' },
-                { extend: 'csv', text: 'csv', className: 'btn btn-primary' } ,
-                { extend: 'excel', text: 'excel', className: 'btn btn-primary', } , 
-                { extend: 'pdf', text: 'pdf', className: 'btn btn-primary' } , 
-                { extend: 'print', text: 'print', className: 'btn btn-primary' },  
-                ]
-                });
-                if (response.variableVar2 != null ) {  
-                  $('#celdas2').DataTable( 
-                    { 
-                      'data': response.datatableVar2.original.data,
-                      "processing": true,
-                      "paging": false, 
-                      "columns": [
-                        {data: 'celda'},
-                        {data: 'dia'},
-                        {data: response.varKeyVar2}
-                                ],
-                      "dom": '<"top"fl>rt<"bottom"Bip><"clear">',
-                      "buttons": [
-                        { extend: 'copy', text: 'copy', className: 'btn btn-primary' },
-                        { extend: 'csv', text: 'csv', className: 'btn btn-primary' } ,
-                        { extend: 'excel', text: 'excel', className: 'btn btn-primary', } , 
-                        { extend: 'pdf', text: 'pdf', className: 'btn btn-primary' } , 
-                        { extend: 'print', text: 'print', className: 'btn btn-primary' },  
+                        switch (response.variable) {
+                            case "Voltaje":
+                                Datos.push(data.voltaje);
+                                break;
+
+                            case "Efectos anodicos":
+                                Datos.push(data.numeroEA);
+                                break;
+
+                            case "Desviación de Resistencia":
+                                //$variableDB = 'voltaje';//falta ubicarlo en BD
+                                Datos.push(data.voltaje);
+                                break;
+
+                            case "Alimentacion de Alumina":
+                                Datos.push(data.voltaje);
+                                //$variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+
+                            case "Temperatura de baño":
+                                Datos.push(data.temperatura);
+                                break;
+
+                            case "Duracion de Tracking":
+                                Datos.push(data.duracionTk);
+                                break;
+
+                            case "Acidez de Baño":
+                                Datos.push(data.acidez);
+
+                                break;
+
+                            case "Dump Size Alumina":
+                                Datos.push(data.voltaje);
+                                //    $variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+
+                            case "Consumo AlF3":
+                                Datos.push(data.voltaje);
+                                // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+
+                            case "Track CD":
+                                Datos.push(data.numeroTk);
+                                break;
+
+                            case "Consumo AlF3 Manual":
+                                Datos.push(data.voltaje);
+                                //$variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+
+                            case "VMAX del Efecto Anodico":
+                                Datos.push(data.vMaxEA);
+                                break;
+
+                            case "Eficiencia de Trasegado (Eficiencia de corriente)":
+                                Datos.push(data.voltaje);
+                                //$variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+
+                            case "Duracion de Efecto anódico":
+                                Datos.push(data.duracionEA);
+                                break;
+
+                            case "Nivel de Metal":
+                                Datos.push(data.nivelDeMetal);
+
+                                break;
+
+                            case "Corriente de Linea ":
+                                Datos.push(data.voltaje);
+                                //$variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+
+                            case "Potencia nominal":
+                                Datos.push(data.voltaje);
+                                // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+
+                            case "(BO+RAJ+BIM+Tetas)":
+                                Datos.push(data.voltaje);
+                                //$variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+
+                            case "Potencia Neta":
+                                Datos.push(data.voltaje);
+                                //$variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+
+                            case "Anodos B/O  cambio Normal":
+                                Datos.push(data.voltaje);
+                                //$variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+
+                            case "Nivel de Baño":
+                                Datos.push(data.nivelDeBanio);
+                                break;
+
+                            case "Anodos Bimetalicos":
+                                //$variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+
+                            case "Criolita Neta ":
+                                Datos.push(data.voltaje);
+                                // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+
+                            case "Criolita de Arranque":
+                                Datos.push(data.voltaje);
+                                // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+
+                            case "Anodos B/A":
+                                Datos.push(data.voltaje);
+                                // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+
+                            case "Baño Fase Densa":
+                                Datos.push(data.voltaje);
+                                // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+
+                            case "Desviacion de Temperatura":
+                                Datos.push(data.voltaje);
+                                // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+
+                            case "Hierro Metal de Celdas ":
+                                Datos.push(data.voltaje);
+                                // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+
+                            case "Desviacion Acidez":
+                                Datos.push(data.voltaje);
+                                // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+
+                            case "Silicio Metal Celdas":
+                                Datos.push(data.voltaje);
+                                // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+
+                            case "Desviacion Nm":
+                                Datos.push(data.voltaje);
+                                // $variableDB = 'voltaje'; //falta ubicarlo en BD
+                                break;
+
+                            case "Frecuencia Desnatado":
+                                Datos.push(data.voltaje);
+                                // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+
+                            case "Desviacion Nb":
+                                Datos.push(data.voltaje);
+                                // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+
+                            case "Celdas Conectadas":
+                                Datos.push(data.voltaje);
+                                // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+
+                            case "Frecuencia Efectos Anodicos ":
+                                Datos.push(data.voltaje);
+                                // $variableDB = 'voltaje'; //falta ubicarlo en BD
+                                break;
+
+                            case "% CaF2 en el baño electrolitico":
+                                Datos.push(data.voltaje);
+                                // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                break;
+                        }
+                    });
+                    //obteniendo datos si hay variable 2
+                    if (response.variableVar2 != null) {
+                        response.datosVar2.forEach(function(data) {
+                            if (response.banda1Var2 != null) {
+                                banda1Var2.push(response.banda1Var2);
+                            }
+                            if (response.banda2Var2 != null) {
+                                banda2Var2.push(response.banda2Var2);
+                            }
+                            DiaVar2.push(data.dia);
+                            CeldasVar2.push(data.celda);
+
+                            switch (response.variableVar2) {
+                                case "Voltaje":
+                                    DatosVar2.push(data.voltaje);
+                                    break;
+
+                                case "Efectos anodicos":
+                                    DatosVar2.push(data.numeroEA);
+                                    break;
+
+                                case "Desviación de Resistencia":
+                                    //$variableDB = 'voltaje';//falta ubicarlo en BD
+                                    DatosVar2.push(data.voltaje);
+                                    break;
+
+                                case "Alimentacion de Alumina":
+                                    DatosVar2.push(data.voltaje);
+                                    //$variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+
+                                case "Temperatura de baño":
+                                    DatosVar2.push(data.temperatura);
+                                    break;
+
+                                case "Duracion de Tracking":
+                                    DatosVar2.push(data.duracionTk);
+                                    break;
+
+                                case "Acidez de Baño":
+                                    DatosVar2.push(data.acidez);
+
+                                    break;
+
+                                case "Dump Size Alumina":
+                                    DatosVar2.push(data.voltaje);
+                                    //    $variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+
+                                case "Consumo AlF3":
+                                    DatosVar2.push(data.voltaje);
+                                    // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+
+                                case "Track CD":
+                                    DatosVar2.push(data.numeroTk);
+                                    break;
+
+                                case "Consumo AlF3 Manual":
+                                    DatosVar2.push(data.voltaje);
+                                    //$variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+
+                                case "VMAX del Efecto Anodico":
+                                    DatosVar2.push(data.vMaxEA);
+                                    break;
+
+                                case "Eficiencia de Trasegado (Eficiencia de corriente)":
+                                    DatosVar2.push(data.voltaje);
+                                    //$variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+
+                                case "Duracion de Efecto anódico":
+                                    DatosVar2.push(data.duracionEA);
+                                    break;
+
+                                case "Nivel de Metal":
+                                    DatosVar2.push(data.nivelDeMetal);
+
+                                    break;
+
+                                case "Corriente de Linea ":
+                                    DatosVar2.push(data.voltaje);
+                                    //$variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+
+                                case "Potencia nominal":
+                                    DatosVar2.push(data.voltaje);
+                                    // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+
+                                case "(BO+RAJ+BIM+Tetas)":
+                                    DatosVar2.push(data.voltaje);
+                                    //$variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+
+                                case "Potencia Neta":
+                                    DatosVar2.push(data.voltaje);
+                                    //$variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+
+                                case "Anodos B/O  cambio Normal":
+                                    DatosVar2.push(data.voltaje);
+                                    //$variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+
+                                case "Nivel de Baño":
+                                    DatosVar2.push(data.nivelDeBanio);
+                                    break;
+
+                                case "Anodos Bimetalicos":
+                                    //$variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+
+                                case "Criolita Neta ":
+                                    DatosVar2.push(data.voltaje);
+                                    // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+
+                                case "Criolita de Arranque":
+                                    DatosVar2.push(data.voltaje);
+                                    // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+
+                                case "Anodos B/A":
+                                    DatosVar2.push(data.voltaje);
+                                    // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+
+                                case "Baño Fase Densa":
+                                    DatosVar2.push(data.voltaje);
+                                    // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+
+                                case "Desviacion de Temperatura":
+                                    DatosVar2.push(data.voltaje);
+                                    // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+
+                                case "Hierro Metal de Celdas ":
+                                    DatosVar2.push(data.voltaje);
+                                    // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+
+                                case "Desviacion Acidez":
+                                    DatosVar2.push(data.voltaje);
+                                    // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+
+                                case "Silicio Metal Celdas":
+                                    DatosVar2.push(data.voltaje);
+                                    // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+
+                                case "Desviacion Nm":
+                                    DatosVar2.push(data.voltaje);
+                                    // $variableDB = 'voltaje'; //falta ubicarlo en BD
+                                    break;
+
+                                case "Frecuencia Desnatado":
+                                    DatosVar2.push(data.voltaje);
+                                    // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+
+                                case "Desviacion Nb":
+                                    DatosVar2.push(data.voltaje);
+                                    // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+
+                                case "Celdas Conectadas":
+                                    DatosVar2.push(data.voltaje);
+                                    // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+
+                                case "Frecuencia Efectos Anodicos ":
+                                    DatosVar2.push(data.voltaje);
+                                    // $variableDB = 'voltaje'; //falta ubicarlo en BD
+                                    break;
+
+                                case "% CaF2 en el baño electrolitico":
+                                    DatosVar2.push(data.voltaje);
+                                    // $variableDB = 'voltaje';//falta ubicarlo en BD
+                                    break;
+                            }
+                        });
+                    }
+                    // mostrando variables para verificacion
+                      console.log("etiqueta");
+                      console.log(etiqueta);
+                      console.log("Dia");
+                      console.log(Dia);
+                      console.log("Celdas");
+                      console.log(Celdas);
+                      console.log("Datos");
+                      console.log(Datos);
+                      console.log("banda1");
+                      console.log(banda1);
+                      console.log("banda2");
+                      console.log(banda2);
+
+                      console.log("DiaVar2");
+                      console.log(DiaVar2);
+                      console.log("CeldasVar2");
+                      console.log(CeldasVar2);
+                      console.log("DatosVar2");
+                      console.log(DatosVar2);
+                      console.log("banda1Var2");
+                      console.log(banda1Var2);
+                      console.log("banda2Var2");
+                      console.log(banda2Var2);
+                    // fin de muestra de variables
+                    mostrar("#cardGrafica");
+                    mostrar("#cardTablaDatos");
+                    if (response.variableVar2 != null) {
+                        console.log("entro");
+                        mostrar("#celdas2");
+                    }
+
+                    var ChartOptions = {
+                        responsive: true,
+                        hoverMode: 'index',
+                        stacked: false,
+                        responsive: true,
+                        title: {
+                          display: true,
+                          text: 'Grafica SICER' + response.variable 
+                        },
+                        tooltips: {
+                          mode: 'nearest',
+                          intersect: true,
+                        },
+                        hover: {
+                          mode: 'nearest',
+                          intersect: true,
+                        },
+                        scales: {
+                            yAxes: [
+                                {
+                                    scaleLabel: {
+                                        labelString: response.ylabel,
+                                        display: true
+                                    },
+                                    type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                                    display: true,
+                                    position: "left",
+                                    id: "y-axis-1",
+                                    ticks: {
+                                        min: response.miny,
+                                        max: response.maxy
+                                    }
+                                },
+                                {
+                                    type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                                    display: true,
+                                    scaleLabel: {
+                                        labelString: response.ylabelVar2,
+                                        display: true
+                                    },
+                                    position: "right",
+                                    id: "y-axis-2",
+                                    ticks: {
+                                        min: response.minyVar2,
+                                        max: response.maxyVar2
+                                    }
+                                }
+                            ],
+
+                            xAxes: [
+                                {
+                                    scaleLabel: {
+                                        labelString: response.xlabel,
+                                        display: true
+                                    },
+                                    position: "bottom",
+                                    id: "x-axis-1",
+                                    ticks: {
+                                        // maxTicksLimit: 20
+                                    }
+                                }
+                            ]
+                        }
+                    };
+                    var ChartData = {
+                        labels: Dia,
+                        datasets: [
+                            {
+                                label: response.variable,
+                                data: Datos,
+                                yAxisID: "y-axis-1",
+                                borderWidth: 1,
+                                backgroundColor: "transparent",
+                                borderColor: "#007bff",
+                                pointBorderColor: "#007bff",
+                                pointBackgroundColor: "#007bff",
+                                fill: false,
+                                lineTension: 0
+                            },
+                            {
+                                label: "celdas",
+                                data: Celdas,
+                                yAxisID: "y-axis-1",
+                                showLine: true,
+                                borderWidth: 1,
+                                backgroundColor: "transparent",
+                                borderColor: "green",
+                                pointBackgroundColor: "green",
+                                pointBorderColor: "green",
+                                pointStyle: "line",
+                                fill: false,
+                                lineTension: 0
+                            },
+                            {
+                                label: "banda1",
+                                data: banda1,
+                                yAxisID: "y-axis-1",
+                                borderWidth: 1,
+                                backgroundColor: "transparent",
+                                borderColor: "red",
+                                pointStyle: "line",
+                                fill: false,
+                                lineTension: 0
+                            },
+                            {
+                                label: "banda2",
+                                data: banda2,
+                                yAxisID: "y-axis-1",
+                                borderWidth: 1,
+                                backgroundColor: "transparent",
+                                borderColor: "yellow",
+                                pointStyle: "line",
+                                fill: false,
+                                lineTension: 0
+                            },
+                            {
+                                label: response.variableVar2,
+                                data: DatosVar2,
+                                yAxisID: "y-axis-2",
+                                borderWidth: 1,
+                                backgroundColor: "transparent",
+                                borderColor: "#9803fc",
+                                pointBorderColor: "#9803fc",
+                                pointBackgroundColor: "#9803fc",
+                                fill: false,
+                                lineTension: 0
+                            },
+                            {
+                                label: "celdas2",
+                                data: CeldasVar2,
+                                yAxisID: "y-axis-2",
+                                showLine: false,
+                                borderWidth: 1,
+                                backgroundColor: "transparent",
+                                borderColor: "orange",
+                                pointStyle: "line",
+                                fill: false,
+                                lineTension: 0
+                            },
+                            {
+                                label: "banda1Var2",
+                                data: banda1Var2,
+                                yAxisID: "y-axis-2",
+                                borderWidth: 1,
+                                backgroundColor: "transparent",
+                                borderColor: "brown",
+                                pointStyle: "line",
+                                fill: false,
+                                lineTension: 0
+                            },
+                            {
+                                label: "banda2Var2",
+                                data: banda2Var2,
+                                yAxisID: "y-axis-2",
+                                borderWidth: 1,
+                                backgroundColor: "transparent",
+                                borderColor: "black",
+                                pointStyle: "line",
+                                fill: false,
+                                lineTension: 0
+                            }
+                        ]
+                    };
+
+                    varChart.options = ChartOptions;
+                    varChart.data = ChartData;
+                    varChart.update();
+                    $("#voltajeChart").CardWidget("expand");
+                    $("#thVariable").text(response.variable);
+                    $("#thVariable2").text(response.variableVar2);
+                    $("#celdaswidget").CardWidget("expand");
+                    $("#celdas").DataTable({
+                        data: response.datatable.original.data,
+                        processing: true,
+                        paging: false,
+                        columns: [
+                            { data: "celda" },
+                            { data: "dia" },
+                            { data: response.varKey }
+                        ],
+                        dom: '<"top"fl>rt<"bottom"Bip><"clear">',
+                        buttons: [
+                            {
+                                extend: "copy",
+                                text: "copy",
+                                className: "btn btn-primary"
+                            },
+                            {
+                                extend: "csv",
+                                text: "csv",
+                                className: "btn btn-primary"
+                            },
+                            {
+                                extend: "excel",
+                                text: "excel",
+                                className: "btn btn-primary"
+                            },
+                            {
+                                extend: "pdf",
+                                text: "pdf",
+                                className: "btn btn-primary"
+                            },
+                            {
+                                extend: "print",
+                                text: "print",
+                                className: "btn btn-primary"
+                            }
                         ]
                     });
+                    if (response.variableVar2 != null) {
+                        $("#celdas2").DataTable({
+                            data: response.datatableVar2.original.data,
+                            processing: true,
+                            paging: false,
+                            columns: [
+                                { data: "celda" },
+                                { data: "dia" },
+                                { data: response.varKeyVar2 }
+                            ],
+                            dom: '<"top"fl>rt<"bottom"Bip><"clear">',
+                            buttons: [
+                                {
+                                    extend: "copy",
+                                    text: "copy",
+                                    className: "btn btn-primary"
+                                },
+                                {
+                                    extend: "csv",
+                                    text: "csv",
+                                    className: "btn btn-primary"
+                                },
+                                {
+                                    extend: "excel",
+                                    text: "excel",
+                                    className: "btn btn-primary"
+                                },
+                                {
+                                    extend: "pdf",
+                                    text: "pdf",
+                                    className: "btn btn-primary"
+                                },
+                                {
+                                    extend: "print",
+                                    text: "print",
+                                    className: "btn btn-primary"
+                                }
+                            ]
+                        });
+                    }
+                },
+                error: function(data) {
+                    /*
+                    * Se ejecuta si la peticón ha sido erronea
+                    * */
+                    alert("Problemas al tratar de enviar el formulario "+ data );
                 }
-              },
-            error: function(data){
-                /*
-                * Se ejecuta si la peticón ha sido erronea
-                * */
-                alert("Problemas al tratar de enviar el formulario");
-            }
+            });
+            // Nos permite cancelar el envio del formulario
+            return false;
         });
-        // Nos permite cancelar el envio del formulario
-        return false;
     });
-});
 
-
-
-
-  /*
-
-
-
-    var areaChartData = {
-      labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-      datasets: [
-        {
-          label               : 'voltaje celda 1',
-          backgroundColor     : 'rgba(60,141,188,0.9)',
-          borderColor         : 'rgba(60,141,188,0.8)',
-          pointRadius          : false,
-          pointColor          : '#3b8bba',
-          pointStrokeColor    : 'rgba(60,141,188,1)',
-          pointHighlightFill  : '#fff',
-          lineTension         : 0,
-          pointHighlightStroke: 'rgba(60,141,188,1)',
-          data                : [28, 48, 40, 19, 86, 27, 90]
-        },
-        {
-          label               : 'celda 2',
-          backgroundColor     : 'rgba(210, 214, 222, 1)',
-          borderColor         : 'rgba(210, 214, 222, 1)',
-          pointRadius         : false,
-          pointColor          : 'rgba(210, 214, 222, 1)',
-          pointStrokeColor    : '#c1c7d1',
-          pointHighlightFill  : '#fff',
-          lineTension         : 0,
-          pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : [65, 59, 80, 81, 56, 55, 40]
-        },
-        {
-          label               : 'Constant',
-          backgroundColor     : 'rgba(210, 214, 222, 1)',
-          borderColor         : 'rgba(210, 214, 222, 1)',
-          pointRadius         : false,
-          pointColor          : 'rgba(210, 214, 222, 1)',
-          pointStrokeColor    : '#c1c7d1',
-          pointHighlightFill  : '#fff',
-          lineTension         : 0,
-          pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : [50]
-        },
-      ]
-    }
-
-    var areaChartOptions = {
-      maintainAspectRatio : false,
-      responsive : true,
-      legend: {
-        display: false
-      },
-      scales: {
-        xAxes: [{
-          gridLines : {
-            display : true,
+    /*
+        
+        
+        
+            var areaChartData = {
+              labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+              datasets: [
+                {
+                  label               : 'voltaje celda 1',
+                  backgroundColor     : 'rgba(60,141,188,0.9)',
+                  borderColor         : 'rgba(60,141,188,0.8)',
+                  pointRadius          : false,
+                  pointColor          : '#3b8bba',
+                  pointStrokeColor    : 'rgba(60,141,188,1)',
+                  pointHighlightFill  : '#fff',
+                  lineTension         : 0,
+                  pointHighlightStroke: 'rgba(60,141,188,1)',
+                  data                : [28, 48, 40, 19, 86, 27, 90]
+                },
+                {
+                  label               : 'celda 2',
+                  backgroundColor     : 'rgba(210, 214, 222, 1)',
+                  borderColor         : 'rgba(210, 214, 222, 1)',
+                  pointRadius         : false,
+                  pointColor          : 'rgba(210, 214, 222, 1)',
+                  pointStrokeColor    : '#c1c7d1',
+                  pointHighlightFill  : '#fff',
+                  lineTension         : 0,
+                  pointHighlightStroke: 'rgba(220,220,220,1)',
+                  data                : [65, 59, 80, 81, 56, 55, 40]
+                },
+                {
+                  label               : 'Constant',
+                  backgroundColor     : 'rgba(210, 214, 222, 1)',
+                  borderColor         : 'rgba(210, 214, 222, 1)',
+                  pointRadius         : false,
+                  pointColor          : 'rgba(210, 214, 222, 1)',
+                  pointStrokeColor    : '#c1c7d1',
+                  pointHighlightFill  : '#fff',
+                  lineTension         : 0,
+                  pointHighlightStroke: 'rgba(220,220,220,1)',
+                  data                : [50]
+                },
+              ]
+            }
+        
+            var areaChartOptions = {
+              maintainAspectRatio : false,
+              responsive : true,
+              legend: {
+                display: false
+              },
+              scales: {
+                xAxes: [{
+                  gridLines : {
+                    display : true,
+                  }
+                }],
+                yAxes: [{
+                  gridLines : {
+                    display : true,
+                  }
+                }]
+              }
+            }
+        
+            //-------------
+            //- LINE CHART -
+            //--------------
+            var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
+            var lineChartOptions = jQuery.extend(true, {}, areaChartOptions)
+            var lineChartData = jQuery.extend(true, {}, areaChartData)
+            lineChartData.datasets[0].fill = false;
+            lineChartData.datasets[1].fill = false;
+            lineChartData.datasets[2].fill = true;
+            lineChartOptions.datasetFill = false
+        
+            var lineChart = new Chart(lineChartCanvas, { 
+              type: 'line',
+              data: lineChartData, 
+              options: lineChartOptions
+            })
+        
+        
+        
+        
+        
+        // otras graficas 
+            var lineChart1Canvas = $('#lineChart1').get(0).getContext('2d')
+            var lineChart1Options = jQuery.extend(true, {}, areaChartOptions)
+            var lineChart1Data = jQuery.extend(true, {}, areaChartData)
+            lineChart1Data.datasets[0].fill = false;
+            lineChart1Data.datasets[1].fill = false;
+            lineChart1Data.datasets[2].fill = true;
+            lineChart1Options.datasetFill = false
+        
+            var lineChart1 = new Chart(lineChart1Canvas, { 
+              type: 'line',
+              data: lineChart1Data, 
+              options: lineChart1Options
+            })
+        
+        
+            var desvResistChartCanvas = $('#desvResistChart').get(0).getContext('2d')
+            var desvResistChartOptions = jQuery.extend(true, {}, areaChartOptions)
+            var desvResistChartData = jQuery.extend(true, {}, areaChartData)
+            desvResistChartData.datasets[0].fill = false;
+            desvResistChartData.datasets[1].fill = false;
+            desvResistChartData.datasets[2].fill = true;
+            desvResistChartOptions.datasetFill = false
+        
+            var desvResistChart = new Chart(desvResistChartCanvas, { 
+              type: 'line',
+              data: desvResistChartData, 
+              options: desvResistChartOptions
+            })
+            
+        
+            var temperaturatChartCanvas = $('#temperaturatChart').get(0).getContext('2d')
+            var temperaturatChartOptions = jQuery.extend(true, {}, areaChartOptions)
+            var temperaturatChartData = jQuery.extend(true, {}, areaChartData)
+            temperaturatChartData.datasets[0].fill = false;
+            temperaturatChartData.datasets[1].fill = false;
+            temperaturatChartData.datasets[2].fill = true;
+            temperaturatChartOptions.datasetFill = false
+        
+            var temperaturatChart = new Chart(temperaturatChartCanvas, { 
+              type: 'line',
+              data: temperaturatChartData, 
+              options: temperaturatChartOptions
+            })
+            
+            var acidBanoChartCanvas = $('#acidBanoChart').get(0).getContext('2d')
+            var acidBanoChartOptions = jQuery.extend(true, {}, areaChartOptions)
+            var acidBanoChartData = jQuery.extend(true, {}, areaChartData)
+            acidBanoChartData.datasets[0].fill = false;
+            acidBanoChartData.datasets[1].fill = false;
+            acidBanoChartData.datasets[2].fill = true;
+            acidBanoChartOptions.datasetFill = false
+        
+            var acidBanoChart = new Chart(acidBanoChartCanvas, { 
+              type: 'line',
+              data: acidBanoChartData, 
+              options: acidBanoChartOptions
+            })
+            
+            var consumoAlChartCanvas = $('#consumoAlChart').get(0).getContext('2d')
+            var consumoAlChartOptions = jQuery.extend(true, {}, areaChartOptions)
+            var consumoAlChartData = jQuery.extend(true, {}, areaChartData)
+            consumoAlChartData.datasets[0].fill = false;
+            consumoAlChartData.datasets[1].fill = false;
+            consumoAlChartData.datasets[2].fill = true;
+            consumoAlChartOptions.datasetFill = false
+        
+            var consumoAlChart = new Chart(consumoAlChartCanvas, { 
+              type: 'line',
+              data: consumoAlChartData, 
+              options: consumoAlChartOptions
+            })
+        
+            var consumoAlManChartCanvas = $('#consumoAlManChart').get(0).getContext('2d')
+            var consumoAlManChartOptions = jQuery.extend(true, {}, areaChartOptions)
+            var consumoAlManChartData = jQuery.extend(true, {}, areaChartData)
+            consumoAlManChartData.datasets[0].fill = false;
+            consumoAlManChartData.datasets[1].fill = false;
+            consumoAlManChartData.datasets[2].fill = true;
+            consumoAlManChartOptions.datasetFill = false
+        
+            var consumoAlManChart = new Chart(consumoAlManChartCanvas, { 
+              type: 'line',
+              data: consumoAlManChartData, 
+              options: consumoAlManChartOptions
+            })
+        
+        
+            var eficTrasegChartCanvas = $('#eficTrasegChart').get(0).getContext('2d')
+            var eficTrasegChartOptions = jQuery.extend(true, {}, areaChartOptions)
+            var eficTrasegChartData = jQuery.extend(true, {}, areaChartData)
+            eficTrasegChartData.datasets[0].fill = false;
+            eficTrasegChartData.datasets[1].fill = false;
+            eficTrasegChartData.datasets[2].fill = true;
+            eficTrasegChartOptions.datasetFill = false
+        
+            var eficTrasegChart = new Chart(eficTrasegChartCanvas, { 
+              type: 'line',
+              data: eficTrasegChartData, 
+              options: eficTrasegChartOptions
+            })
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            //SEGUNDA GRAFICA
+            var ticksStyle = {
+            fontColor: '#495057',
+            fontStyle: 'bold'
           }
-        }],
-        yAxes: [{
-          gridLines : {
-            display : true,
-          }
-        }]
-      }
-    }
-
-    //-------------
-    //- LINE CHART -
-    //--------------
-    var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
-    var lineChartOptions = jQuery.extend(true, {}, areaChartOptions)
-    var lineChartData = jQuery.extend(true, {}, areaChartData)
-    lineChartData.datasets[0].fill = false;
-    lineChartData.datasets[1].fill = false;
-    lineChartData.datasets[2].fill = true;
-    lineChartOptions.datasetFill = false
-
-    var lineChart = new Chart(lineChartCanvas, { 
-      type: 'line',
-      data: lineChartData, 
-      options: lineChartOptions
-    })
-
-
-
-
-
-// otras graficas 
-    var lineChart1Canvas = $('#lineChart1').get(0).getContext('2d')
-    var lineChart1Options = jQuery.extend(true, {}, areaChartOptions)
-    var lineChart1Data = jQuery.extend(true, {}, areaChartData)
-    lineChart1Data.datasets[0].fill = false;
-    lineChart1Data.datasets[1].fill = false;
-    lineChart1Data.datasets[2].fill = true;
-    lineChart1Options.datasetFill = false
-
-    var lineChart1 = new Chart(lineChart1Canvas, { 
-      type: 'line',
-      data: lineChart1Data, 
-      options: lineChart1Options
-    })
-
-
-    var desvResistChartCanvas = $('#desvResistChart').get(0).getContext('2d')
-    var desvResistChartOptions = jQuery.extend(true, {}, areaChartOptions)
-    var desvResistChartData = jQuery.extend(true, {}, areaChartData)
-    desvResistChartData.datasets[0].fill = false;
-    desvResistChartData.datasets[1].fill = false;
-    desvResistChartData.datasets[2].fill = true;
-    desvResistChartOptions.datasetFill = false
-
-    var desvResistChart = new Chart(desvResistChartCanvas, { 
-      type: 'line',
-      data: desvResistChartData, 
-      options: desvResistChartOptions
-    })
-    
-
-    var temperaturatChartCanvas = $('#temperaturatChart').get(0).getContext('2d')
-    var temperaturatChartOptions = jQuery.extend(true, {}, areaChartOptions)
-    var temperaturatChartData = jQuery.extend(true, {}, areaChartData)
-    temperaturatChartData.datasets[0].fill = false;
-    temperaturatChartData.datasets[1].fill = false;
-    temperaturatChartData.datasets[2].fill = true;
-    temperaturatChartOptions.datasetFill = false
-
-    var temperaturatChart = new Chart(temperaturatChartCanvas, { 
-      type: 'line',
-      data: temperaturatChartData, 
-      options: temperaturatChartOptions
-    })
-    
-    var acidBanoChartCanvas = $('#acidBanoChart').get(0).getContext('2d')
-    var acidBanoChartOptions = jQuery.extend(true, {}, areaChartOptions)
-    var acidBanoChartData = jQuery.extend(true, {}, areaChartData)
-    acidBanoChartData.datasets[0].fill = false;
-    acidBanoChartData.datasets[1].fill = false;
-    acidBanoChartData.datasets[2].fill = true;
-    acidBanoChartOptions.datasetFill = false
-
-    var acidBanoChart = new Chart(acidBanoChartCanvas, { 
-      type: 'line',
-      data: acidBanoChartData, 
-      options: acidBanoChartOptions
-    })
-    
-    var consumoAlChartCanvas = $('#consumoAlChart').get(0).getContext('2d')
-    var consumoAlChartOptions = jQuery.extend(true, {}, areaChartOptions)
-    var consumoAlChartData = jQuery.extend(true, {}, areaChartData)
-    consumoAlChartData.datasets[0].fill = false;
-    consumoAlChartData.datasets[1].fill = false;
-    consumoAlChartData.datasets[2].fill = true;
-    consumoAlChartOptions.datasetFill = false
-
-    var consumoAlChart = new Chart(consumoAlChartCanvas, { 
-      type: 'line',
-      data: consumoAlChartData, 
-      options: consumoAlChartOptions
-    })
-
-    var consumoAlManChartCanvas = $('#consumoAlManChart').get(0).getContext('2d')
-    var consumoAlManChartOptions = jQuery.extend(true, {}, areaChartOptions)
-    var consumoAlManChartData = jQuery.extend(true, {}, areaChartData)
-    consumoAlManChartData.datasets[0].fill = false;
-    consumoAlManChartData.datasets[1].fill = false;
-    consumoAlManChartData.datasets[2].fill = true;
-    consumoAlManChartOptions.datasetFill = false
-
-    var consumoAlManChart = new Chart(consumoAlManChartCanvas, { 
-      type: 'line',
-      data: consumoAlManChartData, 
-      options: consumoAlManChartOptions
-    })
-
-
-    var eficTrasegChartCanvas = $('#eficTrasegChart').get(0).getContext('2d')
-    var eficTrasegChartOptions = jQuery.extend(true, {}, areaChartOptions)
-    var eficTrasegChartData = jQuery.extend(true, {}, areaChartData)
-    eficTrasegChartData.datasets[0].fill = false;
-    eficTrasegChartData.datasets[1].fill = false;
-    eficTrasegChartData.datasets[2].fill = true;
-    eficTrasegChartOptions.datasetFill = false
-
-    var eficTrasegChart = new Chart(eficTrasegChartCanvas, { 
-      type: 'line',
-      data: eficTrasegChartData, 
-      options: eficTrasegChartOptions
-    })
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //SEGUNDA GRAFICA
-    var ticksStyle = {
-    fontColor: '#495057',
-    fontStyle: 'bold'
-  }
-    var mode      = 'index'
-    var intersect = true
-    var $voltajeChartCanvas = $('#voltajeChart').get(0).getContext('2d')
-    var voltajeChart  = new Chart($voltajeChartCanvas, {
-    data   : {
-      labels  : ['18th', '20th', '22nd', '24th', '26th', '28th', '30th'],
-      datasets: [{
-        type                : 'line',
-        data                : [100, 120, 170, 167, 180, 177, 160],
-        backgroundColor     : 'transparent',
-        borderColor         : '#007bff',
-        pointBorderColor    : '#007bff',
-        pointBackgroundColor: '#007bff',
-        fill                : false
-        // pointHoverBackgroundColor: '#007bff',
-        // pointHoverBorderColor    : '#007bff'
-      },
-        {
-          type                : 'line',
-          data                : [60, 80, 70, 67, 80, 77, 100],
-          backgroundColor     : 'tansparent',
-          borderColor         : '#ced4da',
-          pointBorderColor    : '#ced4da',
-          pointBackgroundColor: '#ced4da',
-          fill                : false
-          // pointHoverBackgroundColor: '#ced4da',
-          // pointHoverBorderColor    : '#ced4da'
-        }]
-    },
-    options: {
-      maintainAspectRatio: false,
-      tooltips           : {
-        mode     : mode,
-        intersect: intersect
-      },
-      hover              : {
-        mode     : mode,
-        intersect: intersect
-      },
-      legend             : {
-        display: false
-      },
-      scales             : {
-        yAxes: [{
-          // display: false,
-          gridLines: {
-            display      : true,
-            lineWidth    : '4px',
-            color        : 'rgba(0, 0, 0, .2)',
-            zeroLineColor: 'transparent'
-          },
-          ticks    : $.extend({
-            beginAtZero : true,
-            suggestedMax: 200
-          }, ticksStyle)
-        }],
-        xAxes: [{
-          display  : true,
-          gridLines: {
-            display: false
-          },
-          ticks    : ticksStyle
-        }]
-      }
-    }
-  })
-
-
-*/
+            var mode      = 'index'
+            var intersect = true
+            var $voltajeChartCanvas = $('#voltajeChart').get(0).getContext('2d')
+            var voltajeChart  = new Chart($voltajeChartCanvas, {
+            data   : {
+              labels  : ['18th', '20th', '22nd', '24th', '26th', '28th', '30th'],
+              datasets: [{
+                type                : 'line',
+                data                : [100, 120, 170, 167, 180, 177, 160],
+                backgroundColor     : 'transparent',
+                borderColor         : '#007bff',
+                pointBorderColor    : '#007bff',
+                pointBackgroundColor: '#007bff',
+                fill                : false
+                // pointHoverBackgroundColor: '#007bff',
+                // pointHoverBorderColor    : '#007bff'
+              },
+                {
+                  type                : 'line',
+                  data                : [60, 80, 70, 67, 80, 77, 100],
+                  backgroundColor     : 'tansparent',
+                  borderColor         : '#ced4da',
+                  pointBorderColor    : '#ced4da',
+                  pointBackgroundColor: '#ced4da',
+                  fill                : false
+                  // pointHoverBackgroundColor: '#ced4da',
+                  // pointHoverBorderColor    : '#ced4da'
+                }]
+            },
+            options: {
+              maintainAspectRatio: false,
+              tooltips           : {
+                mode     : mode,
+                intersect: intersect
+              },
+              hover              : {
+                mode     : mode,
+                intersect: intersect
+              },
+              legend             : {
+                display: false
+              },
+              scales             : {
+                yAxes: [{
+                  // display: false,
+                  gridLines: {
+                    display      : true,
+                    lineWidth    : '4px',
+                    color        : 'rgba(0, 0, 0, .2)',
+                    zeroLineColor: 'transparent'
+                  },
+                  ticks    : $.extend({
+                    beginAtZero : true,
+                    suggestedMax: 200
+                  }, ticksStyle)
+                }],
+                xAxes: [{
+                  display  : true,
+                  gridLines: {
+                    display: false
+                  },
+                  ticks    : ticksStyle
+                }]
+              }
+            }
+          })
+        
+        
+        */
 
 
 </script>
