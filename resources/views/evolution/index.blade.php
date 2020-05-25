@@ -7,7 +7,7 @@
 <div class="card">
   <div class="card-header">
     <h3 class="card-title">Formulario de consulta</h3>
-    
+
     <div class="card-tools">
       <!-- Buttons, labels, and many other things can be placed here! -->
       <!-- Here is a label for example -->
@@ -16,172 +16,103 @@
     <!-- /.card-tools -->
   </div>
   <!-- /.card-header -->
-  
+
   <div class="card-body">
     <form id="formData">
       <div class="form-row">
-      <div class ="col-md-3 mr-1">
-      <div id= "selectOrden" class="form-group " >
-        <label>Opcion eje x</label>
-        <select id="orden" name="orden" class="form-control">
-          <option selected>Fecha</option>
-          <option>Celda</option>
-        </select>
-      </div>
-          <!-- /.form group -->
-      <div class="form-group">
-        <label>Rango de fecha y hora</label>
-        <div class="input-group ">
-          <div class="input-group-prepend">
-            <span class="input-group-text"><i class="far fa-clock"></i></span>
+        <div class="col-md-3 mr-1">
+          <div id="selectOrden" class="form-group">
+            <label>Opcion eje x</label>
+            <select id="orden" name="orden" class="form-control">
+              <option selected>Fecha</option>
+              <option>Celda</option>
+            </select>
           </div>
-          <input type="text" name="rangoFecha" class="form-control float-right " id="rangoFecha">
-        </div>
-        <!-- /.input group -->
-      </div>
-      <!-- /.form group -->
-   
-      <div class="form-group">
-          <label >Rango de celdas</label>
-          <div class="form-row form-inline">
+          <!-- /.form group -->
+          <div class="form-group">
+            <label>Rango de fecha y hora</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"
+                  ><i class="far fa-clock"></i
+                ></span>
+              </div>
+              <input
+                type="text"
+                name="rangoFecha"
+                class="form-control float-right"
+                id="rangoFecha"
+              />
+            </div>
+            <!-- /.input group -->
+          </div>
+          <!-- /.form group -->
+
+          <div class="form-group">
+            <label>Rango de celdas</label>
+            <div class="form-row form-inline">
               <div class="input-group col-md-6">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fa fa-th"></i></span>
                 </div>
-                  <input type="number"
-                    class="form-control" name="celda1" min="901" max="1090" id="celda1" aria-describedby="helpId" placeholder="">
+                <input
+                  type="number"
+                  class="form-control"
+                  name="celda1"
+                  min="901"
+                  max="1090"
+                  id="celda1"
+                  aria-describedby="helpId"
+                  placeholder=""
+                />
               </div>
               <!--  / input group -->
               <span class=""> - </span>
-              <div class="input-group col-md-5 ">
-                  <input type="number"
-                    class="form-control" name="celda2" min="901" max="1090" id="celda2" aria-describedby="helpId" placeholder="">
+              <div class="input-group col-md-5">
+                <input
+                  type="number"
+                  class="form-control"
+                  name="celda2"
+                  min="901"
+                  max="1090"
+                  id="celda2"
+                  aria-describedby="helpId"
+                  placeholder=""
+                />
               </div>
               <!--  / input group -->
-              
-              
+            </div>
+            <small id="helpId" class="form-text text-muted"
+              >Celdas 901-1090</small
+            >
+            <!-- /.form row -->
+            <div class="custom-control custom-checkbox">
+              <input
+                type="checkbox"
+                name="checkLinea"
+                class="custom-control-input"
+                id="checkLinea"
+              />
+              <label class="custom-control-label" for="checkLinea"
+                >Linea V</label
+              >
+            </div>
           </div>
-          <small id="helpId" class="form-text text-muted">Celdas 901-1090</small>
-          <!-- /.form row -->
-          <div class="custom-control custom-checkbox ">
-            <input type="checkbox" name="checkLinea" class="custom-control-input" id="checkLinea">
-            <label class="custom-control-label" for="checkLinea">Linea V</label>
-          </div>
-      </div>
-      <!-- /.form group -->
-      </div>
-
-      <div class ="col-md-4 mr-2">
-      <div id= "formvariable" class="form-group ">
-        <label for="variable">Variable 1</label>
-        <select id="variable" name="variable" class="form-control">
-        <option selected>Voltaje</option>
-          <option>Efectos anodicos</option>
-          <option>Alimentacion de alumina</option>
-          <option>Temperatura de baño</option>
-          <option>Duracion del tracking</option>
-          <option>Acidez de baño</option>
-           <!-- <option>Consumo de alumina</option>  -->
-          <option>Dump Size Alumina</option>
-          <option>Consumo AlF3</option>
-          <option>Track CD</option>
-          <option>Consumo AlF3 Manual</option>
-          <option>VMAX del Efecto Anodico</option>
-          <option>Eficiencia de Trasegado (Eficiencia de corriente)</option>
-          <option>Duracion de Efecto anódico</option>
-          <option>Nivel de Metal</option>
-          <option>Corriente de Linea</option>
-          <option>Potencia nominal</option>
-          <option>(BO+RAJ+BIM+Tetas)</option>
-          <option>Potencia Neta</option>
-          <option>Anodos B/O cambio Normal</option>
-          <option>Nivel de Baño</option>
-          <option>Anodos Bimetalicos</option>
-          <option>Criolita Neta</option>
-          <option>Criolita de Arranque</option>
-          <option>Anodos B/A</option>
-          <option>Baño Fase Densa</option>
-          <option>Desviacion de Temperatura</option>
-          <option>Hierro Metal de Celdas </option>
-          <option>Desviacion Acidez</option>
-          <option>Silicio Metal Celdas </option>
-          <option>Desviacion Nm</option>
-          <option>Frecuencia Desnatado</option>
-          <option>Desviacion Nb</option>
-          <option>Celdas Conectadas</option>
-          <option>Frecuencia Efectos Anodicos</option>
-          <option>% CaF2 en el baño electrolitico</option>
-
-
-        </select>
-      </div>
-      <!-- /.form group -->
-      
-      <div class="form-group">
-          <label >Rango de operacion</label>
-          <br>
-          <label>Rango 1 a consultar</label>
-          <div class="form-row form-inline">
-              <div class="input-group col-md-6 ">
-                <div class="input-group-prepend   ">
-                  <span class="input-group-text">operador</span>
-                </div>
-                <select class="custom-select  "  id="operador1" name="operador1">
-                <option selected value=""></option>
-                  <option value="mayor">></option>
-                  <option value="menor"><</option>
-                  <option value="menorigual">&le;</option>
-                  <option value="mayorigual">&ge;</option>
-                </select>
-              </div> 
-              <!--  / input group -->
-              <div class="input-group col-md-6">
-                <div class="input-group-prepend  ">
-                  <span class="input-group-text ">rango 1</span>
-                </div>
-                <input type="number" step="0.01" name="rango1" class="form-control float-right " id="rango1">
-              </div>
-              <!--  / input group -->
-            </div>  
-            <!-- /.form row -->  
-              
-            <label>Rango 2 a consultar</label>
-            <div class="form-row form-inline">
-              <div class="input-group col-md-6 offset-6">
-                <div class="input-group-prepend  ">
-                  <span class="input-group-text ">rango 2</span>
-                </div>
-                <input type="number" step="0.01" name="rango2" class="form-control float-right " id="rango2">
-              </div>
-              <!--  / input group -->
-            </div>  
-            <!-- /.form row --> 
-      </div>
-      <!-- /.form group -->
-      </div>
-      
-
-
-
-      <div class ="col-md-4 mr-2">
-        <div class ="row">
-          <label for="variable2" class="mr-2">Variable 2 </label>
-            <div class="custom-control custom-checkbox ">
-                <input type="checkbox" name="checkVariable2" class="custom-control-input" id="checkVariable2">
-                <label class="custom-control-label" for="checkVariable2"></label>
-              </div>
-           <label for="variable2" class="mr-2">Configurar grafica </label>   
-           <div class="custom-control custom-checkbox ">
-                <input type="checkbox" name="checkConfig" class="custom-control-input" id="checkConfig">
-                <label class="custom-control-label" for="checkConfig"></label>
-              </div>
-        </div>        
-        <div id="variable2Form" style="display:none">
-          <div id= "selectVariable2" class="form-group " >
-            
-            <select id="variable2" name="variable2" class="form-control">
+          <div id="calculo" class="form-group">
+            <select id="calculo" name="calculo" class="form-control">
               <option value="" selected> </option>
-              <option >Voltaje</option>
+              <option>Promedio</option>
+              <option>Desviacion estandar</option>
+            </select>
+          </div>
+          <!-- /.form group -->
+        </div>
+
+        <div class="col-md-4 mr-2">
+          <div id="formvariable" class="form-group">
+            <label for="variable">Variable 1</label>
+            <select id="variable" name="variable" class="form-control">
+              <option selected>Voltaje</option>
               <option>Efectos anodicos</option>
               <option>Alimentacion de alumina</option>
               <option>Temperatura de baño</option>
@@ -217,142 +148,307 @@
               <option>Celdas Conectadas</option>
               <option>Frecuencia Efectos Anodicos</option>
               <option>% CaF2 en el baño electrolitico</option>
-
-
             </select>
           </div>
           <!-- /.form group -->
-          
+
           <div class="form-group">
-              <label >Rango de operacion</label>
-              <br>
-              <label>Rango 1 a consultar</label>
-              <div class="form-row form-inline">
-                  <div class="input-group col-md-6 ">
-                    <div class="input-group-prepend   ">
-                      <span class="input-group-text">operador</span>
-                    </div>
-                    <select class="custom-select  "  id="var2Operador" name="var2Operador">
-                      <option selected value=""></option>
-                      <option value="mayor">></option>
-                      <option value="menor"><</option>
-                      <option value="menorigual">&le;</option>
-                      <option value="mayorigual">&ge;</option>
-                    </select>
-                  </div> 
-                  <!--  / input group -->
-                  <div class="input-group col-md-6">
-                    <div class="input-group-prepend  ">
-                      <span class="input-group-text ">rango 1</span>
-                    </div>
-                    <input type="number" step="0.01" name="var2Rango1" class="form-control float-right " id="var2Rango1">
-                  </div>
-                  <!--  / input group -->
-                </div>  
-                <!-- /.form row -->  
-                  
-                <label>Rango 2 a consultar</label>
-                <div class="form-row form-inline">
-                  <div class="input-group col-md-6 offset-6">
-                    <div class="input-group-prepend  ">
-                      <span class="input-group-text ">rango 2</span>
-                    </div>
-                    <input type="number" step="0.01" name="var2Rango2" class="form-control float-right " id="var2Rango2">
-                  </div>
-                  <!--  / input group -->
-                </div>  
-                <!-- /.form row --> 
-                
+            <label>Rango de operacion</label>
+            <br />
+            <label>Rango 1 a consultar</label>
+            <div class="form-row form-inline">
+              <div class="input-group col-md-6">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">operador</span>
+                </div>
+                <select class="custom-select" id="operador1" name="operador1">
+                  <option selected value=""></option>
+                  <option value="mayor">></option>
+                  <option value="menor"><</option>
+                  <option value="menorigual">&le;</option>
+                  <option value="mayorigual">&ge;</option>
+                </select>
+              </div>
+              <!--  / input group -->
+              <div class="input-group col-md-6">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">rango 1</span>
+                </div>
+                <input
+                  type="number"
+                  step="0.01"
+                  name="rango1"
+                  class="form-control float-right"
+                  id="rango1"
+                />
+              </div>
+              <!--  / input group -->
+            </div>
+            <!-- /.form row -->
+
+            <label>Rango 2 a consultar</label>
+            <div class="form-row form-inline">
+              <div class="input-group col-md-6 offset-6">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">rango 2</span>
+                </div>
+                <input
+                  type="number"
+                  step="0.01"
+                  name="rango2"
+                  class="form-control float-right"
+                  id="rango2"
+                />
+              </div>
+              <!--  / input group -->
+            </div>
+            <!-- /.form row -->
           </div>
           <!-- /.form group -->
         </div>
-       
-      </div>
-      
 
-
-      <div class ="col-md-3 " id="configGrafica" style= 'display:none'>
-      <label >Configuración de grafica</label>
-      <div class="form-group">
-        <div class="form-row ">
-            
-            <label>Banda de control 1</label>
-            <div class="input-group  ">
-              <div class="input-group-prepend">
-              <span class="input-group-text">Min (banda 1)</span>
-              </div>
-              <input type="number" step="0.01" name="banda1" class="form-control float-right col-md-3 " id="banda1">
+        <div class="col-md-4 mr-2">
+          <div class="row">
+            <label for="variable2" class="mr-2">Variable 2 </label>
+            <div class="custom-control custom-checkbox">
+              <input
+                type="checkbox"
+                name="checkVariable2"
+                class="custom-control-input"
+                id="checkVariable2"
+              />
+              <label class="custom-control-label" for="checkVariable2"></label>
             </div>
-            <!-- /.input group -->
-          
-            <label>Banda de control 2</label>
-            <div class="input-group ">
-             
-              <div class="input-group-prepend">
-              <span class="input-group-text">Max (banda 2)</span>
-              </div>
-              <input type="number" step="0.01" name="banda2" class="form-control float-right col-md-3" id="banda2">
+            <label for="variable2" class="mr-2">Configurar grafica </label>
+            <div class="custom-control custom-checkbox">
+              <input
+                type="checkbox"
+                name="checkConfig"
+                class="custom-control-input"
+                id="checkConfig"
+              />
+              <label class="custom-control-label" for="checkConfig"></label>
             </div>
-            <!-- /.input group -->
-       </div>
-       <!-- /.form row -->
-      </div>
-      <!-- /.form group -->
-
-        <div id="bandaVar2" style="display:none">
-          <label>Variable 2 Banda de control 1</label>
-          <div class="input-group  ">
-            <div class="input-group-prepend">
-            <span class="input-group-text">Min (banda 1)</span>
-            </div>
-            <input type="number" step="0.01" name="banda1Var2" class="form-control float-right col-md-3 " id="banda1Var2">
           </div>
-          <!-- /.input group -->
-        
-          <label>Variable 2 Banda de control 2</label>
-          <div class="input-group ">
-          
-            <div class="input-group-prepend">
-            <span class="input-group-text">Max (banda 2)</span>
+          <div id="variable2Form" style="display: none;">
+            <div id="selectVariable2" class="form-group">
+              <select id="variable2" name="variable2" class="form-control">
+                <option value="" selected> </option>
+                <option>Voltaje</option>
+                <option>Efectos anodicos</option>
+                <option>Alimentacion de alumina</option>
+                <option>Temperatura de baño</option>
+                <option>Duracion del tracking</option>
+                <option>Acidez de baño</option>
+                <!-- <option>Consumo de alumina</option>  -->
+                <option>Dump Size Alumina</option>
+                <option>Consumo AlF3</option>
+                <option>Track CD</option>
+                <option>Consumo AlF3 Manual</option>
+                <option>VMAX del Efecto Anodico</option>
+                <option
+                  >Eficiencia de Trasegado (Eficiencia de corriente)</option
+                >
+                <option>Duracion de Efecto anódico</option>
+                <option>Nivel de Metal</option>
+                <option>Corriente de Linea</option>
+                <option>Potencia nominal</option>
+                <option>(BO+RAJ+BIM+Tetas)</option>
+                <option>Potencia Neta</option>
+                <option>Anodos B/O cambio Normal</option>
+                <option>Nivel de Baño</option>
+                <option>Anodos Bimetalicos</option>
+                <option>Criolita Neta</option>
+                <option>Criolita de Arranque</option>
+                <option>Anodos B/A</option>
+                <option>Baño Fase Densa</option>
+                <option>Desviacion de Temperatura</option>
+                <option>Hierro Metal de Celdas </option>
+                <option>Desviacion Acidez</option>
+                <option>Silicio Metal Celdas </option>
+                <option>Desviacion Nm</option>
+                <option>Frecuencia Desnatado</option>
+                <option>Desviacion Nb</option>
+                <option>Celdas Conectadas</option>
+                <option>Frecuencia Efectos Anodicos</option>
+                <option>% CaF2 en el baño electrolitico</option>
+              </select>
             </div>
-            <input type="number" step="0.01" name="banda2Var2" class="form-control float-right col-md-3" id="banda2Var2">
+            <!-- /.form group -->
+
+            <div class="form-group">
+              <label>Rango de operacion</label>
+              <br />
+              <label>Rango 1 a consultar</label>
+              <div class="form-row form-inline">
+                <div class="input-group col-md-6">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">operador</span>
+                  </div>
+                  <select
+                    class="custom-select"
+                    id="var2Operador"
+                    name="var2Operador"
+                  >
+                    <option selected value=""></option>
+                    <option value="mayor">></option>
+                    <option value="menor"><</option>
+                    <option value="menorigual">&le;</option>
+                    <option value="mayorigual">&ge;</option>
+                  </select>
+                </div>
+                <!--  / input group -->
+                <div class="input-group col-md-6">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">rango 1</span>
+                  </div>
+                  <input
+                    type="number"
+                    step="0.01"
+                    name="var2Rango1"
+                    class="form-control float-right"
+                    id="var2Rango1"
+                  />
+                </div>
+                <!--  / input group -->
+              </div>
+              <!-- /.form row -->
+
+              <label>Rango 2 a consultar</label>
+              <div class="form-row form-inline">
+                <div class="input-group col-md-6 offset-6">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">rango 2</span>
+                  </div>
+                  <input
+                    type="number"
+                    step="0.01"
+                    name="var2Rango2"
+                    class="form-control float-right"
+                    id="var2Rango2"
+                  />
+                </div>
+                <!--  / input group -->
+              </div>
+              <!-- /.form row -->
+            </div>
+            <!-- /.form group -->
           </div>
-          <!-- /.input group -->
         </div>
-      <div class="form-group">
-        <div class="form-row ">
-            
-            <label>Minimo de la escala</label>
-            <div class="input-group ">
-              <div class="input-group-prepend">
-              <span class="input-group-text">Min (escala de grafico)</span>
+
+        <div class="col-md-3" id="configGrafica" style="display: none;">
+          <label>Configuración de grafica</label>
+          <div class="form-group">
+            <div class="form-row">
+              <label>Banda de control 1</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Min (banda 1)</span>
+                </div>
+                <input
+                  type="number"
+                  step="0.01"
+                  name="banda1"
+                  class="form-control float-right col-md-3"
+                  id="banda1"
+                />
               </div>
-              <input type="number" name="EscalaMin" class="form-control float-right col-md-3 " id="EscalaMin">
+              <!-- /.input group -->
+
+              <label>Banda de control 2</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Max (banda 2)</span>
+                </div>
+                <input
+                  type="number"
+                  step="0.01"
+                  name="banda2"
+                  class="form-control float-right col-md-3"
+                  id="banda2"
+                />
+              </div>
+              <!-- /.input group -->
             </div>
-            <!-- /.input group -->
-          
-            <label>Maximo de la escala</label>
+            <!-- /.form row -->
+          </div>
+          <!-- /.form group -->
+
+          <div id="bandaVar2" style="display: none;">
+            <label>Variable 2 Banda de control 1</label>
             <div class="input-group">
-             
               <div class="input-group-prepend">
-              <span class="input-group-text">Max (escala de grafico)</span>
+                <span class="input-group-text">Min (banda 1)</span>
               </div>
-              <input type="number" name="EscalaMax" class="form-control float-right col-md-3" id="EscalaMax">
+              <input
+                type="number"
+                step="0.01"
+                name="banda1Var2"
+                class="form-control float-right col-md-3"
+                id="banda1Var2"
+              />
             </div>
             <!-- /.input group -->
-       </div>
-       <!-- /.form row -->
-      </div>
-      <!-- /.form group -->   
-      </div> 
+
+            <label>Variable 2 Banda de control 2</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Max (banda 2)</span>
+              </div>
+              <input
+                type="number"
+                step="0.01"
+                name="banda2Var2"
+                class="form-control float-right col-md-3"
+                id="banda2Var2"
+              />
+            </div>
+            <!-- /.input group -->
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <label>Minimo de la escala</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Min (escala de grafico)</span>
+                </div>
+                <input
+                  type="number"
+                  min="-5.00"
+                  step="0.01"
+                  name="EscalaMin"
+                  class="form-control float-right col-md-3"
+                  id="EscalaMin"
+                />
+              </div>
+              <!-- /.input group -->
+
+              <label>Maximo de la escala</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Max (escala de grafico)</span>
+                </div>
+                <input
+                  type="number"
+                  step="0.01"
+                  name="EscalaMax"
+                  class="form-control float-right col-md-3"
+                  id="EscalaMax"
+                />
+              </div>
+              <!-- /.input group -->
+            </div>
+            <!-- /.form row -->
+          </div>
+          <!-- /.form group -->
+        </div>
       </div>
 
       <button type="submit" class="btn btn-primary">Submit</button>
-
     </form>
     <!-- /.form -->
   </div>
-    
+
   <!-- /.card-body -->
   <div class="card-footer">
     The footer of the card
@@ -364,86 +460,126 @@
 <!-- Card para las graficas-->
 <!-- Aqui se deberia utilizar un ciclo para mostrar las distintas graficas con menos codigo-->
 <!-- LINE CHART -->
-<div class="card card-info" style= 'display:none' id="lineVChart">
+<div class="card card-info" style="display: none;" id="lineVChart">
   <div class="card-header">
-      <h3 class="card-title">Line V Chart</h3>
+    <h3 class="card-title">Line V Chart</h3>
 
-      <div class="card-tools">
-        <button type="button" id="chartwidget" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
+    <div class="card-tools">
+      <button
+        type="button"
+        id="chartwidget"
+        class="btn btn-tool"
+        data-card-widget="collapse"
+      >
+        <i class="fas fa-minus"></i>
+      </button>
+      <button type="button" class="btn btn-tool" data-card-widget="remove">
+        <i class="fas fa-times"></i>
+      </button>
     </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="lineChart" style="display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
   </div>
+  <div class="card-body">
+    <div class="chart">
+      <div class="chartjs-size-monitor">
+        <div class="chartjs-size-monitor-expand"><div class=""></div></div>
+        <div class="chartjs-size-monitor-shrink"><div class=""></div></div>
+      </div>
+      <canvas
+        id="lineChart"
+        style="display: block; width: 764px;"
+        width="764"
+        height="250"
+        class="chartjs-render-monitor"
+      ></canvas>
+    </div>
+  </div>
+  <!-- /.card-body -->
+</div>
 <!-- /.card -->
 
 <!-- Card para las graficas-->
 <!-- voltaje LINE CHART -->
-<div class="card card-info" id='cardGrafica' style= 'display:none'>
+<div class="card card-info" id="cardGrafica" style="display: none;">
   <div class="card-header">
-      <h3 class="card-title">Voltaje PRE Chart</h3>
+    <h3 class="card-title">Voltaje PRE Chart</h3>
 
-      <div class="card-tools">
-        <button type="button" id="voltajeChartwidget" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-      </div>
+    <div class="card-tools">
+      <button
+        type="button"
+        id="voltajeChartwidget"
+        class="btn btn-tool"
+        data-card-widget="collapse"
+      >
+        <i class="fas fa-minus"></i>
+      </button>
+      <button type="button" class="btn btn-tool" data-card-widget="remove">
+        <i class="fas fa-times"></i>
+      </button>
     </div>
-    <div class="card-body">
-      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="voltajeChart" style="display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
-      </div>
-    </div>
-    <!-- /.card-body -->
   </div>
+  <div class="card-body">
+    <div class="chart">
+      <div class="chartjs-size-monitor">
+        <div class="chartjs-size-monitor-expand"><div class=""></div></div>
+        <div class="chartjs-size-monitor-shrink"><div class=""></div></div>
+      </div>
+      <canvas
+        id="voltajeChart"
+        style="display: block; width: 764px;"
+        width="764"
+        height="250"
+        class="chartjs-render-monitor"
+      ></canvas>
+    </div>
+  </div>
+  <!-- /.card-body -->
+</div>
 <!-- /.card -->
 
-
 <!-- Card para la tabla de los datos de la grafica -->
-<div class="card card-info" id="cardTablaDatos" style= 'display:none'>
-    <div class="card-header">
-        <h3 class="card-title">Tabla de datos de la grafica</h3>
-        <div class="card-tools">
-          <button type="button" class="btn btn-tool" id="celdaswidget" data-card-widget="collapse"><i class="fas fa-minus"></i>
-          </button>
-          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-        </div>
-      </div>
-      <div class="card-body"> 
-          <table class="table" id="celdas">
-            <thead>
-              <tr>
-                <th>celda</th>
-                <th>dia</th>
-                <th id="thVariable"></th>
-              </tr>
-            </thead>
-            <tbody>
-            
-            </tbody>
-          </table>
-          <table class="table" style= 'display:none' id="celdas2">
-            <thead>
-              <tr>
-                <th>celda</th>
-                <th>dia</th>
-                <th id="thVariable2"></th>
-              </tr>
-            </thead>
-            <tbody>
-            
-            </tbody>
-          </table>
-      </div>
-      <!-- /.card-body -->
+<div class="card card-info" id="cardTablaDatos" style="display: none;">
+  <div class="card-header">
+    <h3 class="card-title">Tabla de datos de la grafica</h3>
+    <div class="card-tools">
+      <button
+        type="button"
+        class="btn btn-tool"
+        id="celdaswidget"
+        data-card-widget="collapse"
+      >
+        <i class="fas fa-minus"></i>
+      </button>
+      <button type="button" class="btn btn-tool" data-card-widget="remove">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
   </div>
-  <!-- /.card -->
+  <div class="card-body">
+    <table class="table" id="celdas">
+      <thead>
+        <tr>
+          <th>celda</th>
+          <th>dia</th>
+          <th id="thVariable"></th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <table class="table" style="display: none;" id="celdas2">
+      <thead>
+        <tr>
+          <th>celda</th>
+          <th>dia</th>
+          <th id="thVariable2"></th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <!-- /.card-body -->
+</div>
+<!-- /.card -->
+
 
 {{-- 
 
