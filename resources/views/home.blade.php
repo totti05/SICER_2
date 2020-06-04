@@ -50,7 +50,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    The footer of the card
+                    SICER
                 </div>
                 <!-- /.card-footer -->
                 </div>
