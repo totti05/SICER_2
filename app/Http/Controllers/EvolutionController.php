@@ -111,6 +111,8 @@ class EvolutionController extends Controller
 
             $banda1Voltaje = 4.55;
             $banda2Voltaje = 4.65;
+            $minVoltaje =  4.4;
+            $maxVoltaje = 5.1;
 
             $corriente = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -122,6 +124,8 @@ class EvolutionController extends Controller
 
             $banda1Corriente = 219;
             $banda2Corriente = null;
+            $minCorriente =  180;
+            $maxCorriente = 240;
 
             $efCorriente = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -133,6 +137,8 @@ class EvolutionController extends Controller
 
             $banda1EfCorriente = 90;
             $banda2EfCorriente = 94;
+            $minEfCorriente =  50;
+            $maxEfCorriente = 110;
 
             $desvResistencia = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -144,6 +150,8 @@ class EvolutionController extends Controller
 
             $banda1DesvResistencia = 0.06;
             $banda2DesvResistencia = null;
+            $minDesvResistencia =  -0.2;
+            $maxDesvResistencia = 0.2;
 
             $frecuenciaEA = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -155,6 +163,8 @@ class EvolutionController extends Controller
 
             $banda1FrecuenciaEA = 0.15;
             $banda2FrecuenciaEA = null;
+            $minFrecuenciaEA =  0;
+            $maxFrecuenciaEA = 1.2;
 
             $potencia = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -166,6 +176,8 @@ class EvolutionController extends Controller
 
             $banda1Potencia = 980;
             $banda2Potencia = 1000;
+            $minPotencia =  920;
+            $maxPotencia = 1120;
 
             $nivelDeMetal = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -177,6 +189,8 @@ class EvolutionController extends Controller
 
             $banda1NivelDeMetal = 20;
             $banda2NivelDeMetal = 22;
+            $minNivelDeMetal =  18;
+            $maxNivelDeMetal = 27;
 
             $nivelDeBanio = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -188,6 +202,8 @@ class EvolutionController extends Controller
 
             $banda1NivelDeBano = 20;
             $banda2NivelDeBano = 23;
+            $minNivelDeBano =  15;
+            $maxNivelDeBano = 27;
 
             $frecuenciaTK = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -199,6 +215,8 @@ class EvolutionController extends Controller
 
             $banda1FrecuenciaTK = 0.15;
             $banda2FrecuenciaTK = null;
+            $minFrecuenciaTK =  0;
+            $maxFrecuenciaTK = 2.5;
 
             $duracionTK = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -210,6 +228,8 @@ class EvolutionController extends Controller
 
             $banda1DuracionTK = 0.7;
             $banda2DuracionTK = 0.8;
+            $minDuracionTK =  0.5;
+            $maxDuracionTK = 1.9;
 
             $golpesAlumina = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -221,6 +241,8 @@ class EvolutionController extends Controller
 
             $banda1GolpesAlumina = 2.4;
             $banda2GolpesAlumina = null;
+            $minGolpesAlumina =  1.7;
+            $maxGolpesAlumina = 3.2;
             
             $alimentacionAlumina = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -232,6 +254,8 @@ class EvolutionController extends Controller
             
             $banda1AlimentacionAlumina = 1200;
             $banda2AlimentacionAlumina = 1300;
+            $minAlimentacionAlumina =  800;
+            $maxAlimentacionAlumina = 1350;
 
             $temperatura = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -243,6 +267,8 @@ class EvolutionController extends Controller
 
             $banda1Temperatura = 960;
             $banda2Temperatura = 965;
+            $minTemperatura =  950;
+            $maxTemperatura = 990;
 
             $acidez = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -254,6 +280,8 @@ class EvolutionController extends Controller
 
             $banda1Acidez = 10.5;
             $banda2Acidez = 11;
+            $minAcidez =  8;
+            $maxAcidez = 13.5;
 
             $desvTemperatura = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -265,6 +293,8 @@ class EvolutionController extends Controller
             
             $banda1DesvTemperatura = 10;
             $banda2DesvTemperatura = null;
+            $minDesvTemperatura =  0;
+            $maxDesvTemperatura = 25;
 
             $desvAcidez = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -276,6 +306,8 @@ class EvolutionController extends Controller
 
             $banda1DesvAcidez = 1.0;
             $banda2DesvAcidez = null;
+            $minDesvAcidez =  0;
+            $maxDesvAcidez = 4;
 
             $consumoFl = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -287,6 +319,8 @@ class EvolutionController extends Controller
 
             $banda1ConsumoFl = 50;
             $banda2ConsumoFl = 70;
+            $minConsumoFl =  0;
+            $maxConsumoFl = 170;
 
 
             $porcHierro = DB::connection('reduccion')->table('diariocelda')
@@ -299,6 +333,8 @@ class EvolutionController extends Controller
 
             $banda1PorcHierro = 0.2;
             $banda2PorcHierro = null;
+            $minPorcHierro =  0;
+            $maxPorcHierro = 1.1;
 
             $purezaSilicio = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -310,6 +346,8 @@ class EvolutionController extends Controller
 
             $banda1PurezaSilicio = 1;
             $banda2PurezaSilicio = 1;
+            $minPurezaSilicio =  0;
+            $maxPurezaSilicio = 0.45;
 
             $porcSilicio = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -321,6 +359,8 @@ class EvolutionController extends Controller
 
             $banda1PorcSilicio = 0.08;
             $banda2PorcSilicio = null;
+            $minPorcSilicio =  0;
+            $maxPorcSilicio = 0.45;
 
             return response()->json(
             [   'fecha1' => $fecha1,
@@ -329,82 +369,122 @@ class EvolutionController extends Controller
                 'datosVoltaje' => $voltaje,
                 'banda1Voltaje' => $banda1Voltaje,
                 'banda2Voltaje' => $banda2Voltaje,
+                'minVoltaje' => $minVoltaje,
+                'maxVoltaje' => $maxVoltaje,
 
                 'datosCorriente' => $corriente,
                 'banda1Corriente' => $banda1Corriente,
                 'banda2Corriente' => $banda2Corriente,
+                'minCorriente' => $minCorriente,
+                'maxCorriente' => $maxCorriente,
 
                 'datosEfCorriente' => $efCorriente,
                 'banda1EfCorriente' => $banda1EfCorriente,
                 'banda2EfCorriente' => $banda2EfCorriente,
+                'minEfCorriente' => $minEfCorriente,
+                'maxEfCorriente' => $maxEfCorriente,
 
                 'datosDesvResistencia' => $desvResistencia,
                 'banda1DesvResistencia' => $banda1DesvResistencia ,
                 'banda2DesvResistencia' => $banda2DesvResistencia,
+                'minDesvResistencia' => $minDesvResistencia,
+                'maxDesvResistencia' => $maxDesvResistencia,
                 
                 'datosFrecuenciaEA' => $frecuenciaEA,
                 'banda1FrecuenciaEA' => $banda1FrecuenciaEA ,
                 'banda2FrecuenciaEA' => $banda2FrecuenciaEA,
+                'minFrecuenciaEA' => $minFrecuenciaEA,
+                'maxFrecuenciaEA' => $maxFrecuenciaEA,
                 
                 'datosPotencia' => $potencia,
                 'banda1Potencia' => $banda1Potencia,
                 'banda2Potencia' => $banda2Potencia  , 
+                'minPotencia' => $minPotencia,
+                'maxPotencia' => $maxPotencia,
                 
                 'datosNivelDeMetal' => $nivelDeMetal,
                 'banda1NivelDeMetal' =>  $banda1NivelDeMetal, 
                 'banda2NivelDeMetal' => $banda2NivelDeMetal,
+                'minNivelDeMetal' => $minNivelDeMetal,
+                'maxNivelDeMetal' => $maxNivelDeMetal,
                 
                 'datosNivelDeBanio' => $nivelDeBanio,
                 'banda1NivelDeBano' => $banda1NivelDeBano,
                 'banda2NivelDeBano' => $banda2NivelDeBano,
+                'minNivelDeBano' => $minNivelDeBano,
+                'maxNivelDeBano' => $maxNivelDeBano,
                 
                 'datosFrecuenciaTK' => $frecuenciaTK,
                 'banda1FrecuenciaTK' => $banda1FrecuenciaTK,
                 'banda2FrecuenciaTK' => $banda2FrecuenciaTK,
+                'minFrecuenciaTK' => $minFrecuenciaTK,
+                'maxFrecuenciaTK' => $maxFrecuenciaTK,
                 
                 'datosDuracionTK' => $duracionTK,
                 'banda1DuracionTK' => $banda1DuracionTK,
                 'banda2DuracionTK' => $banda2DuracionTK, 
+                'minDuracionTK' => $minDuracionTK,
+                'maxDuracionTK' => $maxDuracionTK,
                 
                 'datosGolpesAlumina' => $golpesAlumina,
                 'banda1GolpesAlumina' => $banda1GolpesAlumina,
                 'banda2GolpesAlumina' => $banda2GolpesAlumina,
+                'minGolpesAlumina' => $minGolpesAlumina,
+                'maxGolpesAlumina' => $maxGolpesAlumina,
                 
                 'datosAlimentacionAlumina' => $alimentacionAlumina,
                 'banda1AlimentacionAlumina' => $banda1AlimentacionAlumina,
                 'banda2AlimentacionAlumina' => $banda2AlimentacionAlumina,
-                
+                'minAlimentacionAlumina' => $minAlimentacionAlumina,
+                'maxAlimentacionAlumina' => $maxAlimentacionAlumina,
+
                 'datosTemperatura' => $temperatura,
                 'banda1Temperatura' => $banda1Temperatura,
                 'banda2Temperatura' => $banda2Temperatura,
+                'minTemperatura' => $minTemperatura,
+                'maxTemperatura' => $maxTemperatura,
                 
                 'datosAcidez' => $acidez,
                 'banda1Acidez' => $banda1Acidez,
                 'banda2Acidez' => $banda2Acidez,
+                'minAcidez' => $minAcidez,
+                'maxAcidez' => $maxAcidez,
                 
                 'datosDesvTemperatura' => $desvTemperatura,
                 'banda1DesvTemperatura' =>  $banda1DesvTemperatura,
                 'banda2DesvTemperatura' => $banda2DesvTemperatura,
+                'minDesvTemperatura' => $minDesvTemperatura,
+                'maxDesvTemperatura' => $maxDesvTemperatura,
                 
                 'datosDesvAcidez' => $desvAcidez,
                 'banda1DesvAcidez' => $banda1DesvAcidez,
                 'banda2DesvAcidez' => $banda2DesvAcidez,
+                'minDesvAcidez' => $minDesvAcidez,
+                'maxDesvAcidez' => $maxDesvAcidez,
                 
                 'datosConsumoFl' => $consumoFl,
                 'banda1ConsumoFl' => $banda1ConsumoFl,
                 'banda2ConsumoFl' => $banda2ConsumoFl,
+                'minConsumoFl' => $minConsumoFl,
+                'maxConsumoFl' => $maxConsumoFl,
                 
                 'datosPorcHierro' => $porcHierro,
                 'banda1PorcHierro' => $banda1PorcHierro,
                 'banda2PorcHierro' => $banda2PorcHierro, 
+                'minPorcHierro' => $minPorcHierro,
+                'maxPorcHierro' => $maxPorcHierro,
                 
                 'datosPurezaSilicio' => $purezaSilicio,
                 'banda1PurezaSilicio' => $banda1PurezaSilicio,
                 'banda2PurezaSilicio' => $banda2PurezaSilicio,
+                'minPurezaSilicio' => $minPurezaSilicio,
+                'maxPurezaSilicio' => $maxPurezaSilicio,
                 
                 'datosPorcSilicio' => $porcSilicio,
                 'banda1PorcSilicio' => $banda1PorcSilicio,
                 'banda2PorcSilicio' => $banda2PorcSilicio,
+                'minPorcSilicio' => $minPorcSilicio,
+                'maxPorcSilicio' => $maxPorcSilicio,
                 
                 ]);
 
@@ -434,6 +514,8 @@ class EvolutionController extends Controller
 
             $banda1Voltaje = 4.55;
             $banda2Voltaje = 4.65;
+            $minVoltaje =  4.4;
+            $maxVoltaje = 5.1;
 
             $corriente = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -445,6 +527,8 @@ class EvolutionController extends Controller
 
             $banda1Corriente = 219;
             $banda2Corriente = null;
+            $minCorriente =  180;
+            $maxCorriente = 240;
 
             $efCorriente = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -456,6 +540,8 @@ class EvolutionController extends Controller
 
             $banda1EfCorriente = 90;
             $banda2EfCorriente = 94;
+            $minEfCorriente =  50;
+            $maxEfCorriente = 110;
 
             $desvResistencia = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -467,6 +553,8 @@ class EvolutionController extends Controller
 
             $banda1DesvResistencia = 0.06;
             $banda2DesvResistencia = null;
+            $minDesvResistencia =  -0.2;
+            $maxDesvResistencia = 0.2;
 
             $frecuenciaEA = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -478,6 +566,8 @@ class EvolutionController extends Controller
 
             $banda1FrecuenciaEA = 0.15;
             $banda2FrecuenciaEA = null;
+            $minFrecuenciaEA =  0;
+            $maxFrecuenciaEA = 1.2;
 
             $potencia = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -489,6 +579,8 @@ class EvolutionController extends Controller
 
             $banda1Potencia = 980;
             $banda2Potencia = 1000;
+            $minPotencia =  920;
+            $maxPotencia = 1120;
 
             $nivelDeMetal = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -500,6 +592,8 @@ class EvolutionController extends Controller
 
             $banda1NivelDeMetal = 20;
             $banda2NivelDeMetal = 22;
+            $minNivelDeMetal =  18;
+            $maxNivelDeMetal = 27;
 
             $nivelDeBanio = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -511,6 +605,8 @@ class EvolutionController extends Controller
 
             $banda1NivelDeBano = 20;
             $banda2NivelDeBano = 23;
+            $minNivelDeBano =  15;
+            $maxNivelDeBano = 27;
 
             $frecuenciaTK = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -522,6 +618,8 @@ class EvolutionController extends Controller
 
             $banda1FrecuenciaTK = 0.15;
             $banda2FrecuenciaTK = null;
+            $minFrecuenciaTK =  0;
+            $maxFrecuenciaTK = 2.5;
 
             $duracionTK = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -533,6 +631,8 @@ class EvolutionController extends Controller
 
             $banda1DuracionTK = 0.7;
             $banda2DuracionTK = 0.8;
+            $minDuracionTK =  0.5;
+            $maxDuracionTK = 1.9;
 
             $golpesAlumina = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -544,6 +644,8 @@ class EvolutionController extends Controller
 
             $banda1GolpesAlumina = 2.4;
             $banda2GolpesAlumina = null;
+            $minGolpesAlumina =  1.7;
+            $maxGolpesAlumina = 3.2;
             
             $alimentacionAlumina = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -555,6 +657,8 @@ class EvolutionController extends Controller
             
             $banda1AlimentacionAlumina = 1200;
             $banda2AlimentacionAlumina = 1300;
+            $minAlimentacionAlumina =  800;
+            $maxAlimentacionAlumina = 1350;
 
             $temperatura = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -566,6 +670,8 @@ class EvolutionController extends Controller
 
             $banda1Temperatura = 960;
             $banda2Temperatura = 965;
+            $minTemperatura =  950;
+            $maxTemperatura = 990;
 
             $acidez = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -577,6 +683,8 @@ class EvolutionController extends Controller
 
             $banda1Acidez = 10.5;
             $banda2Acidez = 11;
+            $minAcidez =  8;
+            $maxAcidez = 13.5;
 
             $desvTemperatura = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -588,6 +696,8 @@ class EvolutionController extends Controller
             
             $banda1DesvTemperatura = 10;
             $banda2DesvTemperatura = null;
+            $minDesvTemperatura =  0;
+            $maxDesvTemperatura = 25;
 
             $desvAcidez = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -599,6 +709,8 @@ class EvolutionController extends Controller
 
             $banda1DesvAcidez = 1.0;
             $banda2DesvAcidez = null;
+            $minDesvAcidez =  0;
+            $maxDesvAcidez = 4;
 
             $consumoFl = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -610,6 +722,8 @@ class EvolutionController extends Controller
 
             $banda1ConsumoFl = 50;
             $banda2ConsumoFl = 70;
+            $minConsumoFl =  0;
+            $maxConsumoFl = 170;
 
 
             $porcHierro = DB::connection('reduccion')->table('diariocelda')
@@ -622,6 +736,8 @@ class EvolutionController extends Controller
 
             $banda1PorcHierro = 0.2;
             $banda2PorcHierro = null;
+            $minPorcHierro =  0;
+            $maxPorcHierro = 1.1;
 
             $purezaSilicio = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -633,6 +749,8 @@ class EvolutionController extends Controller
 
             $banda1PurezaSilicio = 1;
             $banda2PurezaSilicio = 1;
+            $minPurezaSilicio =  0;
+            $maxPurezaSilicio = 0.45;
 
             $porcSilicio = DB::connection('reduccion')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
@@ -644,90 +762,132 @@ class EvolutionController extends Controller
 
             $banda1PorcSilicio = 0.08;
             $banda2PorcSilicio = null;
+            $minPorcSilicio =  0;
+            $maxPorcSilicio = 0.45;
 
             return response()->json(
             [   'fecha1' => $fecha1,
-                'fecha2' => $fecha2,
+            'fecha2' => $fecha2,
 
-                'datosVoltaje' => $voltaje,
-                'banda1Voltaje' => $banda1Voltaje,
-                'banda2Voltaje' => $banda2Voltaje,
+            'datosVoltaje' => $voltaje,
+            'banda1Voltaje' => $banda1Voltaje,
+            'banda2Voltaje' => $banda2Voltaje,
+            'minVoltaje' => $minVoltaje,
+            'maxVoltaje' => $maxVoltaje,
 
-                'datosCorriente' => $corriente,
-                'banda1Corriente' => $banda1Corriente,
-                'banda2Corriente' => $banda2Corriente,
+            'datosCorriente' => $corriente,
+            'banda1Corriente' => $banda1Corriente,
+            'banda2Corriente' => $banda2Corriente,
+            'minCorriente' => $minCorriente,
+            'maxCorriente' => $maxCorriente,
 
-                'datosEfCorriente' => $efCorriente,
-                'banda1EfCorriente' => $banda1EfCorriente,
-                'banda2EfCorriente' => $banda2EfCorriente,
+            'datosEfCorriente' => $efCorriente,
+            'banda1EfCorriente' => $banda1EfCorriente,
+            'banda2EfCorriente' => $banda2EfCorriente,
+            'minEfCorriente' => $minEfCorriente,
+            'maxEfCorriente' => $maxEfCorriente,
 
-                'datosDesvResistencia' => $desvResistencia,
-                'banda1DesvResistencia' => $banda1DesvResistencia ,
-                'banda2DesvResistencia' => $banda2DesvResistencia,
-                
-                'datosFrecuenciaEA' => $frecuenciaEA,
-                'banda1FrecuenciaEA' => $banda1FrecuenciaEA ,
-                'banda2FrecuenciaEA' => $banda2FrecuenciaEA,
-                
-                'datosPotencia' => $potencia,
-                'banda1Potencia' => $banda1Potencia,
-                'banda2Potencia' => $banda2Potencia  , 
-                
-                'datosNivelDeMetal' => $nivelDeMetal,
-                'banda1NivelDeMetal' =>  $banda1NivelDeMetal, 
-                'banda2NivelDeMetal' => $banda2NivelDeMetal,
-                
-                'datosNivelDeBanio' => $nivelDeBanio,
-                'banda1NivelDeBano' => $banda1NivelDeBano,
-                'banda2NivelDeBano' => $banda2NivelDeBano,
-                
-                'datosFrecuenciaTK' => $frecuenciaTK,
-                'banda1FrecuenciaTK' => $banda1FrecuenciaTK,
-                'banda2FrecuenciaTK' => $banda2FrecuenciaTK,
-                
-                'datosDuracionTK' => $duracionTK,
-                'banda1DuracionTK' => $banda1DuracionTK,
-                'banda2DuracionTK' => $banda2DuracionTK, 
-                
-                'datosGolpesAlumina' => $golpesAlumina,
-                'banda1GolpesAlumina' => $banda1GolpesAlumina,
-                'banda2GolpesAlumina' => $banda2GolpesAlumina,
-                
-                'datosAlimentacionAlumina' => $alimentacionAlumina,
-                'banda1AlimentacionAlumina' => $banda1AlimentacionAlumina,
-                'banda2AlimentacionAlumina' => $banda2AlimentacionAlumina,
-                
-                'datosTemperatura' => $temperatura,
-                'banda1Temperatura' => $banda1Temperatura,
-                'banda2Temperatura' => $banda2Temperatura,
-                
-                'datosAcidez' => $acidez,
-                'banda1Acidez' => $banda1Acidez,
-                'banda2Acidez' => $banda2Acidez,
-                
-                'datosDesvTemperatura' => $desvTemperatura,
-                'banda1DesvTemperatura' =>  $banda1DesvTemperatura,
-                'banda2DesvTemperatura' => $banda2DesvTemperatura,
-                
-                'datosDesvAcidez' => $desvAcidez,
-                'banda1DesvAcidez' => $banda1DesvAcidez,
-                'banda2DesvAcidez' => $banda2DesvAcidez,
-                
-                'datosConsumoFl' => $consumoFl,
-                'banda1ConsumoFl' => $banda1ConsumoFl,
-                'banda2ConsumoFl' => $banda2ConsumoFl,
-                
-                'datosPorcHierro' => $porcHierro,
-                'banda1PorcHierro' => $banda1PorcHierro,
-                'banda2PorcHierro' => $banda2PorcHierro, 
-                
-                'datosPurezaSilicio' => $purezaSilicio,
-                'banda1PurezaSilicio' => $banda1PurezaSilicio,
-                'banda2PurezaSilicio' => $banda2PurezaSilicio,
-                
-                'datosPorcSilicio' => $porcSilicio,
-                'banda1PorcSilicio' => $banda1PorcSilicio,
-                'banda2PorcSilicio' => $banda2PorcSilicio,
+            'datosDesvResistencia' => $desvResistencia,
+            'banda1DesvResistencia' => $banda1DesvResistencia ,
+            'banda2DesvResistencia' => $banda2DesvResistencia,
+            'minDesvResistencia' => $minDesvResistencia,
+            'maxDesvResistencia' => $maxDesvResistencia,
+            
+            'datosFrecuenciaEA' => $frecuenciaEA,
+            'banda1FrecuenciaEA' => $banda1FrecuenciaEA ,
+            'banda2FrecuenciaEA' => $banda2FrecuenciaEA,
+            'minFrecuenciaEA' => $minFrecuenciaEA,
+            'maxFrecuenciaEA' => $maxFrecuenciaEA,
+            
+            'datosPotencia' => $potencia,
+            'banda1Potencia' => $banda1Potencia,
+            'banda2Potencia' => $banda2Potencia  , 
+            'minPotencia' => $minPotencia,
+            'maxPotencia' => $maxPotencia,
+            
+            'datosNivelDeMetal' => $nivelDeMetal,
+            'banda1NivelDeMetal' =>  $banda1NivelDeMetal, 
+            'banda2NivelDeMetal' => $banda2NivelDeMetal,
+            'minNivelDeMetal' => $minNivelDeMetal,
+            'maxNivelDeMetal' => $maxNivelDeMetal,
+            
+            'datosNivelDeBanio' => $nivelDeBanio,
+            'banda1NivelDeBano' => $banda1NivelDeBano,
+            'banda2NivelDeBano' => $banda2NivelDeBano,
+            'minNivelDeBano' => $minNivelDeBano,
+            'maxNivelDeBano' => $maxNivelDeBano,
+            
+            'datosFrecuenciaTK' => $frecuenciaTK,
+            'banda1FrecuenciaTK' => $banda1FrecuenciaTK,
+            'banda2FrecuenciaTK' => $banda2FrecuenciaTK,
+            'minFrecuenciaTK' => $minFrecuenciaTK,
+            'maxFrecuenciaTK' => $maxFrecuenciaTK,
+            
+            'datosDuracionTK' => $duracionTK,
+            'banda1DuracionTK' => $banda1DuracionTK,
+            'banda2DuracionTK' => $banda2DuracionTK, 
+            'minDuracionTK' => $minDuracionTK,
+            'maxDuracionTK' => $maxDuracionTK,
+            
+            'datosGolpesAlumina' => $golpesAlumina,
+            'banda1GolpesAlumina' => $banda1GolpesAlumina,
+            'banda2GolpesAlumina' => $banda2GolpesAlumina,
+            'minGolpesAlumina' => $minGolpesAlumina,
+            'maxGolpesAlumina' => $maxGolpesAlumina,
+            
+            'datosAlimentacionAlumina' => $alimentacionAlumina,
+            'banda1AlimentacionAlumina' => $banda1AlimentacionAlumina,
+            'banda2AlimentacionAlumina' => $banda2AlimentacionAlumina,
+            'minAlimentacionAlumina' => $minAlimentacionAlumina,
+            'maxAlimentacionAlumina' => $maxAlimentacionAlumina,
+
+            'datosTemperatura' => $temperatura,
+            'banda1Temperatura' => $banda1Temperatura,
+            'banda2Temperatura' => $banda2Temperatura,
+            'minTemperatura' => $minTemperatura,
+            'maxTemperatura' => $maxTemperatura,
+            
+            'datosAcidez' => $acidez,
+            'banda1Acidez' => $banda1Acidez,
+            'banda2Acidez' => $banda2Acidez,
+            'minAcidez' => $minAcidez,
+            'maxAcidez' => $maxAcidez,
+            
+            'datosDesvTemperatura' => $desvTemperatura,
+            'banda1DesvTemperatura' =>  $banda1DesvTemperatura,
+            'banda2DesvTemperatura' => $banda2DesvTemperatura,
+            'minDesvTemperatura' => $minDesvTemperatura,
+            'maxDesvTemperatura' => $maxDesvTemperatura,
+            
+            'datosDesvAcidez' => $desvAcidez,
+            'banda1DesvAcidez' => $banda1DesvAcidez,
+            'banda2DesvAcidez' => $banda2DesvAcidez,
+            'minDesvAcidez' => $minDesvAcidez,
+            'maxDesvAcidez' => $maxDesvAcidez,
+            
+            'datosConsumoFl' => $consumoFl,
+            'banda1ConsumoFl' => $banda1ConsumoFl,
+            'banda2ConsumoFl' => $banda2ConsumoFl,
+            'minConsumoFl' => $minConsumoFl,
+            'maxConsumoFl' => $maxConsumoFl,
+            
+            'datosPorcHierro' => $porcHierro,
+            'banda1PorcHierro' => $banda1PorcHierro,
+            'banda2PorcHierro' => $banda2PorcHierro, 
+            'minPorcHierro' => $minPorcHierro,
+            'maxPorcHierro' => $maxPorcHierro,
+            
+            'datosPurezaSilicio' => $purezaSilicio,
+            'banda1PurezaSilicio' => $banda1PurezaSilicio,
+            'banda2PurezaSilicio' => $banda2PurezaSilicio,
+            'minPurezaSilicio' => $minPurezaSilicio,
+            'maxPurezaSilicio' => $maxPurezaSilicio,
+            
+            'datosPorcSilicio' => $porcSilicio,
+            'banda1PorcSilicio' => $banda1PorcSilicio,
+            'banda2PorcSilicio' => $banda2PorcSilicio,
+            'minPorcSilicio' => $minPorcSilicio,
+            'maxPorcSilicio' => $maxPorcSilicio,
                 
                 ]);
 
