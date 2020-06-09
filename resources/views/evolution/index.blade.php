@@ -1,6 +1,26 @@
 @extends('adminlte::page')
 @section('content_header')
-    <h1 class=""><i class="fa fa-chart-bar"></i> Evolucion de línea</h1>
+  <h1 class=""><i class="fa fa-chart-bar"></i> Evolucion de línea </h1>
+  <form id="formPredet" class="form-inline justify-content-end">
+    <div class="form-group ml-2 mb-2 ">
+     <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"
+            ><i class="far fa-clock"></i
+          ></span>
+        </div>
+        <input
+          type="text"
+          name="rangoFechaPredet"
+          class="form-control float-right"
+          id="rangoFechaPredet"
+        />
+      </div>
+      <!-- /.input group -->
+    </div>
+    <!-- /.form group -->
+    <button type="submit" class="btn btn-primary mb-2">Consultar</button>
+  </form>
 @endsection
 @section('css')
   <style>
@@ -46,15 +66,16 @@
       <div class="col-md-4">
         <!-- Card para las graficas-->
         <!-- Desviación de Resistencia LINE CHART -->
-        <div class="card card-warning">
+        <div class="card card-warning" id="cardVoltaje">
           <div class="card-header">
-            <h3 class="card-title">Desviación de Resistencia Chart</h3>
+            <h3 class="card-title">Gráfica - Voltaje</h3>
 
             <div class="card-tools">
               <button
                 type="button"
                 class="btn btn-tool"
                 data-card-widget="collapse"
+                id="voltajeChartwidget"
               >
                 <i class="fas fa-minus"></i>
               </button>
@@ -67,16 +88,11 @@
             </div>
           </div>
           <div class="card-body">
-            <div class="chart">
-              <div class="chartjs-size-monitor">
-                <div class="chartjs-size-monitor-expand"><div class=""></div></div>
-                <div class="chartjs-size-monitor-shrink"><div class=""></div></div>
-              </div>
+            <div class="chart" >
+             
               <canvas
-                id="lineChart"
-                style="display: block; width: 764px;"
-                width="764"
-                height="250"
+                id="voltajeChart"
+                
                 class="chartjs-render-monitor"
               ></canvas>
             </div>
@@ -89,7 +105,7 @@
         <!-- Temperatura LINE CHART -->
         <div class="card card-warning">
           <div class="card-header">
-            <h3 class="card-title">Temperatura Chart</h3>
+            <h3 class="card-title">Gráfica - Corriente</h3>
 
             <div class="card-tools">
               <button
@@ -108,16 +124,11 @@
             </div>
           </div>
           <div class="card-body">
-            <div class="chart">
-              <div class="chartjs-size-monitor">
-                <div class="chartjs-size-monitor-expand"><div class=""></div></div>
-                <div class="chartjs-size-monitor-shrink"><div class=""></div></div>
-              </div>
+            <div class="chart" >
+             
               <canvas
-                id="lineChart2"
-                style="display: block; width: 764px;"
-                width="764"
-                height="250"
+                id="corrienteChart"
+                
                 class="chartjs-render-monitor"
               ></canvas>
             </div>
@@ -130,7 +141,7 @@
         <!-- ACIDEZ DE BAÑO LINE CHART -->
         <div class="card card-warning">
           <div class="card-header">
-            <h3 class="card-title">ACIDEZ DE BAÑO Chart</h3>
+            <h3 class="card-title">Gráfica - Eficiencia de corriente</h3>
 
             <div class="card-tools">
               <button
@@ -150,15 +161,10 @@
           </div>
           <div class="card-body">
             <div class="chart">
-              <div class="chartjs-size-monitor">
-                <div class="chartjs-size-monitor-expand"><div class=""></div></div>
-                <div class="chartjs-size-monitor-shrink"><div class=""></div></div>
-              </div>
+             
               <canvas
-                id="lineChart3"
-                style="display: block; width: 764px;"
-                width="764"
-                height="250"
+                id="efCorrienteChart"
+                
                 class="chartjs-render-monitor"
               ></canvas>
             </div>
@@ -173,7 +179,7 @@
         <!-- CONSUMO DE AlF3 LINE CHART -->
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title">CONSUMO DE AlF3 Chart</h3>
+            <h3 class="card-title">Gráfica - Desviacion de resistencia</h3>
 
             <div class="card-tools">
               <button
@@ -192,16 +198,11 @@
             </div>
           </div>
           <div class="card-body">
-            <div class="chart">
-              <div class="chartjs-size-monitor">
-                <div class="chartjs-size-monitor-expand"><div class=""></div></div>
-                <div class="chartjs-size-monitor-shrink"><div class=""></div></div>
-              </div>
+            <div class="chart" >
+            
               <canvas
-                id="lineChart4"
-                style="display: block; width: 764px;"
-                width="764"
-                height="250"
+                id="desvResistenciaChart"
+                
                 class="chartjs-render-monitor"
               ></canvas>
             </div>
@@ -214,7 +215,7 @@
         <!-- CONSUMO DE AlF3 MANUAL LINE CHART -->
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title">CONSUMO DE AlF3 MANUAL Chart</h3>
+            <h3 class="card-title">Gráfica - Frecuencia de efecto anódico</h3>
 
             <div class="card-tools">
               <button
@@ -234,15 +235,10 @@
           </div>
           <div class="card-body">
             <div class="chart">
-              <div class="chartjs-size-monitor">
-                <div class="chartjs-size-monitor-expand"><div class=""></div></div>
-                <div class="chartjs-size-monitor-shrink"><div class=""></div></div>
-              </div>
+              
               <canvas
-                id="lineChart5"
-                style="display: block; width: 764px;"
-                width="764"
-                height="250"
+                id="frecuenciaEAChart"
+                
                 class="chartjs-render-monitor"
               ></canvas>
             </div>
@@ -255,7 +251,7 @@
         <!-- EFICIENCIA DE TRASEGADO LINE CHART -->
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title">EFICIENCIA DE TRASEGADO Chart</h3>
+            <h3 class="card-title">Gráfica - Potencia</h3>
 
             <div class="card-tools">
               <button
@@ -275,15 +271,10 @@
           </div>
           <div class="card-body">
             <div class="chart">
-              <div class="chartjs-size-monitor">
-                <div class="chartjs-size-monitor-expand"><div class=""></div></div>
-                <div class="chartjs-size-monitor-shrink"><div class=""></div></div>
-              </div>
+            
               <canvas
-                id="lineChart6"
-                style="display: block; width: 764px;"
-                width="764"
-                height="250"
+                id="potenciaChart"
+               
                 class="chartjs-render-monitor"
               ></canvas>
             </div>
@@ -292,12 +283,13 @@
         </div>
         <!-- /.card -->
       </div>
+
       <div class="col-md-4">
         <!-- Card para las graficas-->
         <!-- NIVEL DE METAL LINE CHART -->
         <div class="card card-danger">
           <div class="card-header">
-            <h3 class="card-title">NIVEL DE METAL Chart</h3>
+            <h3 class="card-title">Gráfica - Nivel de metal</h3>
 
             <div class="card-tools">
               <button
@@ -317,15 +309,10 @@
           </div>
           <div class="card-body">
             <div class="chart">
-              <div class="chartjs-size-monitor">
-                <div class="chartjs-size-monitor-expand"><div class=""></div></div>
-                <div class="chartjs-size-monitor-shrink"><div class=""></div></div>
-              </div>
+             
               <canvas
-                id="lineChart7"
-                style="display: block; width: 764px;"
-                width="764"
-                height="250"
+                id="nivelDeMetalChart"
+                
                 class="chartjs-render-monitor"
               ></canvas>
             </div>
@@ -338,7 +325,7 @@
         <!-- POTENCIA NOMINAL LINE CHART -->
         <div class="card card-danger">
           <div class="card-header">
-            <h3 class="card-title">POTENCIA NOMINAL Chart</h3>
+            <h3 class="card-title">Gráfica - Nivel de baño</h3>
 
             <div class="card-tools">
               <button
@@ -358,15 +345,10 @@
           </div>
           <div class="card-body">
             <div class="chart">
-              <div class="chartjs-size-monitor">
-                <div class="chartjs-size-monitor-expand"><div class=""></div></div>
-                <div class="chartjs-size-monitor-shrink"><div class=""></div></div>
-              </div>
+              
               <canvas
-                id="lineChart8"
-                style="display: block; width: 764px;"
-                width="764"
-                height="250"
+                id="nivelDeBanoChart"
+                
                 class="chartjs-render-monitor"
               ></canvas>
             </div>
@@ -379,7 +361,7 @@
         <!-- POTENCIA NETA LINE CHART -->
         <div class="card card-danger">
           <div class="card-header">
-            <h3 class="card-title">POTENCIA NETA Chart</h3>
+            <h3 class="card-title">Grafica - Frecuencia de tracking</h3>
 
             <div class="card-tools">
               <button
@@ -399,15 +381,10 @@
           </div>
           <div class="card-body">
             <div class="chart">
-              <div class="chartjs-size-monitor">
-                <div class="chartjs-size-monitor-expand"><div class=""></div></div>
-                <div class="chartjs-size-monitor-shrink"><div class=""></div></div>
-              </div>
+              
               <canvas
-                id="lineChart9"
-                style="display: block; position: relative; height:40vh; width:80vw;"
-                width="764"
-                height="250"
+                id="frecuenciaTKChart"
+                
                 class="chartjs-render-monitor"
               ></canvas>
             </div>
@@ -427,7 +404,7 @@
     <!-- NIVEL DE BAÑO LINE CHART -->
     <div class="card card-info">
       <div class="card-header">
-          <h3 class="card-title">Line V Chart</h3>
+          <h3 class="card-title">Grafica - Frecuencia de tracking</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -436,8 +413,8 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-            <canvas id="lineChart1" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
+          <div class="chart">
+            <canvas id="frecuenciaTKChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
         <!-- /.card-body -->
@@ -457,7 +434,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -478,7 +455,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -499,7 +476,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -520,7 +497,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -541,7 +518,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -562,7 +539,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -583,7 +560,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="eficTrasegChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -604,7 +581,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -625,7 +602,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -646,7 +623,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -667,7 +644,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -688,7 +665,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -709,7 +686,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -730,7 +707,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -751,7 +728,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -772,7 +749,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -793,7 +770,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -814,7 +791,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -835,7 +812,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -856,7 +833,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -877,7 +854,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -899,7 +876,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -920,7 +897,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -941,7 +918,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -1552,10 +1529,7 @@
     </div>
     <div class="card-body">
       <div class="chart">
-        <div class="chartjs-size-monitor">
-          <div class="chartjs-size-monitor-expand"><div class=""></div></div>
-          <div class="chartjs-size-monitor-shrink"><div class=""></div></div>
-        </div>
+        
         <canvas
           id="lineChart"
           style="display: block; width: 764px;"
@@ -1578,7 +1552,7 @@
       <div class="card-tools">
         <button
           type="button"
-          id="voltajeChartwidget"
+          id="consultaChartwidget"
           class="btn btn-tool"
           data-card-widget="collapse"
         >
@@ -1591,12 +1565,9 @@
     </div>
     <div class="card-body">
       <div class="chart">
-        <div class="chartjs-size-monitor">
-          <div class="chartjs-size-monitor-expand"><div class=""></div></div>
-          <div class="chartjs-size-monitor-shrink"><div class=""></div></div>
-        </div>
+        
         <canvas
-          id="voltajeChart"
+          id="consultaChart"
           style="display: block; width: 764px;"
           width="764"
           height="250"
@@ -1668,7 +1639,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="desvResistChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -1689,7 +1660,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="temperaturatChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -1710,7 +1681,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="acidBanoChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -1731,7 +1702,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="consumoAlChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -1752,7 +1723,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="consumoAlManChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -1773,7 +1744,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="eficTrasegChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -1794,7 +1765,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="nivelMetalChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -1815,7 +1786,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="potenciaNominalChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -1836,7 +1807,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="potenciaNetaChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -1862,7 +1833,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart1" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -1883,7 +1854,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -1904,7 +1875,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -1925,7 +1896,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -1946,7 +1917,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -1967,7 +1938,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -1988,7 +1959,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -2009,7 +1980,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="eficTrasegChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -2030,7 +2001,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -2051,7 +2022,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -2072,7 +2043,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -2093,7 +2064,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -2114,7 +2085,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -2135,7 +2106,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -2156,7 +2127,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -2177,7 +2148,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -2198,7 +2169,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -2219,7 +2190,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -2240,7 +2211,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -2261,7 +2232,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -2282,7 +2253,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -2303,7 +2274,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -2325,7 +2296,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -2346,7 +2317,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -2367,7 +2338,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+          <div class="chart">
             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 764px;" width="764" height="250" class="chartjs-render-monitor"></canvas>
           </div>
         </div>
@@ -2436,6 +2407,68 @@
         cell.destroy();
     };
     //Date range picker with time picker
+    $("#rangoFechaPredet").daterangepicker(
+        {
+            showWeekNumbers: true,
+            minYear: 2003,
+            ranges: {
+                Hoy: [moment(), moment()],
+                Ayer: [moment().subtract(1, "days"), moment().subtract(1, "days")],
+                "Últimos 7 días": [moment().subtract(6, "days"), moment()],
+                "Últimos 30 días": [moment().subtract(29, "days"), moment()],
+                "Este mes": [moment().startOf("month"), moment().endOf("month")],
+                "Último mes": [
+                    moment()
+                        .subtract(1, "month")
+                        .startOf("month"),
+                    moment()
+                        .subtract(1, "month")
+                        .endOf("month")
+                ]
+            },
+            locale: {
+                format: "YYYY/MM/DD",
+                separator: " - ",
+                applyLabel: "Seleccionar",
+                cancelLabel: "Cancelar",
+                fromLabel: "Desde",
+                toLabel: "Hasta",
+                customRangeLabel: "Elegir",
+                weekLabel: "Sem",
+                daysOfWeek: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
+                monthNames: [
+                    "Enero",
+                    "Febrero",
+                    "Marzo",
+                    "Abril",
+                    "Mayo",
+                    "Junio",
+                    "Julio",
+                    "Agosto",
+                    "Septiembre",
+                    "Octubre",
+                    "Noviembre",
+                    "Diciembre"
+                ],
+                firstDay: 1
+            },
+            linkedCalendars: false,
+            minDate: "01/01/2003",
+            maxDate: moment()
+        },
+        function(start, end, label) {
+            console.log(
+                "New date range selected: " +
+                    start.format("YYYY-MM-DD") +
+                    " to " +
+                    end.format("YYYY-MM-DD") +
+                    " (predefined range: " +
+                    label +
+                    ")"
+            );
+        }
+    );
+
     $("#rangoFecha").daterangepicker(
         {
             showWeekNumbers: true,
@@ -2499,7 +2532,7 @@
     );
 
     $("#chartwidget").CardWidget("collapse");
-    $("#voltajeChartwidget").CardWidget("collapse");
+    //$("#voltajeChartwidget").CardWidget("collapse");
     $("#celdaswidget").CardWidget("collapse");
 
     $(document).ready(function() {
@@ -2521,8 +2554,69 @@
     var Voltaje = new Array();
     var ChartDataclear = {};
     var ChartOptionsclear = {};
-    var ctx = document.getElementById("voltajeChart").getContext("2d");
+    var ctx = document.getElementById("consultaChart").getContext("2d");
     var varChart = new Chart(ctx, {
+        type: "line",
+        data: ChartDataclear,
+        options: ChartOptionsclear
+    });
+
+    var ctx1 = document.getElementById("voltajeChart").getContext("2d");
+    var voltajeChart = new Chart(ctx1, {
+        type: "line",
+        data: ChartDataclear,
+        options: ChartOptionsclear
+    });
+
+    var ctx2 = document.getElementById("corrienteChart").getContext("2d");
+    var corrienteChart = new Chart(ctx2, {
+        type: "line",
+        data: ChartDataclear,
+        options: ChartOptionsclear
+    });
+
+    var ctx3 = document.getElementById("efCorrienteChart").getContext("2d");
+    var efCorrienteChart = new Chart(ctx3, {
+        type: "line",
+        data: ChartDataclear,
+        options: ChartOptionsclear
+    });
+
+    var ctx4 = document.getElementById("desvResistenciaChart").getContext("2d");
+    var desvResistenciaChart = new Chart(ctx4, {
+        type: "line",
+        data: ChartDataclear,
+        options: ChartOptionsclear
+    });
+    var ctx5 = document.getElementById("frecuenciaEAChart").getContext("2d");
+    var frecuenciaEAChart = new Chart(ctx5, {
+        type: "line",
+        data: ChartDataclear,
+        options: ChartOptionsclear
+    });
+
+    var ctx6 = document.getElementById("potenciaChart").getContext("2d");
+    var potenciaChart = new Chart(ctx6, {
+        type: "line",
+        data: ChartDataclear,
+        options: ChartOptionsclear
+    });
+
+    var ctx7 = document.getElementById("nivelDeMetalChart").getContext("2d");
+    var nivelDeMetalChart = new Chart(ctx7, {
+        type: "line",
+        data: ChartDataclear,
+        options: ChartOptionsclear
+    });
+
+    var ctx8 = document.getElementById("nivelDeBanoChart").getContext("2d");
+    var nivelDeBanoChart = new Chart(ctx8, {
+        type: "line",
+        data: ChartDataclear,
+        options: ChartOptionsclear
+    });
+    var ctx9 = document.getElementById("frecuenciaTKChart").getContext("2d");
+    var frecuenciaTKChart = new Chart(ctx9, {
         type: "line",
         data: ChartDataclear,
         options: ChartOptionsclear
@@ -2587,13 +2681,60 @@
               /*
               * Se ejecuta al termino de la petición
               * */
-              MENSAJE = "Pagina en desarrollo" ;
+              MENSAJE = "Enviando..." ;
               $("#mensaje").html(MENSAJE);
               $("#alertaMsj").html(MENSAJE);
               $("#modalMensaje").modal('show');
               
           },
           success: function(response) {
+            var ChartOptions = {
+                        hoverMode: 'index',
+                        stacked: false,
+                        responsive: true,
+                        title: {
+                          display: true,
+                          text: 'Grafica SICER - '
+                        },
+                        tooltips: {
+                          mode: 'nearest',
+                          intersect: true,
+                        },
+                        hover: {
+                          mode: 'nearest',
+                          intersect: true,
+                        },
+                        scales: {
+                            yAxes: [
+                                {
+                                    scaleLabel: {
+                                        
+                                        display: true
+                                    },
+                                    type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                                    display: true,
+                                    position: "left",
+                                    id: "y-axis-1",
+                                    ticks: {
+                                    }
+                                }
+                            ],
+
+                            xAxes: [
+                                {
+                                    scaleLabel: {
+                                        
+                                        display: true
+                                    },
+                                    position: "bottom",
+                                    id: "x-axis-1",
+                                    ticks: {
+                                        // maxTicksLimit: 20
+                                    }
+                                }
+                            ]
+                        }
+                    }
             var DiaVoltaje = new Array();
             var DatosVoltaje = new Array();
             var Banda1Voltaje = new Array();
@@ -2922,7 +3063,6 @@
                   responsive: true,
                   title: {
                     display: true,
-                    text: 'Grafica SICER - ' + response.variable 
                   },
                   tooltips: {
                     mode: 'nearest',
@@ -2936,7 +3076,7 @@
                       yAxes: [
                           {
                               scaleLabel: {
-                                  labelString: response.ylabel,
+                                 
                                   display: true
                               },
                               type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
@@ -2944,8 +3084,7 @@
                               position: "left",
                               id: "y-axis-1",
                               ticks: {
-                                  min: response.miny,
-                                  max: response.maxy
+                               
                               }
                           }
                       ],
@@ -2953,7 +3092,7 @@
                       xAxes: [
                           {
                               scaleLabel: {
-                                  labelString: response.xlabel,
+                                 
                                   display: true
                               },
                               position: "bottom",
@@ -2965,319 +3104,219 @@
                       ]
                   }
             };
+            var voltajeChartData = {
+                      labels: DiaVoltaje,
+                      datasets: [
+                          {
+                              label: "Voltaje",
+                              data: DatosVoltaje,
+                              borderWidth: 1,
+                              backgroundColor: "transparent",
+                              borderColor: "#007bff",
+                              pointBorderColor: "#007bff",
+                              pointBackgroundColor: "#007bff",
+                              fill: false,
+                              lineTension: 0
+                          },
+                          {
+                              label: "banda1",
+                              data: Banda1Voltaje,
+                              yAxisID: "y-axis-1",
+                              borderWidth: 1,
+                              backgroundColor: "transparent",
+                              borderColor: "red",
+                              pointBackgroundColor: "red",
+                              pointBorderColor: "red",
+                              pointStyle: "line",
+                              fill: false,
+                              lineTension: 0
+                          },
+                          {
+                              label: "banda2",
+                              data: Banda2Voltaje,
+                              yAxisID: "y-axis-1",
+                              borderWidth: 1,
+                              backgroundColor: "transparent",
+                              borderColor: "orange",
+                              pointBackgroundColor: "orange",
+                              pointBorderColor: "orange",
+                              pointStyle: "line",
+                              fill: false,
+                              lineTension: 0
+                          },
+                      ]
+                   };
+
+                    var corrienteChartData = {
+                      labels: DiaCorriente,
+                      datasets: [
+                          {
+                              label: "Corriente",
+                              data: DatosCorriente,
+                              borderWidth: 1,
+                              backgroundColor: "transparent",
+                              borderColor: "#007bff",
+                              pointBorderColor: "#007bff",
+                              pointBackgroundColor: "#007bff",
+                              fill: false,
+                              lineTension: 0
+                          }
+                      ]
+                   };
+
+                    var efCorrienteChartData = {
+                      labels: DiaEfCorriente,
+                      datasets: [
+                          {
+                              label: "EfCorriente",
+                              data: DatosEfCorriente,
+                              borderWidth: 1,
+                              backgroundColor: "transparent",
+                              borderColor: "#007bff",
+                              pointBorderColor: "#007bff",
+                              pointBackgroundColor: "#007bff",
+                              fill: false,
+                              lineTension: 0
+                          }
+                      ]
+                    };
+
+                    var desvResistenciaChartData = {
+                      labels: DiaDesvResistencia,
+                      datasets: [
+                          {
+                              label: "DesvResistencia",
+                              data: DatosDesvResistencia,
+                              borderWidth: 1,
+                              backgroundColor: "transparent",
+                              borderColor: "#007bff",
+                              pointBorderColor: "#007bff",
+                              pointBackgroundColor: "#007bff",
+                              fill: false,
+                              lineTension: 0
+                          }
+                      ]
+                    };
+                    
+                    var frecuenciaEAChartData = {
+                      labels: DiaFrecuenciaEA,
+                      datasets: [
+                          {
+                              label: "FrecuenciaEA",
+                              data: DatosFrecuenciaEA,
+                              borderWidth: 1,
+                              backgroundColor: "transparent",
+                              borderColor: "#007bff",
+                              pointBorderColor: "#007bff",
+                              pointBackgroundColor: "#007bff",
+                              fill: false,
+                              lineTension: 0
+                          }
+                      ]
+                    };
+
+                    var potenciaChartData = {
+                      labels: DiaPotencia,
+                      datasets: [
+                          {
+                              label: "Potencia",
+                              data: DatosPotencia,
+                              borderWidth: 1,
+                              backgroundColor: "transparent",
+                              borderColor: "#007bff",
+                              pointBorderColor: "#007bff",
+                              pointBackgroundColor: "#007bff",
+                              fill: false,
+                              lineTension: 0
+                          }
+                      ]
+                    };
+
+                    var nivelDeMetalChartData = {
+                      labels: DiaNivelDeMetal,
+                      datasets: [
+                          {
+                              label: "NivelDeMetal",
+                              data: DatosNivelDeMetal,
+                              borderWidth: 1,
+                              backgroundColor: "transparent",
+                              borderColor: "#007bff",
+                              pointBorderColor: "#007bff",
+                              pointBackgroundColor: "#007bff",
+                              fill: false,
+                              lineTension: 0
+                          }
+                      ]
+                    };
+
+                    var nivelDeBanoChartData =  {
+                      labels: DiaNivelDeBano,
+                      datasets: [
+                          {
+                              label: "NivelDeBano",
+                              data: DatosNivelDeBano,
+                              borderWidth: 1,
+                              backgroundColor: "transparent",
+                              borderColor: "#007bff",
+                              pointBorderColor: "#007bff",
+                              pointBackgroundColor: "#007bff",
+                              fill: false,
+                              lineTension: 0
+                          }
+                      ]
+                    };
+                    var frecuenciaTKChartData = {
+                      labels: DiaFrecuenciaTK,
+                      datasets: [
+                          {
+                              label: "FrecuenciaTK",
+                              data: DatosFrecuenciaTK,
+                              borderWidth: 1,
+                              backgroundColor: "transparent",
+                              borderColor: "#007bff",
+                              pointBorderColor: "#007bff",
+                              pointBackgroundColor: "#007bff",
+                              fill: false,
+                              lineTension: 0
+                          }
+                      ]
+                    };
             console.log(response);
-            var ctx = document.getElementById("lineChart").getContext("2d");
-            var myChart = new Chart(ctx, {
-                type: "line",
-                data: {
-                    labels: DiaVoltaje,
-                    datasets: [
-                        {
-                            label: "Voltaje",
-                            data: DatosVoltaje,
-                            borderWidth: 1,
-                            backgroundColor: "transparent",
-                            borderColor: "#007bff",
-                            pointBorderColor: "#007bff",
-                            pointBackgroundColor: "#007bff",
-                            fill: false,
-                            lineTension: 0
-                        },
-                        {
-                            label: "banda1",
-                            data: Banda1Voltaje,
-                            yAxisID: "y-axis-1",
-                            borderWidth: 1,
-                            backgroundColor: "transparent",
-                            borderColor: "red",
-                            pointBackgroundColor: "red",
-                            pointBorderColor: "red",
-                            pointStyle: "line",
-                            fill: false,
-                            lineTension: 0
-                        },
-                        {
-                            label: "banda2",
-                            data: Banda2Voltaje,
-                            yAxisID: "y-axis-1",
-                            borderWidth: 1,
-                            backgroundColor: "transparent",
-                            borderColor: "orange",
-                            pointBackgroundColor: "orange",
-                            pointBorderColor: "orange",
-                            pointStyle: "line",
-                            fill: false,
-                            lineTension: 0
-                        },
-                    ]
-                },
-                options: {
-                    scales: {
-                        yAxes: [
-                            {
-                                ticks: {
-                                    beginAtZero: false
-                                }
-                            }
-                        ]
-                    }
-                }
-            });
+            voltajeChart.options = ChartOptions;
+                    voltajeChart.data = voltajeChartData;
+                    voltajeChart.update();
+                    
+                    corrienteChart.options = ChartOptions;
+                    corrienteChart.data = corrienteChartData;
+                    corrienteChart.update();
 
+                    efCorrienteChart.options = ChartOptions;
+                    efCorrienteChart.data = efCorrienteChartData;
+                    efCorrienteChart.update();
 
-            var ctx = document.getElementById("lineChart2").getContext("2d");
-            var myChart = new Chart(ctx, {
-                type: "line",
-                data: {
-                    labels: DiaCorriente,
-                    datasets: [
-                        {
-                            label: "Corriente",
-                            data: DatosCorriente,
-                            borderWidth: 1,
-                            backgroundColor: "transparent",
-                            borderColor: "#007bff",
-                            pointBorderColor: "#007bff",
-                            pointBackgroundColor: "#007bff",
-                            fill: false,
-                            lineTension: 0
-                        }
-                    ]
-                },
-                options: {
-                    scales: {
-                        yAxes: [
-                            {
-                                ticks: {
-                                    beginAtZero: false
-                                }
-                            }
-                        ]
-                    }
-                }
-            });
+                    desvResistenciaChart.options = ChartOptions;
+                    desvResistenciaChart.data = desvResistenciaChartData;
+                    desvResistenciaChart.update();
 
-            var ctx = document.getElementById("lineChart3").getContext("2d");
-            var myChart = new Chart(ctx, {
-                type: "line",
-                data: {
-                    labels: DiaEfCorriente,
-                    datasets: [
-                        {
-                            label: "EfCorriente",
-                            data: DatosEfCorriente,
-                            borderWidth: 1,
-                            backgroundColor: "transparent",
-                            borderColor: "#007bff",
-                            pointBorderColor: "#007bff",
-                            pointBackgroundColor: "#007bff",
-                            fill: false,
-                            lineTension: 0
-                        }
-                    ]
-                },
-                options: {
-                    scales: {
-                        yAxes: [
-                            {
-                                ticks: {
-                                    beginAtZero: false
-                                }
-                            }
-                        ]
-                    }
-                }
-            });
+                    frecuenciaEAChart.options = ChartOptions;
+                    frecuenciaEAChart.data = frecuenciaEAChartData;
+                    frecuenciaEAChart.update();
 
-            var ctx = document.getElementById("lineChart4").getContext("2d");
-            var myChart = new Chart(ctx, {
-                type: "line",
-                data: {
-                    labels: DiaDesvResistencia,
-                    datasets: [
-                        {
-                            label: "DesvResistencia",
-                            data: DatosDesvResistencia,
-                            borderWidth: 1,
-                            backgroundColor: "transparent",
-                            borderColor: "#007bff",
-                            pointBorderColor: "#007bff",
-                            pointBackgroundColor: "#007bff",
-                            fill: false,
-                            lineTension: 0
-                        }
-                    ]
-                },
-                options: {
-                    scales: {
-                        yAxes: [
-                            {
-                                ticks: {
-                                    beginAtZero: false
-                                }
-                            }
-                        ]
-                    }
-                }
-            });
-            var ctx = document.getElementById("lineChart5").getContext("2d");
-            var myChart = new Chart(ctx, {
-                type: "line",
-                data: {
-                    labels: DiaFrecuenciaEA,
-                    datasets: [
-                        {
-                            label: "FrecuenciaEA",
-                            data: DatosFrecuenciaEA,
-                            borderWidth: 1,
-                            backgroundColor: "transparent",
-                            borderColor: "#007bff",
-                            pointBorderColor: "#007bff",
-                            pointBackgroundColor: "#007bff",
-                            fill: false,
-                            lineTension: 0
-                        }
-                    ]
-                },
-                options: {
-                    scales: {
-                        yAxes: [
-                            {
-                                ticks: {
-                                    beginAtZero: false
-                                }
-                            }
-                        ]
-                    }
-                }
-            });
+                    potenciaChart.options = ChartOptions;
+                    potenciaChart.data = potenciaChartData;
+                    potenciaChart.update();
 
-            var ctx = document.getElementById("lineChart6").getContext("2d");
-            var myChart = new Chart(ctx, {
-                type: "line",
-                data: {
-                    labels: DiaPotencia,
-                    datasets: [
-                        {
-                            label: "Potencia",
-                            data: DatosPotencia,
-                            borderWidth: 1,
-                            backgroundColor: "transparent",
-                            borderColor: "#007bff",
-                            pointBorderColor: "#007bff",
-                            pointBackgroundColor: "#007bff",
-                            fill: false,
-                            lineTension: 0
-                        }
-                    ]
-                },
-                options: {
-                    scales: {
-                        yAxes: [
-                            {
-                                ticks: {
-                                    beginAtZero: false
-                                }
-                            }
-                        ]
-                    }
-                }
-            });
+                    nivelDeMetalChart.options = ChartOptions;
+                    nivelDeMetalChart.data = nivelDeMetalChartData;
+                    nivelDeMetalChart.update();
 
-            var ctx = document.getElementById("lineChart7").getContext("2d");
-            var myChart = new Chart(ctx, {
-                type: "line",
-                data: {
-                    labels: DiaNivelDeMetal,
-                    datasets: [
-                        {
-                            label: "NivelDeMetal",
-                            data: DatosNivelDeMetal,
-                            borderWidth: 1,
-                            backgroundColor: "transparent",
-                            borderColor: "#007bff",
-                            pointBorderColor: "#007bff",
-                            pointBackgroundColor: "#007bff",
-                            fill: false,
-                            lineTension: 0
-                        }
-                    ]
-                },
-                options: {
-                    scales: {
-                        yAxes: [
-                            {
-                                ticks: {
-                                    beginAtZero: false
-                                }
-                            }
-                        ]
-                    }
-                }
-            });
+                    nivelDeBanoChart.options = ChartOptions;
+                    nivelDeBanoChart.data = nivelDeBanoChartData;
+                    nivelDeBanoChart.update();
 
-            var ctx = document.getElementById("lineChart8").getContext("2d");
-            var myChart = new Chart(ctx, {
-                type: "line",
-                data: {
-                    labels: DiaNivelDeBano,
-                    datasets: [
-                        {
-                            label: "NivelDeBano",
-                            data: DatosNivelDeBano,
-                            borderWidth: 1,
-                            backgroundColor: "transparent",
-                            borderColor: "#007bff",
-                            pointBorderColor: "#007bff",
-                            pointBackgroundColor: "#007bff",
-                            fill: false,
-                            lineTension: 0
-                        }
-                    ]
-                },
-                options: {
-                    scales: {
-                        yAxes: [
-                            {
-                                ticks: {
-                                    beginAtZero: false
-                                }
-                            }
-                        ]
-                    }
-                }
-            });
-            var ctx = document.getElementById("lineChart9").getContext("2d");
-            var myChart = new Chart(ctx, {
-                type: "line",
-                data: {
-                    labels: DiaFrecuenciaTK,
-                    datasets: [
-                        {
-                            label: "FrecuenciaTK",
-                            data: DatosFrecuenciaTK,
-                            borderWidth: 1,
-                            backgroundColor: "transparent",
-                            borderColor: "#007bff",
-                            pointBorderColor: "#007bff",
-                            pointBackgroundColor: "#007bff",
-                            fill: false,
-                            lineTension: 0
-                        }
-                    ]
-                },
-                options: {
-                    scales: {
-                        yAxes: [
-                            {
-                                ticks: {
-                                    beginAtZero: false
-                                }
-                            }
-                        ]
-                    }
-                  }
-            });
+                    frecuenciaTKChart.options = ChartOptions;
+                    frecuenciaTKChart.data = frecuenciaTKChartData;
+                    frecuenciaTKChart.update();
           },
           error: function(data) {
                 /*
@@ -3290,7 +3329,642 @@
           },
        });
      });
+     $(document).ready(function() {
+        $("#formPredet").bind("submit", function() {
+            $.ajaxSetup({
+                headers: {
+                    "X-CSRF-TOKEN": "{{ csrf_token() }}"
+                }
+            });
+            datos = $(this).serialize();
+            console.log(datos);
+            $.ajax({
+                type: "post",
+                url: "{{ route('evolution.dataChartPrePost') }}",
+                data: $(this).serialize(),
+                beforeSend: function() {
+                    /*
+                    * Esta función se ejecuta durante el envió de la petición al
+                    * servidor.
+                    * */
+                   
+                },
+                complete: function(data) {
+                    /*
+                    * Se ejecuta al termino de la petición
+                    * */
+                    MENSAJE = "Enviando: "+ data ;
+                    $("#mensaje").html(MENSAJE);
+                    $("#alertaMsj").html(MENSAJE);
+                    $("#modalMensaje").modal('show');
+                    
+                },
+                success: function(response) {
+                    /*
+                    * Se ejecuta cuando termina la petición y esta ha sido
+                    * correcta
+                    * */
+                  
+                    var ChartOptions = {
+                        hoverMode: 'index',
+                        stacked: false,
+                        responsive: true,
+                        title: {
+                          display: true,
+                          text: 'Grafica SICER - '
+                        },
+                        tooltips: {
+                          mode: 'nearest',
+                          intersect: true,
+                        },
+                        hover: {
+                          mode: 'nearest',
+                          intersect: true,
+                        },
+                        scales: {
+                            yAxes: [
+                                {
+                                    scaleLabel: {
+                                        
+                                        display: true
+                                    },
+                                    type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                                    display: true,
+                                    position: "left",
+                                    id: "y-axis-1",
+                                    ticks: {
+                                    }
+                                }
+                            ],
 
+                            xAxes: [
+                                {
+                                    scaleLabel: {
+                                        
+                                        display: true
+                                    },
+                                    position: "bottom",
+                                    id: "x-axis-1",
+                                    ticks: {
+                                        // maxTicksLimit: 20
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                    var DiaVoltaje = new Array();
+                    var DatosVoltaje = new Array();
+                    var Banda1Voltaje = new Array();
+                    var Banda2Voltaje = new Array();
+
+                    var DiaCorriente = new Array();
+                    var DatosCorriente = new Array();
+                    var Banda1Corriente = new Array();
+                    var Banda2Corriente = new Array();
+
+                    var DiaEfCorriente = new Array();
+                    var DatosEfCorriente = new Array();
+                    var Banda1EfCorriente = new Array();
+                    var Banda2EfCorriente = new Array();
+
+                    var DiaDesvResistencia = new Array();
+                    var DatosDesvResistencia = new Array();
+                    var Banda1DesvResistencia = new Array();
+                    var Banda2DesvResistencia = new Array();
+
+                    var DiaFrecuenciaEA = new Array();
+                    var DatosFrecuenciaEA = new Array();
+                    var Banda1FrecuenciaEA = new Array();
+                    var Banda2FrecuenciaEA = new Array();
+
+                    var DiaPotencia = new Array();
+                    var DatosPotencia = new Array();
+                    var Banda1Potencia = new Array();
+                    var Banda2Potencia = new Array();
+
+                    var DiaNivelDeMetal = new Array();
+                    var DatosNivelDeMetal = new Array();
+                    var Banda1NivelDeMetal = new Array();
+                    var Banda2NivelDeMetal = new Array();
+
+                    var DiaNivelDeBano = new Array();
+                    var DatosNivelDeBano = new Array();
+                    var Banda1NivelDeBano = new Array();
+                    var Banda2NivelDeBano = new Array();
+
+                    var DiaFrecuenciaTK = new Array();
+                    var DatosFrecuenciaTK = new Array();
+                    var Banda1FrecuenciaTK = new Array();
+                    var Banda2FrecuenciaTK = new Array();
+
+                    var DiaDuracionTK = new Array();
+                    var DatosDuracionTK = new Array();
+                    var Banda1DuracionTK = new Array();
+                    var Banda2DuracionTK = new Array();
+                    
+                    var DiaGolpesAlumina = new Array();
+                    var DatosGolpesAlumina = new Array();
+                    var Banda1GolpesAlumina = new Array();
+                    var Banda2GolpesAlumina = new Array();
+
+                    var DiaAlimentacionAlumina = new Array();
+                    var DatosAlimentacionAlumina = new Array();
+                    var Banda1AlimentacionAlumina = new Array();
+                    var Banda2AlimentacionAlumina = new Array();
+
+                    var DiaTemperatura = new Array();
+                    var DatosTemperatura = new Array();
+                    var Banda1Temperatura = new Array();
+                    var Banda2Temperatura = new Array();
+
+                    var DiaAcidez = new Array();
+                    var DatosAcidez = new Array();
+                    var Banda1Acidez = new Array();
+                    var Banda2Acidez = new Array();
+
+                    var DiaDesvTemperatura = new Array();
+                    var DatosDesvTemperatura = new Array();
+                    var Banda1DesvTemperatura = new Array();
+                    var Banda2DesvTemperatura = new Array();
+
+                    var DiaDesvAcidez = new Array();
+                    var DatosDesvAcidez = new Array();
+                    var Banda1DesvAcidez = new Array();
+                    var Banda2DesvAcidez = new Array();
+
+                    var DiaConsumoFl = new Array();
+                    var DatosConsumoFl = new Array();
+                    var Banda1ConsumoFl = new Array();
+                    var Banda2ConsumoFl = new Array();
+
+                    var DiaPorcHierro = new Array();
+                    var DatosPorcHierro = new Array();
+                    var Banda1PorcHierro = new Array();
+                    var Banda2PorcHierro = new Array();
+
+                    var DiaPurezaSilicio = new Array();
+                    var DatosPurezaSilicio = new Array();
+                    var Banda1PurezaSilicio = new Array();
+                    var Banda2PurezaSilicio = new Array();
+
+                    var DiaPorcSilicio = new Array();
+                    var DatosPorcSilicio = new Array();
+                    var Banda1PorcSilicio = new Array();
+                    var Banda2PorcSilicio = new Array();
+
+                    //obteniendo datos para variable 1    
+                      response.datosVoltaje.forEach(function(data) {
+                        if (response.banda1voltaje != null) {
+                            Banda1Voltaje.push(response.banda1voltaje);
+                        }
+                        if (response.banda2voltaje != null) {
+                            Banda2Voltaje.push(response.banda2voltaje);
+                        }
+                        DiaVoltaje.push(data.dia);
+                        DatosVoltaje.push(data.voltaje);
+                      });
+
+                      response.datosCorriente.forEach(function(data) {
+                        if (response.banda1Corriente != null) {
+                            Banda1Corriente.push(response.banda1Corriente);
+                        }
+                        if (response.banda2Corriente != null) {
+                            Banda2Corriente.push(response.banda2Corriente);
+                        }
+                        DiaCorriente.push(data.dia);
+                        DatosCorriente.push(data.corriente);
+                      });
+
+                      response.datosEfCorriente.forEach(function(data) {
+                        if (response.banda1EfCorriente != null) {
+                            Banda1EfCorriente.push(response.banda1EfCorriente);
+                        }
+                        if (response.banda2EfCorriente != null) {
+                            Banda2EfCorriente.push(response.banda2EfCorriente);
+                        }
+                        DiaEfCorriente.push(data.dia);
+                        DatosEfCorriente.push(data.efCorriente);
+                      });
+
+                      response.datosDesvResistencia.forEach(function(data) {
+                        if (response.banda1DesvResistencia != null) {
+                            Banda1DesvResistencia.push(response.banda1DesvResistencia);
+                        }
+                        if (response.banda2DesvResistencia != null) {
+                            Banda2DesvResistencia.push(response.banda2DesvResistencia);
+                        }
+                        DiaDesvResistencia.push(data.dia);
+                        DatosDesvResistencia.push(data.desvResistencia);
+                      });
+
+                      response.datosFrecuenciaEA.forEach(function(data) {
+                        if (response.banda1FrecuenciaEA != null) {
+                          Banda1FrecuenciaEA.push(response.banda1FrecuenciaEA);
+                        }
+                        if (response.banda2FrecuenciaEA != null) {
+                            Banda2FrecuenciaEA.push(response.banda2FrecuenciaEA);
+                        }
+                        DiaFrecuenciaEA.push(data.dia);
+                        DatosFrecuenciaEA.push(data.frecuenciaEA);
+                      });
+
+                      response.datosPotencia.forEach(function(data) {
+                        if (response.banda1Potencia != null) {
+                            Banda1Potencia.push(response.banda1Potencia);
+                        }
+                        if (response.banda2Potencia != null) {
+                            Banda2Potencia.push(response.banda2Potencia);
+                        }
+                        DiaPotencia.push(data.dia);
+                        DatosPotencia.push(data.potencia);
+                      });
+
+                      response.datosNivelDeMetal.forEach(function(data) {
+                        if (response.banda1NivelDeMetal != null) {
+                          Banda1NivelDeMetal.push(response.banda1NivelDeMetal);
+                        }
+                        if (response.banda2NivelDeMetal != null) {
+                          Banda2NivelDeMetal.push(response.banda2NivelDeMetal);
+                        }
+                        DiaNivelDeMetal.push(data.dia);
+                        DatosNivelDeMetal.push(data.nivelDeMetal);
+                      });
+
+                      response.datosNivelDeBanio.forEach(function(data) {
+                        if (response.banda1NivelDeBano != null) {
+                          Banda1NivelDeBano.push(response.banda1NivelDeBano);
+                        }
+                        if (response.banda2NivelDeBano != null) {
+                          Banda2NivelDeBano.push(response.banda2NivelDeBano);
+                        }
+                        DiaNivelDeBano.push(data.dia);
+                        DatosNivelDeBano.push(data.nivelDeBanio);
+                      });
+
+                      response.datosFrecuenciaTK.forEach(function(data) {
+                        if (response.banda1FrecuenciaTK != null) {
+                          Banda1FrecuenciaTK.push(response.banda1FrecuenciaTK);
+                        }
+                        if (response.banda2FrecuenciaTK != null) {
+                          Banda2FrecuenciaTK.push(response.banda2FrecuenciaTK);
+                        }
+                        DiaFrecuenciaTK.push(data.dia);
+                        DatosFrecuenciaTK.push(data.frecuenciaTK);
+                      });
+
+                      response.datosDuracionTK.forEach(function(data) {
+                        if (response.banda1DuracionTK != null) {
+                          Banda1DuracionTK.push(response.banda1DuracionTK);
+                        }
+                        if (response.banda2DuracionTK != null) {
+                          Banda2DuracionTK.push(response.banda2DuracionTK);
+                        }
+                        DiaDuracionTK.push(data.dia);
+                        DatosDuracionTK.push(data.duracionTK);
+                      });
+
+                      response.datosGolpesAlumina.forEach(function(data) {
+                        if (response.banda1GolpesAlumina != null) {
+                          Banda1GolpesAlumina.push(response.banda1GolpesAlumina);
+                        }
+                        if (response.banda2GolpesAlumina != null) {
+                          Banda2GolpesAlumina.push(response.banda2GolpesAlumina);
+                        }
+                        DiaGolpesAlumina.push(data.dia);
+                        DatosGolpesAlumina.push(data.golpesAlumina);
+                      });
+
+                      response.datosAlimentacionAlumina.forEach(function(data) {
+                        if (response.banda1AlimentacionAlumina != null) {
+                          Banda1AlimentacionAlumina.push(response.banda1AlimentacionAlumina);
+                        }
+                        if (response.banda2AlimentacionAlumina != null) {
+                          Banda2AlimentacionAlumina.push(response.banda2AlimentacionAlumina);
+                        }
+                        DiaAlimentacionAlumina.push(data.dia);
+                        DatosAlimentacionAlumina.push(data.alimentacionAlumina);
+                      });
+                      
+                      response.datosTemperatura.forEach(function(data) {
+                        if (response.banda1Temperatura != null) {
+                          Banda1Temperatura.push(response.banda1Temperatura);
+                        }
+                        if (response.banda2Temperatura != null) {
+                          Banda2Temperatura.push(response.banda2Temperatura);
+                        }
+                        DiaTemperatura.push(data.dia);
+                        DatosTemperatura.push(data.temperatura);
+                      });
+
+                      response.datosAcidez.forEach(function(data) {
+                        if (response.banda1Acidez != null) {
+                          Banda1Acidez.push(response.banda1Acidez);
+                        }
+                        if (response.banda2Acidez != null) {
+                          Banda2Acidez.push(response.banda2Acidez);
+                        }
+                        DiaAcidez.push(data.dia);
+                        DatosAcidez.push(data.acidez);
+                      });
+
+                      response.datosDesvTemperatura.forEach(function(data) {
+                        if (response.banda1DesvTemperatura != null) {
+                          Banda1DesvTemperatura.push(response.banda1DesvTemperatura);
+                        }
+                        if (response.banda2DesvTemperatura != null) {
+                          Banda2DesvTemperatura.push(response.banda2DesvTemperatura);
+                        }
+                        DiaDesvTemperatura.push(data.dia);
+                        DatosDesvTemperatura.push(data.desvTemperatura);
+                      });
+
+                      response.datosDesvAcidez.forEach(function(data) {
+                        if (response.banda1DesvAcidez != null) {
+                          Banda1DesvAcidez.push(response.banda1DesvAcidez);
+                        }
+                        if (response.banda2DesvAcidez != null) {
+                          Banda2DesvAcidez.push(response.banda2DesvAcidez);
+                        }
+                        DiaDesvAcidez.push(data.dia);
+                        DatosDesvAcidez.push(data.desvAcidez);
+                      });
+
+                      response.datosConsumoFl.forEach(function(data) {
+                        if (response.banda1ConsumoFl != null) {
+                          Banda1ConsumoFl.push(response.banda1ConsumoFl);
+                        }
+                        if (response.banda2ConsumoFl != null) {
+                          Banda2ConsumoFl.push(response.banda2ConsumoFl);
+                        }
+                        DiaConsumoFl.push(data.dia);
+                        DatosConsumoFl.push(data.consumoFl);
+                      });
+
+                      response.datosPorcHierro.forEach(function(data) {
+                        if (response.banda1PorcHierro != null) {
+                          Banda1PorcHierro.push(response.banda1PorcHierro);
+                        }
+                        if (response.banda2PorcHierro != null) {
+                          Banda2PorcHierro.push(response.banda2PorcHierro);
+                        }
+                        DiaPorcHierro.push(data.dia);
+                        DatosPorcHierro.push(data.porcHierro);
+                      });
+
+                      response.datosPurezaSilicio.forEach(function(data) {
+                        if (response.banda1PurezaSilicio != null) {
+                          Banda1PurezaSilicio.push(response.banda1PurezaSilicio);
+                        }
+                        if (response.banda2PurezaSilicio != null) {
+                          Banda2PurezaSilicio.push(response.banda2PurezaSilicio);
+                        }
+                        DiaPurezaSilicio.push(data.dia);
+                        DatosPurezaSilicio.push(data.purezaSilicio);
+                      });
+
+                      response.datosPorcSilicio.forEach(function(data) {
+                        if (response.banda1PorcSilicio != null) {
+                          Banda1PorcSilicio.push(response.banda1PorcSilicio);
+                        }
+                        if (response.banda2PorcSilicio != null) {
+                          Banda2PorcSilicio.push(response.banda2PorcSilicio);
+                        }
+                        DiaPorcSilicio.push(data.dia);
+                        DatosPorcSilicio.push(data.porcSilicio);
+                      });
+
+                    
+                    console.log(response);
+                   
+                    var voltajeChartData = {
+                      labels: DiaVoltaje,
+                      datasets: [
+                          {
+                              label: "Voltaje",
+                              data: DatosVoltaje,
+                              borderWidth: 1,
+                              backgroundColor: "transparent",
+                              borderColor: "#007bff",
+                              pointBorderColor: "#007bff",
+                              pointBackgroundColor: "#007bff",
+                              fill: false,
+                              lineTension: 0
+                          },
+                          {
+                              label: "banda1",
+                              data: Banda1Voltaje,
+                              yAxisID: "y-axis-1",
+                              borderWidth: 1,
+                              backgroundColor: "transparent",
+                              borderColor: "red",
+                              pointBackgroundColor: "red",
+                              pointBorderColor: "red",
+                              pointStyle: "line",
+                              fill: false,
+                              lineTension: 0
+                          },
+                          {
+                              label: "banda2",
+                              data: Banda2Voltaje,
+                              yAxisID: "y-axis-1",
+                              borderWidth: 1,
+                              backgroundColor: "transparent",
+                              borderColor: "orange",
+                              pointBackgroundColor: "orange",
+                              pointBorderColor: "orange",
+                              pointStyle: "line",
+                              fill: false,
+                              lineTension: 0
+                          },
+                      ]
+                   };
+
+                    var corrienteChartData = {
+                      labels: DiaCorriente,
+                      datasets: [
+                          {
+                              label: "Corriente",
+                              data: DatosCorriente,
+                              borderWidth: 1,
+                              backgroundColor: "transparent",
+                              borderColor: "#007bff",
+                              pointBorderColor: "#007bff",
+                              pointBackgroundColor: "#007bff",
+                              fill: false,
+                              lineTension: 0
+                          }
+                      ]
+                   };
+
+                    var efCorrienteChartData = {
+                      labels: DiaEfCorriente,
+                      datasets: [
+                          {
+                              label: "EfCorriente",
+                              data: DatosEfCorriente,
+                              borderWidth: 1,
+                              backgroundColor: "transparent",
+                              borderColor: "#007bff",
+                              pointBorderColor: "#007bff",
+                              pointBackgroundColor: "#007bff",
+                              fill: false,
+                              lineTension: 0
+                          }
+                      ]
+                    };
+
+                    var desvResistenciaChartData = {
+                      labels: DiaDesvResistencia,
+                      datasets: [
+                          {
+                              label: "DesvResistencia",
+                              data: DatosDesvResistencia,
+                              borderWidth: 1,
+                              backgroundColor: "transparent",
+                              borderColor: "#007bff",
+                              pointBorderColor: "#007bff",
+                              pointBackgroundColor: "#007bff",
+                              fill: false,
+                              lineTension: 0
+                          }
+                      ]
+                    };
+                    
+                    var frecuenciaEAChartData = {
+                      labels: DiaFrecuenciaEA,
+                      datasets: [
+                          {
+                              label: "FrecuenciaEA",
+                              data: DatosFrecuenciaEA,
+                              borderWidth: 1,
+                              backgroundColor: "transparent",
+                              borderColor: "#007bff",
+                              pointBorderColor: "#007bff",
+                              pointBackgroundColor: "#007bff",
+                              fill: false,
+                              lineTension: 0
+                          }
+                      ]
+                    };
+
+                    var potenciaChartData = {
+                      labels: DiaPotencia,
+                      datasets: [
+                          {
+                              label: "Potencia",
+                              data: DatosPotencia,
+                              borderWidth: 1,
+                              backgroundColor: "transparent",
+                              borderColor: "#007bff",
+                              pointBorderColor: "#007bff",
+                              pointBackgroundColor: "#007bff",
+                              fill: false,
+                              lineTension: 0
+                          }
+                      ]
+                    };
+
+                    var nivelDeMetalChartData = {
+                      labels: DiaNivelDeMetal,
+                      datasets: [
+                          {
+                              label: "NivelDeMetal",
+                              data: DatosNivelDeMetal,
+                              borderWidth: 1,
+                              backgroundColor: "transparent",
+                              borderColor: "#007bff",
+                              pointBorderColor: "#007bff",
+                              pointBackgroundColor: "#007bff",
+                              fill: false,
+                              lineTension: 0
+                          }
+                      ]
+                    };
+
+                    var nivelDeBanoChartData =  {
+                      labels: DiaNivelDeBano,
+                      datasets: [
+                          {
+                              label: "NivelDeBano",
+                              data: DatosNivelDeBano,
+                              borderWidth: 1,
+                              backgroundColor: "transparent",
+                              borderColor: "#007bff",
+                              pointBorderColor: "#007bff",
+                              pointBackgroundColor: "#007bff",
+                              fill: false,
+                              lineTension: 0
+                          }
+                      ]
+                    };
+                    var frecuenciaTKChartData = {
+                      labels: DiaFrecuenciaTK,
+                      datasets: [
+                          {
+                              label: "FrecuenciaTK",
+                              data: DatosFrecuenciaTK,
+                              borderWidth: 1,
+                              backgroundColor: "transparent",
+                              borderColor: "#007bff",
+                              pointBorderColor: "#007bff",
+                              pointBackgroundColor: "#007bff",
+                              fill: false,
+                              lineTension: 0
+                          }
+                      ]
+                    };
+
+                    voltajeChart.options = ChartOptions;
+                    voltajeChart.data = voltajeChartData;
+                    voltajeChart.update();
+                    
+                    corrienteChart.options = ChartOptions;
+                    corrienteChart.data = corrienteChartData;
+                    corrienteChart.update();
+
+                    efCorrienteChart.options = ChartOptions;
+                    efCorrienteChart.data = efCorrienteChartData;
+                    efCorrienteChart.update();
+
+                    desvResistenciaChart.options = ChartOptions;
+                    desvResistenciaChart.data = desvResistenciaChartData;
+                    desvResistenciaChart.update();
+
+                    frecuenciaEAChart.options = ChartOptions;
+                    frecuenciaEAChart.data = frecuenciaEAChartData;
+                    frecuenciaEAChart.update();
+
+                    potenciaChart.options = ChartOptions;
+                    potenciaChart.data = potenciaChartData;
+                    potenciaChart.update();
+
+                    nivelDeMetalChart.options = ChartOptions;
+                    nivelDeMetalChart.data = nivelDeMetalChartData;
+                    nivelDeMetalChart.update();
+
+                    nivelDeBanoChart.options = ChartOptions;
+                    nivelDeBanoChart.data = nivelDeBanoChartData;
+                    nivelDeBanoChart.update();
+
+                    frecuenciaTKChart.options = ChartOptions;
+                    frecuenciaTKChart.data = frecuenciaTKChartData;
+                    frecuenciaTKChart.update();
+
+
+                },
+                error: function(data) {
+                    /*
+                    * Se ejecuta si la peticón ha sido erronea
+                    * */
+                    MENSAJE = "Problemas al tratar de enviar el formulario "+ data ;
+                    $("#mensaje").html(MENSAJE);
+                    $("#modalMensaje").modal('show');
+                }
+            });
+            // Nos permite cancelar el envio del formulario
+            return false;
+        });
+     });
     //FUNCION QUE SE ESTA UTILIZANDO PARA GRAFICAR
 
     $(document).ready(function() {
@@ -3859,7 +4533,7 @@
                                 }
                             ]
                         }
-                    };
+                      };
 
                     }
 
@@ -4037,7 +4711,7 @@
                     varChart.options = ChartOptions;
                     varChart.data = ChartData;
                     varChart.update();
-                    $("#voltajeChart").CardWidget("expand");
+                    $("#consultaChart").CardWidget("expand");
                     $("#thVariable").text(response.variable);
                     $("#thVariable2").text(response.variableVar2);
                     $("#celdaswidget").CardWidget("expand");
@@ -4223,289 +4897,6 @@
             return false;
         });
     });
-
-    /*
-        
-        
-        
-            var areaChartData = {
-              labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-              datasets: [
-                {
-                  label               : 'voltaje celda 1',
-                  backgroundColor     : 'rgba(60,141,188,0.9)',
-                  borderColor         : 'rgba(60,141,188,0.8)',
-                  pointRadius          : false,
-                  pointColor          : '#3b8bba',
-                  pointStrokeColor    : 'rgba(60,141,188,1)',
-                  pointHighlightFill  : '#fff',
-                  lineTension         : 0,
-                  pointHighlightStroke: 'rgba(60,141,188,1)',
-                  data                : [28, 48, 40, 19, 86, 27, 90]
-                },
-                {
-                  label               : 'celda 2',
-                  backgroundColor     : 'rgba(210, 214, 222, 1)',
-                  borderColor         : 'rgba(210, 214, 222, 1)',
-                  pointRadius         : false,
-                  pointColor          : 'rgba(210, 214, 222, 1)',
-                  pointStrokeColor    : '#c1c7d1',
-                  pointHighlightFill  : '#fff',
-                  lineTension         : 0,
-                  pointHighlightStroke: 'rgba(220,220,220,1)',
-                  data                : [65, 59, 80, 81, 56, 55, 40]
-                },
-                {
-                  label               : 'Constant',
-                  backgroundColor     : 'rgba(210, 214, 222, 1)',
-                  borderColor         : 'rgba(210, 214, 222, 1)',
-                  pointRadius         : false,
-                  pointColor          : 'rgba(210, 214, 222, 1)',
-                  pointStrokeColor    : '#c1c7d1',
-                  pointHighlightFill  : '#fff',
-                  lineTension         : 0,
-                  pointHighlightStroke: 'rgba(220,220,220,1)',
-                  data                : [50]
-                },
-              ]
-            }
-        
-            var areaChartOptions = {
-              maintainAspectRatio : false,
-              responsive : true,
-              legend: {
-                display: false
-              },
-              scales: {
-                xAxes: [{
-                  gridLines : {
-                    display : true,
-                  }
-                }],
-                yAxes: [{
-                  gridLines : {
-                    display : true,
-                  }
-                }]
-              }
-            }
-        
-            //-------------
-            //- LINE CHART -
-            //--------------
-            var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
-            var lineChartOptions = jQuery.extend(true, {}, areaChartOptions)
-            var lineChartData = jQuery.extend(true, {}, areaChartData)
-            lineChartData.datasets[0].fill = false;
-            lineChartData.datasets[1].fill = false;
-            lineChartData.datasets[2].fill = true;
-            lineChartOptions.datasetFill = false
-        
-            var lineChart = new Chart(lineChartCanvas, { 
-              type: 'line',
-              data: lineChartData, 
-              options: lineChartOptions
-            })
-        
-        
-        
-        
-        
-        // otras graficas 
-            var lineChart1Canvas = $('#lineChart1').get(0).getContext('2d')
-            var lineChart1Options = jQuery.extend(true, {}, areaChartOptions)
-            var lineChart1Data = jQuery.extend(true, {}, areaChartData)
-            lineChart1Data.datasets[0].fill = false;
-            lineChart1Data.datasets[1].fill = false;
-            lineChart1Data.datasets[2].fill = true;
-            lineChart1Options.datasetFill = false
-        
-            var lineChart1 = new Chart(lineChart1Canvas, { 
-              type: 'line',
-              data: lineChart1Data, 
-              options: lineChart1Options
-            })
-        
-        
-            var desvResistChartCanvas = $('#desvResistChart').get(0).getContext('2d')
-            var desvResistChartOptions = jQuery.extend(true, {}, areaChartOptions)
-            var desvResistChartData = jQuery.extend(true, {}, areaChartData)
-            desvResistChartData.datasets[0].fill = false;
-            desvResistChartData.datasets[1].fill = false;
-            desvResistChartData.datasets[2].fill = true;
-            desvResistChartOptions.datasetFill = false
-        
-            var desvResistChart = new Chart(desvResistChartCanvas, { 
-              type: 'line',
-              data: desvResistChartData, 
-              options: desvResistChartOptions
-            })
-            
-        
-            var temperaturatChartCanvas = $('#temperaturatChart').get(0).getContext('2d')
-            var temperaturatChartOptions = jQuery.extend(true, {}, areaChartOptions)
-            var temperaturatChartData = jQuery.extend(true, {}, areaChartData)
-            temperaturatChartData.datasets[0].fill = false;
-            temperaturatChartData.datasets[1].fill = false;
-            temperaturatChartData.datasets[2].fill = true;
-            temperaturatChartOptions.datasetFill = false
-        
-            var temperaturatChart = new Chart(temperaturatChartCanvas, { 
-              type: 'line',
-              data: temperaturatChartData, 
-              options: temperaturatChartOptions
-            })
-            
-            var acidBanoChartCanvas = $('#acidBanoChart').get(0).getContext('2d')
-            var acidBanoChartOptions = jQuery.extend(true, {}, areaChartOptions)
-            var acidBanoChartData = jQuery.extend(true, {}, areaChartData)
-            acidBanoChartData.datasets[0].fill = false;
-            acidBanoChartData.datasets[1].fill = false;
-            acidBanoChartData.datasets[2].fill = true;
-            acidBanoChartOptions.datasetFill = false
-        
-            var acidBanoChart = new Chart(acidBanoChartCanvas, { 
-              type: 'line',
-              data: acidBanoChartData, 
-              options: acidBanoChartOptions
-            })
-            
-            var consumoAlChartCanvas = $('#consumoAlChart').get(0).getContext('2d')
-            var consumoAlChartOptions = jQuery.extend(true, {}, areaChartOptions)
-            var consumoAlChartData = jQuery.extend(true, {}, areaChartData)
-            consumoAlChartData.datasets[0].fill = false;
-            consumoAlChartData.datasets[1].fill = false;
-            consumoAlChartData.datasets[2].fill = true;
-            consumoAlChartOptions.datasetFill = false
-        
-            var consumoAlChart = new Chart(consumoAlChartCanvas, { 
-              type: 'line',
-              data: consumoAlChartData, 
-              options: consumoAlChartOptions
-            })
-        
-            var consumoAlManChartCanvas = $('#consumoAlManChart').get(0).getContext('2d')
-            var consumoAlManChartOptions = jQuery.extend(true, {}, areaChartOptions)
-            var consumoAlManChartData = jQuery.extend(true, {}, areaChartData)
-            consumoAlManChartData.datasets[0].fill = false;
-            consumoAlManChartData.datasets[1].fill = false;
-            consumoAlManChartData.datasets[2].fill = true;
-            consumoAlManChartOptions.datasetFill = false
-        
-            var consumoAlManChart = new Chart(consumoAlManChartCanvas, { 
-              type: 'line',
-              data: consumoAlManChartData, 
-              options: consumoAlManChartOptions
-            })
-        
-        
-            var eficTrasegChartCanvas = $('#eficTrasegChart').get(0).getContext('2d')
-            var eficTrasegChartOptions = jQuery.extend(true, {}, areaChartOptions)
-            var eficTrasegChartData = jQuery.extend(true, {}, areaChartData)
-            eficTrasegChartData.datasets[0].fill = false;
-            eficTrasegChartData.datasets[1].fill = false;
-            eficTrasegChartData.datasets[2].fill = true;
-            eficTrasegChartOptions.datasetFill = false
-        
-            var eficTrasegChart = new Chart(eficTrasegChartCanvas, { 
-              type: 'line',
-              data: eficTrasegChartData, 
-              options: eficTrasegChartOptions
-            })
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            //SEGUNDA GRAFICA
-            var ticksStyle = {
-            fontColor: '#495057',
-            fontStyle: 'bold'
-          }
-            var mode      = 'index'
-            var intersect = true
-            var $voltajeChartCanvas = $('#voltajeChart').get(0).getContext('2d')
-            var voltajeChart  = new Chart($voltajeChartCanvas, {
-            data   : {
-              labels  : ['18th', '20th', '22nd', '24th', '26th', '28th', '30th'],
-              datasets: [{
-                type                : 'line',
-                data                : [100, 120, 170, 167, 180, 177, 160],
-                backgroundColor     : 'transparent',
-                borderColor         : '#007bff',
-                pointBorderColor    : '#007bff',
-                pointBackgroundColor: '#007bff',
-                fill                : false
-                // pointHoverBackgroundColor: '#007bff',
-                // pointHoverBorderColor    : '#007bff'
-              },
-                {
-                  type                : 'line',
-                  data                : [60, 80, 70, 67, 80, 77, 100],
-                  backgroundColor     : 'tansparent',
-                  borderColor         : '#ced4da',
-                  pointBorderColor    : '#ced4da',
-                  pointBackgroundColor: '#ced4da',
-                  fill                : false
-                  // pointHoverBackgroundColor: '#ced4da',
-                  // pointHoverBorderColor    : '#ced4da'
-                }]
-            },
-            options: {
-              maintainAspectRatio: false,
-              tooltips           : {
-                mode     : mode,
-                intersect: intersect
-              },
-              hover              : {
-                mode     : mode,
-                intersect: intersect
-              },
-              legend             : {
-                display: false
-              },
-              scales             : {
-                yAxes: [{
-                  // display: false,
-                  gridLines: {
-                    display      : true,
-                    lineWidth    : '4px',
-                    color        : 'rgba(0, 0, 0, .2)',
-                    zeroLineColor: 'transparent'
-                  },
-                  ticks    : $.extend({
-                    beginAtZero : true,
-                    suggestedMax: 200
-                  }, ticksStyle)
-                }],
-                xAxes: [{
-                  display  : true,
-                  gridLines: {
-                    display: false
-                  },
-                  ticks    : ticksStyle
-                }]
-              }
-            }
-          })
-        
-        
-    */
-
 
   </script>
 @stop

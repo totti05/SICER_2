@@ -86,6 +86,654 @@ class EvolutionController extends Controller
     {
         //
     }
+
+    public function EvolutionDataChartGet(Request $request)
+    {
+        if ($request->isMethod('get')) {
+            $date1 = strtotime("2018/03/30"); 
+            $fecha1 = date("Y/m/d", strtotime("2018/03/30"));
+            $date2 = strtotime('+30 day', strtotime($fecha1));
+            $fecha2 = date("Y/m/d", $date2);
+
+           // $fecha1= "2018/03/01";
+           // $fecha2 ="2018/03/30";
+            $celda1=901;
+            $celda2= 1090;
+           
+
+            $voltaje = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(voltaje) as voltaje'))
+            ->get();
+
+            $banda1Voltaje = 4.55;
+            $banda2Voltaje = 4.65;
+
+            $corriente = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(corrienteL) as corriente'))
+            ->get();
+
+            $banda1Corriente = 219;
+            $banda2Corriente = null;
+
+            $efCorriente = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(corrienteL) as efCorriente'))
+            ->get();
+
+            $banda1EfCorriente = 90;
+            $banda2EfCorriente = 94;
+
+            $desvResistencia = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(dsr) as desvResistencia'))
+            ->get();
+
+            $banda1DesvResistencia = 0.06;
+            $banda2DesvResistencia = null;
+
+            $frecuenciaEA = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(dsr) as frecuenciaEA'))
+            ->get();
+
+            $banda1FrecuenciaEA = 0.15;
+            $banda2FrecuenciaEA = null;
+
+            $potencia = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(potencia) as potencia'))
+            ->get();
+
+            $banda1Potencia = 980;
+            $banda2Potencia = 1000;
+
+            $nivelDeMetal = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(nivelDeMetal) as nivelDeMetal'))
+            ->get();
+
+            $banda1NivelDeMetal = 20;
+            $banda2NivelDeMetal = 22;
+
+            $nivelDeBanio = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(nivelDeBanio) as nivelDeBanio'))
+            ->get();
+
+            $banda1NivelDeBano = 20;
+            $banda2NivelDeBano = 23;
+
+            $frecuenciaTK = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(nivelDeBanio) as frecuenciaTK'))
+            ->get();
+
+            $banda1FrecuenciaTK = 0.15;
+            $banda2FrecuenciaTK = null;
+
+            $duracionTK = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(duracionTk) as duracionTk'))
+            ->get();
+
+            $banda1DuracionTK = 0.7;
+            $banda2DuracionTK = 0.8;
+
+            $golpesAlumina = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(golpesAlumina) as golpesAlumina'))
+            ->get();
+
+            $banda1GolpesAlumina = 2.4;
+            $banda2GolpesAlumina = null;
+            
+            $alimentacionAlumina = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(golpesAlumina) as alimentacionAlumina'))
+            ->get();
+            
+            $banda1AlimentacionAlumina = 1200;
+            $banda2AlimentacionAlumina = 1300;
+
+            $temperatura = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(temperatura) as temperatura'))
+            ->get();
+
+            $banda1Temperatura = 960;
+            $banda2Temperatura = 965;
+
+            $acidez = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(acidez) as acidez'))
+            ->get();
+
+            $banda1Acidez = 10.5;
+            $banda2Acidez = 11;
+
+            $desvTemperatura = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('STDDEV(temperatura) as desvTemperatura'))
+            ->get();
+            
+            $banda1DesvTemperatura = 10;
+            $banda2DesvTemperatura = null;
+
+            $desvAcidez = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('STDDEV(acidez) as desvAcidez'))
+            ->get();
+
+            $banda1DesvAcidez = 1.0;
+            $banda2DesvAcidez = null;
+
+            $consumoFl = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(temperatura) as consumoFl'))
+            ->get();
+
+            $banda1ConsumoFl = 50;
+            $banda2ConsumoFl = 70;
+
+
+            $porcHierro = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(fe) as porcHierro'))
+            ->get();
+
+            $banda1PorcHierro = 0.2;
+            $banda2PorcHierro = null;
+
+            $purezaSilicio = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(si) as purezaSilicio'))
+            ->get();
+
+            $banda1PurezaSilicio = 1;
+            $banda2PurezaSilicio = 1;
+
+            $porcSilicio = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(si) as porcSilicio'))
+            ->get();
+
+            $banda1PorcSilicio = 0.08;
+            $banda2PorcSilicio = null;
+
+            return response()->json(
+            [   'fecha1' => $fecha1,
+                'fecha2' => $fecha2,
+
+                'datosVoltaje' => $voltaje,
+                'banda1Voltaje' => $banda1Voltaje,
+                'banda2Voltaje' => $banda2Voltaje,
+
+                'datosCorriente' => $corriente,
+                'banda1Corriente' => $banda1Corriente,
+                'banda2Corriente' => $banda2Corriente,
+
+                'datosEfCorriente' => $efCorriente,
+                'banda1EfCorriente' => $banda1EfCorriente,
+                'banda2EfCorriente' => $banda2EfCorriente,
+
+                'datosDesvResistencia' => $desvResistencia,
+                'banda1DesvResistencia' => $banda1DesvResistencia ,
+                'banda2DesvResistencia' => $banda2DesvResistencia,
+                
+                'datosFrecuenciaEA' => $frecuenciaEA,
+                'banda1FrecuenciaEA' => $banda1FrecuenciaEA ,
+                'banda2FrecuenciaEA' => $banda2FrecuenciaEA,
+                
+                'datosPotencia' => $potencia,
+                'banda1Potencia' => $banda1Potencia,
+                'banda2Potencia' => $banda2Potencia  , 
+                
+                'datosNivelDeMetal' => $nivelDeMetal,
+                'banda1NivelDeMetal' =>  $banda1NivelDeMetal, 
+                'banda2NivelDeMetal' => $banda2NivelDeMetal,
+                
+                'datosNivelDeBanio' => $nivelDeBanio,
+                'banda1NivelDeBano' => $banda1NivelDeBano,
+                'banda2NivelDeBano' => $banda2NivelDeBano,
+                
+                'datosFrecuenciaTK' => $frecuenciaTK,
+                'banda1FrecuenciaTK' => $banda1FrecuenciaTK,
+                'banda2FrecuenciaTK' => $banda2FrecuenciaTK,
+                
+                'datosDuracionTK' => $duracionTK,
+                'banda1DuracionTK' => $banda1DuracionTK,
+                'banda2DuracionTK' => $banda2DuracionTK, 
+                
+                'datosGolpesAlumina' => $golpesAlumina,
+                'banda1GolpesAlumina' => $banda1GolpesAlumina,
+                'banda2GolpesAlumina' => $banda2GolpesAlumina,
+                
+                'datosAlimentacionAlumina' => $alimentacionAlumina,
+                'banda1AlimentacionAlumina' => $banda1AlimentacionAlumina,
+                'banda2AlimentacionAlumina' => $banda2AlimentacionAlumina,
+                
+                'datosTemperatura' => $temperatura,
+                'banda1Temperatura' => $banda1Temperatura,
+                'banda2Temperatura' => $banda2Temperatura,
+                
+                'datosAcidez' => $acidez,
+                'banda1Acidez' => $banda1Acidez,
+                'banda2Acidez' => $banda2Acidez,
+                
+                'datosDesvTemperatura' => $desvTemperatura,
+                'banda1DesvTemperatura' =>  $banda1DesvTemperatura,
+                'banda2DesvTemperatura' => $banda2DesvTemperatura,
+                
+                'datosDesvAcidez' => $desvAcidez,
+                'banda1DesvAcidez' => $banda1DesvAcidez,
+                'banda2DesvAcidez' => $banda2DesvAcidez,
+                
+                'datosConsumoFl' => $consumoFl,
+                'banda1ConsumoFl' => $banda1ConsumoFl,
+                'banda2ConsumoFl' => $banda2ConsumoFl,
+                
+                'datosPorcHierro' => $porcHierro,
+                'banda1PorcHierro' => $banda1PorcHierro,
+                'banda2PorcHierro' => $banda2PorcHierro, 
+                
+                'datosPurezaSilicio' => $purezaSilicio,
+                'banda1PurezaSilicio' => $banda1PurezaSilicio,
+                'banda2PurezaSilicio' => $banda2PurezaSilicio,
+                
+                'datosPorcSilicio' => $porcSilicio,
+                'banda1PorcSilicio' => $banda1PorcSilicio,
+                'banda2PorcSilicio' => $banda2PorcSilicio,
+                
+                ]);
+
+        }
+        
+    }
+
+
+    public function EvolutionDataChartPost(Request $request)
+    {
+        if ($request->isMethod('post')) {
+            list( $fecha1, $fecha2) = explode(' - ', $request->input('rangoFechaPredet'));
+
+           // $fecha1= "2018/03/01";
+           // $fecha2 ="2018/03/30";
+            $celda1=901;
+            $celda2= 1090;
+           
+
+            $voltaje = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(voltaje) as voltaje'))
+            ->get();
+
+            $banda1Voltaje = 4.55;
+            $banda2Voltaje = 4.65;
+
+            $corriente = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(corrienteL) as corriente'))
+            ->get();
+
+            $banda1Corriente = 219;
+            $banda2Corriente = null;
+
+            $efCorriente = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(corrienteL) as efCorriente'))
+            ->get();
+
+            $banda1EfCorriente = 90;
+            $banda2EfCorriente = 94;
+
+            $desvResistencia = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(dsr) as desvResistencia'))
+            ->get();
+
+            $banda1DesvResistencia = 0.06;
+            $banda2DesvResistencia = null;
+
+            $frecuenciaEA = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(dsr) as frecuenciaEA'))
+            ->get();
+
+            $banda1FrecuenciaEA = 0.15;
+            $banda2FrecuenciaEA = null;
+
+            $potencia = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(potencia) as potencia'))
+            ->get();
+
+            $banda1Potencia = 980;
+            $banda2Potencia = 1000;
+
+            $nivelDeMetal = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(nivelDeMetal) as nivelDeMetal'))
+            ->get();
+
+            $banda1NivelDeMetal = 20;
+            $banda2NivelDeMetal = 22;
+
+            $nivelDeBanio = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(nivelDeBanio) as nivelDeBanio'))
+            ->get();
+
+            $banda1NivelDeBano = 20;
+            $banda2NivelDeBano = 23;
+
+            $frecuenciaTK = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(nivelDeBanio) as frecuenciaTK'))
+            ->get();
+
+            $banda1FrecuenciaTK = 0.15;
+            $banda2FrecuenciaTK = null;
+
+            $duracionTK = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(duracionTk) as duracionTk'))
+            ->get();
+
+            $banda1DuracionTK = 0.7;
+            $banda2DuracionTK = 0.8;
+
+            $golpesAlumina = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(golpesAlumina) as golpesAlumina'))
+            ->get();
+
+            $banda1GolpesAlumina = 2.4;
+            $banda2GolpesAlumina = null;
+            
+            $alimentacionAlumina = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(golpesAlumina) as alimentacionAlumina'))
+            ->get();
+            
+            $banda1AlimentacionAlumina = 1200;
+            $banda2AlimentacionAlumina = 1300;
+
+            $temperatura = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(temperatura) as temperatura'))
+            ->get();
+
+            $banda1Temperatura = 960;
+            $banda2Temperatura = 965;
+
+            $acidez = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(acidez) as acidez'))
+            ->get();
+
+            $banda1Acidez = 10.5;
+            $banda2Acidez = 11;
+
+            $desvTemperatura = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('STDDEV(temperatura) as desvTemperatura'))
+            ->get();
+            
+            $banda1DesvTemperatura = 10;
+            $banda2DesvTemperatura = null;
+
+            $desvAcidez = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('STDDEV(acidez) as desvAcidez'))
+            ->get();
+
+            $banda1DesvAcidez = 1.0;
+            $banda2DesvAcidez = null;
+
+            $consumoFl = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(temperatura) as consumoFl'))
+            ->get();
+
+            $banda1ConsumoFl = 50;
+            $banda2ConsumoFl = 70;
+
+
+            $porcHierro = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(fe) as porcHierro'))
+            ->get();
+
+            $banda1PorcHierro = 0.2;
+            $banda2PorcHierro = null;
+
+            $purezaSilicio = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(si) as purezaSilicio'))
+            ->get();
+
+            $banda1PurezaSilicio = 1;
+            $banda2PurezaSilicio = 1;
+
+            $porcSilicio = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('dia')
+            ->having('dia', '>=', $fecha1)
+            ->select('dia', DB::raw('AVG(si) as porcSilicio'))
+            ->get();
+
+            $banda1PorcSilicio = 0.08;
+            $banda2PorcSilicio = null;
+
+            return response()->json(
+            [   'fecha1' => $fecha1,
+                'fecha2' => $fecha2,
+
+                'datosVoltaje' => $voltaje,
+                'banda1Voltaje' => $banda1Voltaje,
+                'banda2Voltaje' => $banda2Voltaje,
+
+                'datosCorriente' => $corriente,
+                'banda1Corriente' => $banda1Corriente,
+                'banda2Corriente' => $banda2Corriente,
+
+                'datosEfCorriente' => $efCorriente,
+                'banda1EfCorriente' => $banda1EfCorriente,
+                'banda2EfCorriente' => $banda2EfCorriente,
+
+                'datosDesvResistencia' => $desvResistencia,
+                'banda1DesvResistencia' => $banda1DesvResistencia ,
+                'banda2DesvResistencia' => $banda2DesvResistencia,
+                
+                'datosFrecuenciaEA' => $frecuenciaEA,
+                'banda1FrecuenciaEA' => $banda1FrecuenciaEA ,
+                'banda2FrecuenciaEA' => $banda2FrecuenciaEA,
+                
+                'datosPotencia' => $potencia,
+                'banda1Potencia' => $banda1Potencia,
+                'banda2Potencia' => $banda2Potencia  , 
+                
+                'datosNivelDeMetal' => $nivelDeMetal,
+                'banda1NivelDeMetal' =>  $banda1NivelDeMetal, 
+                'banda2NivelDeMetal' => $banda2NivelDeMetal,
+                
+                'datosNivelDeBanio' => $nivelDeBanio,
+                'banda1NivelDeBano' => $banda1NivelDeBano,
+                'banda2NivelDeBano' => $banda2NivelDeBano,
+                
+                'datosFrecuenciaTK' => $frecuenciaTK,
+                'banda1FrecuenciaTK' => $banda1FrecuenciaTK,
+                'banda2FrecuenciaTK' => $banda2FrecuenciaTK,
+                
+                'datosDuracionTK' => $duracionTK,
+                'banda1DuracionTK' => $banda1DuracionTK,
+                'banda2DuracionTK' => $banda2DuracionTK, 
+                
+                'datosGolpesAlumina' => $golpesAlumina,
+                'banda1GolpesAlumina' => $banda1GolpesAlumina,
+                'banda2GolpesAlumina' => $banda2GolpesAlumina,
+                
+                'datosAlimentacionAlumina' => $alimentacionAlumina,
+                'banda1AlimentacionAlumina' => $banda1AlimentacionAlumina,
+                'banda2AlimentacionAlumina' => $banda2AlimentacionAlumina,
+                
+                'datosTemperatura' => $temperatura,
+                'banda1Temperatura' => $banda1Temperatura,
+                'banda2Temperatura' => $banda2Temperatura,
+                
+                'datosAcidez' => $acidez,
+                'banda1Acidez' => $banda1Acidez,
+                'banda2Acidez' => $banda2Acidez,
+                
+                'datosDesvTemperatura' => $desvTemperatura,
+                'banda1DesvTemperatura' =>  $banda1DesvTemperatura,
+                'banda2DesvTemperatura' => $banda2DesvTemperatura,
+                
+                'datosDesvAcidez' => $desvAcidez,
+                'banda1DesvAcidez' => $banda1DesvAcidez,
+                'banda2DesvAcidez' => $banda2DesvAcidez,
+                
+                'datosConsumoFl' => $consumoFl,
+                'banda1ConsumoFl' => $banda1ConsumoFl,
+                'banda2ConsumoFl' => $banda2ConsumoFl,
+                
+                'datosPorcHierro' => $porcHierro,
+                'banda1PorcHierro' => $banda1PorcHierro,
+                'banda2PorcHierro' => $banda2PorcHierro, 
+                
+                'datosPurezaSilicio' => $purezaSilicio,
+                'banda1PurezaSilicio' => $banda1PurezaSilicio,
+                'banda2PurezaSilicio' => $banda2PurezaSilicio,
+                
+                'datosPorcSilicio' => $porcSilicio,
+                'banda1PorcSilicio' => $banda1PorcSilicio,
+                'banda2PorcSilicio' => $banda2PorcSilicio,
+                
+                ]);
+
+        }
+        
+    }
     public function EvolutionDataChart(Request $request)
     {
         if ($request->isMethod('get')) {

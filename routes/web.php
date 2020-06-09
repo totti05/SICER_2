@@ -31,5 +31,6 @@ Route::get('/celldata', 'CellController@CellDataChart')->name('cell.dataChart');
 Route::get('/celldatable', 'CellController@CellDataTable')->name('cell.datatable');
 Route::post('/celldatable', 'CellController@CellDataTable')->name('cell.datatablep');
 
-Route::get('/evolutionChart', 'EvolutionController@EvolutionDataChart')->name('evolution.dataChart');
+Route::get('/evolutionChartPredet', 'EvolutionController@EvolutionDataChartGet')->name('evolution.dataChart');
+Route::post('/evolutionChartPredet', 'EvolutionController@EvolutionDataChartPost')->name('evolution.dataChartPrePost');
 Route::post('/evolutionChart', 'EvolutionController@EvolutionDataChart')->name('evolution.dataChartp');
