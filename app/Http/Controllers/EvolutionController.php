@@ -53,6 +53,10 @@ class EvolutionController extends Controller
         //
     }
 
+    public function lineV()
+    {
+        return view('evolution.lineaV');
+    }
     /**
      * Show the form for editing the specified resource.
      *

@@ -1,89 +1,30 @@
 @extends('adminlte::page')
-
+@section('content_top_nav_left')
+ <ul class="nav ">
+    <li class="nav-item">
+    <h4 class="nav-link active" > Div.  Control  de  Procesos</h4>
+    </li>
+  </ul>
+ 
+@stop
 @section('content')
 <div>
     <div class="row">
         <div class="col-md-2">
             <div class="info-box bg-info">
-              <span class="info-box-icon"><i class="fas fa-industry"></i></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Linea I</span>
-                <span class="info-box-number">0</span>
-
-                <div class="progress">
-                  <div class="progress-bar" style="width: 70%"></div>
-                </div>
-                <span class="progress-description">
-                  70% Increase in 30 Days
-                </span>
-                <a href="#" class="small-box-footer">Mas información <i class="fas fa-arrow-circle-right"></i></a>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-
-        <div class="col-md-2">
-            <div class="info-box bg-info">
-              <span class="info-box-icon"><i class="fas fa-industry"></i></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Linea II</span>
-                <span class="info-box-number">0</span>
-
-                <div class="progress">
-                  <div class="progress-bar" style="width: 70%"></div>
-                </div>
-                <span class="progress-description">
-                  70% Increase in 30 Days
-                </span>
-                <a href="#" class="small-box-footer">Mas información <i class="fas fa-arrow-circle-right"></i></a>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-
-        <div class="col-md-2">
-            <div class="info-box bg-info">
-              <span class="info-box-icon"><i class="fas fa-industry"></i></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Linea III</span>
-                <span class="info-box-number">0</span>
-
-                <div class="progress">
-                  <div class="progress-bar" style="width: 70%"></div>
-                </div>
-                <span class="progress-description">
-                  70% Increase in 30 Days
-                </span>
-                <a href="#" class="small-box-footer text-white">Mas información <i class="fas fa-arrow-circle-right"></i></a>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-
-        <div class="col-md-2">
-            <div class="info-box bg-info">
               <span class="info-box-icon"><i class="fas fa-industry"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Linea IV</span>
-                <span class="info-box-number">0</span>
-
+                <span class="info-box-text">Linea V</span>
+                <span class="info-box-text">Celdas conectadas: </span>
+                <span class="info-box-number">{{ $celdas }}</span>
                 <div class="progress">
                   <div class="progress-bar" style="width: 70%"></div>
                 </div>
                 <span class="progress-description">
-                  70% Increase in 30 Days
+                  Operatividad
                 </span>
-                <a href="#" class="small-box-footer">Mas información <i class="fas fa-arrow-circle-right"></i></a>
+                <a href=" {{ route('evolution.lineaV') }} " class="small-box-footer text-white">Mas información <i class="fas fa-arrow-circle-right"></i></a>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -97,15 +38,81 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Linea V</span>
+                <span class="info-box-text">Celdas conectadas: </span>
                 <span class="info-box-number">{{ $celdas }}</span>
-
                 <div class="progress">
                   <div class="progress-bar" style="width: 70%"></div>
                 </div>
                 <span class="progress-description">
-                  70% Increase in 30 Days
+                  Operatividad
                 </span>
-                <a href="#" class="small-box-footer">Mas información <i class="fas fa-arrow-circle-right"></i></a>
+                <a href=" {{ route('evolution.lineaV') }} " class="small-box-footer text-white">Mas información <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+
+        <div class="col-md-2">
+            <div class="info-box bg-info">
+              <span class="info-box-icon"><i class="fas fa-industry"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Linea V</span>
+                <span class="info-box-text">Celdas conectadas: </span>
+                <span class="info-box-number">{{ $celdas }}</span>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 70%"></div>
+                </div>
+                <span class="progress-description">
+                  Operatividad
+                </span>
+                <a href=" {{ route('evolution.lineaV') }} " class="small-box-footer text-white">Mas información <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+
+        <div class="col-md-2">
+            <div class="info-box bg-info">
+              <span class="info-box-icon"><i class="fas fa-industry"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Linea V</span>
+                <span class="info-box-text">Celdas conectadas: </span>
+                <span class="info-box-number">{{ $celdas }}</span>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 70%"></div>
+                </div>
+                <span class="progress-description">
+                  Operatividad
+                </span>
+                <a href=" {{ route('evolution.lineaV') }} " class="small-box-footer text-white">Mas información <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+
+        <div class="col-md-2">
+            <div class="info-box bg-info">
+              <span class="info-box-icon"><i class="fas fa-industry"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Linea V</span>
+                <span class="info-box-text">Celdas conectadas: </span>
+                <span class="info-box-number">{{ $celdas }}</span>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 70%"></div>
+                </div>
+                <span class="progress-description">
+                  Operatividad
+                </span>
+                <a href=" {{ route('evolution.lineaV') }} " class="small-box-footer text-white">Mas información <i class="fas fa-arrow-circle-right"></i></a>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -116,123 +123,144 @@
 
     <div class="row ">
   
-    <div class="card bg-gradient-navy" style="position: relative; left: 0px; top: 0px;">
-        <div class="card-header" >
-        <h3 class="card-title">
-            <i class="fas fa-th mr-1"></i>
-            Sales Graph
-        </h3>
+        <div class="col-md-6 ml-3 card bg-gradient-navy" id="CardGrafica">
+            <div class="card-header" >
+                <h3 class="card-title">
+                    <i class="fas fa-th mr-1"></i>
+                    Sales Graph
+                </h3>
 
-        <div class="card-tools">
-            <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
-            <i class="fas fa-minus"></i>
-            </button>
-            <button type="button" class="btn bg-info btn-sm" data-card-widget="remove">
-            <i class="fas fa-times"></i>
-            </button>
-        </div>
-        </div>
-        <div class="card-body">
-            <div class="chartjs-size-monitor">
-                <div class="chartjs-size-monitor-expand">
-                    <div class="">
-                    </div>
-                </div>
-                <div class="chartjs-size-monitor-shrink">
-                    <div class="">
-                    </div>
+                <div class="card-tools">
+                    <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn bg-info btn-sm" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                    </button>
                 </div>
             </div>
-            <canvas class="chart chartjs-render-monitor" id="graph" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 627px;" width="627" height="250"></canvas>
-        </div>
-        <!-- /.card-body -->
-        <div class="card-footer bg-transparent">
-            <div class="row">
-                <div class="col-4 text-center">
-                <div style="display:inline;width:60px;height:60px;">
-                    <canvas width="60" height="60"></canvas><input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60" data-fgcolor="#39CCCC" readonly="readonly" style="width: 34px; height: 20px; position: absolute; vertical-align: middle; margin-top: 20px; margin-left: -47px; border: 0px; background: none; font: bold 12px Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; -webkit-appearance: none;">
+            <div class="card-body">
+                <div class="chartjs-size-monitor">
+                    <div class="chartjs-size-monitor-expand">
+                        <div class="">
+                        </div>
+                    </div>
+                    <div class="chartjs-size-monitor-shrink">
+                        <div class="">
+                        </div>
+                    </div>
                 </div>
-
-                <div class="text-white">Mail-Orders</div>
-                </div>
-                <!-- ./col -->
-                <div class="col-4 text-center">
-                <div style="display:inline;width:60px;height:60px;">
-                    <canvas width="60" height="60"></canvas>
-                    <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60" data-fgcolor="#39CCCC" readonly="readonly" style="width: 34px; height: 20px; position: absolute; vertical-align: middle; margin-top: 20px; margin-left: -47px; border: 0px; background: none; font: bold 12px Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; -webkit-appearance: none;">
-                </div>
-
-                <div class="text-white">Online</div>
-                </div>
-                <!-- ./col -->
-                <div class="col-4 text-center">
-                <div style="display:inline;width:60px;height:60px;">
-                    <canvas width="60" height="60"></canvas>
-                    <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60" data-fgcolor="#39CCCC" readonly="readonly" style="width: 34px; height: 20px; position: absolute; vertical-align: middle; margin-top: 20px; margin-left: -47px; border: 0px; background: none; font: bold 12px Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; -webkit-appearance: none;">
-                </div>
-
-                <div class="text-white">In-Store</div>
-                </div>
-                <!-- ./col -->
+                <canvas class="chart chartjs-render-monitor" id="graph"></canvas>
             </div>
-            <!-- /.row -->
+            <!-- /.card-body -->
+
         </div>
-        <!-- /.card-footer -->
-    </div>
-    </div>
-    <div class="row ">
-        <div class="col-md-7 offset-3">
+
+        <div class="col-md-5 ">
         
-            <div class="card">
+            <div class="card card-navy" id="tablaCeldas">
                 <div class="card-header "  >
                     <h3 class="card-title">Celdas Conectadas</h3>
                     <div class="card-tools">
                     <!-- Buttons, labels, and many other things can be placed here! -->
                     <!-- Here is a label for example -->
-                    <span class="badge badge-primary">Label</span>
+                    <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn bg-info btn-sm" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                    </button>
                     </div>
                     <!-- /.card-tools -->
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
                     
-                        <table id="table_id" class="table table-bordered table-hover dataTable">
-                            <thead class="bg-navy">
+                        <table id="table_id" class="table  table-striped table-hover dataTable">
+                            <thead class="bg-info">
                                 <tr>
                                     <th>Linea</th>
                                     <th>Cantidad de celdas</th>
+                                    <th>En coccion</th>
+                                    <th>En normalización</th>
+                                    <th>En produccion</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>Linea 1</td>
                                     <td>nro celdas</td>
+                                    <td>nro celdas coc</td>
+                                    <td>nro celdas norm</td>
+                                    <td>nro celdas prod</td>
                                 </tr>
                                 <tr>
                                     <td>Linea 2</td>
                                     <td>nro celdas</td>
+                                    <td>nro celdas coc</td>
+                                    <td>nro celdas norm</td>
+                                    <td>nro celdas prod</td>
                                 </tr>
                                 <tr>
                                     <td>Linea 3</td>
                                     <td>nro celdas</td>
+                                    <td>nro celdas coc</td>
+                                    <td>nro celdas norm</td>
+                                    <td>nro celdas prod</td>
                                 </tr>
                                 <tr>
                                     <td>Linea 4</td>
                                     <td>nro celdas</td>
+                                    <td>nro celdas coc</td>
+                                    <td>nro celdas norm</td>
+                                    <td>nro celdas prod</td>
                                 </tr>
                                 <tr>
-                                    <td>Linea 5</td>
-                                <td> {{ $celdas }}</td>
+                                    <td><a href=" {{ route('evolution.lineaV') }} ">Linea 5</a> </td>
+                                    <td> {{ $celdas }}</td>
+                                    <td>{{ $coccion }}</td>
+                                    <td>{{ $normalizacion }}</td>
+                                    <td>{{ $produccion }}</td>
                                 </tr>
                             </tbody>
                         </table>    
                 </div>
                 <!-- /.card-body -->
-                <div class="card-footer">
-                    SICER
+            </div>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-md-6 ml-3 card bg-gradient-navy">
+            <div class="card-header" >
+                <h3 class="card-title">
+                    <i class="fas fa-th mr-1"></i>
+                    Sales Graph
+                </h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn bg-info btn-sm" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                    </button>
                 </div>
-                <!-- /.card-footer -->
+            </div>
+            <div class="card-body">
+                <div class="chartjs-size-monitor">
+                    <div class="chartjs-size-monitor-expand">
+                        <div class="">
+                        </div>
+                    </div>
+                    <div class="chartjs-size-monitor-shrink">
+                        <div class="">
+                        </div>
+                    </div>
                 </div>
+                <canvas class="chart chartjs-render-monitor" id="graph"></canvas>
+            </div>
+            <!-- /.card-body -->
+
         </div>
     </div>
 </div>
@@ -310,4 +338,15 @@
 
        
     </script>
+@stop
+@section('footer')
+    <div class="float-right d-none d-sm-block">
+      <b>Version BETA</b> 1.0.0
+    </div>
+    <div class="row">
+     <strong>Desarrollado por Departamento de  <a href="#">Automatización y control</a> </strong>.
+    </div>
+    <div class="row">
+       <strong>Gerencia control de calidad  2020. <strong>
+    </div>
 @stop

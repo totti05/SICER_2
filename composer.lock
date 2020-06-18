@@ -465,16 +465,16 @@
         },
         {
             "name": "jeroennoten/laravel-adminlte",
-            "version": "v3.0.9",
+            "version": "v3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeroennoten/Laravel-AdminLTE.git",
-                "reference": "ee4cde0f651d2f3ce94351f294197c9949c6c1af"
+                "reference": "82e7a3f14a7de6e0a7bb33a1e659f87f024261a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeroennoten/Laravel-AdminLTE/zipball/ee4cde0f651d2f3ce94351f294197c9949c6c1af",
-                "reference": "ee4cde0f651d2f3ce94351f294197c9949c6c1af",
+                "url": "https://api.github.com/repos/jeroennoten/Laravel-AdminLTE/zipball/82e7a3f14a7de6e0a7bb33a1e659f87f024261a5",
+                "reference": "82e7a3f14a7de6e0a7bb33a1e659f87f024261a5",
                 "shasum": ""
             },
             "require": {
@@ -483,6 +483,7 @@
                 "php": ">=7.2.0"
             },
             "require-dev": {
+                "orchestra/testbench": ">=4.0",
                 "phpunit/phpunit": "^8.3"
             },
             "type": "library",
@@ -515,7 +516,7 @@
                 "administrator",
                 "laravel"
             ],
-            "time": "2020-03-04T07:26:48+00:00"
+            "time": "2020-06-09T05:51:41+00:00"
         },
         {
             "name": "laravel/framework",

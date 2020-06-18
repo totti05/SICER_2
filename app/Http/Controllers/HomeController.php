@@ -32,7 +32,37 @@ class HomeController extends Controller
       ->select('celda')
       ->get();
 
+      $produccion = DB::connection('reduccion')->table('diariocelda')
+      ->whereYear('dia','2020')
+      ->whereMonth('dia','03')
+      ->whereDay('dia', '26')
+      ->where('estado', '=', 'ecProduccion')
+      ->select('celda')
+      ->get();
+
+      $normalizacion = DB::connection('reduccion')->table('diariocelda')
+      ->whereYear('dia','2020')
+      ->whereMonth('dia','03')
+      ->whereDay('dia', '26')
+      ->where('estado', '=', 'ecNormalizacion')
+      ->select('celda')
+      ->get();
+      
+      $coccion = DB::connection('reduccion')->table('diariocelda')
+      ->whereYear('dia','2020')
+      ->whereMonth('dia','03')
+      ->whereDay('dia', '26')
+      ->where('estado', '=', 'ecCoccion')
+      ->select('celda')
+      ->get();
+
       $celdas = sizeof($celdas) ;
-        return view('home', ['celdas' => $celdas] );
+      $produccion = sizeof($produccion) ;
+      $normalizacion = sizeof($normalizacion) ;
+      $coccion = sizeof($coccion) ;
+        return view('home', ['celdas' => $celdas,
+                              'produccion' => $produccion,
+                              'normalizacion' => $normalizacion,
+                              'coccion' => $coccion] );
     }
 }

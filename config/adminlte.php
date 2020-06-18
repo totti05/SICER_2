@@ -46,7 +46,7 @@ return [
     */
 
     'logo' => '<b>SICER</b>',
-    'logo_img' => 'vendor/adminlte/dist/img/venalum1.png',
+    'logo_img' => 'vendor/adminlte/dist/img/venalum logo.png',
     'logo_img_class' => 'brand-image-xl',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -87,9 +87,9 @@ return [
     'classes_brand_text' => '',
     'classes_content_header' => 'container-fluid',
     'classes_content' => 'container-fluid',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-dark-primary bg-navy elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-white navbar-light',
+    'classes_topnav' => 'navbar-white  navbar-light',
     'classes_topnav_nav' => 'navbar-expand-md',
     'classes_topnav_container' => 'container',
 
@@ -188,20 +188,22 @@ return [
     */
 
     'menu' => [
-        [
-            'text'        => 'Celdas conectadas',
-            'url'         => 'home',
-            'icon'        => 'fa fa-table',
-            'icon_color' => 'yellow',
-            'label'       => 8,
-            'label_color' => 'success',
+        
+        ['header' => 'MENU',
+         'key'         => 'MENU',
         ],
-        ['header' => 'MENU'],
         [
             'text' => 'Evolución de línea',
             'url'  => 'evolution',
             'icon' => 'fa fa-chart-line',
             'icon_color' => 'green',
+            
+            [
+                'text' => 'Linea V',
+                'url'  => 'lineV',
+                'icon' => 'fa fa-chart-line',
+                'icon_color' => 'green',
+            ]
         ],
         [
             'text' => 'Celdas',

@@ -9,6 +9,14 @@ window._ = require('lodash');
 try {
     window.Popper = require('popper.js').default;
     window.$ = window.jQuery = require('jquery');
+    require( 'jszip' );
+    require( 'pdfmake' );
+    require( 'datatables.net-bs4' )();
+    require( 'datatables.net-buttons-bs4' )();
+    require( 'datatables.net-buttons/js/buttons.html5.js' )();
+    require( 'datatables.net-responsive-bs4' )();
+    require( 'datatables.net-scroller-bs4' )();
+    window.DataTable = require( 'datatables.net' )();
     require('overlayscrollbars');
     require('../../vendor/almasaeed2010/adminlte/dist/js/adminlte');
     require('bootstrap');

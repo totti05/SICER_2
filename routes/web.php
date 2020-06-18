@@ -34,3 +34,4 @@ Route::post('/celldatable', 'CellController@CellDataTable')->name('cell.datatabl
 Route::get('/evolutionChartPredet', 'EvolutionController@EvolutionDataChartGet')->name('evolution.dataChart');
 Route::post('/evolutionChartPredet', 'EvolutionController@EvolutionDataChartPost')->name('evolution.dataChartPrePost');
 Route::post('/evolutionChart', 'EvolutionController@EvolutionDataChart')->name('evolution.dataChartp');
+Route::get('/lineV', 'EvolutionController@lineV')->name('evolution.lineaV');
