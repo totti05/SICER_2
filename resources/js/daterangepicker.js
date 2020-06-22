@@ -1,0 +1,1 @@
+window.daterangepicker = require('daterangepicker');
