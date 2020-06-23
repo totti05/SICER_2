@@ -29,14 +29,14 @@
 @endif
 
 @section('body')
-    <div class="login-box">
-        <div class="login-logo">
-            <a href="{{ $dashboard_url }}">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</a>
+    <div class="">
+        <div class="">
+            <a href="{{ route('home')  }}">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</a>
         </div>
         <div class="card">
-            <div class="card-body login-card-body">
+            <div class="card-body ">
                 <p class="login-box-msg">{{ __('adminlte::adminlte.login_message') }}</p>
-                <form action="{{ $login_url }}" method="post">
+                <form action="{{route('login') }}" method="post">
                     {{ csrf_field() }}
                     <div class="input-group mb-3">
                         <input type="email" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" value="{{ old('email') }}" placeholder="{{ __('adminlte::adminlte.email') }}" autofocus>
@@ -79,13 +79,13 @@
                     </div>
                 </form>
                 <p class="mt-2 mb-1">
-                    <a href="{{ $password_reset_url }}">
+                    <a href="{{route('password.request')}}">
                         {{ __('adminlte::adminlte.i_forgot_my_password') }}
                     </a>
                 </p>
                 @if ($register_url)
                     <p class="mb-0">
-                        <a href="{{ $register_url }}">
+                        <a href="{{  route('register') }}">
                             {{ __('adminlte::adminlte.register_a_new_membership') }}
                         </a>
                     </p>
