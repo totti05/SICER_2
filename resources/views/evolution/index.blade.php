@@ -28,6 +28,14 @@
   </ul>
  
 @stop
+@section('content_top_nav_right')
+ <ul class="nav ">
+    <li class="nav-item">
+    <h4 class="nav-link active" > Div.  Control  de  Procesos</h4>
+    </li>
+  </ul>
+ 
+@stop
 @section('content')
   <div class="modal" tabindex="-1" role="dialog" id="modalMensaje">
     <div class="modal-dialog">
@@ -242,7 +250,7 @@
                 <!--  / input group -->
                 <div class="input-group col-md-6">
                   <div class="input-group-prepend">
-                    <span class="input-group-text">rango 1</span>
+                    <span class="input-group-text">Limite inferior</span>
                   </div>
                   <input
                     type="number"
@@ -260,7 +268,7 @@
               <div class="form-row form-inline">
                 <div class="input-group col-md-6 offset-6">
                   <div class="input-group-prepend">
-                    <span class="input-group-text">rango 2</span>
+                    <span class="input-group-text">Limite superior</span>
                   </div>
                   <input
                     type="number"
@@ -350,7 +358,7 @@
                 <!--  / input group -->
                 <div class="input-group col-md-6">
                   <div class="input-group-prepend">
-                    <span class="input-group-text">rango 1</span>
+                    <span class="input-group-text">Limite inferior</span>
                   </div>
                   <input
                     type="number"
@@ -368,7 +376,7 @@
               <div class="form-row form-inline">
                 <div class="input-group col-md-6 offset-6">
                   <div class="input-group-prepend">
-                    <span class="input-group-text">rango 2</span>
+                    <span class="input-group-text">Limite superior</span>
                   </div>
                   <input
                     type="number"
@@ -478,7 +486,7 @@
                   <!--  / input group -->
                   <div class="input-group col-md-6">
                     <div class="input-group-prepend">
-                      <span class="input-group-text">rango 1</span>
+                      <span class="input-group-text">Limite inferior</span>
                     </div>
                     <input
                       type="number"
@@ -496,7 +504,7 @@
                 <div class="form-row form-inline">
                   <div class="input-group col-md-6 offset-6">
                     <div class="input-group-prepend">
-                      <span class="input-group-text">rango 2</span>
+                      <span class="input-group-text">Limite superior</span>
                     </div>
                     <input
                       type="number"

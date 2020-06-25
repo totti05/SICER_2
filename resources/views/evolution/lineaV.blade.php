@@ -109,7 +109,10 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          SICER
+          <button type="button" class="btn btn-primary">PDF</button>
+          <button type="button" class="btn btn-primary">Copiar</button>
+          <button type="button" class="btn btn-primary">Imprimir</button>
+          <button type="button" class="btn btn-primary">Excel</button>
         </div>
         <!-- /.card-footer -->
       </div>
@@ -148,7 +151,10 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          SICER
+          <button type="button" class="btn btn-primary">PDF</button>
+          <button type="button" class="btn btn-primary">Copiar</button>
+          <button type="button" class="btn btn-primary">Imprimir</button>
+          <button type="button" class="btn btn-primary">Excel</button>
         </div>
         <!-- /.card-footer -->
       </div>
@@ -187,7 +193,10 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          SICER
+          <button type="button" class="btn btn-primary">PDF</button>
+          <button type="button" class="btn btn-primary">Copiar</button>
+          <button type="button" class="btn btn-primary">Imprimir</button>
+          <button type="button" class="btn btn-primary">Excel</button>
         </div>
         <!-- /.card-footer -->
       </div>
@@ -231,7 +240,10 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          SICER
+          <button type="button" class="btn btn-primary">PDF</button>
+          <button type="button" class="btn btn-primary">Copiar</button>
+          <button type="button" class="btn btn-primary">Imprimir</button>
+          <button type="button" class="btn btn-primary">Excel</button>
         </div>
         <!-- /.card-footer -->
       </div>
@@ -273,7 +285,10 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          SICER
+          <button type="button" class="btn btn-primary">PDF</button>
+          <button type="button" class="btn btn-primary">Copiar</button>
+          <button type="button" class="btn btn-primary">Imprimir</button>
+          <button type="button" class="btn btn-primary">Excel</button>
         </div>
         <!-- /.card-footer -->
       </div>
@@ -312,7 +327,10 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          SICER
+          <button type="button" class="btn btn-primary">PDF</button>
+          <button type="button" class="btn btn-primary">Copiar</button>
+          <button type="button" class="btn btn-primary">Imprimir</button>
+          <button type="button" class="btn btn-primary">Excel</button>
         </div>
         <!-- /.card-footer -->
       </div>
@@ -356,7 +374,10 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          SICER
+          <button type="button" class="btn btn-primary">PDF</button>
+          <button type="button" class="btn btn-primary">Copiar</button>
+          <button type="button" class="btn btn-primary">Imprimir</button>
+          <button type="button" class="btn btn-primary">Excel</button>
         </div>
         <!-- /.card-footer -->
       </div>
@@ -395,7 +416,10 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          SICER
+          <button type="button" class="btn btn-primary">PDF</button>
+          <button type="button" class="btn btn-primary">Copiar</button>
+          <button type="button" class="btn btn-primary">Imprimir</button>
+          <button type="button" class="btn btn-primary">Excel</button>
         </div>
         <!-- /.card-footer -->
       </div>
@@ -437,7 +461,10 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          SICER
+          <button type="button" class="btn btn-primary">PDF</button>
+          <button type="button" class="btn btn-primary">Copiar</button>
+          <button type="button" class="btn btn-primary">Imprimir</button>
+          <button type="button" class="btn btn-primary">Excel</button>
         </div>
         <!-- /.card-footer -->
       </div>
@@ -972,7 +999,7 @@
             title: {
               display: true,
               text:
-                "Grafica SICER - Voltaje" ,
+                "Voltaje" ,
             },
             tooltips: {
               mode: "nearest",
@@ -1028,7 +1055,7 @@
             title: {
               display: true,
               text:
-                "Grafica SICER - Corriente" ,
+                "Corriente" ,
             },
             tooltips: {
               mode: "nearest",
@@ -1079,7 +1106,7 @@
             title: {
               display: true,
               text:
-                "Grafica SICER - Eficiencia de Corriente" ,
+                "Eficiencia de Corriente" ,
             },
             tooltips: {
               mode: "nearest",
@@ -1130,7 +1157,7 @@
             title: {
               display: true,
               text:
-                "Grafica SICER - Desviación de ressitencia" ,
+                "Desviación de ressitencia" ,
             },
             tooltips: {
               mode: "nearest",
@@ -1182,7 +1209,7 @@
             title: {
               display: true,
               text:
-                "Grafica SICER - Frecuencia de efecto anódico" ,
+                "Frecuencia de efecto anódico" ,
             },
             tooltips: {
               mode: "nearest",
@@ -1234,7 +1261,7 @@
             title: {
               display: true,
               text:
-                "Grafica SICER - Potencia" ,
+                "Potencia" ,
             },
             tooltips: {
               mode: "nearest",
@@ -1286,7 +1313,7 @@
             title: {
               display: true,
               text:
-                "Grafica SICER - Nivel de metal" ,
+                "Nivel de metal" ,
             },
             tooltips: {
               mode: "nearest",
@@ -1338,7 +1365,7 @@
             title: {
               display: true,
               text:
-                "Grafica SICER - Nivel de bano" ,
+                "Nivel de bano" ,
             },
             tooltips: {
               mode: "index",
@@ -1395,7 +1422,7 @@
             title: {
               display: true,
               text:
-                "Grafica SICER - Frecuencia de Tracking" ,
+                "Frecuencia de Tracking" ,
             },
             tooltips: {
               mode: "nearest",
@@ -2237,7 +2264,7 @@
               title: {
                 display: true,
                 text:
-                  "Grafica SICER - Voltaje" ,
+                  "Voltaje" ,
               },
               tooltips: {
                 mode: "nearest",
@@ -2293,7 +2320,7 @@
               title: {
                 display: true,
                 text:
-                  "Grafica SICER - Corriente" ,
+                  "Corriente" ,
               },
               tooltips: {
                 mode: "nearest",
@@ -2344,7 +2371,7 @@
               title: {
                 display: true,
                 text:
-                  "Grafica SICER - Eficiencia de Corriente" ,
+                  "Eficiencia de Corriente" ,
               },
               tooltips: {
                 mode: "nearest",
@@ -2395,7 +2422,7 @@
               title: {
                 display: true,
                 text:
-                  "Grafica SICER - Desviación de ressitencia" ,
+                  "Desviación de ressitencia" ,
               },
               tooltips: {
                 mode: "nearest",
@@ -2447,7 +2474,7 @@
               title: {
                 display: true,
                 text:
-                  "Grafica SICER - Frecuencia de efecto anódico" ,
+                  "Frecuencia de efecto anódico" ,
               },
               tooltips: {
                 mode: "nearest",
@@ -2499,7 +2526,7 @@
               title: {
                 display: true,
                 text:
-                  "Grafica SICER - Potencia" ,
+                  "Potencia" ,
               },
               tooltips: {
                 mode: "nearest",
@@ -2551,7 +2578,7 @@
               title: {
                 display: true,
                 text:
-                  "Grafica SICER - Nivel de metal" ,
+                  "Nivel de metal" ,
               },
               tooltips: {
                 mode: "nearest",
@@ -2603,7 +2630,7 @@
               title: {
                 display: true,
                 text:
-                  "Grafica SICER - Nivel de bano" ,
+                  "Nivel de bano" ,
               },
               tooltips: {
                 mode: "index",
@@ -2660,7 +2687,7 @@
               title: {
                 display: true,
                 text:
-                  "Grafica SICER - Frecuencia de Tracking" ,
+                  "Frecuencia de Tracking" ,
               },
               tooltips: {
                 mode: "nearest",
