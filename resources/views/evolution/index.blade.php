@@ -239,7 +239,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text">operador</span>
                   </div>
-                  <select class="custom-select" id="operadorVF" name="operadorVF">
+                  <select class="custom-select col-md-4" id="operadorVF" name="operadorVF">
                     <option selected value=""></option>
                     <option value="mayor">></option>
                     <option value="menor"><</option>
@@ -264,7 +264,6 @@
               </div>
               <!-- /.form row -->
 
-              <label>Rango 2 a consultar</label>
               <div class="form-row form-inline">
                 <div class="input-group col-md-6 offset-6">
                   <div class="input-group-prepend">
@@ -296,7 +295,7 @@
 
           <div class="col-md-4 mr-2">
             <div id="formvariable" class="form-group">
-              <label for="variable">Variable 1</label>
+              <label for="variable">Variable Y1</label>
               <select id="variable" name="variable" class="form-control">
                 <option selected>Voltaje</option>
                 <option>Efectos anodicos</option>
@@ -341,13 +340,13 @@
             <div class="form-group">
               <label>Rango de operacion</label>
               <br />
-              <label>Rango 1 a consultar</label>
+              <label>Rango de <span id="labelVariable"> variable </span> a consultar</label>
               <div class="form-row form-inline">
                 <div class="input-group col-md-6">
                   <div class="input-group-prepend">
                     <span class="input-group-text">operador</span>
                   </div>
-                  <select class="custom-select" id="operador1" name="operador1">
+                  <select class="custom-select col-md-4" id="operador1" name="operador1">
                     <option selected value=""></option>
                     <option value="mayor">></option>
                     <option value="menor"><</option>
@@ -372,7 +371,6 @@
               </div>
               <!-- /.form row -->
 
-              <label>Rango 2 a consultar</label>
               <div class="form-row form-inline">
                 <div class="input-group col-md-6 offset-6">
                   <div class="input-group-prepend">
@@ -395,7 +393,7 @@
 
           <div class="col-md-4 mr-2">
             <div class="row">
-              <label for="variable2" class="mr-2">Variable 2 </label>
+              <label for="variable2" class="mr-2">Variable Y2 </label>
               <div class="custom-control custom-checkbox">
                 <input
                   type="checkbox"
@@ -465,14 +463,14 @@
               <div class="form-group">
                 <label>Rango de operacion</label>
                 <br />
-                <label>Rango 1 a consultar</label>
+                <label>Rango de <span id="labelVariable2"> variable </span> a consultar</label>
                 <div class="form-row form-inline">
                   <div class="input-group col-md-6">
                     <div class="input-group-prepend">
                       <span class="input-group-text">operador</span>
                     </div>
                     <select
-                      class="custom-select"
+                      class="custom-select col-md-4"
                       id="var2Operador"
                       name="var2Operador"
                     >
@@ -500,7 +498,6 @@
                 </div>
                 <!-- /.form row -->
 
-                <label>Rango 2 a consultar</label>
                 <div class="form-row form-inline">
                   <div class="input-group col-md-6 offset-6">
                     <div class="input-group-prepend">
@@ -522,75 +519,10 @@
             </div>
           </div>
 
-          <div class="col-md-3" id="configGrafica" style="display: none;">
+         
+          <div class="col-md-4" id="configGrafica" style="display: none;">
             <label>Configuración de grafica</label>
-            <div class="form-group">
-              <div class="form-row">
-                <label>Banda de control 1</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">Min (banda 1)</span>
-                  </div>
-                  <input
-                    type="number"
-                    step="0.01"
-                    name="banda1"
-                    class="form-control float-right col-md-3"
-                    id="banda1"
-                  />
-                </div>
-                <!-- /.input group -->
 
-                <label>Banda de control 2</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">Max (banda 2)</span>
-                  </div>
-                  <input
-                    type="number"
-                    step="0.01"
-                    name="banda2"
-                    class="form-control float-right col-md-3"
-                    id="banda2"
-                  />
-                </div>
-                <!-- /.input group -->
-              </div>
-              <!-- /.form row -->
-            </div>
-            <!-- /.form group -->
-
-            <div id="bandaVar2" style="display: none;">
-              <label>Variable 2 Banda de control 1</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">Min (banda 1)</span>
-                </div>
-                <input
-                  type="number"
-                  step="0.01"
-                  name="banda1Var2"
-                  class="form-control float-right col-md-3"
-                  id="banda1Var2"
-                />
-              </div>
-              <!-- /.input group -->
-
-              <label>Variable 2 Banda de control 2</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">Max (banda 2)</span>
-                </div>
-                <input
-                  type="number"
-                  step="0.01"
-                  name="banda2Var2"
-                  class="form-control float-right col-md-3"
-                  id="banda2Var2"
-                />
-              </div>
-              <!-- /.input group -->
-            </div>
             <div class="form-group">
               <div class="form-row">
                 <label>Minimo de la escala</label>
@@ -628,9 +560,82 @@
             </div>
             <!-- /.form group -->
           </div>
-        </div>
 
+          <div class="col-md-4" id="configGrafica1" style="display: none;">
+            <div class="form-group">
+              <div class="form-row">
+                <label>Variable Y1 Banda de control 1</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Min (banda 1)</span>
+                  </div>
+                  <input
+                    type="number"
+                    step="0.01"
+                    name="banda1"
+                    class="form-control float-right col-md-3"
+                    id="banda1"
+                  />
+                </div>
+                <!-- /.input group -->
+
+                <label>Variable Y1 Banda de control 2</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Max (banda 2)</span>
+                  </div>
+                  <input
+                    type="number"
+                    step="0.01"
+                    name="banda2"
+                    class="form-control float-right col-md-3"
+                    id="banda2"
+                  />
+                </div>
+                <!-- /.input group -->
+              </div>
+              <!-- /.form row -->
+            </div>
+            <!-- /.form group -->
+          </div>
+
+          <div class="col-md-4" id="configGrafica2" style="display: none;">
+            <div id="bandaVar2">
+              <label>Variable Y2 Banda de control 1</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Min (banda 1)</span>
+                </div>
+                <input
+                  type="number"
+                  step="0.01"
+                  name="banda1Var2"
+                  class="form-control float-right col-md-3"
+                  id="banda1Var2"
+                />
+              </div>
+              <!-- /.input group -->
+
+              <label>Variable Y2 Banda de control 2</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Max (banda 2)</span>
+                </div>
+                <input
+                  type="number"
+                  step="0.01"
+                  name="banda2Var2"
+                  class="form-control float-right col-md-3"
+                  id="banda2Var2"
+                />
+              </div>
+              <!-- /.input group -->
+            </div>
+          </div>
+        </div>
         <button type="submit" class="btn btn-primary">Consultar</button>
+
+    
       </form>
       <!-- /.form -->
     </div>
@@ -880,14 +885,24 @@
       options: ChartOptionsclear,
     });
 
-
+    //funcion para cambiar el texto de la variable cuando cambie el combobox
+    $("#variable").change(function (){
+      $("#labelVariable").text($('#variable').val());
+    });
+    $("#variable2").change(function (){
+      $("#labelVariable2").text($('#variable2').val());
+    });
     //funcion para mostrar elemento HTML cuando cambia un checkbox
     $("#checkConfig").change(function () {
       let estado = $("#checkConfig").is(":checked");
       if (estado) {
         mostrar("#configGrafica");
+        mostrar("#configGrafica1");
+        mostrar("#configGrafica2");
       } else {
         ocultar("#configGrafica");
+        ocultar("#configGrafica1");
+        ocultar("#configGrafica2");
       }
     });
     //funcion para cambiar valor de inputs cuando cambia un checkbox

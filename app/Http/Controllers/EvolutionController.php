@@ -1803,8 +1803,8 @@ class EvolutionController extends Controller
             $rangoOp1Var2 = $request->input('var2Rango1');
             $rangoOp2Var2 = $request->input('var2Rango2');
 
-            $banda1Var2 = null;
-            $banda2Var2 = null;
+            $banda1Var2 =  $request->input('banda1Var2');
+            $banda2Var2 = $request->input('banda2Var2');
             $minVar2 = null;
             $maxVar2 = null;
             $ylabelVar2 = null;
@@ -1841,8 +1841,11 @@ class EvolutionController extends Controller
                         $variableDB2 = 'numeroEA';
                         $ylabelVar2 = 'EA'; 
                         $xlabelVar2 = 'fecha';
-                        $banda1Var2 = 0.4;
+                        
                         $banda2Var2= null;
+                        if($banda1Var2  == ''){
+                            $banda1Var2 = 0.4;
+                        } 
                         if($minVar2 == ''){
                             $minVar2 = 0;
                         } 
@@ -1855,8 +1858,12 @@ class EvolutionController extends Controller
                         $variableDB2 = 'resistencia';
                         $ylabelVar2 = 'Microhomnio'; 
                         $xlabelVar2 = 'fecha';
-                        $banda1Var2 = 0.06;                    ;
+                                          ;
                         $banda2Var2= null;
+                        if($banda1Var2  == ''){
+                           $banda1Var2 = 0.06;  
+                        } 
+                        
                         if($minVar2 == ''){
                             $minVar2 = 0;
                         } 
@@ -1869,8 +1876,14 @@ class EvolutionController extends Controller
                         $variableDB2 = 'golpesAlumina';
                         $ylabelVar2 = 'numero'; 
                         $xlabelVar2 = 'fecha';
-                        $banda1Var2 = 1200;                    ;
-                        $banda2Var2= 1300; // segun maita
+                                          ;
+                        
+                        if($banda1Var2  == ''){
+                             $banda1Var2 = 1200; 
+                        } 
+                        if($banda2Var2 == ''){
+                            $banda2Var2= 1300; // segun maita
+                        }   
                         if($minVar2 == ''){
                             $minVar2 =800;
                         } 
@@ -1883,8 +1896,14 @@ class EvolutionController extends Controller
                         $variableDB2 = 'temperatura';
                         $ylabelVar2 = '°C'; 
                         $xlabelVar2 = 'fecha';
-                        $banda1Var2 = 960;                    ;
-                        $banda2Var2= 965;// segun maita
+                                      ;
+                        
+                        if($banda1Var2  == ''){
+                            $banda1Var2 = 960;     
+                        } 
+                        if($banda2Var2 == ''){
+                           $banda2Var2= 965;// segun maita
+                        }   
                         if($minVar2 == ''){
                             $minVar2 =950;
                         } 
@@ -1897,8 +1916,13 @@ class EvolutionController extends Controller
                         $variableDB2 = 'duracionTk';
                         $ylabelVar2 = 'h'; 
                         $xlabelVar2 = 'fecha';
-                        $banda1Var2 = 0.7;                    ;
-                        $banda2Var2= 0.8; //segun maita
+                       
+                        if($banda1Var2  == ''){
+                           $banda1Var2 = 0.7;     
+                        } 
+                        if($banda2Var2 == ''){
+                           $banda2Var2= 0.8; //segun maita
+                        }   
                         if($minVar2 == ''){
                             $minVar2 =0.5;
                         } 
@@ -1912,8 +1936,14 @@ class EvolutionController extends Controller
                         // segun maita
                         $ylabelVar2 = '%AlF3'; 
                         $xlabelVar2 = 'fecha';
-                        $banda1Var2 = 10.5;                    ;
-                        $banda2Var2= 11;
+                                        
+                        
+                        if($banda1Var2  == ''){
+                            $banda1Var2 = 10.5;   
+                        } 
+                        if($banda2Var2 == ''){
+                            $banda2Var2= 11;
+                        }   
                         if($minVar2 == ''){
                             $minVar2 =8;
                         } 
@@ -1927,7 +1957,10 @@ class EvolutionController extends Controller
                         $ylabelVar2 = 'KG/golpe'; 
                         $xlabelVar2 = 'fecha';
                         $banda1Var2 = null;                    ;
-                        $banda2Var2= 2.4;
+                        
+                        if($banda2Var2 == ''){
+                          $banda2Var2= 2.4;
+                        }   
                         if($minVar2 == ''){
                             $minVar2 =1.7;
                         } 
@@ -1940,8 +1973,13 @@ class EvolutionController extends Controller
                         $variableDB2 = 'voltaje';
                         $ylabelVar2 = 'KG/CD'; 
                         $xlabelVar2 = 'fecha';
-                        $banda1Var2 = 50;                    ;
-                        $banda2Var2= 70;
+                                       
+                        if($banda1Var2  == ''){
+                            $banda1Var2 = 50;   
+                        } 
+                        if($banda2Var2 == ''){
+                          $banda2Var2= 70;
+                        }   
                         if($minVar2 == ''){
                             $minVar2 =0;
                         } 
@@ -1954,8 +1992,14 @@ class EvolutionController extends Controller
                         $variableDB2 = 'numeroTk';
                         $ylabelVar2 = 'KG/CD'; 
                         $xlabelVar2 = 'fecha';
-                        $banda1Var2 = 1;                    ;
-                        $banda2Var2= 1.3;
+                                  
+                       
+                        if($banda1Var2  == ''){
+                            $banda1Var2 = 1;      
+                        } 
+                        if($banda2Var2 == ''){
+                            $banda2Var2= 1.3;
+                        }   
                         if($minVar2 == ''){
                             $minVar2 =0;
                         } 
@@ -1976,8 +2020,14 @@ class EvolutionController extends Controller
                         $variableDB2 = 'voltaje';
                         $ylabelVar2 = '%'; 
                         $xlabelVar2 = 'fecha';
-                        $banda1Var2 = 90;                    ;
-                        $banda2Var2= 94;
+                                   
+                      
+                        if($banda1Var2  == ''){
+                             $banda1Var2 = 90;       
+                        } 
+                        if($banda2Var2 == ''){
+                             $banda2Var2= 94;
+                        }   
                         if($minVar2 == ''){
                             $minVar2 =50;
                         } 
@@ -1994,8 +2044,13 @@ class EvolutionController extends Controller
                         $variableDB2 = 'nivelDeMetal';
                         $ylabelVar2 = 'cm'; 
                         $xlabelVar2 = 'fecha';
-                        $banda1Var2 = 20;                    ;
-                        $banda2Var2= 22;
+
+                        if($banda1Var2  == ''){
+                            $banda1Var2 = 20;            
+                        } 
+                        if($banda2Var2 == ''){
+                           $banda2Var2= 22;
+                        }   
                         if($minVar2 == ''){
                             $minVar2 =18;
                         } 
@@ -2008,8 +2063,10 @@ class EvolutionController extends Controller
                         $variableDB2 = 'voltaje';
                         $ylabelVar2 = 'kA'; 
                         $xlabelVar2 = 'fecha';
-                        $banda1Var2 = null;                    ;
-                        $banda2Var2= 219; //segun maita
+                               
+                        if($banda2Var2 == ''){
+                           $banda2Var2= 219; //segun maita
+                        }   
                         if($minVar2 == ''){
                             $minVar2 =180;
                         } 
@@ -2022,8 +2079,13 @@ class EvolutionController extends Controller
                         $variableDB2 = 'voltaje';
                         $ylabelVar2 = 'KG/CD'; 
                         $xlabelVar2 = 'fecha';
-                        $banda1Var2 = 980;                    ;
-                        $banda2Var2= 1000;
+                     
+                        if($banda1Var2  == ''){
+                            $banda1Var2 = 980;         
+                        } 
+                        if($banda2Var2 == ''){
+                             $banda2Var2= 1000;
+                        }   
                         if($minVar2 == ''){
                             $minVar2 =920;
                         } 
@@ -2048,8 +2110,13 @@ class EvolutionController extends Controller
                         $variableDB2 = 'nivelDeBanio';
                         $ylabelVar2 = 'cm'; 
                         $xlabelVar2 = 'fecha';
-                        $banda1Var2 = 20;                    ;
-                        $banda2Var2= 23;
+                                         
+                        if($banda1Var2  == ''){
+                         $banda1Var2 = 20;  
+                        } 
+                        if($banda2Var2 == ''){
+                           $banda2Var2= 23;
+                        }   
                         if($minVar2 == ''){
                             $minVar2 =15;
                         } 
@@ -2082,8 +2149,11 @@ class EvolutionController extends Controller
                         $variableDB2 = 'voltaje';
                         $ylabelVar2 = '°C'; 
                         $xlabelVar2 = 'fecha';
-                        $banda1Var2 = null;                    ;
-                        $banda2Var2= 10;
+                        $banda1Var2 = null;                  
+                    
+                        if($banda2Var2 == ''){
+                            $banda2Var2= 10;
+                        }   
                         if($minVar2 == ''){
                             $minVar2 =0;
                         } 
@@ -2096,8 +2166,11 @@ class EvolutionController extends Controller
                         $variableDB2 = 'voltaje';
                         $ylabelVar2 = '%'; 
                         $xlabelVar2 = 'fecha';
-                        $banda1Var2 = null;                    ;
-                        $banda2Var2= 0.2;
+                        $banda1Var2 = null;               
+                      
+                        if($banda2Var2 == ''){
+                             $banda2Var2= 0.2; 
+                        }   
                         if($minVar2 == ''){
                             $minVar2 =0;
                         } 
@@ -2110,8 +2183,12 @@ class EvolutionController extends Controller
                         $variableDB2 = 'voltaje';
                         $ylabelVar2 = '%'; 
                         $xlabelVar2 = 'fecha';
-                        $banda1Var2 = null;                    ;
-                        $banda2Var2= 1;
+                        $banda1Var2 = null;                
+                        
+                        if($banda2Var2 == ''){
+                            $banda2Var2= 1;
+                    
+                        }   
                         if($minVar2 == ''){
                             $minVar2 =0;
                         } 
@@ -2124,8 +2201,14 @@ class EvolutionController extends Controller
                         $variableDB2 = 'voltaje';
                         $ylabelVar2 = '%'; 
                         $xlabelVar2 = 'fecha';
-                        $banda1Var2 = 0.05;                    ;
-                        $banda2Var2= 0.08;
+                                           
+                       
+                        if($banda1Var2  == ''){
+                            $banda1Var2 = 0.05;
+                        } 
+                        if($banda2Var2 == ''){
+                            $banda2Var2= 0.08;
+                        }   
                         if($minVar2 == ''){
                             $minVar2 =0;
                         } 
@@ -2154,8 +2237,12 @@ class EvolutionController extends Controller
                         $variableDB2 = 'voltaje';
                         $ylabelVar2 = 'EA/CD'; 
                         $xlabelVar2 = 'fecha';
-                        $banda1Var2 = null;                    ;
-                        $banda2Var2= 0.15; //segun maita
+                        $banda1Var2 = null;               
+                       
+                    
+                        if($banda2Var2 == ''){
+                            $banda2Var2= 0.15; //segun maita 
+                        }   
                         if($minVar2 == ''){
                             $minVar2 =1;
                         } 
