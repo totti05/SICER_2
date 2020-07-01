@@ -36,6 +36,11 @@
     
 
   }
+  .chart{
+    position: relative; 
+    max-height: 80vh;
+    max-width:80vw;
+  }
   </style>
 @endsection
 @section('content_top_nav_left')
@@ -993,6 +998,7 @@
 
           var ChartOptionsVoltaje = {
             responsive: true,
+            maintainAspectRatio: true,
             hoverMode: "index",
             stacked: false,
             responsive: true,
@@ -1049,6 +1055,7 @@
           };
           var ChartOptionsCorriente = {
             responsive: true,
+            maintainAspectRatio: true,
             hoverMode: "index",
             stacked: false,
             responsive: true,
@@ -1100,6 +1107,7 @@
           };
           var ChartOptionsEfCorriente = {
             responsive: true,
+            maintainAspectRatio: true,
             hoverMode: "index",
             stacked: false,
             responsive: true,
@@ -1151,6 +1159,7 @@
           };
           var ChartOptionsDesvResistencia = {
             responsive: true,
+            maintainAspectRatio: true,
             hoverMode: "index",
             stacked: false,
             responsive: true,
@@ -1203,6 +1212,7 @@
          
           var ChartOptionsFrecuenciaEA = {
             responsive: true,
+            maintainAspectRatio: true,
             hoverMode: "index",
             stacked: false,
             responsive: true,
@@ -1255,6 +1265,7 @@
 
           var ChartOptionsPotencia = {
             responsive: true,
+            maintainAspectRatio: true,
             hoverMode: "index",
             stacked: false,
             responsive: true,
@@ -1307,6 +1318,7 @@
 
           var ChartOptionsNivelDeMetal = {
             responsive: true,
+            maintainAspectRatio: true,
             hoverMode: "index",
             stacked: false,
             responsive: true,
@@ -1359,6 +1371,7 @@
 
           var ChartOptionsNivelDeBano = {
             responsive: true,
+            maintainAspectRatio: true,
             hoverMode: "index",
             stacked: false,
             responsive: true,
@@ -1416,6 +1429,7 @@
 
           var ChartOptionsFrecuenciaTK = {
             responsive: true,
+            maintainAspectRatio: true,
             hoverMode: "index",
             stacked: false,
             responsive: true,
@@ -2258,6 +2272,7 @@
             console.log(response);
             var ChartOptionsVoltaje = {
               responsive: true,
+              maintainAspectRatio: true,
               hoverMode: "index",
               stacked: false,
               responsive: true,
@@ -2314,6 +2329,7 @@
             };
             var ChartOptionsCorriente = {
               responsive: true,
+              maintainAspectRatio: true,
               hoverMode: "index",
               stacked: false,
               responsive: true,
@@ -2365,6 +2381,7 @@
             };
             var ChartOptionsEfCorriente = {
               responsive: true,
+              maintainAspectRatio: true,
               hoverMode: "index",
               stacked: false,
               responsive: true,
@@ -2416,6 +2433,7 @@
             };
             var ChartOptionsDesvResistencia = {
               responsive: true,
+              maintainAspectRatio: true,
               hoverMode: "index",
               stacked: false,
               responsive: true,
@@ -2468,6 +2486,7 @@
           
             var ChartOptionsFrecuenciaEA = {
               responsive: true,
+              maintainAspectRatio: true,
               hoverMode: "index",
               stacked: false,
               responsive: true,
@@ -2520,6 +2539,7 @@
 
             var ChartOptionsPotencia = {
               responsive: true,
+              maintainAspectRatio: true,
               hoverMode: "index",
               stacked: false,
               responsive: true,
@@ -2572,6 +2592,7 @@
 
             var ChartOptionsNivelDeMetal = {
               responsive: true,
+              maintainAspectRatio: true,
               hoverMode: "index",
               stacked: false,
               responsive: true,
@@ -2624,6 +2645,7 @@
 
             var ChartOptionsNivelDeBano = {
               responsive: true,
+              maintainAspectRatio: true,
               hoverMode: "index",
               stacked: false,
               responsive: true,
@@ -2681,6 +2703,7 @@
 
             var ChartOptionsFrecuenciaTK = {
               responsive: true,
+              maintainAspectRatio: true,
               hoverMode: "index",
               stacked: false,
               responsive: true,
