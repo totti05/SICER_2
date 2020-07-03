@@ -116,7 +116,7 @@
         <div class="card-footer">
           <button type="button" class="btn btn-primary">PDF</button>
           <button type="button" class="btn btn-primary">Copiar</button>
-          <button type="button" class="btn btn-primary">Imprimir</button>
+          <button type="button" id="imprimir_btn"class="btn btn-primary">Imprimir</button>
           <button type="button" class="btn btn-primary">Excel</button>
         </div>
         <!-- /.card-footer -->
@@ -513,6 +513,11 @@
       cell = $(elemento).DataTable();
       cell.destroy();
     };
+    $("#imprimir_btn").click(function(){
+      window.print();
+});
+   
+
     //Date range picker with time picker
     $("#rangoFechaPredet").daterangepicker(
       {

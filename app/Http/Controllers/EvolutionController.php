@@ -110,7 +110,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(voltaje) as voltaje'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(voltaje), 4), ",","") as voltaje'))
             ->get();
 
             $banda1Voltaje = 4.55;
@@ -123,7 +123,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(corrienteL) as corriente'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(corrienteL), 4), ",","") as corriente'))
             ->get();
 
             $banda1Corriente = 219;
@@ -136,7 +136,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(corrienteL) as efCorriente'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(corrienteL), 4), ",","") as efCorriente'))
             ->get();
 
             $banda1EfCorriente = 90;
@@ -149,7 +149,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(dsr) as desvResistencia'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(dsr), 4), ",","") as desvResistencia'))
             ->get();
 
             $banda1DesvResistencia = 0.06;
@@ -162,7 +162,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(dsr) as frecuenciaEA'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(dsr), 4), ",","") as frecuenciaEA'))
             ->get();
 
             $banda1FrecuenciaEA = 0.15;
@@ -175,7 +175,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(potencia) as potencia'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(potencia), 4), ",", "") as potencia'))
             ->get();
 
             $banda1Potencia = 980;
@@ -188,7 +188,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(nivelDeMetal) as nivelDeMetal'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(nivelDeMetal), 4), ",","") as nivelDeMetal'))
             ->get();
 
             $banda1NivelDeMetal = 20;
@@ -201,7 +201,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(nivelDeBanio) as nivelDeBanio'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(nivelDeBanio), 4), ",","") as nivelDeBanio'))
             ->get();
 
             $banda1NivelDeBano = 20;
@@ -214,7 +214,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(nivelDeBanio) as frecuenciaTK'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(nivelDeBanio), 4), ",","") as frecuenciaTK'))
             ->get();
 
             $banda1FrecuenciaTK = 0.15;
@@ -227,7 +227,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(duracionTk) as duracionTk'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(duracionTk), 4), ",","") as duracionTk'))
             ->get();
 
             $banda1DuracionTK = 0.7;
@@ -240,7 +240,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(golpesAlumina) as golpesAlumina'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(golpesAlumina), 4), ",","") as golpesAlumina'))
             ->get();
 
             $banda1GolpesAlumina = 2.4;
@@ -253,7 +253,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(golpesAlumina) as alimentacionAlumina'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(golpesAlumina), 4), ",","") as alimentacionAlumina'))
             ->get();
             
             $banda1AlimentacionAlumina = 1200;
@@ -266,7 +266,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(temperatura) as temperatura'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(temperatura), 4), ",","") as temperatura'))
             ->get();
 
             $banda1Temperatura = 960;
@@ -279,7 +279,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(acidez) as acidez'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(acidez), 4), ",","") as acidez'))
             ->get();
 
             $banda1Acidez = 10.5;
@@ -292,7 +292,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('STDDEV(temperatura) as desvTemperatura'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV(temperatura), 4), ",","") as desvTemperatura'))
             ->get();
             
             $banda1DesvTemperatura = 10;
@@ -305,7 +305,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('STDDEV(acidez) as desvAcidez'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV(acidez), 4), ",","") as desvAcidez'))
             ->get();
 
             $banda1DesvAcidez = 1.0;
@@ -318,7 +318,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(temperatura) as consumoFl'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(temperatura), 4), ",","") as consumoFl'))
             ->get();
 
             $banda1ConsumoFl = 50;
@@ -332,7 +332,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(fe) as porcHierro'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(fe), 4), ",","") as porcHierro'))
             ->get();
 
             $banda1PorcHierro = 0.2;
@@ -345,7 +345,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(si) as purezaSilicio'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(si), 4), ",","") as purezaSilicio'))
             ->get();
 
             $banda1PurezaSilicio = 1;
@@ -358,7 +358,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(si) as porcSilicio'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(si), 4), ",","") as porcSilicio'))
             ->get();
 
             $banda1PorcSilicio = 0.08;
@@ -513,7 +513,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(voltaje) as voltaje'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(voltaje),4), ",","") as voltaje'))
             ->get();
 
             $banda1Voltaje = 4.55;
@@ -526,7 +526,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(corrienteL) as corriente'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(corrienteL),4), ",","") as corriente'))
             ->get();
 
             $banda1Corriente = 219;
@@ -539,7 +539,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(corrienteL) as efCorriente'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(corrienteL),4), ",","") as efCorriente'))
             ->get();
 
             $banda1EfCorriente = 90;
@@ -552,7 +552,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(dsr) as desvResistencia'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(dsr),4), ",","") as desvResistencia'))
             ->get();
 
             $banda1DesvResistencia = 0.06;
@@ -565,7 +565,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(dsr) as frecuenciaEA'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(dsr),4), ",","") as frecuenciaEA'))
             ->get();
 
             $banda1FrecuenciaEA = 0.15;
@@ -578,7 +578,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(potencia) as potencia'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(potencia),4), ",","") as potencia'))
             ->get();
 
             $banda1Potencia = 980;
@@ -591,7 +591,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(nivelDeMetal) as nivelDeMetal'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(nivelDeMetal),4), ",","") as nivelDeMetal'))
             ->get();
 
             $banda1NivelDeMetal = 20;
@@ -604,7 +604,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(nivelDeBanio) as nivelDeBanio'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(nivelDeBanio),4), ",","") as nivelDeBanio'))
             ->get();
 
             $banda1NivelDeBano = 20;
@@ -617,7 +617,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(nivelDeBanio) as frecuenciaTK'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(nivelDeBanio),4), ",","") as frecuenciaTK'))
             ->get();
 
             $banda1FrecuenciaTK = 0.15;
@@ -630,7 +630,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(duracionTk) as duracionTk'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(duracionTk),4), ",","") as duracionTk'))
             ->get();
 
             $banda1DuracionTK = 0.7;
@@ -643,7 +643,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(golpesAlumina) as golpesAlumina'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(golpesAlumina),4), ",","") as golpesAlumina'))
             ->get();
 
             $banda1GolpesAlumina = 2.4;
@@ -656,7 +656,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(golpesAlumina) as alimentacionAlumina'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(golpesAlumina),4), ",","") as alimentacionAlumina'))
             ->get();
             
             $banda1AlimentacionAlumina = 1200;
@@ -669,7 +669,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(temperatura) as temperatura'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(temperatura),4), ",","") as temperatura'))
             ->get();
 
             $banda1Temperatura = 960;
@@ -682,7 +682,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(acidez) as acidez'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(acidez),4), ",","") as acidez'))
             ->get();
 
             $banda1Acidez = 10.5;
@@ -695,7 +695,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('STDDEV(temperatura) as desvTemperatura'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV(temperatura),4), ",","") as desvTemperatura'))
             ->get();
             
             $banda1DesvTemperatura = 10;
@@ -708,7 +708,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('STDDEV(acidez) as desvAcidez'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV(acidez),4), ",","") as desvAcidez'))
             ->get();
 
             $banda1DesvAcidez = 1.0;
@@ -721,7 +721,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(temperatura) as consumoFl'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(temperatura),4), ",","") as consumoFl'))
             ->get();
 
             $banda1ConsumoFl = 50;
@@ -735,7 +735,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(fe) as porcHierro'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(fe),4), ",","") as porcHierro'))
             ->get();
 
             $banda1PorcHierro = 0.2;
@@ -748,7 +748,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(si) as purezaSilicio'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(si),4), ",","") as purezaSilicio'))
             ->get();
 
             $banda1PurezaSilicio = 1;
@@ -761,7 +761,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(si) as porcSilicio'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(si),4), ",","") as porcSilicio'))
             ->get();
 
             $banda1PorcSilicio = 0.08;
@@ -912,7 +912,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(voltaje) as voltaje'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(voltaje), 4), ",","") as voltaje'))
             ->get();
 
             $banda1Voltaje = 4.55;
@@ -923,7 +923,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(corrienteL) as corriente'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(corrienteL), 4), ",","") as corriente'))
             ->get();
 
             $banda1Corriente = 219;
@@ -934,7 +934,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(corrienteL) as efCorriente'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(corrienteL), 4), ",","") as efCorriente'))
             ->get();
 
             $banda1EfCorriente = 90;
@@ -945,7 +945,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(dsr) as desvResistencia'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(dsr), 4), ",","") as desvResistencia'))
             ->get();
 
             $banda1DesvResistencia = 0.06;
@@ -956,7 +956,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(dsr) as frecuenciaEA'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(dsr), 4), ",","") as frecuenciaEA'))
             ->get();
 
             $banda1FrecuenciaEA = 0.15;
@@ -967,7 +967,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(potencia) as potencia'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(potencia), 4), ",","") as potencia'))
             ->get();
 
             $banda1Potencia = 980;
@@ -978,7 +978,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(nivelDeMetal) as nivelDeMetal'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(nivelDeMetal), 4), ",","") as nivelDeMetal'))
             ->get();
 
             $banda1NivelDeMetal = 20;
@@ -989,7 +989,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(nivelDeBanio) as nivelDeBanio'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(nivelDeBanio), 4), ",","") as nivelDeBanio'))
             ->get();
 
             $banda1NivelDeBano = 20;
@@ -1000,7 +1000,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(nivelDeBanio) as frecuenciaTK'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(nivelDeBanio), 4), ",","") as frecuenciaTK'))
             ->get();
 
             $banda1FrecuenciaTK = 0.15;
@@ -1011,7 +1011,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(duracionTk) as duracionTk'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(duracionTk), 4), ",","") as duracionTk'))
             ->get();
 
             $banda1DuracionTK = 0.7;
@@ -1022,7 +1022,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(golpesAlumina) as golpesAlumina'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(golpesAlumina), 4), ",","") as golpesAlumina'))
             ->get();
 
             $banda1GolpesAlumina = 2.4;
@@ -1033,7 +1033,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(golpesAlumina) as alimentacionAlumina'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(golpesAlumina), 4), ",","") as alimentacionAlumina'))
             ->get();
             
             $banda1AlimentacionAlumina = 1200;
@@ -1044,7 +1044,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(temperatura) as temperatura'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(temperatura), 4), ",","") as temperatura'))
             ->get();
 
             $banda1Temperatura = 960;
@@ -1055,7 +1055,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(acidez) as acidez'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(acidez), 4), ",","") as acidez'))
             ->get();
 
             $banda1Acidez = 10.5;
@@ -1066,7 +1066,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('STDDEV(temperatura) as desvTemperatura'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV(temperatura), 4), ",","") as desvTemperatura'))
             ->get();
             
             $banda1DesvTemperatura = 10;
@@ -1077,7 +1077,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('STDDEV(acidez) as desvAcidez'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV(acidez), 4), ",","") as desvAcidez'))
             ->get();
 
             $banda1DesvAcidez = 1.0;
@@ -1088,7 +1088,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(temperatura) as consumoFl'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(temperatura), 4), ",","") as consumoFl'))
             ->get();
 
             $banda1ConsumoFl = 50;
@@ -1100,7 +1100,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(fe) as porcHierro'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(fe), 4), ",","") as porcHierro'))
             ->get();
 
             $banda1PorcHierro = 0.2;
@@ -1111,7 +1111,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(si) as purezaSilicio'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(si), 4), ",","") as purezaSilicio'))
             ->get();
 
             $banda1PurezaSilicio = 1;
@@ -1122,7 +1122,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('AVG(si) as porcSilicio'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(si), 4), ",","") as porcSilicio'))
             ->get();
 
             $banda1PorcSilicio = 0.08;
@@ -2285,7 +2285,7 @@ class EvolutionController extends Controller
                                 ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('AVG('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
         
@@ -2299,7 +2299,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
         
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -2312,7 +2312,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -2323,7 +2323,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
         
@@ -2361,7 +2361,7 @@ class EvolutionController extends Controller
                                 ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('AVG('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
         
@@ -2375,7 +2375,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
         
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -2388,7 +2388,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -2399,7 +2399,7 @@ class EvolutionController extends Controller
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
         
@@ -2437,7 +2437,7 @@ class EvolutionController extends Controller
                             ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
                             ->groupBy('dia')
                             ->having('dia', '>=', $fecha1)
-                            ->select('dia', DB::raw('AVG('.$variableDB.') as '.$variableDB))
+                            ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB.'),4), ",","") as '.$variableDB))
                             ->get();
                             $datatable = Datatables::of($result)->make();
     
@@ -2450,7 +2450,7 @@ class EvolutionController extends Controller
                                             ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
     
                                             $datatableVar2 = Datatables::of($result2)->make();
@@ -2462,7 +2462,7 @@ class EvolutionController extends Controller
                                             ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
@@ -2472,7 +2472,7 @@ class EvolutionController extends Controller
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
                                             $datatableVar2 = Datatables::of($result2)->make();
     
@@ -2514,7 +2514,7 @@ class EvolutionController extends Controller
                                 ->where($variableDB, $operador1 , $rangoOp1 ) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('AVG('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 //segunda variable
@@ -2527,7 +2527,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -2540,7 +2540,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -2551,7 +2551,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -2588,7 +2588,7 @@ class EvolutionController extends Controller
                                 ->where($variableDB, $operador1 , $rangoOp1 ) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('AVG('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 //segunda variable
@@ -2601,7 +2601,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -2614,7 +2614,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -2625,7 +2625,7 @@ class EvolutionController extends Controller
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -2663,7 +2663,7 @@ class EvolutionController extends Controller
                             ->where($variableDB, $operador1 , $rangoOp1 ) 
                             ->groupBy('dia')
                             ->having('dia', '>=', $fecha1)
-                            ->select('dia', DB::raw('AVG('.$variableDB.') as '.$variableDB))
+                            ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB.'),4), ",","") as '.$variableDB))
                             ->get();
                             $datatable = Datatables::of($result)->make();
                             //segunda variable
@@ -2675,7 +2675,7 @@ class EvolutionController extends Controller
                                             ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
 
                                             $datatableVar2 = Datatables::of($result2)->make();
@@ -2687,7 +2687,7 @@ class EvolutionController extends Controller
                                             ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
@@ -2697,7 +2697,7 @@ class EvolutionController extends Controller
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
                                             $datatableVar2 = Datatables::of($result2)->make();
 
@@ -2737,7 +2737,7 @@ class EvolutionController extends Controller
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('AVG('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 if($variable2 != ''){
@@ -2750,7 +2750,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -2763,7 +2763,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -2774,7 +2774,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -2811,7 +2811,7 @@ class EvolutionController extends Controller
                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('AVG('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 if($variable2 != ''){
@@ -2824,7 +2824,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -2837,7 +2837,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -2848,7 +2848,7 @@ class EvolutionController extends Controller
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -2882,7 +2882,7 @@ class EvolutionController extends Controller
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('AVG('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 if($variable2 != ''){
@@ -2894,7 +2894,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -2906,7 +2906,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -2916,7 +2916,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -2954,7 +2954,7 @@ class EvolutionController extends Controller
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('AVG('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 if($variable2 != ''){
@@ -2966,7 +2966,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -2978,7 +2978,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -2988,7 +2988,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -3034,7 +3034,7 @@ class EvolutionController extends Controller
                                 ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('STDDEV('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
         
@@ -3048,7 +3048,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
         
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -3061,7 +3061,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -3072,7 +3072,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
         
@@ -3110,7 +3110,7 @@ class EvolutionController extends Controller
                                 ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('STDDEV('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
 
@@ -3124,7 +3124,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
 
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -3137,7 +3137,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -3148,7 +3148,7 @@ class EvolutionController extends Controller
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
 
@@ -3187,7 +3187,7 @@ class EvolutionController extends Controller
                             ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
                             ->groupBy('dia')
                             ->having('dia', '>=', $fecha1)
-                            ->select('dia', DB::raw('STDDEV('.$variableDB.') as '.$variableDB))
+                            ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB.'),4), ",","") as '.$variableDB))
                             ->get();
                             $datatable = Datatables::of($result)->make();
     
@@ -3200,7 +3200,7 @@ class EvolutionController extends Controller
                                             ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
     
                                             $datatableVar2 = Datatables::of($result2)->make();
@@ -3212,7 +3212,7 @@ class EvolutionController extends Controller
                                             ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
@@ -3222,7 +3222,7 @@ class EvolutionController extends Controller
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
                                             $datatableVar2 = Datatables::of($result2)->make();
     
@@ -3264,7 +3264,7 @@ class EvolutionController extends Controller
                                 ->where($variableDB, $operador1 , $rangoOp1 ) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('STDDEV('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 //segunda variable
@@ -3277,7 +3277,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -3290,7 +3290,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -3301,7 +3301,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -3338,7 +3338,7 @@ class EvolutionController extends Controller
                                 ->where($variableDB, $operador1 , $rangoOp1 ) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('STDDEV('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 //segunda variable
@@ -3351,7 +3351,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -3364,7 +3364,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -3375,7 +3375,7 @@ class EvolutionController extends Controller
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -3413,7 +3413,7 @@ class EvolutionController extends Controller
                                 ->where($variableDB, $operador1 , $rangoOp1 ) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('STDDEV('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 //segunda variable
@@ -3425,7 +3425,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -3437,7 +3437,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -3447,7 +3447,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -3487,7 +3487,7 @@ class EvolutionController extends Controller
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('STDDEV('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 if($variable2 != ''){
@@ -3500,7 +3500,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -3513,7 +3513,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -3524,7 +3524,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -3561,7 +3561,7 @@ class EvolutionController extends Controller
                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('STDDEV('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 if($variable2 != ''){
@@ -3574,7 +3574,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -3587,7 +3587,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -3598,7 +3598,7 @@ class EvolutionController extends Controller
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -3636,7 +3636,7 @@ class EvolutionController extends Controller
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('STDDEV('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 if($variable2 != ''){
@@ -3648,7 +3648,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -3660,7 +3660,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -3670,7 +3670,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -3716,7 +3716,7 @@ class EvolutionController extends Controller
                                 ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('SUM('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
         
@@ -3730,7 +3730,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
         
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -3743,7 +3743,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -3754,7 +3754,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
         
@@ -3792,7 +3792,7 @@ class EvolutionController extends Controller
                                 ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('SUM('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
         
@@ -3806,7 +3806,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
         
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -3819,7 +3819,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -3830,7 +3830,7 @@ class EvolutionController extends Controller
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
         
@@ -3869,7 +3869,7 @@ class EvolutionController extends Controller
                             ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
                             ->groupBy('dia')
                             ->having('dia', '>=', $fecha1)
-                            ->select('dia', DB::raw('SUM('.$variableDB.') as '.$variableDB))
+                            ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB.'),4), ",","") as '.$variableDB))
                             ->get();
                             $datatable = Datatables::of($result)->make();
     
@@ -3882,7 +3882,7 @@ class EvolutionController extends Controller
                                             ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
     
                                             $datatableVar2 = Datatables::of($result2)->make();
@@ -3894,7 +3894,7 @@ class EvolutionController extends Controller
                                             ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
@@ -3904,7 +3904,7 @@ class EvolutionController extends Controller
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
                                             $datatableVar2 = Datatables::of($result2)->make();
     
@@ -3946,7 +3946,7 @@ class EvolutionController extends Controller
                                 ->where($variableDB, $operador1 , $rangoOp1 ) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('SUM('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 //segunda variable
@@ -3959,7 +3959,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -3972,7 +3972,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -3983,7 +3983,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -4020,7 +4020,7 @@ class EvolutionController extends Controller
                                 ->where($variableDB, $operador1 , $rangoOp1 ) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('SUM('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 //segunda variable
@@ -4033,7 +4033,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -4046,7 +4046,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -4057,7 +4057,7 @@ class EvolutionController extends Controller
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -4095,7 +4095,7 @@ class EvolutionController extends Controller
                                 ->where($variableDB, $operador1 , $rangoOp1 ) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('SUM('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 //segunda variable
@@ -4107,7 +4107,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -4119,7 +4119,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -4129,7 +4129,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -4169,7 +4169,7 @@ class EvolutionController extends Controller
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('SUM('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 if($variable2 != ''){
@@ -4182,7 +4182,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -4195,7 +4195,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -4206,7 +4206,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -4243,7 +4243,7 @@ class EvolutionController extends Controller
                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('SUM('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 if($variable2 != ''){
@@ -4256,7 +4256,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -4269,7 +4269,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -4280,7 +4280,7 @@ class EvolutionController extends Controller
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -4318,7 +4318,7 @@ class EvolutionController extends Controller
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('SUM('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 if($variable2 != ''){
@@ -4330,7 +4330,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -4342,7 +4342,7 @@ class EvolutionController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -4352,7 +4352,7 @@ class EvolutionController extends Controller
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     

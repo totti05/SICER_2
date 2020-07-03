@@ -1162,7 +1162,7 @@ class CellController extends Controller
                                 ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('AVG('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
         
@@ -1176,7 +1176,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
         
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -1189,7 +1189,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -1200,7 +1200,7 @@ class CellController extends Controller
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
         
@@ -1238,7 +1238,7 @@ class CellController extends Controller
                                 ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('AVG('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
         
@@ -1252,7 +1252,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
         
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -1265,7 +1265,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -1276,7 +1276,7 @@ class CellController extends Controller
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
         
@@ -1314,7 +1314,7 @@ class CellController extends Controller
                             ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
                             ->groupBy('dia')
                             ->having('dia', '>=', $fecha1)
-                            ->select('dia', DB::raw('AVG('.$variableDB.') as '.$variableDB))
+                            ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB.'),4), ",","") as '.$variableDB))
                             ->get();
                             $datatable = Datatables::of($result)->make();
     
@@ -1327,7 +1327,7 @@ class CellController extends Controller
                                             ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
     
                                             $datatableVar2 = Datatables::of($result2)->make();
@@ -1339,7 +1339,7 @@ class CellController extends Controller
                                             ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
@@ -1349,7 +1349,7 @@ class CellController extends Controller
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
                                             $datatableVar2 = Datatables::of($result2)->make();
     
@@ -1391,7 +1391,7 @@ class CellController extends Controller
                                 ->where($variableDB, $operador1 , $rangoOp1 ) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('AVG('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 //segunda variable
@@ -1404,7 +1404,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -1417,7 +1417,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -1428,7 +1428,7 @@ class CellController extends Controller
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -1465,7 +1465,7 @@ class CellController extends Controller
                                 ->where($variableDB, $operador1 , $rangoOp1 ) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('AVG('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 //segunda variable
@@ -1478,7 +1478,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -1491,7 +1491,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -1502,7 +1502,7 @@ class CellController extends Controller
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -1540,7 +1540,7 @@ class CellController extends Controller
                             ->where($variableDB, $operador1 , $rangoOp1 ) 
                             ->groupBy('dia')
                             ->having('dia', '>=', $fecha1)
-                            ->select('dia', DB::raw('AVG('.$variableDB.') as '.$variableDB))
+                            ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB.'),4), ",","") as '.$variableDB))
                             ->get();
                             $datatable = Datatables::of($result)->make();
                             //segunda variable
@@ -1552,7 +1552,7 @@ class CellController extends Controller
                                             ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
 
                                             $datatableVar2 = Datatables::of($result2)->make();
@@ -1564,7 +1564,7 @@ class CellController extends Controller
                                             ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
@@ -1574,7 +1574,7 @@ class CellController extends Controller
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
                                             $datatableVar2 = Datatables::of($result2)->make();
 
@@ -1614,7 +1614,7 @@ class CellController extends Controller
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('AVG('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 if($variable2 != ''){
@@ -1627,7 +1627,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -1640,7 +1640,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -1651,7 +1651,7 @@ class CellController extends Controller
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -1688,7 +1688,7 @@ class CellController extends Controller
                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('AVG('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 if($variable2 != ''){
@@ -1701,7 +1701,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -1714,7 +1714,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -1725,7 +1725,7 @@ class CellController extends Controller
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -1759,7 +1759,7 @@ class CellController extends Controller
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('AVG('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 if($variable2 != ''){
@@ -1771,7 +1771,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -1783,7 +1783,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -1793,7 +1793,7 @@ class CellController extends Controller
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -1831,7 +1831,7 @@ class CellController extends Controller
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('AVG('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 if($variable2 != ''){
@@ -1843,7 +1843,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -1855,7 +1855,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -1865,7 +1865,7 @@ class CellController extends Controller
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('AVG('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(AVG('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -1911,7 +1911,7 @@ class CellController extends Controller
                                 ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('STDDEV('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
         
@@ -1925,7 +1925,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
         
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -1938,7 +1938,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -1949,7 +1949,7 @@ class CellController extends Controller
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
         
@@ -1987,7 +1987,7 @@ class CellController extends Controller
                                 ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('STDDEV('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
 
@@ -2001,7 +2001,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
 
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -2014,7 +2014,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -2025,7 +2025,7 @@ class CellController extends Controller
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
 
@@ -2064,7 +2064,7 @@ class CellController extends Controller
                             ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
                             ->groupBy('dia')
                             ->having('dia', '>=', $fecha1)
-                            ->select('dia', DB::raw('STDDEV('.$variableDB.') as '.$variableDB))
+                            ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB.'),4), ",","") as '.$variableDB))
                             ->get();
                             $datatable = Datatables::of($result)->make();
     
@@ -2077,7 +2077,7 @@ class CellController extends Controller
                                             ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
     
                                             $datatableVar2 = Datatables::of($result2)->make();
@@ -2089,7 +2089,7 @@ class CellController extends Controller
                                             ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
@@ -2099,7 +2099,7 @@ class CellController extends Controller
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
                                             $datatableVar2 = Datatables::of($result2)->make();
     
@@ -2141,7 +2141,7 @@ class CellController extends Controller
                                 ->where($variableDB, $operador1 , $rangoOp1 ) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('STDDEV('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 //segunda variable
@@ -2154,7 +2154,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -2167,7 +2167,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -2178,7 +2178,7 @@ class CellController extends Controller
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -2215,7 +2215,7 @@ class CellController extends Controller
                                 ->where($variableDB, $operador1 , $rangoOp1 ) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('STDDEV('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 //segunda variable
@@ -2228,7 +2228,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -2241,7 +2241,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -2252,7 +2252,7 @@ class CellController extends Controller
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -2290,7 +2290,7 @@ class CellController extends Controller
                                 ->where($variableDB, $operador1 , $rangoOp1 ) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('STDDEV('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 //segunda variable
@@ -2302,7 +2302,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -2314,7 +2314,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -2324,7 +2324,7 @@ class CellController extends Controller
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -2364,7 +2364,7 @@ class CellController extends Controller
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('STDDEV('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 if($variable2 != ''){
@@ -2377,7 +2377,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -2390,7 +2390,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -2401,7 +2401,7 @@ class CellController extends Controller
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -2438,7 +2438,7 @@ class CellController extends Controller
                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('STDDEV('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 if($variable2 != ''){
@@ -2451,7 +2451,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -2464,7 +2464,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -2475,7 +2475,7 @@ class CellController extends Controller
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -2513,7 +2513,7 @@ class CellController extends Controller
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('STDDEV('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 if($variable2 != ''){
@@ -2525,7 +2525,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -2537,7 +2537,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -2547,7 +2547,7 @@ class CellController extends Controller
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('STDDEV('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(STDDEV('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -2593,7 +2593,7 @@ class CellController extends Controller
                                 ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('SUM('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
         
@@ -2607,7 +2607,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
         
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -2620,7 +2620,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -2631,7 +2631,7 @@ class CellController extends Controller
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
         
@@ -2669,7 +2669,7 @@ class CellController extends Controller
                                 ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('SUM('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
         
@@ -2683,7 +2683,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
         
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -2696,7 +2696,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -2707,7 +2707,7 @@ class CellController extends Controller
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
         
@@ -2746,7 +2746,7 @@ class CellController extends Controller
                             ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
                             ->groupBy('dia')
                             ->having('dia', '>=', $fecha1)
-                            ->select('dia', DB::raw('SUM('.$variableDB.') as '.$variableDB))
+                            ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB.'),4), ",","") as '.$variableDB))
                             ->get();
                             $datatable = Datatables::of($result)->make();
     
@@ -2759,7 +2759,7 @@ class CellController extends Controller
                                             ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
     
                                             $datatableVar2 = Datatables::of($result2)->make();
@@ -2771,7 +2771,7 @@ class CellController extends Controller
                                             ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
@@ -2781,7 +2781,7 @@ class CellController extends Controller
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->groupBy('dia')
                                             ->having('dia', '>=', $fecha1)
-                                            ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                            ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                             ->get();
                                             $datatableVar2 = Datatables::of($result2)->make();
     
@@ -2823,7 +2823,7 @@ class CellController extends Controller
                                 ->where($variableDB, $operador1 , $rangoOp1 ) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('SUM('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 //segunda variable
@@ -2836,7 +2836,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -2849,7 +2849,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -2860,7 +2860,7 @@ class CellController extends Controller
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -2897,7 +2897,7 @@ class CellController extends Controller
                                 ->where($variableDB, $operador1 , $rangoOp1 ) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('SUM('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 //segunda variable
@@ -2910,7 +2910,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -2923,7 +2923,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -2934,7 +2934,7 @@ class CellController extends Controller
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -2972,7 +2972,7 @@ class CellController extends Controller
                                 ->where($variableDB, $operador1 , $rangoOp1 ) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('SUM('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 //segunda variable
@@ -2984,7 +2984,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -2996,7 +2996,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -3006,7 +3006,7 @@ class CellController extends Controller
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -3046,7 +3046,7 @@ class CellController extends Controller
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('SUM('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 if($variable2 != ''){
@@ -3059,7 +3059,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -3072,7 +3072,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -3083,7 +3083,7 @@ class CellController extends Controller
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -3120,7 +3120,7 @@ class CellController extends Controller
                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('SUM('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 if($variable2 != ''){
@@ -3133,7 +3133,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -3146,7 +3146,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -3157,7 +3157,7 @@ class CellController extends Controller
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     
@@ -3195,7 +3195,7 @@ class CellController extends Controller
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->groupBy('dia')
                                 ->having('dia', '>=', $fecha1)
-                                ->select('dia', DB::raw('SUM('.$variableDB.') as '.$variableDB))
+                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB.'),4), ",","") as '.$variableDB))
                                 ->get();
                                 $datatable = Datatables::of($result)->make();
                                 if($variable2 != ''){
@@ -3207,7 +3207,7 @@ class CellController extends Controller
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
     
                                                 $datatableVar2 = Datatables::of($result2)->make();
@@ -3219,7 +3219,7 @@ class CellController extends Controller
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
@@ -3229,7 +3229,7 @@ class CellController extends Controller
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
                                                 ->having('dia', '>=', $fecha1)
-                                                ->select('dia', DB::raw('SUM('.$variableDB2.') as '.$variableDB2))
+                                                ->select('dia', DB::raw('REPLACE(FORMAT(SUM('.$variableDB2.'),4), ",","") as '.$variableDB2))
                                                 ->get();
                                                 $datatableVar2 = Datatables::of($result2)->make();
     

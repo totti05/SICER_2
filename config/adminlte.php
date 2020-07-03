@@ -197,13 +197,19 @@ return [
             'url'  => 'evolution',
             'icon' => 'fa fa-chart-line',
             'icon_color' => 'green',
-            'data' =>
-            [
-                'text' => 'Linea V',
-                'url'  => 'lineV',
-                'icon' => 'fa fa-chart-line',
-                'icon_color' => 'green',
-            ]
+            'submenu' =>[
+                [
+                    'text' => 'Consultas',
+                    'url'  => 'evolution',
+                    'icon' => 'fa fa-search',
+                    'icon_color' => 'green',
+                ],
+                [
+                    'text' => 'Linea V',
+                    'url'  => 'lineV',
+                    'icon' => 'fa fa-chart-line',
+                    'icon_color' => 'green',
+                ],],
         ],
         [
             'text' => 'Celdas',
