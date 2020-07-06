@@ -1077,6 +1077,11 @@
               mode: "nearest",
               intersect: true,
             },
+            plugins: {
+              filler: {
+                  propagate: true
+              }
+            },
             scales: {
               yAxes: [
                 {
@@ -1129,6 +1134,11 @@
               mode: "nearest",
               intersect: true,
             },
+            plugins: {
+              filler: {
+                  propagate: true
+              }
+            },
             scales: {
               yAxes: [
                 {
@@ -1180,6 +1190,11 @@
             hover: {
               mode: "nearest",
               intersect: true,
+            },
+            plugins: {
+              filler: {
+                  propagate: true
+              }
             },
             scales: {
               yAxes: [
@@ -1234,6 +1249,11 @@
               mode: "nearest",
               intersect: true,
             },
+            plugins: {
+              filler: {
+                  propagate: true
+              }
+            },
             scales: {
               yAxes: [
                 {
@@ -1287,6 +1307,11 @@
               mode: "nearest",
               intersect: true,
             },
+            plugins: {
+              filler: {
+                  propagate: true
+              }
+            },
             scales: {
               yAxes: [
                 {
@@ -1339,6 +1364,11 @@
             hover: {
               mode: "nearest",
               intersect: true,
+            },
+            plugins: {
+              filler: {
+                  propagate: true
+              }
             },
             scales: {
               yAxes: [
@@ -1451,6 +1481,11 @@
               mode: "nearest",
               intersect: true,
             },
+            plugins: {
+              filler: {
+                  propagate: true
+              }
+            },
             scales: {
               yAxes: [
                 {
@@ -1505,7 +1540,7 @@
                 data: Banda1Voltaje,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
-                backgroundColor: "#b7babd",
+                backgroundColor: "#fad9b6",
                 borderColor: "red",
                 pointBackgroundColor: "red",
                 pointBorderColor: "red",
@@ -1548,12 +1583,12 @@
                 data: Banda1Corriente,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
-                backgroundColor: "transparent",
+                backgroundColor: "#fad9b6",
                 borderColor: "red",
                 pointBackgroundColor: "red",
                 pointBorderColor: "red",
                 pointStyle: "line",
-                fill: false,
+                fill: +2,
                 lineTension: 0,
               },
               {
@@ -1591,12 +1626,12 @@
                 data: Banda1EfCorriente,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
-                backgroundColor: "transparent",
+                backgroundColor: "#fad9b6",
                 borderColor: "red",
                 pointBackgroundColor: "red",
                 pointBorderColor: "red",
                 pointStyle: "line",
-                fill: false,
+                fill: +2,
                 lineTension: 0,
               },
               {
@@ -1634,12 +1669,12 @@
                 data: Banda1DesvResistencia,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
-                backgroundColor: "transparent",
+                backgroundColor: "#fad9b6",
                 borderColor: "red",
                 pointBackgroundColor: "red",
                 pointBorderColor: "red",
                 pointStyle: "line",
-                fill: false,
+                fill: +2,
                 lineTension: 0,
               },
               {
@@ -1677,12 +1712,12 @@
                 data: Banda1FrecuenciaEA,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
-                backgroundColor: "transparent",
+                backgroundColor: "#fad9b6",
                 borderColor: "red",
                 pointBackgroundColor: "red",
                 pointBorderColor: "red",
                 pointStyle: "line",
-                fill: false,
+                fill: +2,
                 lineTension: 0,
               },
               {
@@ -1720,12 +1755,12 @@
                 data: Banda1Potencia,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
-                backgroundColor: "transparent",
+                backgroundColor: "#fad9b6",
                 borderColor: "red",
                 pointBackgroundColor: "red",
                 pointBorderColor: "red",
                 pointStyle: "line",
-                fill: false,
+                fill: +2,
                 lineTension: 0,
               },
               {
@@ -1763,12 +1798,12 @@
                 data: Banda1NivelDeMetal,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
-                backgroundColor: "transparent",
+                backgroundColor: "#fad9b6",
                 borderColor: "red",
                 pointBackgroundColor: "red",
                 pointBorderColor: "red",
                 pointStyle: "line",
-                fill: false,
+                fill: +2,
                 lineTension: 0,
               },
               {
@@ -1849,12 +1884,12 @@
                 data: Banda1FrecuenciaTK,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
-                backgroundColor: "transparent",
+                backgroundColor: "#fad9b6",
                 borderColor: "red",
                 pointBackgroundColor: "red",
                 pointBorderColor: "red",
                 pointStyle: "line",
-                fill: false,
+                fill: +2,
                 lineTension: 0,
               },
               {
