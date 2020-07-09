@@ -60,9 +60,71 @@ class HomeController extends Controller
       $produccion = sizeof($produccion) ;
       $normalizacion = sizeof($normalizacion) ;
       $coccion = sizeof($coccion) ;
-        return view('home', ['celdas' => $celdas,
+        return view('home', [ 'celdas' => $celdas,
                               'produccion' => $produccion,
                               'normalizacion' => $normalizacion,
-                              'coccion' => $coccion] );
+                              'coccion' => $coccion,
+                              
+                              ] );
+    }
+
+    public function grapHome(){
+
+
+      $fecha1='2018-03-01';
+      $fecha2='2018-03-30';
+      $celda1=901;
+      $celda2= 1090;
+
+      $hierro = DB::connection('reduccion')->table('diariocelda')
+      ->whereBetween('celda', [$celda1,$celda2])
+      ->whereBetween('dia', [$fecha1,$fecha2])
+      ->groupBy('dia')
+      ->having('dia', '>=', $fecha1)
+      ->select('dia', DB::raw('REPLACE(FORMAT(AVG(fe),4), ",","") as fe'))
+      ->get();
+
+      $celdas = DB::connection('reduccion')->table('diariocelda')
+      ->whereBetween('celda', [$celda1,$celda2])
+      ->whereBetween('dia', [$fecha1,$fecha2])
+      ->where('enServicio', '=', 1)
+      ->groupBy('dia')
+      ->having('dia', '>=', $fecha1)
+      ->select('dia', DB::raw('count(*) as celdas_conectadas'))
+      ->get();
+
+      $prod = DB::connection('reduccion')->table('diariocelda')
+      ->whereBetween('celda', [$celda1,$celda2])
+      ->whereBetween('dia', [$fecha1,$fecha2])
+      ->groupBy('dia')
+      ->having('dia', '>=', $fecha1)
+      ->select('dia', DB::raw('REPLACE(FORMAT(AVG(al),4), ",","") as prod'))
+      ->get();
+
+      return response()->json(
+        [   'fecha1' => $fecha1,
+            'fecha2' => $fecha2,
+            'datosHierro' => $hierro,
+            'datosCeldasCon' => $celdas,
+            'datosProd' => $prod ,
+            ]);
+
+     /* $fecha1='2018-03-01';
+      $fecha2='2018-03-30';
+      $celda1=901;
+      $celda2= 1090;
+
+      $hierro = DB::connection('reduccion')->table('diariocelda')
+            ->whereBetween('celda', [$celda1,$celda2])
+            ->whereBetween('dia', [$fecha1,$fecha2])
+            ->groupBy('celda')
+            ->having('celda', '>=', $celda1)
+            ->select('celda', DB::raw('REPLACE(FORMAT(AVG(fe),4), ",","") as fe'))
+            ->get();
+            return response()->json(
+              [   'fecha1' => $fecha1,
+                  'fecha2' => $fecha2,
+                  'datosHierro' => $hierro
+                  ]); */
     }
 }

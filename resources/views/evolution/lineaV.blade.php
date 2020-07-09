@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 @section('content_header')
-  <h1 class=""><i class="fa fa-chart-bar"></i> Evolucion de línea</h1>
+  <h1 class=""><i class="fa fa-chart-bar"></i> Evolución de línea</h1>
   <form id="formPredet" class="form-inline justify-content-end">
     <div class="form-group ml-2 mb-2">
       <div class="input-group">
@@ -213,7 +213,7 @@
       <!-- CONSUMO DE AlF3 LINE CHART -->
       <div class="card card-navy">
         <div class="card-header">
-          <h3 class="card-title">Gráfica - Desviacion de resistencia</h3>
+          <h3 class="card-title">Gráfica - Desviación de resistencia</h3>
 
           <div class="card-tools">
             <button
@@ -434,7 +434,7 @@
       <!-- POTENCIA NETA LINE CHART -->
       <div class="card card-navy">
         <div class="card-header">
-          <h3 class="card-title">Grafica - Frecuencia de tracking</h3>
+          <h3 class="card-title">Gráfica - Frecuencia de tracking</h3>
 
           <div class="card-tools">
             <button

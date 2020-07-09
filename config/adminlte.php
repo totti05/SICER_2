@@ -205,7 +205,7 @@ return [
                     'icon_color' => 'green',
                 ],
                 [
-                    'text' => 'Linea V',
+                    'text' => 'Línea V',
                     'url'  => 'lineV',
                     'icon' => 'fa fa-chart-line',
                     'icon_color' => 'green',
@@ -218,7 +218,7 @@ return [
             'icon_color' => 'orange',
         ],
         [
-            'text'    => 'Fallas de anodos',
+            'text'    => 'Fallas de ánodos',
             'url'  => 'fail',
             'icon'    => 'fa fa-exclamation-triangle',
             'icon_color' => 'red',
@@ -230,7 +230,7 @@ return [
             'icon_color' => 'purple',
          ],
          [
-            'text'    => 'Informacion de línea ',
+            'text'    => 'Información de línea ',
             'url'  => 'infoline',
             'icon'    => 'fas fa-fw fa-share',
             'icon_color' => 'blue',
@@ -241,19 +241,6 @@ return [
             'icon'    => 'fa fa-fill-drip',
             'icon_color' => 'grey',
          ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'aqua',
-        ],
     ],
 
     /*

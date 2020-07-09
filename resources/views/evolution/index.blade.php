@@ -28,14 +28,6 @@
   </ul>
  
 @stop
-@section('content_top_nav_right')
- <ul class="nav ">
-    <li class="nav-item">
-    <h4 class="nav-link active" > Div.  Control  de  Procesos</h4>
-    </li>
-  </ul>
- 
-@stop
 @section('content')
   <div class="modal" tabindex="-1" role="dialog" id="modalMensaje">
     <div class="modal-dialog">
@@ -181,7 +173,7 @@
                   id="checkLinea"
                 />
                 <label class="custom-control-label" for="checkLinea"
-                  >Linea V</label
+                  >Línea V</label
                 >
               </div>
             </div>
@@ -231,7 +223,7 @@
             <!-- /.form group -->
 
             <div class="form-group">
-              <label>Rango de operacion</label>
+              <label>Rango de operación</label>
               <br />
               <label>Rango varFiltro a consultar</label>
               <div class="form-row form-inline">
@@ -250,7 +242,7 @@
                 <!--  / input group -->
                 <div class="input-group col-md-6">
                   <div class="input-group-prepend">
-                    <span class="input-group-text">Limite inferior</span>
+                    <span class="input-group-text">Límite inferior</span>
                   </div>
                   <input
                     type="number"
@@ -267,7 +259,7 @@
               <div class="form-row form-inline">
                 <div class="input-group col-md-6 offset-6">
                   <div class="input-group-prepend">
-                    <span class="input-group-text">Limite superior</span>
+                    <span class="input-group-text">Límite superior</span>
                   </div>
                   <input
                     type="number"
@@ -338,7 +330,7 @@
             <!-- /.form group -->
 
             <div class="form-group">
-              <label>Rango de operacion</label>
+              <label>Rango de operación</label>
               <br />
               <label>Rango de <span id="labelVariable"> variable </span> a consultar</label>
               <div class="form-row form-inline">
@@ -357,7 +349,7 @@
                 <!--  / input group -->
                 <div class="input-group col-md-6">
                   <div class="input-group-prepend">
-                    <span class="input-group-text">Limite inferior</span>
+                    <span class="input-group-text">Límite inferior</span>
                   </div>
                   <input
                     type="number"
@@ -374,7 +366,7 @@
               <div class="form-row form-inline">
                 <div class="input-group col-md-6 offset-6">
                   <div class="input-group-prepend">
-                    <span class="input-group-text">Limite superior</span>
+                    <span class="input-group-text">Límite superior</span>
                   </div>
                   <input
                     type="number"
@@ -461,7 +453,7 @@
               <!-- /.form group -->
 
               <div class="form-group">
-                <label>Rango de operacion</label>
+                <label>Rango de operación</label>
                 <br />
                 <label>Rango de <span id="labelVariable2"> variable </span> a consultar</label>
                 <div class="form-row form-inline">
@@ -484,7 +476,7 @@
                   <!--  / input group -->
                   <div class="input-group col-md-6">
                     <div class="input-group-prepend">
-                      <span class="input-group-text">Limite inferior</span>
+                      <span class="input-group-text">Límite inferior</span>
                     </div>
                     <input
                       type="number"
@@ -501,7 +493,7 @@
                 <div class="form-row form-inline">
                   <div class="input-group col-md-6 offset-6">
                     <div class="input-group-prepend">
-                      <span class="input-group-text">Limite superior</span>
+                      <span class="input-group-text">Límite superior</span>
                     </div>
                     <input
                       type="number"
@@ -521,14 +513,14 @@
 
          
           <div class="col-md-4" id="configGrafica" style="display: none;">
-            <label>Configuración de grafica</label>
+            <label>Configuración de gráfica</label>
 
             <div class="form-group">
               <div class="form-row">
-                <label>Minimo de la escala</label>
+                <label>Mínimo de la escala</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
-                    <span class="input-group-text">Min (escala de grafico)</span>
+                    <span class="input-group-text">Min (escala de gráfico)</span>
                   </div>
                   <input
                     type="number"
@@ -541,10 +533,10 @@
                 </div>
                 <!-- /.input group -->
 
-                <label>Maximo de la escala</label>
+                <label>Máximo de la escala</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
-                    <span class="input-group-text">Max (escala de grafico)</span>
+                    <span class="input-group-text">Max (escala de gráfico)</span>
                   </div>
                   <input
                     type="number"
@@ -722,7 +714,7 @@
   <!-- Card para la tabla de los datos de la grafica -->
   <div class="card card-navy" id="cardTablaDatos" style="display: none;">
     <div class="card-header">
-      <h3 class="card-title">Tabla de datos de la grafica</h3>
+      <h3 class="card-title">Tabla de datos de la gráfica</h3>
       <div class="card-tools">
         <button
           type="button"
@@ -1394,7 +1386,6 @@
                 title: {
                   display: true,
                   text:
-                    "Grafica SICER - " +
                     response.variable +
                     " - " +
                     response.variableVar2,
@@ -1462,7 +1453,7 @@
                 responsive: true,
                 title: {
                   display: true,
-                  text: "Grafica SICER - " + response.variable,
+                  text: response.variable,
                 },
                 tooltips: {
                   mode: "nearest",

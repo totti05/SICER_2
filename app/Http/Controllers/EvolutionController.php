@@ -90,7 +90,7 @@ class EvolutionController extends Controller
     {
         //
     }
-
+//funcion que se utiliza cuando se solicita mediante get datos de graficos
     public function EvolutionDataChartGet(Request $request)
     {
         if ($request->isMethod('get')) {
@@ -496,7 +496,7 @@ class EvolutionController extends Controller
         
     }
 
-
+    //funcion que se utiliza cuando se envia mediante post un rango de fecha
     public function EvolutionDataChartPost(Request $request)
     {
         if ($request->isMethod('post')) {
@@ -898,6 +898,7 @@ class EvolutionController extends Controller
         }
         
     }
+    //funcion que se utiliza cuando se solicita mediante get datos de graficos y mediante post las distintas variables para consulta detallada
     public function EvolutionDataChart(Request $request)
     {
         if ($request->isMethod('get')) {

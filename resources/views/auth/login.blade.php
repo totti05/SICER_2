@@ -48,7 +48,7 @@
 
         #loginCard{
 
-            margin-top: 33vh;
+            margin-top: 40vh;
         }
 
     </style>
