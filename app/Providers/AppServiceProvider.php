@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
             $celdas = DB::connection('reduccion')->table('diariocelda')
             ->whereYear('dia','2020')
             ->whereMonth('dia','03')
-            ->whereDay('dia', '26')
+            ->whereDay('dia', '17')
             ->where('enServicio', '=', 1)
             ->select('celda')
             ->get();

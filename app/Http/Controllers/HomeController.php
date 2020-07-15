@@ -27,7 +27,7 @@ class HomeController extends Controller
       $celdas = DB::connection('reduccion')->table('diariocelda')
       ->whereYear('dia','2020')
       ->whereMonth('dia','03')
-      ->whereDay('dia', '26')
+      ->whereDay('dia', '17')
       ->where('enServicio', '=', 1)
       ->select('celda')
       ->get();
@@ -35,7 +35,7 @@ class HomeController extends Controller
       $produccion = DB::connection('reduccion')->table('diariocelda')
       ->whereYear('dia','2020')
       ->whereMonth('dia','03')
-      ->whereDay('dia', '26')
+      ->whereDay('dia', '17')
       ->where('estado', '=', 'ecProduccion')
       ->select('celda')
       ->get();
@@ -43,7 +43,7 @@ class HomeController extends Controller
       $normalizacion = DB::connection('reduccion')->table('diariocelda')
       ->whereYear('dia','2020')
       ->whereMonth('dia','03')
-      ->whereDay('dia', '26')
+      ->whereDay('dia', '17')
       ->where('estado', '=', 'ecNormalizacion')
       ->select('celda')
       ->get();
@@ -51,7 +51,7 @@ class HomeController extends Controller
       $coccion = DB::connection('reduccion')->table('diariocelda')
       ->whereYear('dia','2020')
       ->whereMonth('dia','03')
-      ->whereDay('dia', '26')
+      ->whereDay('dia', '17')
       ->where('estado', '=', 'ecCoccion')
       ->select('celda')
       ->get();
@@ -71,8 +71,8 @@ class HomeController extends Controller
     public function grapHome(){
 
 
-      $fecha1='2018-03-01';
-      $fecha2='2018-03-30';
+      $fecha1='2020-03-01';
+      $fecha2='2020-03-17';
       $celda1=901;
       $celda2= 1090;
 
