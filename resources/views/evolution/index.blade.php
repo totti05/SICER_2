@@ -1391,12 +1391,17 @@
                     response.variableVar2,
                 },
                 tooltips: {
-                  mode: "nearest",
-                  intersect: true,
+                mode: "nearest",
+                intersect: true,
                 },
                 hover: {
                   mode: "nearest",
                   intersect: true,
+                },
+                plugins: {
+                  filler: {
+                      propagate: true
+                  }
                 },
                 scales: {
                   yAxes: [
@@ -1456,12 +1461,17 @@
                   text: response.variable,
                 },
                 tooltips: {
-                  mode: "nearest",
-                  intersect: true,
+                mode: "nearest",
+                intersect: true,
                 },
                 hover: {
                   mode: "nearest",
                   intersect: true,
+                },
+                plugins: {
+                  filler: {
+                      propagate: true
+                  }
                 },
                 scales: {
                   yAxes: [
@@ -1508,10 +1518,10 @@
                     data: Datos,
                     yAxisID: "y-axis-1",
                     borderWidth: 1,
-                    backgroundColor: "transparent",
-                    borderColor: "#007bff",
-                    pointBorderColor: "#007bff",
-                    pointBackgroundColor: "#007bff",
+                    backgroundColor: "#83befc",
+                    borderColor: "#0306ad",
+                    pointBorderColor: "#0306ad",
+                    pointBackgroundColor: "#0306ad",
                     fill: false,
                     lineTension: 0,
                   },
@@ -1534,12 +1544,12 @@
                     data: banda1,
                     yAxisID: "y-axis-1",
                     borderWidth: 1,
-                    backgroundColor: "transparent",
+                    backgroundColor: "#fad9b6",
                     borderColor: "red",
                     pointBackgroundColor: "red",
                     pointBorderColor: "red",
                     pointStyle: "line",
-                    fill: false,
+                    fill: +2,
                     lineTension: 0,
                   },
                   {
@@ -1589,7 +1599,7 @@
                     pointBorderColor: "#brown",
                     pointBackgroundColor: "#brown",
                     pointStyle: "line",
-                    fill: false,
+                    fill: +2,
                     lineTension: 0,
                   },
                   {
@@ -1616,10 +1626,10 @@
                     data: Datos,
                     yAxisID: "y-axis-1",
                     borderWidth: 1,
-                    backgroundColor: "transparent",
-                    borderColor: "#007bff",
-                    pointBorderColor: "#007bff",
-                    pointBackgroundColor: "#007bff",
+                    backgroundColor: "#83befc",
+                    borderColor: "#0306ad",
+                    pointBorderColor: "#0306ad",
+                    pointBackgroundColor: "#0306ad",
                     fill: false,
                     lineTension: 0,
                   },
@@ -1642,12 +1652,12 @@
                     data: banda1,
                     yAxisID: "y-axis-1",
                     borderWidth: 1,
-                    backgroundColor: "transparent",
+                    backgroundColor: "#fad9b6",
                     borderColor: "red",
                     pointBackgroundColor: "red",
                     pointBorderColor: "red",
                     pointStyle: "line",
-                    fill: false,
+                    fill: +2,
                     lineTension: 0,
                   },
                   {
