@@ -30,8 +30,8 @@ class AppServiceProvider extends ServiceProvider
         $events->listen(BuildingMenu::class, function (BuildingMenu $event) {
             $celdas = DB::connection('reduccion')->table('diariocelda')
             ->whereYear('dia','2020')
-            ->whereMonth('dia','03')
-            ->whereDay('dia', '17')
+            ->whereMonth('dia','07')
+            ->whereDay('dia', '26')
             ->where('enServicio', '=', 1)
             ->select('celda')
             ->get();

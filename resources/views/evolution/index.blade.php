@@ -44,7 +44,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <p id="mensaje">Modal body text goes here.</p>
+          <p id="mensaje">MODULO EN DESARROLLO</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">

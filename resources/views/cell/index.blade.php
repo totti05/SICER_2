@@ -29,11 +29,7 @@
  
 @stop
 @section('content_top_nav_right')
- <ul class="nav ">
-    <li class="nav-item">
-    <h4 class="nav-link active" > Div.  Control  de  Procesos</h4>
-    </li>
-  </ul>
+
  
 @stop
 @section('content')
@@ -52,7 +48,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <p id="mensaje">Modal body text goes here.</p>
+          <p id="mensaje">MODULO EN DESARROLLO</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">
@@ -859,6 +855,7 @@
    // $("#celdaswidget").CardWidget("collapse");
 
     $(document).ready(function () {
+      $("#modalMensaje").modal("show");
       $("#formdata").submit(function (event) {
         event.preventDefault();
         formdatos = $(this).serializeArray();
@@ -935,6 +932,7 @@
    //FUNCION QUE SE ESTA UTILIZANDO PARA GRAFICAR
 
     $(document).ready(function () {
+      $("#modalMensaje").modal("show");
       $("#formData").bind("submit", function () {
         $.ajaxSetup({
           headers: {

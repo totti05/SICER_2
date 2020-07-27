@@ -26,16 +26,16 @@ class HomeController extends Controller
     {   
       $celdas = DB::connection('reduccion')->table('diariocelda')
       ->whereYear('dia','2020')
-      ->whereMonth('dia','03')
-      ->whereDay('dia', '17')
+      ->whereMonth('dia','07')
+      ->whereDay('dia', '26')
       ->where('enServicio', '=', 1)
       ->select('celda')
       ->get();
 
       $produccion = DB::connection('reduccion')->table('diariocelda')
       ->whereYear('dia','2020')
-      ->whereMonth('dia','03')
-      ->whereDay('dia', '17')
+      ->whereMonth('dia','07')
+      ->whereDay('dia', '26')
       ->where('estado', '=', 'ecProduccion')
       ->select('celda')
       ->get();
@@ -50,8 +50,8 @@ class HomeController extends Controller
       
       $coccion = DB::connection('reduccion')->table('diariocelda')
       ->whereYear('dia','2020')
-      ->whereMonth('dia','03')
-      ->whereDay('dia', '17')
+      ->whereMonth('dia','07')
+      ->whereDay('dia', '26')
       ->where('estado', '=', 'ecCoccion')
       ->select('celda')
       ->get();
@@ -71,8 +71,8 @@ class HomeController extends Controller
     public function grapHome(){
 
 
-      $fecha1='2020-03-01';
-      $fecha2='2020-03-17';
+      $fecha1='2020-07-01';
+      $fecha2='2020-07-26';
       $celda1=901;
       $celda2= 1090;
 
@@ -98,7 +98,15 @@ class HomeController extends Controller
       ->whereBetween('dia', [$fecha1,$fecha2])
       ->groupBy('dia')
       ->having('dia', '>=', $fecha1)
-      ->select('dia', DB::raw('REPLACE(FORMAT(AVG(al),4), ",","") as prod'))
+      ->select('dia', DB::raw('REPLACE(FORMAT(SUM(metal_rcol),4), ",","") as prod'))
+      ->get();
+
+      $prod_prog = DB::connection('reduccion')->table('diariocelda')
+      ->whereBetween('celda', [$celda1,$celda2])
+      ->whereBetween('dia', [$fecha1,$fecha2])
+      ->groupBy('dia')
+      ->having('dia', '>=', $fecha1)
+      ->select('dia', DB::raw('REPLACE(FORMAT(SUM(metal_prog),4), ",","") as prod_prog'))
       ->get();
 
       return response()->json(
@@ -107,6 +115,7 @@ class HomeController extends Controller
             'datosHierro' => $hierro,
             'datosCeldasCon' => $celdas,
             'datosProd' => $prod ,
+            'datosProd_prog'=> $prod_prog,
             ]);
 
      /* $fecha1='2018-03-01';

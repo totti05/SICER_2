@@ -433,7 +433,9 @@
 
                 var DiaProd = new Array();
                 var DatosProd = new Array();
-               
+
+                var DiaProd_prog = new Array();     
+                var DatosProd_prog = new Array();                    
 
                 //obteniendo datos para variable 1
                 response.datosHierro.forEach(function (data) {
@@ -454,6 +456,14 @@
                     DatosProd.push(data.prod);
                 });
                 console.log(response);
+
+                response.datosProd_prog.forEach(function (data) {
+                    
+                    DiaProd_prog.push(data.dia);
+                    DatosProd_prog.push(data.prod_prog);
+                });
+                console.log(response);
+                
 
                 var ChartOptionsHierro = {
                     responsive: true,
@@ -600,10 +610,7 @@
                             id: "y-axis-1",
                             ticks: {
                                 fontColor: '#efefef',
-                                stepSize: 10,
-                                suggestedMin: 0,
-                                suggestedMax: 180,
-                                maxTicksLimit: 90
+                                stepSize: 1
                             
                             },
                             gridLines : {
@@ -651,6 +658,17 @@
                         borderColor         : '#efefef',
                         pointBorderColor: '#efefef',
                         pointBackgroundColor: '#efefef',
+                        fill: false,
+                        lineTension: 0,
+                    },
+                    {
+                        label: "Producción Programada",
+                        data: DatosProd_prog,
+                        borderWidth: 1,
+                        backgroundColor: '#de2500',
+                        borderColor         : '#de2500',
+                        pointBorderColor: '#de2500',
+                        pointBackgroundColor: '#de2500',
                         fill: false,
                         lineTension: 0,
                     }

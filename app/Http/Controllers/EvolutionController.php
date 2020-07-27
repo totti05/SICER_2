@@ -94,8 +94,8 @@ class EvolutionController extends Controller
     public function EvolutionDataChartGet(Request $request)
     {
         if ($request->isMethod('get')) {
-            $date1 = strtotime("2018/03/30"); 
-            $fecha1 = date("Y/m/d", strtotime("2018/03/30"));
+            $date1 = strtotime("2020/07/01"); 
+            $fecha1 = date("Y/m/d", strtotime("2020/07/01"));
             $date2 = strtotime('+30 day', strtotime($fecha1));
             $fecha2 = date("Y/m/d", $date2);
 
@@ -900,7 +900,7 @@ class EvolutionController extends Controller
     }
     //funcion que se utiliza cuando se solicita mediante get datos de graficos y mediante post las distintas variables para consulta detallada
     public function EvolutionDataChart(Request $request)
-    {
+    {   //get  no se utiliza
         if ($request->isMethod('get')) {
             $fecha1='2018-03-01';
             $fecha2='2018-03-30';
