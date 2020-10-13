@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Evolution;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
+use setasign\Fpdi\Fpdi;
 
 class EvolutionController extends Controller
 {
@@ -56,6 +57,28 @@ class EvolutionController extends Controller
     public function lineV()
     {
         return view('evolution.lineaV');
+    }
+
+    public function PDFC()
+    {
+        
+        $pdf = new Fpdi();
+        // add a page
+        $pdf->AddPage();
+        // set the source file
+        $pdf->setSourceFile("Trabajo Remoto usando Conexion VPN.PDF");
+        // import page 1
+        $tplIdx = $pdf->importPage(1);
+        // use the imported page and place it at point 10,10 with a width of 100 mm
+        $pdf->useImportedPage($tplIdx, 10, 10, 100);
+
+        // now write some text above the imported page
+        $pdf->SetFont('Helvetica');
+        $pdf->SetTextColor(255, 0, 0);
+        $pdf->SetXY(30, 30);
+        $pdf->Write(0, 'This is just a simple text');
+
+        $pdf->Output();
     }
     /**
      * Show the form for editing the specified resource.

@@ -245,7 +245,7 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          <button type="button" class="btn btn-primary">PDF</button>
+          <form action="{{route('evolution.pdfc')}}" method="get"><button type="submit" class="btn btn-primary">PDF</button></form>
           <button type="button" class="btn btn-primary">Copiar</button>
           <button type="button" class="btn btn-primary">Imprimir</button>
           <button type="button" class="btn btn-primary">Excel</button>
