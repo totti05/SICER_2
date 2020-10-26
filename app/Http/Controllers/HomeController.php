@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {   
-      $celdas = DB::connection('reduccion')->table('diariocelda')
+      $celdas = DB::connection('reduccionl5')->table('diariocelda')
       ->whereYear('dia','2020')
       ->whereMonth('dia','07')
       ->whereDay('dia', '26')
@@ -32,7 +32,7 @@ class HomeController extends Controller
       ->select('celda')
       ->get();
 
-      $produccion = DB::connection('reduccion')->table('diariocelda')
+      $produccion = DB::connection('reduccionl5')->table('diariocelda')
       ->whereYear('dia','2020')
       ->whereMonth('dia','07')
       ->whereDay('dia', '26')
@@ -40,7 +40,7 @@ class HomeController extends Controller
       ->select('celda')
       ->get();
 
-      $normalizacion = DB::connection('reduccion')->table('diariocelda')
+      $normalizacion = DB::connection('reduccionl5')->table('diariocelda')
       ->whereYear('dia','2020')
       ->whereMonth('dia','03')
       ->whereDay('dia', '17')
@@ -48,7 +48,7 @@ class HomeController extends Controller
       ->select('celda')
       ->get();
       
-      $coccion = DB::connection('reduccion')->table('diariocelda')
+      $coccion = DB::connection('reduccionl5')->table('diariocelda')
       ->whereYear('dia','2020')
       ->whereMonth('dia','07')
       ->whereDay('dia', '26')
@@ -76,7 +76,7 @@ class HomeController extends Controller
       $celda1=901;
       $celda2= 1090;
 
-      $hierro = DB::connection('reduccion')->table('diariocelda')
+      $hierro = DB::connection('reduccionl5')->table('diariocelda')
       ->whereBetween('celda', [$celda1,$celda2])
       ->whereBetween('dia', [$fecha1,$fecha2])
       ->groupBy('dia')
@@ -84,7 +84,7 @@ class HomeController extends Controller
       ->select('dia', DB::raw('REPLACE(FORMAT(AVG(fe),4), ",","") as fe'))
       ->get();
 
-      $celdas = DB::connection('reduccion')->table('diariocelda')
+      $celdas = DB::connection('reduccionl5')->table('diariocelda')
       ->whereBetween('celda', [$celda1,$celda2])
       ->whereBetween('dia', [$fecha1,$fecha2])
       ->where('enServicio', '=', 1)
@@ -93,7 +93,7 @@ class HomeController extends Controller
       ->select('dia', DB::raw('count(*) as celdas_conectadas'))
       ->get();
 
-      $prod = DB::connection('reduccion')->table('diariocelda')
+      $prod = DB::connection('reduccionl5')->table('diariocelda')
       ->whereBetween('celda', [$celda1,$celda2])
       ->whereBetween('dia', [$fecha1,$fecha2])
       ->groupBy('dia')
@@ -101,7 +101,7 @@ class HomeController extends Controller
       ->select('dia', DB::raw('REPLACE(FORMAT(SUM(metal_rcol),4), ",","") as prod'))
       ->get();
 
-      $prod_prog = DB::connection('reduccion')->table('diariocelda')
+      $prod_prog = DB::connection('reduccionl5')->table('diariocelda')
       ->whereBetween('celda', [$celda1,$celda2])
       ->whereBetween('dia', [$fecha1,$fecha2])
       ->groupBy('dia')
@@ -123,7 +123,7 @@ class HomeController extends Controller
       $celda1=901;
       $celda2= 1090;
 
-      $hierro = DB::connection('reduccion')->table('diariocelda')
+      $hierro = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('celda')

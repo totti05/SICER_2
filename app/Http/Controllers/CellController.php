@@ -1155,7 +1155,7 @@ class CellController extends Controller
                     if ($rangoOp1 != '' AND $rangoOp2 != '' AND $operador1 == '' ) {
                         if ($varFiltro !='' ) {
                             if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -1169,7 +1169,7 @@ class CellController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -1182,7 +1182,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -1194,7 +1194,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -1231,7 +1231,7 @@ class CellController extends Controller
                                                         
                                                         'calculo' => $calculo]);
                             }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ) {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -1245,7 +1245,7 @@ class CellController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -1258,7 +1258,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -1270,7 +1270,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -1308,7 +1308,7 @@ class CellController extends Controller
                                                         'calculo' => $calculo]);
                             }
                         }else{
-                            $result = DB::connection('reduccion')->table('diariocelda')
+                            $result = DB::connection('reduccionl5')->table('diariocelda')
                             ->whereBetween('celda', [$celda1,$celda2])
                             ->whereBetween('dia', [$fecha1,$fecha2])
                             ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
@@ -1321,7 +1321,7 @@ class CellController extends Controller
                             //segunda variable
                             if($variable2 != ''){
                                 if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                            $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -1333,7 +1333,7 @@ class CellController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                            $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -1344,7 +1344,7 @@ class CellController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                            $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->groupBy('dia')
@@ -1384,7 +1384,7 @@ class CellController extends Controller
                     }elseif ($rangoOp1 != '' AND $rangoOp2 == '' AND $operador1 != '' ){
                         if ($varFiltro !='' ) {
                             if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -1397,7 +1397,7 @@ class CellController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -1410,7 +1410,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -1422,7 +1422,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -1458,7 +1458,7 @@ class CellController extends Controller
                                                      
                                                         'calculo' => $calculo]);
                             }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ) {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -1471,7 +1471,7 @@ class CellController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -1484,7 +1484,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -1496,7 +1496,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -1534,7 +1534,7 @@ class CellController extends Controller
                             }
                         
                         }else{
-                            $result = DB::connection('reduccion')->table('diariocelda')
+                            $result = DB::connection('reduccionl5')->table('diariocelda')
                             ->whereBetween('celda', [$celda1,$celda2])
                             ->whereBetween('dia', [$fecha1,$fecha2])
                             ->where($variableDB, $operador1 , $rangoOp1 ) 
@@ -1546,7 +1546,7 @@ class CellController extends Controller
                             //segunda variable
                             if($variable2 != ''){
                                 if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                            $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -1558,7 +1558,7 @@ class CellController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                            $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -1569,7 +1569,7 @@ class CellController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->groupBy('dia')
@@ -1608,7 +1608,7 @@ class CellController extends Controller
                     }elseif (($rangoOp1 == '' AND $rangoOp2 == '' AND $operador1 == '' )) {
                         if ($varFiltro !='' ) {
                             if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') {  
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -1620,7 +1620,7 @@ class CellController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -1633,7 +1633,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -1645,7 +1645,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -1682,7 +1682,7 @@ class CellController extends Controller
                                                      
                                                         'calculo' => $calculo]);
                             }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ) { 
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -1694,7 +1694,7 @@ class CellController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -1707,7 +1707,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -1719,7 +1719,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -1754,7 +1754,7 @@ class CellController extends Controller
                                                         'xlabelVar2'=> $xlabelVar2,
                                                         'datatableVar2' => $datatableVar2,
                                                      
-                                                        'calculo' => $calculo]); $result = DB::connection('reduccion')->table('diariocelda')
+                                                        'calculo' => $calculo]); $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->groupBy('dia')
@@ -1765,7 +1765,7 @@ class CellController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -1777,7 +1777,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -1788,7 +1788,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
@@ -1826,7 +1826,7 @@ class CellController extends Controller
                             }
                         
                         }else{
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->groupBy('dia')
@@ -1837,7 +1837,7 @@ class CellController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -1849,7 +1849,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -1860,7 +1860,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
@@ -1904,7 +1904,7 @@ class CellController extends Controller
                     if ($rangoOp1 != '' AND $rangoOp2 != '' AND $operador1 == '' ) {
                         if ($varFiltro !='' ) {
                             if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -1918,7 +1918,7 @@ class CellController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -1931,7 +1931,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -1943,7 +1943,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -1980,7 +1980,7 @@ class CellController extends Controller
                                                         
                                                         'calculo' => $calculo  ]);
                             }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ) {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -1994,7 +1994,7 @@ class CellController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2007,7 +2007,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2019,7 +2019,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2058,7 +2058,7 @@ class CellController extends Controller
                             }
                         
                         }else{
-                            $result = DB::connection('reduccion')->table('diariocelda')
+                            $result = DB::connection('reduccionl5')->table('diariocelda')
                             ->whereBetween('celda', [$celda1,$celda2])
                             ->whereBetween('dia', [$fecha1,$fecha2])
                             ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
@@ -2071,7 +2071,7 @@ class CellController extends Controller
                             //segunda variable
                             if($variable2 != ''){
                                 if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                             $result2 = DB::connection('reduccion')->table('diariocelda')
+                                             $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -2083,7 +2083,7 @@ class CellController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                             $result2 = DB::connection('reduccion')->table('diariocelda')
+                                             $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -2094,7 +2094,7 @@ class CellController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                             $result2 = DB::connection('reduccion')->table('diariocelda')
+                                             $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->groupBy('dia')
@@ -2134,7 +2134,7 @@ class CellController extends Controller
                     }elseif ($rangoOp1 != '' AND $rangoOp2 == '' AND $operador1 != '' ){
                         if ($varFiltro !='' ) {
                             if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') { 
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2147,7 +2147,7 @@ class CellController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2160,7 +2160,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                               $result2 = DB::connection('reduccion')->table('diariocelda')
+                                               $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2172,7 +2172,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                               $result2 = DB::connection('reduccion')->table('diariocelda')
+                                               $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2208,7 +2208,7 @@ class CellController extends Controller
                                                      
                                                         'calculo' => $calculo]);
                             }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ) {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2221,7 +2221,7 @@ class CellController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2234,7 +2234,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                               $result2 = DB::connection('reduccion')->table('diariocelda')
+                                               $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2246,7 +2246,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                               $result2 = DB::connection('reduccion')->table('diariocelda')
+                                               $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2284,7 +2284,7 @@ class CellController extends Controller
                             }
                         
                         }else{
-                            $result = DB::connection('reduccion')->table('diariocelda')
+                            $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($variableDB, $operador1 , $rangoOp1 ) 
@@ -2296,7 +2296,7 @@ class CellController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -2308,7 +2308,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                               $result2 = DB::connection('reduccion')->table('diariocelda')
+                                               $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -2319,7 +2319,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                               $result2 = DB::connection('reduccion')->table('diariocelda')
+                                               $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
@@ -2358,7 +2358,7 @@ class CellController extends Controller
                     }elseif (($rangoOp1 == '' AND $rangoOp2 == '' AND $operador1 == '' )) {
                         if ($varFiltro !='' ) {
                             if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') { 
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2370,7 +2370,7 @@ class CellController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2383,7 +2383,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                               $result2 = DB::connection('reduccion')->table('diariocelda')
+                                               $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2395,7 +2395,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2432,7 +2432,7 @@ class CellController extends Controller
                                                      
                                                         'calculo' => $calculo]);
                             }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ) {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2444,7 +2444,7 @@ class CellController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2457,7 +2457,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                               $result2 = DB::connection('reduccion')->table('diariocelda')
+                                               $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2469,7 +2469,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2508,7 +2508,7 @@ class CellController extends Controller
                             }
                         
                         }else{
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->groupBy('dia')
@@ -2519,7 +2519,7 @@ class CellController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -2531,7 +2531,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                               $result2 = DB::connection('reduccion')->table('diariocelda')
+                                               $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -2542,7 +2542,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
@@ -2586,7 +2586,7 @@ class CellController extends Controller
                     if ($rangoOp1 != '' AND $rangoOp2 != '' AND $operador1 == '' ) {
                         if ($varFiltro !='' ) {
                             if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2600,7 +2600,7 @@ class CellController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2613,7 +2613,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2625,7 +2625,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2662,7 +2662,7 @@ class CellController extends Controller
                                                         
                                                             'calculo' => $calculo  ]);
                             }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ) {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2676,7 +2676,7 @@ class CellController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2689,7 +2689,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2701,7 +2701,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2740,7 +2740,7 @@ class CellController extends Controller
                             }
                         
                         }else{
-                            $result = DB::connection('reduccion')->table('diariocelda')
+                            $result = DB::connection('reduccionl5')->table('diariocelda')
                             ->whereBetween('celda', [$celda1,$celda2])
                             ->whereBetween('dia', [$fecha1,$fecha2])
                             ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
@@ -2753,7 +2753,7 @@ class CellController extends Controller
                             //segunda variable
                             if($variable2 != ''){
                                 if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                            $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -2765,7 +2765,7 @@ class CellController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -2776,7 +2776,7 @@ class CellController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                            $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->groupBy('dia')
@@ -2816,7 +2816,7 @@ class CellController extends Controller
                     }elseif ($rangoOp1 != '' AND $rangoOp2 == '' AND $operador1 != '' ){
                         if ($varFiltro !='' ) {
                             if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2829,7 +2829,7 @@ class CellController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2842,7 +2842,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2854,7 +2854,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2890,7 +2890,7 @@ class CellController extends Controller
                                                     
                                                         'calculo' => $calculo]);
                             }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ) {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2903,7 +2903,7 @@ class CellController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2916,7 +2916,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2928,7 +2928,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2966,7 +2966,7 @@ class CellController extends Controller
                             }
                         
                         }else{
-                            $result = DB::connection('reduccion')->table('diariocelda')
+                            $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($variableDB, $operador1 , $rangoOp1 ) 
@@ -2978,7 +2978,7 @@ class CellController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -2990,7 +2990,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -3001,7 +3001,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
@@ -3040,7 +3040,7 @@ class CellController extends Controller
                     }elseif (($rangoOp1 == '' AND $rangoOp2 == '' AND $operador1 == '' )) {
                         if ($varFiltro !='' ) {
                             if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3052,7 +3052,7 @@ class CellController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3065,7 +3065,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3077,7 +3077,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3114,7 +3114,7 @@ class CellController extends Controller
                                                     
                                                         'calculo' => $calculo]);
                             }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ) {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -3126,7 +3126,7 @@ class CellController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -3139,7 +3139,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -3151,7 +3151,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -3190,7 +3190,7 @@ class CellController extends Controller
                             }
                         
                         }else{
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->groupBy('dia')
@@ -3201,7 +3201,7 @@ class CellController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -3213,7 +3213,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -3224,7 +3224,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
@@ -3270,7 +3270,7 @@ class CellController extends Controller
                     if ($rangoOp1 != '' AND $rangoOp2 != '' AND $operador1 == '' ) {
                         if ($varFiltro !='' ) {
                            if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3282,7 +3282,7 @@ class CellController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3293,7 +3293,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3303,7 +3303,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3338,7 +3338,7 @@ class CellController extends Controller
                                                         
                                                             'calculo' => '' ]);
                            }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ) {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -3350,7 +3350,7 @@ class CellController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -3361,7 +3361,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -3371,7 +3371,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -3408,7 +3408,7 @@ class CellController extends Controller
                            }
                         
                         }else{
-                            $result = DB::connection('reduccion')->table('diariocelda')
+                            $result = DB::connection('reduccionl5')->table('diariocelda')
                             ->whereBetween('celda', [$celda1,$celda2])
                             ->whereBetween('dia', [$fecha1,$fecha2])
                             ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
@@ -3419,7 +3419,7 @@ class CellController extends Controller
                             //segunda variable
                             if($variable2 != ''){
                                 if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                            $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -3429,7 +3429,7 @@ class CellController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                             $result2 = DB::connection('reduccion')->table('diariocelda')
+                                             $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -3438,7 +3438,7 @@ class CellController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                            $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->select('celda','dia',$variableDB2) 
@@ -3475,7 +3475,7 @@ class CellController extends Controller
                     }elseif ($rangoOp1 != '' AND $rangoOp2 == '' AND $operador1 != '' ){
                         if ($varFiltro !='' ) {
                             if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3486,7 +3486,7 @@ class CellController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3497,7 +3497,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3507,7 +3507,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3541,7 +3541,7 @@ class CellController extends Controller
                                                     
                                                         'calculo' => '']);
                             }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ){
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -3552,7 +3552,7 @@ class CellController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -3563,7 +3563,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -3573,7 +3573,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -3608,7 +3608,7 @@ class CellController extends Controller
                                                         'calculo' => '']);
                             }
                         }else{
-                            $result = DB::connection('reduccion')->table('diariocelda')
+                            $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($variableDB, $operador1 , $rangoOp1 ) 
@@ -3618,7 +3618,7 @@ class CellController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -3628,7 +3628,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -3637,7 +3637,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->select('celda','dia',$variableDB2) 
@@ -3674,7 +3674,7 @@ class CellController extends Controller
                     }elseif (($rangoOp1 == '' AND $rangoOp2 == '' AND $operador1 == '' )) {
                         if ($varFiltro !='' ) {
                             if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3684,7 +3684,7 @@ class CellController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3695,7 +3695,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3705,7 +3705,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3740,7 +3740,7 @@ class CellController extends Controller
                                                         
                                                         'calculo' => '']); 
                             }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ){
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -3750,7 +3750,7 @@ class CellController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -3761,7 +3761,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -3771,7 +3771,7 @@ class CellController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -3807,7 +3807,7 @@ class CellController extends Controller
                                                         'calculo' => '']); 
                             }   
                         }else{
-                            $result = DB::connection('reduccion')->table('diariocelda')
+                            $result = DB::connection('reduccionl5')->table('diariocelda')
                             ->whereBetween('celda', [$celda1,$celda2])
                             ->whereBetween('dia', [$fecha1,$fecha2])
                             ->select('celda','dia',$variableDB) 
@@ -3816,7 +3816,7 @@ class CellController extends Controller
                             if($variable2 != ''){
                                 //segunda variable
                                 if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                             $result2 = DB::connection('reduccion')->table('diariocelda')
+                                             $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -3826,7 +3826,7 @@ class CellController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                              $result2 = DB::connection('reduccion')->table('diariocelda')
+                                              $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -3835,7 +3835,7 @@ class CellController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                             $result2 = DB::connection('reduccion')->table('diariocelda')
+                                             $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->select('celda','dia',$variableDB2) 
@@ -3878,7 +3878,7 @@ class CellController extends Controller
     public function CellDataTable(Request $request){
         
         if ($request->isMethod('get')) {
-           $celdas = DB::connection('reduccion')->table('diariocelda')
+           $celdas = DB::connection('reduccionl5')->table('diariocelda')
         ->whereBetween('celda', [1001 ,1002])
         ->whereYear('dia', '2018')
         ->whereMonth('dia', '05')
@@ -4060,7 +4060,7 @@ class CellController extends Controller
 
             }
             
-            $celdas = DB::connection('reduccion')->table('diariocelda')
+            $celdas = DB::connection('reduccionl5')->table('diariocelda')
                         ->whereBetween('celda', [$celda1,$celda2])
                         ->whereBetween('dia', [$fecha1,$fecha2])  
                         ->select('celda','dia',$variableDB) 

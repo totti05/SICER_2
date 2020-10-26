@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cell extends Model
 {
-    protected $connection = 'reduccion';
+    protected $connection = 'reduccionl5';
     protected $table = 'diariocelda';
     protected $primaryKey = ['celda','dia'];
     public $incrementing = false;

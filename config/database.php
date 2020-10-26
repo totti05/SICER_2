@@ -53,7 +53,7 @@ return [
             'password' => env('DB_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8',
-            'collation' => 'utf8_spanish_ci',
+            'collation' => 'utf8_unicode_ci',
             'prefix' => '',
             'prefix_indexes' => true,
             'strict' => true,
@@ -64,15 +64,15 @@ return [
         ],
 
 
-        'reduccion' => [
+        'reduccionl5' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('REDUCCION_HOST', '127.0.0.1'),
-            'port' => env('REDUCCION_PORT', '3306'),
-            'database' => env('REDUCCION_DATABASE', 'forge'),
-            'username' => env('REDUCCION_USERNAME', 'forge'),
-            'password' => env('REDUCCION_PASSWORD', ''),
-            'unix_socket' => env('REDUCCION_SOCKET', ''),
+            'host' => env('REDUCCION_L5_HOST', '127.0.0.1'),
+            'port' => env('REDUCCION_L5_PORT', '3306'),
+            'database' => env('REDUCCION_L5_DATABASE', 'forge'),
+            'username' => env('REDUCCION_L5_USERNAME', 'forge'),
+            'password' => env('REDUCCION_L5_PASSWORD', ''),
+            'unix_socket' => env('REDUCCION_L5_SOCKET', ''),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',

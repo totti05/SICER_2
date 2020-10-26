@@ -120,6 +120,6 @@ class Celda extends Model
      * 
      * @var string
      */
-    protected $connection = 'reduccion';
+    protected $connection = 'reduccionl5';
 
 }

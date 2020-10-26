@@ -128,7 +128,7 @@ class EvolutionController extends Controller
             $celda2= 1090;
            
 
-            $voltaje = DB::connection('reduccion')->table('diariocelda')
+            $voltaje = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -141,7 +141,7 @@ class EvolutionController extends Controller
             $minVoltaje =  4.4;
             $maxVoltaje = 5.1;
 
-            $corriente = DB::connection('reduccion')->table('diariocelda')
+            $corriente = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -154,7 +154,7 @@ class EvolutionController extends Controller
             $minCorriente =  180;
             $maxCorriente = 240;
 
-            $efCorriente = DB::connection('reduccion')->table('diariocelda')
+            $efCorriente = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -167,7 +167,7 @@ class EvolutionController extends Controller
             $minEfCorriente =  50;
             $maxEfCorriente = 110;
 
-            $desvResistencia = DB::connection('reduccion')->table('diariocelda')
+            $desvResistencia = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -180,7 +180,7 @@ class EvolutionController extends Controller
             $minDesvResistencia =  -0.2;
             $maxDesvResistencia = 0.2;
 
-            $frecuenciaEA = DB::connection('reduccion')->table('diariocelda')
+            $frecuenciaEA = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -193,7 +193,7 @@ class EvolutionController extends Controller
             $minFrecuenciaEA =  0;
             $maxFrecuenciaEA = 1.2;
 
-            $potencia = DB::connection('reduccion')->table('diariocelda')
+            $potencia = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -206,7 +206,7 @@ class EvolutionController extends Controller
             $minPotencia =  920;
             $maxPotencia = 1120;
 
-            $nivelDeMetal = DB::connection('reduccion')->table('diariocelda')
+            $nivelDeMetal = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -219,7 +219,7 @@ class EvolutionController extends Controller
             $minNivelDeMetal =  18;
             $maxNivelDeMetal = 27;
 
-            $nivelDeBanio = DB::connection('reduccion')->table('diariocelda')
+            $nivelDeBanio = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -232,7 +232,7 @@ class EvolutionController extends Controller
             $minNivelDeBano =  15;
             $maxNivelDeBano = 27;
 
-            $frecuenciaTK = DB::connection('reduccion')->table('diariocelda')
+            $frecuenciaTK = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -245,7 +245,7 @@ class EvolutionController extends Controller
             $minFrecuenciaTK =  0;
             $maxFrecuenciaTK = 2.5;
 
-            $duracionTK = DB::connection('reduccion')->table('diariocelda')
+            $duracionTK = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -258,7 +258,7 @@ class EvolutionController extends Controller
             $minDuracionTK =  0.5;
             $maxDuracionTK = 1.9;
 
-            $golpesAlumina = DB::connection('reduccion')->table('diariocelda')
+            $golpesAlumina = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -271,7 +271,7 @@ class EvolutionController extends Controller
             $minGolpesAlumina =  1.7;
             $maxGolpesAlumina = 3.2;
             
-            $alimentacionAlumina = DB::connection('reduccion')->table('diariocelda')
+            $alimentacionAlumina = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -284,7 +284,7 @@ class EvolutionController extends Controller
             $minAlimentacionAlumina =  800;
             $maxAlimentacionAlumina = 1350;
 
-            $temperatura = DB::connection('reduccion')->table('diariocelda')
+            $temperatura = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -297,7 +297,7 @@ class EvolutionController extends Controller
             $minTemperatura =  950;
             $maxTemperatura = 990;
 
-            $acidez = DB::connection('reduccion')->table('diariocelda')
+            $acidez = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -310,7 +310,7 @@ class EvolutionController extends Controller
             $minAcidez =  8;
             $maxAcidez = 13.5;
 
-            $desvTemperatura = DB::connection('reduccion')->table('diariocelda')
+            $desvTemperatura = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -323,7 +323,7 @@ class EvolutionController extends Controller
             $minDesvTemperatura =  0;
             $maxDesvTemperatura = 25;
 
-            $desvAcidez = DB::connection('reduccion')->table('diariocelda')
+            $desvAcidez = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -336,7 +336,7 @@ class EvolutionController extends Controller
             $minDesvAcidez =  0;
             $maxDesvAcidez = 4;
 
-            $consumoFl = DB::connection('reduccion')->table('diariocelda')
+            $consumoFl = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -350,7 +350,7 @@ class EvolutionController extends Controller
             $maxConsumoFl = 170;
 
 
-            $porcHierro = DB::connection('reduccion')->table('diariocelda')
+            $porcHierro = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -363,7 +363,7 @@ class EvolutionController extends Controller
             $minPorcHierro =  0;
             $maxPorcHierro = 1.1;
 
-            $purezaSilicio = DB::connection('reduccion')->table('diariocelda')
+            $purezaSilicio = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -376,7 +376,7 @@ class EvolutionController extends Controller
             $minPurezaSilicio =  0;
             $maxPurezaSilicio = 0.45;
 
-            $porcSilicio = DB::connection('reduccion')->table('diariocelda')
+            $porcSilicio = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -531,7 +531,7 @@ class EvolutionController extends Controller
             $celda2= 1090;
            
 
-            $voltaje = DB::connection('reduccion')->table('diariocelda')
+            $voltaje = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -544,7 +544,7 @@ class EvolutionController extends Controller
             $minVoltaje =  4.4;
             $maxVoltaje = 5.1;
 
-            $corriente = DB::connection('reduccion')->table('diariocelda')
+            $corriente = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -557,7 +557,7 @@ class EvolutionController extends Controller
             $minCorriente =  180;
             $maxCorriente = 240;
 
-            $efCorriente = DB::connection('reduccion')->table('diariocelda')
+            $efCorriente = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -570,7 +570,7 @@ class EvolutionController extends Controller
             $minEfCorriente =  50;
             $maxEfCorriente = 110;
 
-            $desvResistencia = DB::connection('reduccion')->table('diariocelda')
+            $desvResistencia = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -583,7 +583,7 @@ class EvolutionController extends Controller
             $minDesvResistencia =  -0.2;
             $maxDesvResistencia = 0.2;
 
-            $frecuenciaEA = DB::connection('reduccion')->table('diariocelda')
+            $frecuenciaEA = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -596,7 +596,7 @@ class EvolutionController extends Controller
             $minFrecuenciaEA =  0;
             $maxFrecuenciaEA = 1.2;
 
-            $potencia = DB::connection('reduccion')->table('diariocelda')
+            $potencia = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -609,7 +609,7 @@ class EvolutionController extends Controller
             $minPotencia =  920;
             $maxPotencia = 1120;
 
-            $nivelDeMetal = DB::connection('reduccion')->table('diariocelda')
+            $nivelDeMetal = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -622,7 +622,7 @@ class EvolutionController extends Controller
             $minNivelDeMetal =  18;
             $maxNivelDeMetal = 27;
 
-            $nivelDeBanio = DB::connection('reduccion')->table('diariocelda')
+            $nivelDeBanio = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -635,7 +635,7 @@ class EvolutionController extends Controller
             $minNivelDeBano =  15;
             $maxNivelDeBano = 27;
 
-            $frecuenciaTK = DB::connection('reduccion')->table('diariocelda')
+            $frecuenciaTK = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -648,7 +648,7 @@ class EvolutionController extends Controller
             $minFrecuenciaTK =  0;
             $maxFrecuenciaTK = 2.5;
 
-            $duracionTK = DB::connection('reduccion')->table('diariocelda')
+            $duracionTK = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -661,7 +661,7 @@ class EvolutionController extends Controller
             $minDuracionTK =  0.5;
             $maxDuracionTK = 1.9;
 
-            $golpesAlumina = DB::connection('reduccion')->table('diariocelda')
+            $golpesAlumina = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -674,7 +674,7 @@ class EvolutionController extends Controller
             $minGolpesAlumina =  1.7;
             $maxGolpesAlumina = 3.2;
             
-            $alimentacionAlumina = DB::connection('reduccion')->table('diariocelda')
+            $alimentacionAlumina = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -687,7 +687,7 @@ class EvolutionController extends Controller
             $minAlimentacionAlumina =  800;
             $maxAlimentacionAlumina = 1350;
 
-            $temperatura = DB::connection('reduccion')->table('diariocelda')
+            $temperatura = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -700,7 +700,7 @@ class EvolutionController extends Controller
             $minTemperatura =  950;
             $maxTemperatura = 990;
 
-            $acidez = DB::connection('reduccion')->table('diariocelda')
+            $acidez = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -713,7 +713,7 @@ class EvolutionController extends Controller
             $minAcidez =  8;
             $maxAcidez = 13.5;
 
-            $desvTemperatura = DB::connection('reduccion')->table('diariocelda')
+            $desvTemperatura = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -726,7 +726,7 @@ class EvolutionController extends Controller
             $minDesvTemperatura =  0;
             $maxDesvTemperatura = 25;
 
-            $desvAcidez = DB::connection('reduccion')->table('diariocelda')
+            $desvAcidez = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -739,7 +739,7 @@ class EvolutionController extends Controller
             $minDesvAcidez =  0;
             $maxDesvAcidez = 4;
 
-            $consumoFl = DB::connection('reduccion')->table('diariocelda')
+            $consumoFl = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -753,7 +753,7 @@ class EvolutionController extends Controller
             $maxConsumoFl = 170;
 
 
-            $porcHierro = DB::connection('reduccion')->table('diariocelda')
+            $porcHierro = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -766,7 +766,7 @@ class EvolutionController extends Controller
             $minPorcHierro =  0;
             $maxPorcHierro = 1.1;
 
-            $purezaSilicio = DB::connection('reduccion')->table('diariocelda')
+            $purezaSilicio = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -779,7 +779,7 @@ class EvolutionController extends Controller
             $minPurezaSilicio =  0;
             $maxPurezaSilicio = 0.45;
 
-            $porcSilicio = DB::connection('reduccion')->table('diariocelda')
+            $porcSilicio = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -931,7 +931,7 @@ class EvolutionController extends Controller
             $celda2= 1090;
            
 
-            $voltaje = DB::connection('reduccion')->table('diariocelda')
+            $voltaje = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -942,7 +942,7 @@ class EvolutionController extends Controller
             $banda1Voltaje = 4.55;
             $banda2Voltaje = 4.65;
 
-            $corriente = DB::connection('reduccion')->table('diariocelda')
+            $corriente = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -953,7 +953,7 @@ class EvolutionController extends Controller
             $banda1Corriente = 219;
             $banda2Corriente = null;
 
-            $efCorriente = DB::connection('reduccion')->table('diariocelda')
+            $efCorriente = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -964,7 +964,7 @@ class EvolutionController extends Controller
             $banda1EfCorriente = 90;
             $banda2EfCorriente = 94;
 
-            $desvResistencia = DB::connection('reduccion')->table('diariocelda')
+            $desvResistencia = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -975,7 +975,7 @@ class EvolutionController extends Controller
             $banda1DesvResistencia = 0.06;
             $banda2DesvResistencia = null;
 
-            $frecuenciaEA = DB::connection('reduccion')->table('diariocelda')
+            $frecuenciaEA = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -986,7 +986,7 @@ class EvolutionController extends Controller
             $banda1FrecuenciaEA = 0.15;
             $banda2FrecuenciaEA = null;
 
-            $potencia = DB::connection('reduccion')->table('diariocelda')
+            $potencia = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -997,7 +997,7 @@ class EvolutionController extends Controller
             $banda1Potencia = 980;
             $banda2Potencia = 1000;
 
-            $nivelDeMetal = DB::connection('reduccion')->table('diariocelda')
+            $nivelDeMetal = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -1008,7 +1008,7 @@ class EvolutionController extends Controller
             $banda1NivelDeMetal = 20;
             $banda2NivelDeMetal = 22;
 
-            $nivelDeBanio = DB::connection('reduccion')->table('diariocelda')
+            $nivelDeBanio = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -1019,7 +1019,7 @@ class EvolutionController extends Controller
             $banda1NivelDeBano = 20;
             $banda2NivelDeBano = 23;
 
-            $frecuenciaTK = DB::connection('reduccion')->table('diariocelda')
+            $frecuenciaTK = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -1030,7 +1030,7 @@ class EvolutionController extends Controller
             $banda1FrecuenciaTK = 0.15;
             $banda2FrecuenciaTK = null;
 
-            $duracionTK = DB::connection('reduccion')->table('diariocelda')
+            $duracionTK = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -1041,7 +1041,7 @@ class EvolutionController extends Controller
             $banda1DuracionTK = 0.7;
             $banda2DuracionTK = 0.8;
 
-            $golpesAlumina = DB::connection('reduccion')->table('diariocelda')
+            $golpesAlumina = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -1052,7 +1052,7 @@ class EvolutionController extends Controller
             $banda1GolpesAlumina = 2.4;
             $banda2GolpesAlumina = null;
             
-            $alimentacionAlumina = DB::connection('reduccion')->table('diariocelda')
+            $alimentacionAlumina = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -1063,7 +1063,7 @@ class EvolutionController extends Controller
             $banda1AlimentacionAlumina = 1200;
             $banda2AlimentacionAlumina = 1300;
 
-            $temperatura = DB::connection('reduccion')->table('diariocelda')
+            $temperatura = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -1074,7 +1074,7 @@ class EvolutionController extends Controller
             $banda1Temperatura = 960;
             $banda2Temperatura = 965;
 
-            $acidez = DB::connection('reduccion')->table('diariocelda')
+            $acidez = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -1085,7 +1085,7 @@ class EvolutionController extends Controller
             $banda1Acidez = 10.5;
             $banda2Acidez = 11;
 
-            $desvTemperatura = DB::connection('reduccion')->table('diariocelda')
+            $desvTemperatura = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -1096,7 +1096,7 @@ class EvolutionController extends Controller
             $banda1DesvTemperatura = 10;
             $banda2DesvTemperatura = null;
 
-            $desvAcidez = DB::connection('reduccion')->table('diariocelda')
+            $desvAcidez = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -1107,7 +1107,7 @@ class EvolutionController extends Controller
             $banda1DesvAcidez = 1.0;
             $banda2DesvAcidez = null;
 
-            $consumoFl = DB::connection('reduccion')->table('diariocelda')
+            $consumoFl = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -1119,7 +1119,7 @@ class EvolutionController extends Controller
             $banda2ConsumoFl = 70;
 
 
-            $porcHierro = DB::connection('reduccion')->table('diariocelda')
+            $porcHierro = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -1130,7 +1130,7 @@ class EvolutionController extends Controller
             $banda1PorcHierro = 0.2;
             $banda2PorcHierro = null;
 
-            $purezaSilicio = DB::connection('reduccion')->table('diariocelda')
+            $purezaSilicio = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -1141,7 +1141,7 @@ class EvolutionController extends Controller
             $banda1PurezaSilicio = 1;
             $banda2PurezaSilicio = 1;
 
-            $porcSilicio = DB::connection('reduccion')->table('diariocelda')
+            $porcSilicio = DB::connection('reduccionl5')->table('diariocelda')
             ->whereBetween('celda', [$celda1,$celda2])
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
@@ -2302,7 +2302,7 @@ class EvolutionController extends Controller
                     if ($rangoOp1 != '' AND $rangoOp2 != '' AND $operador1 == '' ) {
                         if ($varFiltro !='' ) {
                             if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2316,7 +2316,7 @@ class EvolutionController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2329,7 +2329,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2341,7 +2341,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2378,7 +2378,7 @@ class EvolutionController extends Controller
                                                         
                                                         'calculo' => $calculo]);
                             }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ) {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -2392,7 +2392,7 @@ class EvolutionController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -2405,7 +2405,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -2417,7 +2417,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -2455,7 +2455,7 @@ class EvolutionController extends Controller
                                                         'calculo' => $calculo]);
                             }
                         }else{
-                            $result = DB::connection('reduccion')->table('diariocelda')
+                            $result = DB::connection('reduccionl5')->table('diariocelda')
                             ->whereBetween('celda', [$celda1,$celda2])
                             ->whereBetween('dia', [$fecha1,$fecha2])
                             ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
@@ -2468,7 +2468,7 @@ class EvolutionController extends Controller
                             //segunda variable
                             if($variable2 != ''){
                                 if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                            $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -2480,7 +2480,7 @@ class EvolutionController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                            $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -2491,7 +2491,7 @@ class EvolutionController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                            $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->groupBy('dia')
@@ -2531,7 +2531,7 @@ class EvolutionController extends Controller
                     }elseif ($rangoOp1 != '' AND $rangoOp2 == '' AND $operador1 != '' ){
                         if ($varFiltro !='' ) {
                             if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2544,7 +2544,7 @@ class EvolutionController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2557,7 +2557,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2569,7 +2569,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2605,7 +2605,7 @@ class EvolutionController extends Controller
                                                      
                                                         'calculo' => $calculo]);
                             }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ) {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -2618,7 +2618,7 @@ class EvolutionController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -2631,7 +2631,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -2643,7 +2643,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -2681,7 +2681,7 @@ class EvolutionController extends Controller
                             }
                         
                         }else{
-                            $result = DB::connection('reduccion')->table('diariocelda')
+                            $result = DB::connection('reduccionl5')->table('diariocelda')
                             ->whereBetween('celda', [$celda1,$celda2])
                             ->whereBetween('dia', [$fecha1,$fecha2])
                             ->where($variableDB, $operador1 , $rangoOp1 ) 
@@ -2693,7 +2693,7 @@ class EvolutionController extends Controller
                             //segunda variable
                             if($variable2 != ''){
                                 if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                            $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -2705,7 +2705,7 @@ class EvolutionController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                            $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -2716,7 +2716,7 @@ class EvolutionController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->groupBy('dia')
@@ -2755,7 +2755,7 @@ class EvolutionController extends Controller
                     }elseif (($rangoOp1 == '' AND $rangoOp2 == '' AND $operador1 == '' )) {
                         if ($varFiltro !='' ) {
                             if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') {  
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2767,7 +2767,7 @@ class EvolutionController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2780,7 +2780,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2792,7 +2792,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -2829,7 +2829,7 @@ class EvolutionController extends Controller
                                                      
                                                         'calculo' => $calculo]);
                             }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ) { 
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2841,7 +2841,7 @@ class EvolutionController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2854,7 +2854,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2866,7 +2866,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -2901,7 +2901,7 @@ class EvolutionController extends Controller
                                                         'xlabelVar2'=> $xlabelVar2,
                                                         'datatableVar2' => $datatableVar2,
                                                      
-                                                        'calculo' => $calculo]); $result = DB::connection('reduccion')->table('diariocelda')
+                                                        'calculo' => $calculo]); $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->groupBy('dia')
@@ -2912,7 +2912,7 @@ class EvolutionController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -2924,7 +2924,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -2935,7 +2935,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
@@ -2973,7 +2973,7 @@ class EvolutionController extends Controller
                             }
                         
                         }else{
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->groupBy('dia')
@@ -2984,7 +2984,7 @@ class EvolutionController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -2996,7 +2996,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -3007,7 +3007,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
@@ -3051,7 +3051,7 @@ class EvolutionController extends Controller
                     if ($rangoOp1 != '' AND $rangoOp2 != '' AND $operador1 == '' ) {
                         if ($varFiltro !='' ) {
                             if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3065,7 +3065,7 @@ class EvolutionController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3078,7 +3078,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3090,7 +3090,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3127,7 +3127,7 @@ class EvolutionController extends Controller
                                                         
                                                         'calculo' => $calculo  ]);
                             }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ) {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -3141,7 +3141,7 @@ class EvolutionController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -3154,7 +3154,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -3166,7 +3166,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -3205,7 +3205,7 @@ class EvolutionController extends Controller
                             }
                         
                         }else{
-                            $result = DB::connection('reduccion')->table('diariocelda')
+                            $result = DB::connection('reduccionl5')->table('diariocelda')
                             ->whereBetween('celda', [$celda1,$celda2])
                             ->whereBetween('dia', [$fecha1,$fecha2])
                             ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
@@ -3218,7 +3218,7 @@ class EvolutionController extends Controller
                             //segunda variable
                             if($variable2 != ''){
                                 if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                             $result2 = DB::connection('reduccion')->table('diariocelda')
+                                             $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -3230,7 +3230,7 @@ class EvolutionController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                             $result2 = DB::connection('reduccion')->table('diariocelda')
+                                             $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -3241,7 +3241,7 @@ class EvolutionController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                             $result2 = DB::connection('reduccion')->table('diariocelda')
+                                             $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->groupBy('dia')
@@ -3281,7 +3281,7 @@ class EvolutionController extends Controller
                     }elseif ($rangoOp1 != '' AND $rangoOp2 == '' AND $operador1 != '' ){
                         if ($varFiltro !='' ) {
                             if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') { 
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3294,7 +3294,7 @@ class EvolutionController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3307,7 +3307,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                               $result2 = DB::connection('reduccion')->table('diariocelda')
+                                               $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3319,7 +3319,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                               $result2 = DB::connection('reduccion')->table('diariocelda')
+                                               $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3355,7 +3355,7 @@ class EvolutionController extends Controller
                                                      
                                                         'calculo' => $calculo]);
                             }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ) {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -3368,7 +3368,7 @@ class EvolutionController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -3381,7 +3381,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                               $result2 = DB::connection('reduccion')->table('diariocelda')
+                                               $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -3393,7 +3393,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                               $result2 = DB::connection('reduccion')->table('diariocelda')
+                                               $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -3431,7 +3431,7 @@ class EvolutionController extends Controller
                             }
                         
                         }else{
-                            $result = DB::connection('reduccion')->table('diariocelda')
+                            $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($variableDB, $operador1 , $rangoOp1 ) 
@@ -3443,7 +3443,7 @@ class EvolutionController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -3455,7 +3455,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                               $result2 = DB::connection('reduccion')->table('diariocelda')
+                                               $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -3466,7 +3466,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                               $result2 = DB::connection('reduccion')->table('diariocelda')
+                                               $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
@@ -3505,7 +3505,7 @@ class EvolutionController extends Controller
                     }elseif (($rangoOp1 == '' AND $rangoOp2 == '' AND $operador1 == '' )) {
                         if ($varFiltro !='' ) {
                             if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') { 
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3517,7 +3517,7 @@ class EvolutionController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3530,7 +3530,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                               $result2 = DB::connection('reduccion')->table('diariocelda')
+                                               $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3542,7 +3542,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3579,7 +3579,7 @@ class EvolutionController extends Controller
                                                      
                                                         'calculo' => $calculo]);
                             }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ) {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -3591,7 +3591,7 @@ class EvolutionController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -3604,7 +3604,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                               $result2 = DB::connection('reduccion')->table('diariocelda')
+                                               $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -3616,7 +3616,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -3655,7 +3655,7 @@ class EvolutionController extends Controller
                             }
                         
                         }else{
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->groupBy('dia')
@@ -3666,7 +3666,7 @@ class EvolutionController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -3678,7 +3678,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                               $result2 = DB::connection('reduccion')->table('diariocelda')
+                                               $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -3689,7 +3689,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
@@ -3733,7 +3733,7 @@ class EvolutionController extends Controller
                     if ($rangoOp1 != '' AND $rangoOp2 != '' AND $operador1 == '' ) {
                         if ($varFiltro !='' ) {
                             if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3747,7 +3747,7 @@ class EvolutionController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3760,7 +3760,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3772,7 +3772,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3809,7 +3809,7 @@ class EvolutionController extends Controller
                                                         
                                                             'calculo' => $calculo  ]);
                             }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ) {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -3823,7 +3823,7 @@ class EvolutionController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -3836,7 +3836,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -3848,7 +3848,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -3887,7 +3887,7 @@ class EvolutionController extends Controller
                             }
                         
                         }else{
-                            $result = DB::connection('reduccion')->table('diariocelda')
+                            $result = DB::connection('reduccionl5')->table('diariocelda')
                             ->whereBetween('celda', [$celda1,$celda2])
                             ->whereBetween('dia', [$fecha1,$fecha2])
                             ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
@@ -3900,7 +3900,7 @@ class EvolutionController extends Controller
                             //segunda variable
                             if($variable2 != ''){
                                 if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                            $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -3912,7 +3912,7 @@ class EvolutionController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -3923,7 +3923,7 @@ class EvolutionController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                            $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->groupBy('dia')
@@ -3963,7 +3963,7 @@ class EvolutionController extends Controller
                     }elseif ($rangoOp1 != '' AND $rangoOp2 == '' AND $operador1 != '' ){
                         if ($varFiltro !='' ) {
                             if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3976,7 +3976,7 @@ class EvolutionController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -3989,7 +3989,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -4001,7 +4001,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -4037,7 +4037,7 @@ class EvolutionController extends Controller
                                                     
                                                         'calculo' => $calculo]);
                             }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ) {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -4050,7 +4050,7 @@ class EvolutionController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -4063,7 +4063,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -4075,7 +4075,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -4113,7 +4113,7 @@ class EvolutionController extends Controller
                             }
                         
                         }else{
-                            $result = DB::connection('reduccion')->table('diariocelda')
+                            $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($variableDB, $operador1 , $rangoOp1 ) 
@@ -4125,7 +4125,7 @@ class EvolutionController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -4137,7 +4137,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -4148,7 +4148,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
@@ -4187,7 +4187,7 @@ class EvolutionController extends Controller
                     }elseif (($rangoOp1 == '' AND $rangoOp2 == '' AND $operador1 == '' )) {
                         if ($varFiltro !='' ) {
                             if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -4199,7 +4199,7 @@ class EvolutionController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -4212,7 +4212,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -4224,7 +4224,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -4261,7 +4261,7 @@ class EvolutionController extends Controller
                                                     
                                                         'calculo' => $calculo]);
                             }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ) {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -4273,7 +4273,7 @@ class EvolutionController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -4286,7 +4286,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -4298,7 +4298,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 )
@@ -4337,7 +4337,7 @@ class EvolutionController extends Controller
                             }
                         
                         }else{
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->groupBy('dia')
@@ -4348,7 +4348,7 @@ class EvolutionController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -4360,7 +4360,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -4371,7 +4371,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                    $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                    $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->groupBy('dia')
@@ -4417,7 +4417,7 @@ class EvolutionController extends Controller
                     if ($rangoOp1 != '' AND $rangoOp2 != '' AND $operador1 == '' ) {
                         if ($varFiltro !='' ) {
                            if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -4429,7 +4429,7 @@ class EvolutionController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -4440,7 +4440,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -4450,7 +4450,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -4485,7 +4485,7 @@ class EvolutionController extends Controller
                                                         
                                                             'calculo' => '' ]);
                            }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ) {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -4497,7 +4497,7 @@ class EvolutionController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -4508,7 +4508,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -4518,7 +4518,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -4555,7 +4555,7 @@ class EvolutionController extends Controller
                            }
                         
                         }else{
-                            $result = DB::connection('reduccion')->table('diariocelda')
+                            $result = DB::connection('reduccionl5')->table('diariocelda')
                             ->whereBetween('celda', [$celda1,$celda2])
                             ->whereBetween('dia', [$fecha1,$fecha2])
                             ->whereBetween($variableDB, [$rangoOp1,$rangoOp2]) 
@@ -4566,7 +4566,7 @@ class EvolutionController extends Controller
                             //segunda variable
                             if($variable2 != ''){
                                 if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                            $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -4576,7 +4576,7 @@ class EvolutionController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                             $result2 = DB::connection('reduccion')->table('diariocelda')
+                                             $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -4585,7 +4585,7 @@ class EvolutionController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                                            $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->select('celda','dia',$variableDB2) 
@@ -4622,7 +4622,7 @@ class EvolutionController extends Controller
                     }elseif ($rangoOp1 != '' AND $rangoOp2 == '' AND $operador1 != '' ){
                         if ($varFiltro !='' ) {
                             if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -4633,7 +4633,7 @@ class EvolutionController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -4644,7 +4644,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -4654,7 +4654,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -4688,7 +4688,7 @@ class EvolutionController extends Controller
                                                     
                                                         'calculo' => '']);
                             }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ){
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -4699,7 +4699,7 @@ class EvolutionController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -4710,7 +4710,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -4720,7 +4720,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -4755,7 +4755,7 @@ class EvolutionController extends Controller
                                                         'calculo' => '']);
                             }
                         }else{
-                            $result = DB::connection('reduccion')->table('diariocelda')
+                            $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($variableDB, $operador1 , $rangoOp1 ) 
@@ -4765,7 +4765,7 @@ class EvolutionController extends Controller
                                 //segunda variable
                                 if($variable2 != ''){
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -4775,7 +4775,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                 $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                 $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -4784,7 +4784,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->select('celda','dia',$variableDB2) 
@@ -4821,7 +4821,7 @@ class EvolutionController extends Controller
                     }elseif (($rangoOp1 == '' AND $rangoOp2 == '' AND $operador1 == '' )) {
                         if ($varFiltro !='' ) {
                             if ($rangoVF1 != '' AND $rangoVF2 != '' AND $operadorVF == '') {
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -4831,7 +4831,7 @@ class EvolutionController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -4842,7 +4842,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -4852,7 +4852,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->whereBetween($varFiltro, [$rangoVF1,$rangoVF2]) 
@@ -4887,7 +4887,7 @@ class EvolutionController extends Controller
                                                         
                                                         'calculo' => '']); 
                             }elseif ($rangoVF1 != '' AND $rangoVF2 == '' AND $operadorVF != '' ){
-                                $result = DB::connection('reduccion')->table('diariocelda')
+                                $result = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -4897,7 +4897,7 @@ class EvolutionController extends Controller
                                 if($variable2 != ''){
                                     //segunda variable
                                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -4908,7 +4908,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -4918,7 +4918,7 @@ class EvolutionController extends Controller
                                                 $datatableVar2 = Datatables::of($result2)->make();
                                                 
                                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                                $result2 = DB::connection('reduccion')->table('diariocelda')
+                                                $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                                 ->whereBetween('celda', [$celda1,$celda2])
                                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                                 ->where($varFiltro, $operadorVF , $rangoVF1 ) 
@@ -4954,7 +4954,7 @@ class EvolutionController extends Controller
                                                         'calculo' => '']); 
                             }   
                         }else{
-                            $result = DB::connection('reduccion')->table('diariocelda')
+                            $result = DB::connection('reduccionl5')->table('diariocelda')
                             ->whereBetween('celda', [$celda1,$celda2])
                             ->whereBetween('dia', [$fecha1,$fecha2])
                             ->select('celda','dia',$variableDB) 
@@ -4963,7 +4963,7 @@ class EvolutionController extends Controller
                             if($variable2 != ''){
                                 //segunda variable
                                 if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                                             $result2 = DB::connection('reduccion')->table('diariocelda')
+                                             $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -4973,7 +4973,7 @@ class EvolutionController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                                              $result2 = DB::connection('reduccion')->table('diariocelda')
+                                              $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -4982,7 +4982,7 @@ class EvolutionController extends Controller
                                             $datatableVar2 = Datatables::of($result2)->make();
                                             
                                 }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                                             $result2 = DB::connection('reduccion')->table('diariocelda')
+                                             $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                             ->whereBetween('celda', [$celda1,$celda2])
                                             ->whereBetween('dia', [$fecha1,$fecha2])
                                             ->select('celda','dia',$variableDB2) 
@@ -5022,7 +5022,7 @@ class EvolutionController extends Controller
             
                 /* //segunda variable
                     if ($rangoOp1Var2 != '' AND $rangoOp2Var2 != '' AND $operador2 == '' ) {
-                        $result2 = DB::connection('reduccion')->table('diariocelda')
+                        $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->whereBetween($variableDB2, [$rangoOp1Var2,$rangoOp2Var2]) 
@@ -5032,7 +5032,7 @@ class EvolutionController extends Controller
                                 $datatableVar2 = Datatables::of($result2)->make();
                                 
                     }elseif ($rangoOp1Var2 != '' AND $rangoOp2Var2 == '' AND $operador2 != '' ){
-                            $result2 = DB::connection('reduccion')->table('diariocelda')
+                            $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->where($variableDB2, $operador2 , $rangoOp1Var2 ) 
@@ -5041,7 +5041,7 @@ class EvolutionController extends Controller
                                 $datatableVar2 = Datatables::of($result2)->make();
                                 
                     }elseif (($rangoOp1Var2 == '' AND $rangoOp2Var2 == '' AND $operador2 == '' )) {
-                        $result2 = DB::connection('reduccion')->table('diariocelda')
+                        $result2 = DB::connection('reduccionl5')->table('diariocelda')
                                 ->whereBetween('celda', [$celda1,$celda2])
                                 ->whereBetween('dia', [$fecha1,$fecha2])
                                 ->select('celda','dia',$variableDB2) 
