@@ -24,34 +24,29 @@ class HomeController extends Controller
      */
     public function index()
     {   
+      $fecha2=date("Y-m-d");
+      $fecha1= date("Y-m-d",strtotime($fecha2."- 1 day"));
+      
       $celdas = DB::connection('reduccionl5')->table('diariocelda')
-      ->whereYear('dia','2020')
-      ->whereMonth('dia','07')
-      ->whereDay('dia', '26')
+      ->where('dia',$fecha1)
       ->where('enServicio', '=', 1)
       ->select('celda')
       ->get();
 
       $produccion = DB::connection('reduccionl5')->table('diariocelda')
-      ->whereYear('dia','2020')
-      ->whereMonth('dia','07')
-      ->whereDay('dia', '26')
+      ->where('dia',$fecha1)
       ->where('estado', '=', 'ecProduccion')
       ->select('celda')
       ->get();
 
       $normalizacion = DB::connection('reduccionl5')->table('diariocelda')
-      ->whereYear('dia','2020')
-      ->whereMonth('dia','03')
-      ->whereDay('dia', '17')
+      ->where('dia',$fecha1)
       ->where('estado', '=', 'ecNormalizacion')
       ->select('celda')
       ->get();
       
       $coccion = DB::connection('reduccionl5')->table('diariocelda')
-      ->whereYear('dia','2020')
-      ->whereMonth('dia','07')
-      ->whereDay('dia', '26')
+      ->where('dia',$fecha1)
       ->where('estado', '=', 'ecCoccion')
       ->select('celda')
       ->get();
@@ -70,9 +65,8 @@ class HomeController extends Controller
 
     public function grapHome(){
 
-
-      $fecha1='2020-07-01';
-      $fecha2='2020-07-26';
+      $fecha2=date("Y-m-d");
+      $fecha1= date("Y-m-d",strtotime($fecha2."- 1 month"));
       $celda1=901;
       $celda2= 1090;
 

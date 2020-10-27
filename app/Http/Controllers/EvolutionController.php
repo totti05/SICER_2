@@ -117,10 +117,12 @@ class EvolutionController extends Controller
     public function EvolutionDataChartGet(Request $request)
     {
         if ($request->isMethod('get')) {
-            $date1 = strtotime("2020/07/01"); 
+            /* $date1 = strtotime("2020/07/01"); 
             $fecha1 = date("Y/m/d", strtotime("2020/07/01"));
             $date2 = strtotime('+30 day', strtotime($fecha1));
-            $fecha2 = date("Y/m/d", $date2);
+            $fecha2 = date("Y/m/d", $date2); */
+            $fecha2=date("Y-m-d");
+            $fecha1= date("Y-m-d",strtotime($fecha2."- 1 month"));
 
            // $fecha1= "2018/03/01";
            // $fecha2 ="2018/03/30";

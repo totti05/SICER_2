@@ -28,10 +28,10 @@ class AppServiceProvider extends ServiceProvider
     {
         
         $events->listen(BuildingMenu::class, function (BuildingMenu $event) {
+            $fecha1=date("Y-m-d");
+            $fecha= date("Y-m-d",strtotime($fecha1."- 1 day"));
             $celdas = DB::connection('reduccionl5')->table('diariocelda')
-            ->whereYear('dia','2020')
-            ->whereMonth('dia','07')
-            ->whereDay('dia', '26')
+            ->where('dia',  $fecha)
             ->where('enServicio', '=', 1)
             ->select('celda')
             ->get();
