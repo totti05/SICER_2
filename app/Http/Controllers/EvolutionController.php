@@ -161,7 +161,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(corrienteL), 4), ",","") as efCorriente'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(eficc_rcol), 4), ",","") as efCorriente'))
             ->get();
 
             $banda1EfCorriente = 90;
@@ -187,7 +187,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(dsr), 4), ",","") as frecuenciaEA'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(SUM(numeroEA)/count(*), 4), ",","") as frecuenciaEA'))
             ->get();
 
             $banda1FrecuenciaEA = 0.15;
@@ -239,7 +239,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(nivelDeBanio), 4), ",","") as frecuenciaTK'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(SUM(numeroTK)/count(*), 4), ",","") as frecuenciaTK'))
             ->get();
 
             $banda1FrecuenciaTK = 0.15;
@@ -590,7 +590,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(dsr),4), ",","") as frecuenciaEA'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(SUM(numeroEA)/count(*),4), ",","") as frecuenciaEA'))
             ->get();
 
             $banda1FrecuenciaEA = 0.15;
@@ -642,7 +642,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(nivelDeBanio),4), ",","") as frecuenciaTK'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(SUM(numeroTK)/count(*),4), ",","") as frecuenciaTK'))
             ->get();
 
             $banda1FrecuenciaTK = 0.15;
@@ -982,7 +982,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(dsr), 4), ",","") as frecuenciaEA'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(SUM(numeroEA)/count(*), 4), ",","") as frecuenciaEA'))
             ->get();
 
             $banda1FrecuenciaEA = 0.15;
@@ -1026,7 +1026,7 @@ class EvolutionController extends Controller
             ->whereBetween('dia', [$fecha1,$fecha2])
             ->groupBy('dia')
             ->having('dia', '>=', $fecha1)
-            ->select('dia', DB::raw('REPLACE(FORMAT(AVG(nivelDeBanio), 4), ",","") as frecuenciaTK'))
+            ->select('dia', DB::raw('REPLACE(FORMAT(SUM(numeroTK)/count(*)), 4), ",","") as frecuenciaTK'))
             ->get();
 
             $banda1FrecuenciaTK = 0.15;

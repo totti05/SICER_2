@@ -114,10 +114,10 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          <button type="button" class="btn btn-primary">PDF</button>
+ <!--         <button type="button" class="btn btn-primary">PDF</button>
           <button type="button" class="btn btn-primary">Copiar</button>
           <button type="button" id="imprimir_btn"class="btn btn-primary">Imprimir</button>
-          <button type="button" class="btn btn-primary">Excel</button>
+          <button type="button" class="btn btn-primary">Excel</button> -->
         </div>
         <!-- /.card-footer -->
       </div>
@@ -156,10 +156,10 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          <button type="button" class="btn btn-primary">PDF</button>
+    <!--       <button type="button" class="btn btn-primary">PDF</button>
           <button type="button" class="btn btn-primary">Copiar</button>
           <button type="button" class="btn btn-primary">Imprimir</button>
-          <button type="button" class="btn btn-primary">Excel</button>
+          <button type="button" class="btn btn-primary">Excel</button> -->
         </div>
         <!-- /.card-footer -->
       </div>
@@ -198,10 +198,10 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          <button type="button" class="btn btn-primary">PDF</button>
+    <!--       <button type="button" class="btn btn-primary">PDF</button>
           <button type="button" class="btn btn-primary">Copiar</button>
           <button type="button" class="btn btn-primary">Imprimir</button>
-          <button type="button" class="btn btn-primary">Excel</button>
+          <button type="button" class="btn btn-primary">Excel</button> -->
         </div>
         <!-- /.card-footer -->
       </div>
@@ -245,10 +245,10 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          <form action="{{route('evolution.pdfc')}}" method="get"><button type="submit" class="btn btn-primary">PDF</button></form>
+   <!--        <form action="{{route('evolution.pdfc')}}" method="get"><button type="submit" class="btn btn-primary">PDF</button></form>
           <button type="button" class="btn btn-primary">Copiar</button>
           <button type="button" class="btn btn-primary">Imprimir</button>
-          <button type="button" class="btn btn-primary">Excel</button>
+          <button type="button" class="btn btn-primary">Excel</button> -->
         </div>
         <!-- /.card-footer -->
       </div>
@@ -290,10 +290,10 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          <button type="button" class="btn btn-primary">PDF</button>
+    <!--       <button type="button" class="btn btn-primary">PDF</button>
           <button type="button" class="btn btn-primary">Copiar</button>
           <button type="button" class="btn btn-primary">Imprimir</button>
-          <button type="button" class="btn btn-primary">Excel</button>
+          <button type="button" class="btn btn-primary">Excel</button> -->
         </div>
         <!-- /.card-footer -->
       </div>
@@ -332,10 +332,10 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          <button type="button" class="btn btn-primary">PDF</button>
+    <!--       <button type="button" class="btn btn-primary">PDF</button>
           <button type="button" class="btn btn-primary">Copiar</button>
           <button type="button" class="btn btn-primary">Imprimir</button>
-          <button type="button" class="btn btn-primary">Excel</button>
+          <button type="button" class="btn btn-primary">Excel</button> -->
         </div>
         <!-- /.card-footer -->
       </div>
@@ -379,10 +379,10 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          <button type="button" class="btn btn-primary">PDF</button>
+    <!--       <button type="button" class="btn btn-primary">PDF</button>
           <button type="button" class="btn btn-primary">Copiar</button>
           <button type="button" class="btn btn-primary">Imprimir</button>
-          <button type="button" class="btn btn-primary">Excel</button>
+          <button type="button" class="btn btn-primary">Excel</button> -->
         </div>
         <!-- /.card-footer -->
       </div>
@@ -421,10 +421,10 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          <button type="button" class="btn btn-primary">PDF</button>
+    <!--       <button type="button" class="btn btn-primary">PDF</button>
           <button type="button" class="btn btn-primary">Copiar</button>
           <button type="button" class="btn btn-primary">Imprimir</button>
-          <button type="button" class="btn btn-primary">Excel</button>
+          <button type="button" class="btn btn-primary">Excel</button> -->
         </div>
         <!-- /.card-footer -->
       </div>
@@ -466,10 +466,10 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          <button type="button" class="btn btn-primary">PDF</button>
+   <!--        <button type="button" class="btn btn-primary">PDF</button>
           <button type="button" class="btn btn-primary">Copiar</button>
           <button type="button" class="btn btn-primary">Imprimir</button>
-          <button type="button" class="btn btn-primary">Excel</button>
+          <button type="button" class="btn btn-primary">Excel</button> -->
         </div>
         <!-- /.card-footer -->
       </div>
@@ -583,74 +583,74 @@
     * -------
     * Here we will create a few charts using ChartJS
     */
+    /* Declaracion e iniciacion de variables */
+      var url = "{{route('evolution.dataChart')}}";
+      var Dia = new Array();
+      var Celdas = new Array();
+      var Voltaje = new Array();
+      var ChartDataclear = {};
+      var ChartOptionsclear = {};
+    
+      var ctx1 = document.getElementById("voltajeChart").getContext("2d");
+      var voltajeChart = new Chart(ctx1, {
+        type: "line",
+        data: ChartDataclear,
+        options: ChartOptionsclear,
+      });
 
-    var url = "{{route('evolution.dataChart')}}";
-    var Dia = new Array();
-    var Celdas = new Array();
-    var Voltaje = new Array();
-    var ChartDataclear = {};
-    var ChartOptionsclear = {};
-   
-    var ctx1 = document.getElementById("voltajeChart").getContext("2d");
-    var voltajeChart = new Chart(ctx1, {
-      type: "line",
-      data: ChartDataclear,
-      options: ChartOptionsclear,
-    });
+      var ctx2 = document.getElementById("corrienteChart").getContext("2d");
+      var corrienteChart = new Chart(ctx2, {
+        type: "line",
+        data: ChartDataclear,
+        options: ChartOptionsclear,
+      });
 
-    var ctx2 = document.getElementById("corrienteChart").getContext("2d");
-    var corrienteChart = new Chart(ctx2, {
-      type: "line",
-      data: ChartDataclear,
-      options: ChartOptionsclear,
-    });
+      var ctx3 = document.getElementById("efCorrienteChart").getContext("2d");
+      var efCorrienteChart = new Chart(ctx3, {
+        type: "line",
+        data: ChartDataclear,
+        options: ChartOptionsclear,
+      });
 
-    var ctx3 = document.getElementById("efCorrienteChart").getContext("2d");
-    var efCorrienteChart = new Chart(ctx3, {
-      type: "line",
-      data: ChartDataclear,
-      options: ChartOptionsclear,
-    });
+      var ctx4 = document.getElementById("desvResistenciaChart").getContext("2d");
+      var desvResistenciaChart = new Chart(ctx4, {
+        type: "line",
+        data: ChartDataclear,
+        options: ChartOptionsclear,
+      });
+      var ctx5 = document.getElementById("frecuenciaEAChart").getContext("2d");
+      var frecuenciaEAChart = new Chart(ctx5, {
+        type: "line",
+        data: ChartDataclear,
+        options: ChartOptionsclear,
+      });
 
-    var ctx4 = document.getElementById("desvResistenciaChart").getContext("2d");
-    var desvResistenciaChart = new Chart(ctx4, {
-      type: "line",
-      data: ChartDataclear,
-      options: ChartOptionsclear,
-    });
-    var ctx5 = document.getElementById("frecuenciaEAChart").getContext("2d");
-    var frecuenciaEAChart = new Chart(ctx5, {
-      type: "line",
-      data: ChartDataclear,
-      options: ChartOptionsclear,
-    });
+      var ctx6 = document.getElementById("potenciaChart").getContext("2d");
+      var potenciaChart = new Chart(ctx6, {
+        type: "line",
+        data: ChartDataclear,
+        options: ChartOptionsclear,
+      });
 
-    var ctx6 = document.getElementById("potenciaChart").getContext("2d");
-    var potenciaChart = new Chart(ctx6, {
-      type: "line",
-      data: ChartDataclear,
-      options: ChartOptionsclear,
-    });
+      var ctx7 = document.getElementById("nivelDeMetalChart").getContext("2d");
+      var nivelDeMetalChart = new Chart(ctx7, {
+        type: "line",
+        data: ChartDataclear,
+        options: ChartOptionsclear,
+      });
 
-    var ctx7 = document.getElementById("nivelDeMetalChart").getContext("2d");
-    var nivelDeMetalChart = new Chart(ctx7, {
-      type: "line",
-      data: ChartDataclear,
-      options: ChartOptionsclear,
-    });
-
-    var ctx8 = document.getElementById("nivelDeBanoChart").getContext("2d");
-    var nivelDeBanoChart = new Chart(ctx8, {
-      type: "line",
-      data: ChartDataclear,
-      options: ChartOptionsclear,
-    });
-    var ctx9 = document.getElementById("frecuenciaTKChart").getContext("2d");
-    var frecuenciaTKChart = new Chart(ctx9, {
-      type: "line",
-      data: ChartDataclear,
-      options: ChartOptionsclear,
-    });
+      var ctx8 = document.getElementById("nivelDeBanoChart").getContext("2d");
+      var nivelDeBanoChart = new Chart(ctx8, {
+        type: "line",
+        data: ChartDataclear,
+        options: ChartOptionsclear,
+      });
+      var ctx9 = document.getElementById("frecuenciaTKChart").getContext("2d");
+      var frecuenciaTKChart = new Chart(ctx9, {
+        type: "line",
+        data: ChartDataclear,
+        options: ChartOptionsclear,
+      });
 
     //funcion para mostrar elemento HTML cuando cambia un checkbox
    
@@ -660,6 +660,7 @@
           "X-CSRF-TOKEN": "{{ csrf_token() }}",
         },
       });
+     
       $.ajax({
         type: "get",
         url: "{{ route('evolution.dataChart') }}",
@@ -1977,10 +1978,7 @@
             /*
             * Se ejecuta al termino de la petición
             * */
-            MENSAJE = "Enviando: " + data;
-            $("#mensaje").html(MENSAJE);
-            $("#alertaMsj").html(MENSAJE);
-            $("#modalMensaje").modal("show");
+          
           },
           success: function (response) {
             /*
@@ -2311,911 +2309,911 @@
 
             console.log(response);
             var ChartOptionsVoltaje = {
-            responsive: true,
-            maintainAspectRatio: true,
-            hoverMode: "index",
-            stacked: false,
-            responsive: true,
-            title: {
-              display: true,
-              text:
-                "Voltaje" ,
-            },
-            tooltips: {
-              mode: "nearest",
-              intersect: true,
-            },
-            hover: {
-              mode: "nearest",
-              intersect: true,
-            },
-            plugins: {
-              filler: {
-                  propagate: true
-              }
-            },
-            scales: {
-              yAxes: [
-                {
-                  scaleLabel: {
-                    labelString:"V (voltios)",
+              responsive: true,
+              maintainAspectRatio: true,
+              hoverMode: "index",
+              stacked: false,
+              responsive: true,
+              title: {
+                display: true,
+                text:
+                  "Voltaje" ,
+              },
+              tooltips: {
+                mode: "nearest",
+                intersect: true,
+              },
+              hover: {
+                mode: "nearest",
+                intersect: true,
+              },
+              plugins: {
+                filler: {
+                    propagate: true
+                }
+              },
+              scales: {
+                yAxes: [
+                  {
+                    scaleLabel: {
+                      labelString:"V (voltios)",
+                      display: true,
+                    },
+                    type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
                     display: true,
+                    position: "left",
+                    id: "y-axis-1",
+                    ticks: {
+                      min: response.minVoltaje,
+                      max: response.maxVoltaje,
+                    },
                   },
-                  type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                  display: true,
-                  position: "left",
-                  id: "y-axis-1",
-                  ticks: {
-                    min: response.minVoltaje,
-                    max: response.maxVoltaje,
-                  },
-                },
-              ],
+                ],
 
-              xAxes: [
-                {
-                  scaleLabel: {
-                    labelString: 'fecha',
+                xAxes: [
+                  {
+                    scaleLabel: {
+                      labelString: 'fecha',
+                      display: true,
+                    },
+                    position: "bottom",
+                    id: "x-axis-1",
+                    ticks: {
+                      // maxTicksLimit: 20
+                    },
+                  },
+                ],
+              },
+            };
+            var ChartOptionsCorriente = {
+              responsive: true,
+              maintainAspectRatio: true,
+              hoverMode: "index",
+              stacked: false,
+              responsive: true,
+              title: {
+                display: true,
+                text:
+                  "Corriente" ,
+              },
+              tooltips: {
+                mode: "nearest",
+                intersect: true,
+              },
+              hover: {
+                mode: "nearest",
+                intersect: true,
+              },
+              plugins: {
+                filler: {
+                    propagate: true
+                }
+              },
+              scales: {
+                yAxes: [
+                  {
+                    scaleLabel: {
+                      labelString:"kA",
+                      display: true,
+                    },
+                    type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
                     display: true,
+                    position: "left",
+                    id: "y-axis-1",
+                    ticks: {
+                      min: response.minCorriente,
+                      max: response.maxCorriente,
+                    },
                   },
-                  position: "bottom",
-                  id: "x-axis-1",
-                  ticks: {
-                    // maxTicksLimit: 20
-                  },
-                },
-              ],
-            },
-          };
-          var ChartOptionsCorriente = {
-            responsive: true,
-            maintainAspectRatio: true,
-            hoverMode: "index",
-            stacked: false,
-            responsive: true,
-            title: {
-              display: true,
-              text:
-                "Corriente" ,
-            },
-            tooltips: {
-              mode: "nearest",
-              intersect: true,
-            },
-            hover: {
-              mode: "nearest",
-              intersect: true,
-            },
-            plugins: {
-              filler: {
-                  propagate: true
-              }
-            },
-            scales: {
-              yAxes: [
-                {
-                  scaleLabel: {
-                    labelString:"kA",
-                    display: true,
-                  },
-                  type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                  display: true,
-                  position: "left",
-                  id: "y-axis-1",
-                  ticks: {
-                    min: response.minCorriente,
-                    max: response.maxCorriente,
-                  },
-                },
-              ],
+                ],
 
-              xAxes: [
-                {
-                  scaleLabel: {
-                    labelString: 'fecha',
+                xAxes: [
+                  {
+                    scaleLabel: {
+                      labelString: 'fecha',
+                      display: true,
+                    },
+                    position: "bottom",
+                    id: "x-axis-1",
+                    ticks: {
+                      // maxTicksLimit: 20
+                    },
+                  },
+                ],
+              },
+            };
+            var ChartOptionsEfCorriente = {
+              responsive: true,
+              maintainAspectRatio: true,
+              hoverMode: "index",
+              stacked: false,
+              responsive: true,
+              title: {
+                display: true,
+                text:
+                  "Eficiencia de Corriente" ,
+              },
+              tooltips: {
+                mode: "nearest",
+                intersect: true,
+              },
+              hover: {
+                mode: "nearest",
+                intersect: true,
+              },
+              plugins: {
+                filler: {
+                    propagate: true
+                }
+              },
+              scales: {
+                yAxes: [
+                  {
+                    scaleLabel: {
+                      labelString:"%",
+                      display: true,
+                    },
+                    type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
                     display: true,
+                    position: "left",
+                    id: "y-axis-1",
+                    ticks: {
+                      min: response.minEfCorriente,
+                      max: response.maxEfCorriente,
+                    },
                   },
-                  position: "bottom",
-                  id: "x-axis-1",
-                  ticks: {
-                    // maxTicksLimit: 20
-                  },
-                },
-              ],
-            },
-          };
-          var ChartOptionsEfCorriente = {
-            responsive: true,
-            maintainAspectRatio: true,
-            hoverMode: "index",
-            stacked: false,
-            responsive: true,
-            title: {
-              display: true,
-              text:
-                "Eficiencia de Corriente" ,
-            },
-            tooltips: {
-              mode: "nearest",
-              intersect: true,
-            },
-            hover: {
-              mode: "nearest",
-              intersect: true,
-            },
-            plugins: {
-              filler: {
-                  propagate: true
-              }
-            },
-            scales: {
-              yAxes: [
-                {
-                  scaleLabel: {
-                    labelString:"%",
-                    display: true,
-                  },
-                  type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                  display: true,
-                  position: "left",
-                  id: "y-axis-1",
-                  ticks: {
-                    min: response.minEfCorriente,
-                    max: response.maxEfCorriente,
-                  },
-                },
-              ],
+                ],
 
-              xAxes: [
-                {
-                  scaleLabel: {
-                    labelString: 'fecha',
+                xAxes: [
+                  {
+                    scaleLabel: {
+                      labelString: 'fecha',
+                      display: true,
+                    },
+                    position: "bottom",
+                    id: "x-axis-1",
+                    ticks: {
+                      // maxTicksLimit: 20
+                    },
+                  },
+                ],
+              },
+            };
+            var ChartOptionsDesvResistencia = {
+              responsive: true,
+              maintainAspectRatio: true,
+              hoverMode: "index",
+              stacked: false,
+              responsive: true,
+              title: {
+                display: true,
+                text:
+                  "Desviación de ressitencia" ,
+              },
+              tooltips: {
+                mode: "nearest",
+                intersect: true,
+              },
+              hover: {
+                mode: "nearest",
+                intersect: true,
+              },
+              plugins: {
+                filler: {
+                    propagate: true
+                }
+              },
+              scales: {
+                yAxes: [
+                  {
+                    scaleLabel: {
+                      labelString:"%",
+                      display: true,
+                    },
+                    type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
                     display: true,
+                    position: "left",
+                    id: "y-axis-1",
+                    ticks: {
+                      min: response.minDesvResistencia,
+                      max: response.maxDesvResistencia,
+                    },
                   },
-                  position: "bottom",
-                  id: "x-axis-1",
-                  ticks: {
-                    // maxTicksLimit: 20
-                  },
-                },
-              ],
-            },
-          };
-          var ChartOptionsDesvResistencia = {
-            responsive: true,
-            maintainAspectRatio: true,
-            hoverMode: "index",
-            stacked: false,
-            responsive: true,
-            title: {
-              display: true,
-              text:
-                "Desviación de ressitencia" ,
-            },
-            tooltips: {
-              mode: "nearest",
-              intersect: true,
-            },
-            hover: {
-              mode: "nearest",
-              intersect: true,
-            },
-            plugins: {
-              filler: {
-                  propagate: true
-              }
-            },
-            scales: {
-              yAxes: [
-                {
-                  scaleLabel: {
-                    labelString:"%",
-                    display: true,
-                  },
-                  type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                  display: true,
-                  position: "left",
-                  id: "y-axis-1",
-                  ticks: {
-                    min: response.minDesvResistencia,
-                    max: response.maxDesvResistencia,
-                  },
-                },
-              ],
+                ],
 
-              xAxes: [
-                {
-                  scaleLabel: {
-                    labelString: 'fecha',
+                xAxes: [
+                  {
+                    scaleLabel: {
+                      labelString: 'fecha',
+                      display: true,
+                    },
+                    position: "bottom",
+                    id: "x-axis-1",
+                    ticks: {
+                      // maxTicksLimit: 20
+                    },
+                  },
+                ],
+              },
+            };
+          
+            var ChartOptionsFrecuenciaEA = {
+              responsive: true,
+              maintainAspectRatio: true,
+              hoverMode: "index",
+              stacked: false,
+              responsive: true,
+              title: {
+                display: true,
+                text:
+                  "Frecuencia de efecto anódico" ,
+              },
+              tooltips: {
+                mode: "nearest",
+                intersect: true,
+              },
+              hover: {
+                mode: "nearest",
+                intersect: true,
+              },
+              plugins: {
+                filler: {
+                    propagate: true
+                }
+              },
+              scales: {
+                yAxes: [
+                  {
+                    scaleLabel: {
+                      labelString:"EA",
+                      display: true,
+                    },
+                    type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
                     display: true,
+                    position: "left",
+                    id: "y-axis-1",
+                    ticks: {
+                      min: response.minFrecuenciaEA,
+                      max: response.maxFrecuenciaEA,
+                    },
                   },
-                  position: "bottom",
-                  id: "x-axis-1",
-                  ticks: {
-                    // maxTicksLimit: 20
-                  },
-                },
-              ],
-            },
-          };
-         
-          var ChartOptionsFrecuenciaEA = {
-            responsive: true,
-            maintainAspectRatio: true,
-            hoverMode: "index",
-            stacked: false,
-            responsive: true,
-            title: {
-              display: true,
-              text:
-                "Frecuencia de efecto anódico" ,
-            },
-            tooltips: {
-              mode: "nearest",
-              intersect: true,
-            },
-            hover: {
-              mode: "nearest",
-              intersect: true,
-            },
-            plugins: {
-              filler: {
-                  propagate: true
-              }
-            },
-            scales: {
-              yAxes: [
-                {
-                  scaleLabel: {
-                    labelString:"EA",
-                    display: true,
-                  },
-                  type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                  display: true,
-                  position: "left",
-                  id: "y-axis-1",
-                  ticks: {
-                    min: response.minFrecuenciaEA,
-                    max: response.maxFrecuenciaEA,
-                  },
-                },
-              ],
+                ],
 
-              xAxes: [
-                {
-                  scaleLabel: {
-                    labelString: 'fecha',
-                    display: true,
+                xAxes: [
+                  {
+                    scaleLabel: {
+                      labelString: 'fecha',
+                      display: true,
+                    },
+                    position: "bottom",
+                    id: "x-axis-1",
+                    ticks: {
+                      // maxTicksLimit: 20
+                    },
                   },
-                  position: "bottom",
-                  id: "x-axis-1",
-                  ticks: {
-                    // maxTicksLimit: 20
-                  },
-                },
-              ],
-            },
-          };
+                ],
+              },
+            };
 
-          var ChartOptionsPotencia = {
-            responsive: true,
-            maintainAspectRatio: true,
-            hoverMode: "index",
-            stacked: false,
-            responsive: true,
-            title: {
-              display: true,
-              text:
-                "Potencia" ,
-            },
-            tooltips: {
-              mode: "nearest",
-              intersect: true,
-            },
-            hover: {
-              mode: "nearest",
-              intersect: true,
-            },
-            plugins: {
-              filler: {
-                  propagate: true
-              }
-            },
-            scales: {
-              yAxes: [
-                {
-                  scaleLabel: {
-                    labelString:"Kw",
+            var ChartOptionsPotencia = {
+              responsive: true,
+              maintainAspectRatio: true,
+              hoverMode: "index",
+              stacked: false,
+              responsive: true,
+              title: {
+                display: true,
+                text:
+                  "Potencia" ,
+              },
+              tooltips: {
+                mode: "nearest",
+                intersect: true,
+              },
+              hover: {
+                mode: "nearest",
+                intersect: true,
+              },
+              plugins: {
+                filler: {
+                    propagate: true
+                }
+              },
+              scales: {
+                yAxes: [
+                  {
+                    scaleLabel: {
+                      labelString:"Kw",
+                      display: true,
+                    },
+                    type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
                     display: true,
+                    position: "left",
+                    id: "y-axis-1",
+                    ticks: {
+                      min: response.minPotencia,
+                      max: response.maxPotencia,
+                    },
                   },
-                  type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                  display: true,
-                  position: "left",
-                  id: "y-axis-1",
-                  ticks: {
-                    min: response.minPotencia,
-                    max: response.maxPotencia,
-                  },
-                },
-              ],
+                ],
 
-              xAxes: [
-                {
-                  scaleLabel: {
-                    labelString: 'fecha',
-                    display: true,
+                xAxes: [
+                  {
+                    scaleLabel: {
+                      labelString: 'fecha',
+                      display: true,
+                    },
+                    position: "bottom",
+                    id: "x-axis-1",
+                    ticks: {
+                      // maxTicksLimit: 20
+                    },
                   },
-                  position: "bottom",
-                  id: "x-axis-1",
-                  ticks: {
-                    // maxTicksLimit: 20
-                  },
-                },
-              ],
-            },
-          };
+                ],
+              },
+            };
 
-          var ChartOptionsNivelDeMetal = {
-            responsive: true,
-            maintainAspectRatio: true,
-            hoverMode: "index",
-            stacked: false,
-            responsive: true,
-            title: {
-              display: true,
-              text:
-                "Nivel de metal" ,
-            },
-            tooltips: {
-              mode: "nearest",
-              intersect: true,
-            },
-            hover: {
-              mode: "nearest",
-              intersect: true,
-            },
-            plugins: {
-              filler: {
-                  propagate: true
-              }
-            },
-            scales: {
-              yAxes: [
-                {
-                  scaleLabel: {
-                    labelString:"cm",
+            var ChartOptionsNivelDeMetal = {
+              responsive: true,
+              maintainAspectRatio: true,
+              hoverMode: "index",
+              stacked: false,
+              responsive: true,
+              title: {
+                display: true,
+                text:
+                  "Nivel de metal" ,
+              },
+              tooltips: {
+                mode: "nearest",
+                intersect: true,
+              },
+              hover: {
+                mode: "nearest",
+                intersect: true,
+              },
+              plugins: {
+                filler: {
+                    propagate: true
+                }
+              },
+              scales: {
+                yAxes: [
+                  {
+                    scaleLabel: {
+                      labelString:"cm",
+                      display: true,
+                    },
+                    type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
                     display: true,
+                    position: "left",
+                    id: "y-axis-1",
+                    ticks: {
+                      min: response.minNivelDeMetal,
+                      max: response.maxNivelDeMetal,
+                    },
                   },
-                  type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                  display: true,
-                  position: "left",
-                  id: "y-axis-1",
-                  ticks: {
-                    min: response.minNivelDeMetal,
-                    max: response.maxNivelDeMetal,
-                  },
-                },
-              ],
+                ],
 
-              xAxes: [
-                {
-                  scaleLabel: {
-                    labelString: 'fecha',
-                    display: true,
+                xAxes: [
+                  {
+                    scaleLabel: {
+                      labelString: 'fecha',
+                      display: true,
+                    },
+                    position: "bottom",
+                    id: "x-axis-1",
+                    ticks: {
+                      // maxTicksLimit: 20
+                    },
                   },
-                  position: "bottom",
-                  id: "x-axis-1",
-                  ticks: {
-                    // maxTicksLimit: 20
-                  },
-                },
-              ],
-            },
-          };
+                ],
+              },
+            };
 
-          var ChartOptionsNivelDeBano = {
-            responsive: true,
-            maintainAspectRatio: true,
-            hoverMode: "index",
-            stacked: false,
-            responsive: true,
-            title: {
-              display: true,
-              text:
-                "Nivel de bano" ,
-            },
-            tooltips: {
-              mode: "index",
-              intersect: true,
-            },
-            hover: {
-              mode: "index",
-              intersect: true,
-            },
-            plugins: {
-              filler: {
-                  propagate: true
-              }
-            },
-            scales: {
-              yAxes: [
-                {
-                  scaleLabel: {
-                    labelString:"cm",
+            var ChartOptionsNivelDeBano = {
+              responsive: true,
+              maintainAspectRatio: true,
+              hoverMode: "index",
+              stacked: false,
+              responsive: true,
+              title: {
+                display: true,
+                text:
+                  "Nivel de bano" ,
+              },
+              tooltips: {
+                mode: "index",
+                intersect: true,
+              },
+              hover: {
+                mode: "index",
+                intersect: true,
+              },
+              plugins: {
+                filler: {
+                    propagate: true
+                }
+              },
+              scales: {
+                yAxes: [
+                  {
+                    scaleLabel: {
+                      labelString:"cm",
+                      display: true,
+                    },
+                    type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
                     display: true,
+                    position: "left",
+                    id: "y-axis-1",
+                    ticks: {
+                      min: response.minNivelDeBano,
+                      max: response.maxNivelDeBano,
+                    },
                   },
-                  type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                  display: true,
-                  position: "left",
-                  id: "y-axis-1",
-                  ticks: {
-                    min: response.minNivelDeBano,
-                    max: response.maxNivelDeBano,
-                  },
-                },
-              ],
+                ],
 
-              xAxes: [
-                {
-                  scaleLabel: {
-                    labelString: 'fecha',
-                    display: true,
+                xAxes: [
+                  {
+                    scaleLabel: {
+                      labelString: 'fecha',
+                      display: true,
+                    },
+                    position: "bottom",
+                    id: "x-axis-1",
+                    ticks: {
+                      // maxTicksLimit: 20
+                    },
                   },
-                  position: "bottom",
-                  id: "x-axis-1",
-                  ticks: {
-                    // maxTicksLimit: 20
-                  },
-                },
-              ],
-            },
-          };
+                ],
+              },
+            };
 
-          var ChartOptionsFrecuenciaTK = {
-            responsive: true,
-            maintainAspectRatio: true,
-            hoverMode: "index",
-            stacked: false,
-            responsive: true,
-            title: {
-              display: true,
-              text:
-                "Frecuencia de Tracking" ,
-            },
-            tooltips: {
-              mode: "nearest",
-              intersect: true,
-            },
-            hover: {
-              mode: "nearest",
-              intersect: true,
-            },
-            plugins: {
-              filler: {
-                  propagate: true
-              }
-            },
-            scales: {
-              yAxes: [
-                {
-                  scaleLabel: {
-                    labelString:"N",
+            var ChartOptionsFrecuenciaTK = {
+              responsive: true,
+              maintainAspectRatio: true,
+              hoverMode: "index",
+              stacked: false,
+              responsive: true,
+              title: {
+                display: true,
+                text:
+                  "Frecuencia de Tracking" ,
+              },
+              tooltips: {
+                mode: "nearest",
+                intersect: true,
+              },
+              hover: {
+                mode: "nearest",
+                intersect: true,
+              },
+              plugins: {
+                filler: {
+                    propagate: true
+                }
+              },
+              scales: {
+                yAxes: [
+                  {
+                    scaleLabel: {
+                      labelString:"N",
+                      display: true,
+                    },
+                    type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
                     display: true,
+                    position: "left",
+                    id: "y-axis-1",
+                    ticks: {
+                      min: response.minFrecuenciaTK,
+                      max: response.maxFrecuenciaTK,
+                    },
                   },
-                  type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                  display: true,
-                  position: "left",
-                  id: "y-axis-1",
-                  ticks: {
-                    min: response.minFrecuenciaTK,
-                    max: response.maxFrecuenciaTK,
-                  },
-                },
-              ],
+                ],
 
-              xAxes: [
-                {
-                  scaleLabel: {
-                    labelString: 'fecha',
-                    display: true,
+                xAxes: [
+                  {
+                    scaleLabel: {
+                      labelString: 'fecha',
+                      display: true,
+                    },
+                    position: "bottom",
+                    id: "x-axis-1",
+                    ticks: {
+                      // maxTicksLimit: 20
+                    },
                   },
-                  position: "bottom",
-                  id: "x-axis-1",
-                  ticks: {
-                    // maxTicksLimit: 20
-                  },
-                },
-              ],
-            },
-          };
+                ],
+              },
+            };
 
             console.log(Banda1Voltaje);
             var voltajeChartData = {
-              labels: DiaVoltaje,
+                labels: DiaVoltaje,
+                datasets: [
+                  {
+                  label: "Voltaje",
+                  data: DatosVoltaje,
+                  borderWidth: 1,
+                  backgroundColor: "#83befc",
+                  borderColor: "#0306ad",
+                  pointBorderColor: "#0306ad",
+                  pointBackgroundColor: "#0306ad",
+                  fill: false,
+                  lineTension: 0,
+                },
+                {
+                  label: "banda1",
+                  data: Banda1Voltaje,
+                  yAxisID: "y-axis-1",
+                  borderWidth: 1,
+                  backgroundColor: "#fad9b6",
+                  borderColor: "red",
+                  pointBackgroundColor: "red",
+                  pointBorderColor: "red",
+                  pointStyle: "line",
+                  fill: +2,
+                  lineTension: 0,
+                },
+                {
+                  label: "banda2",
+                  data: Banda2Voltaje,
+                  yAxisID: "y-axis-1",
+                  borderWidth: 1,
+                  backgroundColor: "transparent",
+                  borderColor: "orange",
+                  pointBackgroundColor: "orange",
+                  pointBorderColor: "orange",
+                  pointStyle: "line",
+                  fill: false,
+                  lineTension: 0,
+                },
+              ],
+            };
+
+            var corrienteChartData = {
+              labels: DiaCorriente,
               datasets: [
                 {
-                label: "Voltaje",
-                data: DatosVoltaje,
-                borderWidth: 1,
-                backgroundColor: "#83befc",
-                borderColor: "#0306ad",
-                pointBorderColor: "#0306ad",
-                pointBackgroundColor: "#0306ad",
-                fill: false,
-                lineTension: 0,
-              },
-              {
-                label: "banda1",
-                data: Banda1Voltaje,
-                yAxisID: "y-axis-1",
-                borderWidth: 1,
-                backgroundColor: "#fad9b6",
-                borderColor: "red",
-                pointBackgroundColor: "red",
-                pointBorderColor: "red",
-                pointStyle: "line",
-                fill: +2,
-                lineTension: 0,
-              },
-              {
-                label: "banda2",
-                data: Banda2Voltaje,
-                yAxisID: "y-axis-1",
-                borderWidth: 1,
-                backgroundColor: "transparent",
-                borderColor: "orange",
-                pointBackgroundColor: "orange",
-                pointBorderColor: "orange",
-                pointStyle: "line",
-                fill: false,
-                lineTension: 0,
-              },
-            ],
-          };
+                  label: "Corriente",
+                  data: DatosCorriente,
+                  borderWidth: 1,
+                  backgroundColor: "transparent",
+                  borderColor: "#007bff",
+                  pointBorderColor: "#007bff",
+                  pointBackgroundColor: "#007bff",
+                  fill: false,
+                  lineTension: 0,
+                },
+                {
+                  label: "banda1",
+                  data: Banda1Corriente,
+                  yAxisID: "y-axis-1",
+                  borderWidth: 1,
+                  backgroundColor: "#fad9b6",
+                  borderColor: "red",
+                  pointBackgroundColor: "red",
+                  pointBorderColor: "red",
+                  pointStyle: "line",
+                  fill: +2,
+                  lineTension: 0,
+                },
+                {
+                  label: "banda2",
+                  data: Banda2Corriente,
+                  yAxisID: "y-axis-1",
+                  borderWidth: 1,
+                  backgroundColor: "transparent",
+                  borderColor: "orange",
+                  pointBackgroundColor: "orange",
+                  pointBorderColor: "orange",
+                  pointStyle: "line",
+                  fill: false,
+                  lineTension: 0,
+                },
+              ],
+            };
 
-          var corrienteChartData = {
-            labels: DiaCorriente,
-            datasets: [
-              {
-                label: "Corriente",
-                data: DatosCorriente,
-                borderWidth: 1,
-                backgroundColor: "transparent",
-                borderColor: "#007bff",
-                pointBorderColor: "#007bff",
-                pointBackgroundColor: "#007bff",
-                fill: false,
-                lineTension: 0,
-              },
-              {
-                label: "banda1",
-                data: Banda1Corriente,
-                yAxisID: "y-axis-1",
-                borderWidth: 1,
-                backgroundColor: "#fad9b6",
-                borderColor: "red",
-                pointBackgroundColor: "red",
-                pointBorderColor: "red",
-                pointStyle: "line",
-                fill: +2,
-                lineTension: 0,
-              },
-              {
-                label: "banda2",
-                data: Banda2Corriente,
-                yAxisID: "y-axis-1",
-                borderWidth: 1,
-                backgroundColor: "transparent",
-                borderColor: "orange",
-                pointBackgroundColor: "orange",
-                pointBorderColor: "orange",
-                pointStyle: "line",
-                fill: false,
-                lineTension: 0,
-              },
-            ],
-          };
+            var efCorrienteChartData = {
+              labels: DiaEfCorriente,
+              datasets: [
+                {
+                  label: "EfCorriente",
+                  data: DatosEfCorriente,
+                  borderWidth: 1,
+                  backgroundColor: "transparent",
+                  borderColor: "#007bff",
+                  pointBorderColor: "#007bff",
+                  pointBackgroundColor: "#007bff",
+                  fill: false,
+                  lineTension: 0,
+                },
+                {
+                  label: "banda1",
+                  data: Banda1EfCorriente,
+                  yAxisID: "y-axis-1",
+                  borderWidth: 1,
+                  backgroundColor: "#fad9b6",
+                  borderColor: "red",
+                  pointBackgroundColor: "red",
+                  pointBorderColor: "red",
+                  pointStyle: "line",
+                  fill: +2,
+                  lineTension: 0,
+                },
+                {
+                  label: "banda2",
+                  data: Banda2EfCorriente,
+                  yAxisID: "y-axis-1",
+                  borderWidth: 1,
+                  backgroundColor: "transparent",
+                  borderColor: "orange",
+                  pointBackgroundColor: "orange",
+                  pointBorderColor: "orange",
+                  pointStyle: "line",
+                  fill: false,
+                  lineTension: 0,
+                },
+              ],
+            };
 
-          var efCorrienteChartData = {
-            labels: DiaEfCorriente,
-            datasets: [
-              {
-                label: "EfCorriente",
-                data: DatosEfCorriente,
-                borderWidth: 1,
-                backgroundColor: "transparent",
-                borderColor: "#007bff",
-                pointBorderColor: "#007bff",
-                pointBackgroundColor: "#007bff",
-                fill: false,
-                lineTension: 0,
-              },
-              {
-                label: "banda1",
-                data: Banda1EfCorriente,
-                yAxisID: "y-axis-1",
-                borderWidth: 1,
-                backgroundColor: "#fad9b6",
-                borderColor: "red",
-                pointBackgroundColor: "red",
-                pointBorderColor: "red",
-                pointStyle: "line",
-                fill: +2,
-                lineTension: 0,
-              },
-              {
-                label: "banda2",
-                data: Banda2EfCorriente,
-                yAxisID: "y-axis-1",
-                borderWidth: 1,
-                backgroundColor: "transparent",
-                borderColor: "orange",
-                pointBackgroundColor: "orange",
-                pointBorderColor: "orange",
-                pointStyle: "line",
-                fill: false,
-                lineTension: 0,
-              },
-            ],
-          };
+            var desvResistenciaChartData = {
+              labels: DiaDesvResistencia,
+              datasets: [
+                {
+                  label: "DesvResistencia",
+                  data: DatosDesvResistencia,
+                  borderWidth: 1,
+                  backgroundColor: "transparent",
+                  borderColor: "#007bff",
+                  pointBorderColor: "#007bff",
+                  pointBackgroundColor: "#007bff",
+                  fill: false,
+                  lineTension: 0,
+                },
+                {
+                  label: "banda1",
+                  data: Banda1DesvResistencia,
+                  yAxisID: "y-axis-1",
+                  borderWidth: 1,
+                  backgroundColor: "#fad9b6",
+                  borderColor: "red",
+                  pointBackgroundColor: "red",
+                  pointBorderColor: "red",
+                  pointStyle: "line",
+                  fill: +2,
+                  lineTension: 0,
+                },
+                {
+                  label: "banda2",
+                  data: Banda2DesvResistencia,
+                  yAxisID: "y-axis-1",
+                  borderWidth: 1,
+                  backgroundColor: "transparent",
+                  borderColor: "orange",
+                  pointBackgroundColor: "orange",
+                  pointBorderColor: "orange",
+                  pointStyle: "line",
+                  fill: false,
+                  lineTension: 0,
+                },
+              ],
+            };
 
-          var desvResistenciaChartData = {
-            labels: DiaDesvResistencia,
-            datasets: [
-              {
-                label: "DesvResistencia",
-                data: DatosDesvResistencia,
-                borderWidth: 1,
-                backgroundColor: "transparent",
-                borderColor: "#007bff",
-                pointBorderColor: "#007bff",
-                pointBackgroundColor: "#007bff",
-                fill: false,
-                lineTension: 0,
-              },
-              {
-                label: "banda1",
-                data: Banda1DesvResistencia,
-                yAxisID: "y-axis-1",
-                borderWidth: 1,
-                backgroundColor: "#fad9b6",
-                borderColor: "red",
-                pointBackgroundColor: "red",
-                pointBorderColor: "red",
-                pointStyle: "line",
-                fill: +2,
-                lineTension: 0,
-              },
-              {
-                label: "banda2",
-                data: Banda2DesvResistencia,
-                yAxisID: "y-axis-1",
-                borderWidth: 1,
-                backgroundColor: "transparent",
-                borderColor: "orange",
-                pointBackgroundColor: "orange",
-                pointBorderColor: "orange",
-                pointStyle: "line",
-                fill: false,
-                lineTension: 0,
-              },
-            ],
-          };
+            var frecuenciaEAChartData = {
+              labels: DiaFrecuenciaEA,
+              datasets: [
+                {
+                  label: "FrecuenciaEA",
+                  data: DatosFrecuenciaEA,
+                  borderWidth: 1,
+                  backgroundColor: "transparent",
+                  borderColor: "#007bff",
+                  pointBorderColor: "#007bff",
+                  pointBackgroundColor: "#007bff",
+                  fill: false,
+                  lineTension: 0,
+                },
+                {
+                  label: "banda1",
+                  data: Banda1FrecuenciaEA,
+                  yAxisID: "y-axis-1",
+                  borderWidth: 1,
+                  backgroundColor: "#fad9b6",
+                  borderColor: "red",
+                  pointBackgroundColor: "red",
+                  pointBorderColor: "red",
+                  pointStyle: "line",
+                  fill: +2,
+                  lineTension: 0,
+                },
+                {
+                  label: "banda2",
+                  data: Banda2FrecuenciaEA,
+                  yAxisID: "y-axis-1",
+                  borderWidth: 1,
+                  backgroundColor: "transparent",
+                  borderColor: "orange",
+                  pointBackgroundColor: "orange",
+                  pointBorderColor: "orange",
+                  pointStyle: "line",
+                  fill: false,
+                  lineTension: 0,
+                },
+              ],
+            };
 
-          var frecuenciaEAChartData = {
-            labels: DiaFrecuenciaEA,
-            datasets: [
-              {
-                label: "FrecuenciaEA",
-                data: DatosFrecuenciaEA,
-                borderWidth: 1,
-                backgroundColor: "transparent",
-                borderColor: "#007bff",
-                pointBorderColor: "#007bff",
-                pointBackgroundColor: "#007bff",
-                fill: false,
-                lineTension: 0,
-              },
-              {
-                label: "banda1",
-                data: Banda1FrecuenciaEA,
-                yAxisID: "y-axis-1",
-                borderWidth: 1,
-                backgroundColor: "#fad9b6",
-                borderColor: "red",
-                pointBackgroundColor: "red",
-                pointBorderColor: "red",
-                pointStyle: "line",
-                fill: +2,
-                lineTension: 0,
-              },
-              {
-                label: "banda2",
-                data: Banda2FrecuenciaEA,
-                yAxisID: "y-axis-1",
-                borderWidth: 1,
-                backgroundColor: "transparent",
-                borderColor: "orange",
-                pointBackgroundColor: "orange",
-                pointBorderColor: "orange",
-                pointStyle: "line",
-                fill: false,
-                lineTension: 0,
-              },
-            ],
-          };
+            var potenciaChartData = {
+              labels: DiaPotencia,
+              datasets: [
+                {
+                  label: "Potencia",
+                  data: DatosPotencia,
+                  borderWidth: 1,
+                  backgroundColor: "transparent",
+                  borderColor: "#007bff",
+                  pointBorderColor: "#007bff",
+                  pointBackgroundColor: "#007bff",
+                  fill: false,
+                  lineTension: 0,
+                },
+                {
+                  label: "banda1",
+                  data: Banda1Potencia,
+                  yAxisID: "y-axis-1",
+                  borderWidth: 1,
+                  backgroundColor: "#fad9b6",
+                  borderColor: "red",
+                  pointBackgroundColor: "red",
+                  pointBorderColor: "red",
+                  pointStyle: "line",
+                  fill: +2,
+                  lineTension: 0,
+                },
+                {
+                  label: "banda2",
+                  data: Banda2Potencia,
+                  yAxisID: "y-axis-1",
+                  borderWidth: 1,
+                  backgroundColor: "transparent",
+                  borderColor: "orange",
+                  pointBackgroundColor: "orange",
+                  pointBorderColor: "orange",
+                  pointStyle: "line",
+                  fill: false,
+                  lineTension: 0,
+                },
+              ],
+            };
 
-          var potenciaChartData = {
-            labels: DiaPotencia,
-            datasets: [
-              {
-                label: "Potencia",
-                data: DatosPotencia,
-                borderWidth: 1,
-                backgroundColor: "transparent",
-                borderColor: "#007bff",
-                pointBorderColor: "#007bff",
-                pointBackgroundColor: "#007bff",
-                fill: false,
-                lineTension: 0,
-              },
-              {
-                label: "banda1",
-                data: Banda1Potencia,
-                yAxisID: "y-axis-1",
-                borderWidth: 1,
-                backgroundColor: "#fad9b6",
-                borderColor: "red",
-                pointBackgroundColor: "red",
-                pointBorderColor: "red",
-                pointStyle: "line",
-                fill: +2,
-                lineTension: 0,
-              },
-              {
-                label: "banda2",
-                data: Banda2Potencia,
-                yAxisID: "y-axis-1",
-                borderWidth: 1,
-                backgroundColor: "transparent",
-                borderColor: "orange",
-                pointBackgroundColor: "orange",
-                pointBorderColor: "orange",
-                pointStyle: "line",
-                fill: false,
-                lineTension: 0,
-              },
-            ],
-          };
+            var nivelDeMetalChartData = {
+              labels: DiaNivelDeMetal,
+              datasets: [
+                {
+                  label: "NivelDeMetal",
+                  data: DatosNivelDeMetal,
+                  borderWidth: 1,
+                  backgroundColor: "transparent",
+                  borderColor: "#007bff",
+                  pointBorderColor: "#007bff",
+                  pointBackgroundColor: "#007bff",
+                  fill: false,
+                  lineTension: 0,
+                },
+                {
+                  label: "banda1",
+                  data: Banda1NivelDeMetal,
+                  yAxisID: "y-axis-1",
+                  borderWidth: 1,
+                  backgroundColor: "#fad9b6",
+                  borderColor: "red",
+                  pointBackgroundColor: "red",
+                  pointBorderColor: "red",
+                  pointStyle: "line",
+                  fill: +2,
+                  lineTension: 0,
+                },
+                {
+                  label: "banda2",
+                  data: Banda2NivelDeMetal,
+                  yAxisID: "y-axis-1",
+                  borderWidth: 1,
+                  backgroundColor: "transparent",
+                  borderColor: "orange",
+                  pointBackgroundColor: "orange",
+                  pointBorderColor: "orange",
+                  pointStyle: "line",
+                  fill: false,
+                  lineTension: 0,
+                },
+              ],
+            };
 
-          var nivelDeMetalChartData = {
-            labels: DiaNivelDeMetal,
-            datasets: [
-              {
-                label: "NivelDeMetal",
-                data: DatosNivelDeMetal,
-                borderWidth: 1,
-                backgroundColor: "transparent",
-                borderColor: "#007bff",
-                pointBorderColor: "#007bff",
-                pointBackgroundColor: "#007bff",
-                fill: false,
-                lineTension: 0,
-              },
-              {
-                label: "banda1",
-                data: Banda1NivelDeMetal,
-                yAxisID: "y-axis-1",
-                borderWidth: 1,
-                backgroundColor: "#fad9b6",
-                borderColor: "red",
-                pointBackgroundColor: "red",
-                pointBorderColor: "red",
-                pointStyle: "line",
-                fill: +2,
-                lineTension: 0,
-              },
-              {
-                label: "banda2",
-                data: Banda2NivelDeMetal,
-                yAxisID: "y-axis-1",
-                borderWidth: 1,
-                backgroundColor: "transparent",
-                borderColor: "orange",
-                pointBackgroundColor: "orange",
-                pointBorderColor: "orange",
-                pointStyle: "line",
-                fill: false,
-                lineTension: 0,
-              },
-            ],
-          };
+            var nivelDeBanoChartData = {
+              labels: DiaNivelDeBano,
+              datasets: [
+                {
+                  label: "NivelDeBano",
+                  data: DatosNivelDeBano,
+                  borderWidth: 1,
+                  backgroundColor: "transparent",
+                  borderColor: "#007bff",
+                  pointBorderColor: "#007bff",
+                  pointBackgroundColor: "#007bff",
+                  fill: false,
+                  lineTension: 0,
+                },
+                {
+                  label: "banda1",
+                  data: Banda1NivelDeBano,
+                  yAxisID: "y-axis-1",
+                  borderWidth: 1,
+                  backgroundColor: "#fad9b6",
+                  borderColor: "red",
+                  pointBackgroundColor: "red",
+                  pointBorderColor: "red",
+                  pointStyle: "line",
+                  fill: +2,
+                  lineTension: 0,
+                },
+                {
+                  label: "banda2",
+                  data: Banda2NivelDeBano,
+                  yAxisID: "y-axis-1",
+                  borderWidth: 1,
+                  backgroundColor: "transparent",
+                  borderColor: "orange",
+                  pointBackgroundColor: "orange",
+                  pointBorderColor: "orange",
+                  pointStyle: "line",
+                  fill: false,
+                  lineTension: 0,
+                },
+              ],
+            };
 
-          var nivelDeBanoChartData = {
-            labels: DiaNivelDeBano,
-            datasets: [
-              {
-                label: "NivelDeBano",
-                data: DatosNivelDeBano,
-                borderWidth: 1,
-                backgroundColor: "transparent",
-                borderColor: "#007bff",
-                pointBorderColor: "#007bff",
-                pointBackgroundColor: "#007bff",
-                fill: false,
-                lineTension: 0,
-              },
-              {
-                label: "banda1",
-                data: Banda1NivelDeBano,
-                yAxisID: "y-axis-1",
-                borderWidth: 1,
-                backgroundColor: "#fad9b6",
-                borderColor: "red",
-                pointBackgroundColor: "red",
-                pointBorderColor: "red",
-                pointStyle: "line",
-                fill: +2,
-                lineTension: 0,
-              },
-              {
-                label: "banda2",
-                data: Banda2NivelDeBano,
-                yAxisID: "y-axis-1",
-                borderWidth: 1,
-                backgroundColor: "transparent",
-                borderColor: "orange",
-                pointBackgroundColor: "orange",
-                pointBorderColor: "orange",
-                pointStyle: "line",
-                fill: false,
-                lineTension: 0,
-              },
-            ],
-          };
-
-          var frecuenciaTKChartData = {
-            labels: DiaFrecuenciaTK,
-            datasets: [
-              {
-                label: "FrecuenciaTK",
-                data: DatosFrecuenciaTK,
-                borderWidth: 1,
-                backgroundColor: "transparent",
-                borderColor: "#007bff",
-                pointBorderColor: "#007bff",
-                pointBackgroundColor: "#007bff",
-                fill: false,
-                lineTension: 0,
-              },
-              {
-                label: "banda1",
-                data: Banda1FrecuenciaTK,
-                yAxisID: "y-axis-1",
-                borderWidth: 1,
-                backgroundColor: "#fad9b6",
-                borderColor: "red",
-                pointBackgroundColor: "red",
-                pointBorderColor: "red",
-                pointStyle: "line",
-                fill: +2,
-                lineTension: 0,
-              },
-              {
-                label: "banda2",
-                data: Banda2FrecuenciaTK,
-                yAxisID: "y-axis-1",
-                borderWidth: 1,
-                backgroundColor: "transparent",
-                borderColor: "orange",
-                pointBackgroundColor: "orange",
-                pointBorderColor: "orange",
-                pointStyle: "line",
-                fill: false,
-                lineTension: 0,
-              },
-            ],
-          };
+            var frecuenciaTKChartData = {
+              labels: DiaFrecuenciaTK,
+              datasets: [
+                {
+                  label: "FrecuenciaTK",
+                  data: DatosFrecuenciaTK,
+                  borderWidth: 1,
+                  backgroundColor: "transparent",
+                  borderColor: "#007bff",
+                  pointBorderColor: "#007bff",
+                  pointBackgroundColor: "#007bff",
+                  fill: false,
+                  lineTension: 0,
+                },
+                {
+                  label: "banda1",
+                  data: Banda1FrecuenciaTK,
+                  yAxisID: "y-axis-1",
+                  borderWidth: 1,
+                  backgroundColor: "#fad9b6",
+                  borderColor: "red",
+                  pointBackgroundColor: "red",
+                  pointBorderColor: "red",
+                  pointStyle: "line",
+                  fill: +2,
+                  lineTension: 0,
+                },
+                {
+                  label: "banda2",
+                  data: Banda2FrecuenciaTK,
+                  yAxisID: "y-axis-1",
+                  borderWidth: 1,
+                  backgroundColor: "transparent",
+                  borderColor: "orange",
+                  pointBackgroundColor: "orange",
+                  pointBorderColor: "orange",
+                  pointStyle: "line",
+                  fill: false,
+                  lineTension: 0,
+                },
+              ],
+            };
             console.log(response);
             voltajeChart.options = ChartOptionsVoltaje;
             voltajeChart.data = voltajeChartData;

@@ -56,12 +56,12 @@
                 <span class="info-box-text">Línea V</span>
                 <span class="info-box-text">Celdas conectadas: </span>
                 <span class="info-box-number">{{ $celdas }}</span>
-                <div class="progress">
+             <!---   <div class="progress">
                   <div class="progress-bar" style="width: 70%"></div>
-                </div>
+                </div> 
                 <span class="progress-description">
                   Operatividad
-                </span>
+                </span> -->
                 <a href=" {{ route('evolution.lineaV') }} " class="small-box-footer text-white">Mas información <i class="fas fa-arrow-circle-right"></i></a>
               </div>
               <!-- /.info-box-content -->
@@ -78,12 +78,12 @@
                 <span class="info-box-text">Línea V</span>
                 <span class="info-box-text">Celdas conectadas: </span>
                 <span class="info-box-number">{{ $celdas }}</span>
-                <div class="progress">
+             <!---   <div class="progress">
                   <div class="progress-bar" style="width: 70%"></div>
-                </div>
+                </div> 
                 <span class="progress-description">
                   Operatividad
-                </span>
+                </span> -->
                 <a href=" {{ route('evolution.lineaV') }} " class="small-box-footer text-white">Mas información <i class="fas fa-arrow-circle-right"></i></a>
               </div>
               <!-- /.info-box-content -->
@@ -100,12 +100,12 @@
                 <span class="info-box-text">Línea V</span>
                 <span class="info-box-text">Celdas conectadas: </span>
                 <span class="info-box-number">{{ $celdas }}</span>
-                <div class="progress">
+            <!---    <div class="progress">
                   <div class="progress-bar" style="width: 70%"></div>
-                </div>
+                </div> 
                 <span class="progress-description">
                   Operatividad
-                </span>
+                </span> -->
                 <a href=" {{ route('evolution.lineaV') }} " class="small-box-footer text-white">Mas información <i class="fas fa-arrow-circle-right"></i></a>
               </div>
               <!-- /.info-box-content -->
@@ -122,12 +122,12 @@
                 <span class="info-box-text">Línea V</span>
                 <span class="info-box-text">Celdas conectadas: </span>
                 <span class="info-box-number">{{ $celdas }}</span>
-                <div class="progress">
+           <!---     <div class="progress">
                   <div class="progress-bar" style="width: 70%"></div>
-                </div>
+                </div> 
                 <span class="progress-description">
                   Operatividad
-                </span>
+                </span> -->
                 <a href=" {{ route('evolution.lineaV') }} " class="small-box-footer text-white">Mas información <i class="fas fa-arrow-circle-right"></i></a>
               </div>
               <!-- /.info-box-content -->
@@ -144,12 +144,12 @@
                 <span class="info-box-text">Línea V</span>
                 <span class="info-box-text">Celdas conectadas: </span>
                 <span class="info-box-number">{{ $celdas }}</span>
-                <div class="progress">
+            <!---    <div class="progress">
                   <div class="progress-bar" style="width: 70%"></div>
-                </div>
+                </div> 
                 <span class="progress-description">
                   Operatividad
-                </span>
+                </span> -->
                 <a href=" {{ route('evolution.lineaV') }} " class="small-box-footer text-white">Mas información <i class="fas fa-arrow-circle-right"></i></a>
               </div>
               <!-- /.info-box-content -->
