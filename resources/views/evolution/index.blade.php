@@ -33,7 +33,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Alerta de SICER</h5>
+          <h5 class="modal-title" id="title">Alerta de SICER</h5>
           <button
             type="button"
             class="close"
@@ -45,6 +45,170 @@
         </div>
         <div class="modal-body">
           <p id="mensaje">MODULO EN DESARROLLO</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" tabindex="-1" role="dialog" id="modalAyuda">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-gradient-info">
+          <h5 class="modal-title" id="title">Ayuda de SICER</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <div class="container">
+          <p id="mensaje" class="text-justify" > 
+          <div class="row">
+          <h2>Esta es la sección de consulta de variables de evolución de línea del SICER. </h2>
+            En este apartado podrá realizar consultas parametrizadas de las variables en las líneas de producción donde se lleva a cabo el proceso de reducción. <br>
+            A continuación se proporciona una lista de operaciones que puede realizar:  
+          </div>
+          
+          <div class="row border border-info m-2">
+            <div class="col-md-6 mt-2">
+              <ul>
+                  <li>Visualizar gráficas de cada variable </li>
+                  <li>Consulta de variable por línea, celda o grupo de celdas</li>
+                  <li>Consultar promedio de variables </li>
+                  <li>Consultar desviación estándar de variables </li>
+                  <li>Consultar total de variables (suma) </li>
+                  <li>Consultar un máximo de dos variables en el mismo gráfico</li>
+                  <li>Consultar información de celdas o línea de acuerdo a un rango de operación de las variables</li>
+                </ul>
+            </div>
+            <div class="col-md-6 mb-2 mt-2">
+              <ul>
+                <li>Filtrar consulta de variables por un rango de operación</li>
+                <li>Configurar escala de la gráfica a visualizar</li>
+                <li>Configurar ubicación de las bandas de control de las variables</li>
+                <li>Información individual de celda</li>
+                <li>Agrupar información por rango de fecha</li>
+                <li>Agrupar información por rango de celdas</li>
+                <li>Exportar datos de las gráficas o consultas realizadas</li>
+                <li>Obtener histórico de los datos</li>
+              </ul>  
+            </div>
+          
+          </div>
+            
+            En el formulario encontrará los siguientes campos a rellenar con los que puede parametrizar su consulta. <br>  
+          </p>
+          <div class="row">
+            <div class="col">
+            <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Campo</th>
+                <th scope="col">Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Rango fecha</th>
+                <td>Puede seleccionar en el menú desplegable un rango de fecha o en la opción elegir seleccionar dos puntos a través de los calendarios.</td>
+              </tr>
+              <tr>
+                <th scope="row">Rango de celdas</th>
+                <td>Debe ingresar el número de celda en ambos campos, puede seleccionar el grupo de celdas que desee consultar o consultar una colocando el mismo número de celda en ambos campos.</td>
+              </tr>
+              <tr>
+                <th scope="row">Línea V</th>
+                <td>Puede marcar esta casilla y automáticamente se rellenaran los campos de rango de celdas con la línea que usted ha marcado.</td>
+              </tr>
+              <tr>
+                <th scope="row"> Opción para filtrar</th>
+                <td>Esta opción es utilizada cuando desea filtrar a través del valor de una variable, por ejemplo consultar: "celdas con edad mayor a X cantidad de días". </td>
+              </tr>
+              <tr>
+                <th scope="row">Opción para filtrar - Rango de operación</th>
+                <td>Estos son campos con los que indica el valor de la variable con la que va a filtrar su consulta: <br> 
+                    <strong>Operador:</strong> acá selecciona el operador relacional "mayor", "mayor igual", "menor, "menor igual". <br>
+                    <strong>Límite inferior:</strong> seleccione el límite inferior para el valor de la variable. <br>
+                    <strong>Límite superior:</strong> seleccione el límite superior para el valor de la variable. <br>
+                    <ul>
+                      <li>En caso de querer consultar variables que esten dentro de un rango, no debe seleccionar operador y debe rellenar los campos límite inferior y límite superior. </li>
+                      <li>En caso de querer consultar variables "mayor", "mayor igual", "menor, "menor igual" a un valor, debe seleccionar el operador y el valor se debe colocar en el campo límite inferior, el campo límite superior no debe tener contenido.</li>
+                    </ul>
+                    
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Cálculo a consultar para rango de celdas</th>
+                <td>Para poder realizar una consulta debe seleccionar el cálculo que desea aplicar sobre las variables. Las opciones son: promedio, desviación estándar y total(suma) esto aplica para rangos de celdas o consulta de línea.</td>
+              </tr>
+              <tr>
+                <th scope="row">Variable Y1 y Variable Y2</th>
+                <td> Estas son las variables que puede consultar en esta sección, podrá visualizar el gráfico y debajo los datos del mismo en una tabla, 
+                     puede seleccionar la casilla "variable Y2" para activar las opciones de la segunda variable. <br> <strong> NOTA: </strong> Si desea consultar una sola variable es recomendable desactivar la casilla "variable Y2".</td>
+              </tr>
+              <tr>
+              <th scope="row">Variable Y1 - Rango de operación</th>
+                <td>Estos son campos con los que indica el valor de la variable Y1: <br> 
+                    <strong>Operador:</strong> acá selecciona el operador relacional "mayor", "mayor igual", "menor, "menor igual".<br>
+                    <strong>Límite inferior:</strong> seleccione el límite inferior para el valor de la variable. <br>
+                    <strong>Límite superior:</strong> seleccione el límite superior para el valor de la variable. <br>
+                    <ul>
+                      <li>En caso de querer consultar variables que esten dentro de un rango, no debe seleccionar operador y debe rellenar los campos límite inferior y límite superior. </li>
+                      <li>En caso de querer consultar variables "mayor", "mayor igual", "menor, "menor igual" a un valor, debe seleccionar el operador y el valor se debe colocar en el campo límite inferior, el campo límite superior no debe tener contenido.</li>
+                    </ul>
+                    
+                </td>
+              <tr>
+              <th scope="row">Variable Y2 - Rango de operación</th>
+                <td>Estos son campos con los que indica el valor de la variable Y2: <br> 
+                    <strong>Operador:</strong> acá selecciona el operador relacional "mayor", "mayor igual", "menor, "menor igual" <br>
+                    <strong>Límite inferior:</strong> seleccione el límite inferior para el valor de la variable. <br>
+                    <strong>Límite superior:</strong> seleccione el límite superior para el valor de la variable. <br>
+                    <ul>
+                      <li>En caso de querer consultar variables que esten dentro de un rango, no debe seleccionar operador y debe rellenar los campos límite inferior y límite superior. </li>
+                      <li>En caso de querer consultar variables "mayor", "mayor igual", "menor, "menor igual" a un valor, este valor se coloca en el campo límite inferior. </li>
+                    </ul>
+                    
+                </td>
+              <tr>
+                <th scope="row">Configurar gráfica</th>
+                <td>Al marcar esta casilla se activan las opciones de configuración de gráfica que le permitirán:
+                  <ul>
+                    <li>Configurar la escala del gráfico el valor tanto valor mínimo como valor máximo.</li>
+                    <li>Configurar la posición de la banda de control mínima y máxima de la variable Y1.</li>
+                    <li>Configurar la posición de la banda de control de la variable Y2.</li>                
+                  </ul>
+                  <p><strong>NOTA:</strong> 
+                      Si no tiene seleccionada la casilla "Variable Y2" no se mostrarán las opciones para esta variable.<br>
+                      Si desea consultar una sola variable es recomendable desactivar la casilla "variable Y2". 
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+            </div>        
+          
+          </div>
+        
+
+
+            <p id="mensaje">
+              
+            </p>
+          
+          </div>
+
+      
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">
@@ -78,6 +242,13 @@
       <div class="card-tools">
         <!-- Buttons, labels, and many other things can be placed here! -->
         <!-- Here is a label for example -->
+        <button
+          type="button"
+          id="helpWidget"
+          class="btn btn-tool"
+        >
+          <i class="far fa-question-circle"></i> 
+        </button>
         <button
           type="button"
           id="chartwidget"
@@ -178,7 +349,7 @@
               </div>
             </div>
             <div id="formvarFiltro" class="form-group">
-              <label for="varFiltro">Variable Filtro</label>
+              <label for="varFiltro">Opción para filtrar</label>
               <select id="varFiltro" name="varFiltro" class="form-control">
                 <option value="" selected> </option>
                 <option>Voltaje</option>
@@ -225,7 +396,7 @@
             <div class="form-group">
               <label>Rango de operación</label>
               <br />
-              <label>Rango varFiltro a consultar</label>
+              <label>Rango para variable de filtrado</label>
               <div class="form-row form-inline">
                 <div class="input-group col-md-6">
                   <div class="input-group-prepend">
@@ -274,7 +445,7 @@
               <!-- /.form row -->
             </div>
             <div id="calculo" class="form-group">
-              <label>Calculo a consultar para rango de celdas</label>
+              <label>Cálculo a consultar para rango de celdas</label>
               <select id="calculo" name="calculo" class="form-control">
                 <option value="" selected> </option>
                 <option>Promedio</option>
@@ -395,7 +566,7 @@
                 />
                 <label class="custom-control-label" for="checkVariable2"></label>
               </div>
-              <label for="variable2" class="mr-2">Configurar grafica </label>
+              <label for="variable2" class="mr-2">Configurar gráfica </label>
               <div class="custom-control custom-checkbox">
                 <input
                   type="checkbox"
@@ -846,7 +1017,10 @@
         );
       }
     );
-
+   
+    $( "#helpWidget" ).click(function() {
+            $("#modalAyuda").modal("show");
+    });
    // $("#chartwidget").CardWidget("collapse");
     //$("#voltajeChartwidget").CardWidget("collapse");
    // $("#celdaswidget").CardWidget("collapse");
