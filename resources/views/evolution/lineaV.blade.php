@@ -1537,7 +1537,7 @@
                 lineTension: 0,
               },
               {
-                label: "banda1",
+                label: "referencia mínima",
                 data: Banda1Voltaje,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
@@ -1550,7 +1550,7 @@
                 lineTension: 0,
               },
               {
-                label: "banda2",
+                label: "referencia máxima",
                 data: Banda2Voltaje,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
@@ -1580,7 +1580,7 @@
                 lineTension: 0,
               },
               {
-                label: "banda1",
+                label: "referencia mínima",
                 data: Banda1Corriente,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
@@ -1593,7 +1593,7 @@
                 lineTension: 0,
               },
               {
-                label: "banda2",
+                label: "referencia máxima",
                 data: Banda2Corriente,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
@@ -1623,7 +1623,7 @@
                 lineTension: 0,
               },
               {
-                label: "banda1",
+                label: "referencia mínima",
                 data: Banda1EfCorriente,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
@@ -1636,7 +1636,7 @@
                 lineTension: 0,
               },
               {
-                label: "banda2",
+                label: "referencia máxima",
                 data: Banda2EfCorriente,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
@@ -1666,7 +1666,7 @@
                 lineTension: 0,
               },
               {
-                label: "banda1",
+                label: "referencia mínima",
                 data: Banda1DesvResistencia,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
@@ -1679,7 +1679,7 @@
                 lineTension: 0,
               },
               {
-                label: "banda2",
+                label: "referencia máxima",
                 data: Banda2DesvResistencia,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
@@ -1709,7 +1709,7 @@
                 lineTension: 0,
               },
               {
-                label: "banda1",
+                label: "referencia mínima",
                 data: Banda1FrecuenciaEA,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
@@ -1722,7 +1722,7 @@
                 lineTension: 0,
               },
               {
-                label: "banda2",
+                label: "referencia máxima",
                 data: Banda2FrecuenciaEA,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
@@ -1752,7 +1752,7 @@
                 lineTension: 0,
               },
               {
-                label: "banda1",
+                label: "referencia mínima",
                 data: Banda1Potencia,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
@@ -1765,7 +1765,7 @@
                 lineTension: 0,
               },
               {
-                label: "banda2",
+                label: "referencia máxima",
                 data: Banda2Potencia,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
@@ -1795,7 +1795,7 @@
                 lineTension: 0,
               },
               {
-                label: "banda1",
+                label: "referencia mínima",
                 data: Banda1NivelDeMetal,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
@@ -1808,7 +1808,7 @@
                 lineTension: 0,
               },
               {
-                label: "banda2",
+                label: "referencia máxima",
                 data: Banda2NivelDeMetal,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
@@ -1838,7 +1838,7 @@
                 lineTension: 0,
               },
               {
-                label: "banda1",
+                label: "referencia mínima",
                 data: Banda1NivelDeBano,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
@@ -1851,7 +1851,7 @@
                 lineTension: 0,
               },
               {
-                label: "banda2",
+                label: "referencia máxima",
                 data: Banda2NivelDeBano,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
@@ -1881,7 +1881,7 @@
                 lineTension: 0,
               },
               {
-                label: "banda1",
+                label: "referencia mínima",
                 data: Banda1FrecuenciaTK,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
@@ -1894,7 +1894,7 @@
                 lineTension: 0,
               },
               {
-                label: "banda2",
+                label: "referencia máxima",
                 data: Banda2FrecuenciaTK,
                 yAxisID: "y-axis-1",
                 borderWidth: 1,
