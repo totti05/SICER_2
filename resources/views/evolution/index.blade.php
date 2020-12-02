@@ -851,7 +851,7 @@
   <!-- voltaje LINE CHART -->
   <div class="card card-navy" id="cardGrafica" style="display: none;">
     <div class="card-header">
-      <h3 class="card-title">Voltaje PRE Chart</h3>
+      <h3 class="card-title">Gráfica</h3>
 
       <div class="card-tools">
         <button
@@ -1126,10 +1126,6 @@
             /*
             * Se ejecuta al termino de la petición
             * */
-            MENSAJE = "Enviando: " + data;
-            $("#mensaje").html(MENSAJE);
-            $("#alertaMsj").html(MENSAJE);
-            $("#modalMensaje").modal("show");
           },
           success: function (response) {
             /*
