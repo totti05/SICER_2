@@ -2366,7 +2366,9 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
-        
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
+                                                        
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
                                                         'varKeyVar2'=> $variableDB2,
@@ -2442,7 +2444,9 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
-        
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
+                                                        
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
                                                         'varKeyVar2'=> $variableDB2,
@@ -2515,7 +2519,9 @@ class EvolutionController extends Controller
                                                      'ylabel'=> $ylabel,
                                                      'xlabel'=> $xlabel,
                                                      'datatable' => $datatable,
-    
+                                                     'celda1' =>$celda1,
+                                                     'celda2' =>$celda2,
+                                                                                                            
                                                      'datosVar2' => $result2,
                                                      'variableVar2'=> $variable2,
                                                      'varKeyVar2'=> $variableDB2,
@@ -2593,6 +2599,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -2667,6 +2675,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -2739,7 +2749,9 @@ class EvolutionController extends Controller
                                                     'ylabel'=> $ylabel,
                                                     'xlabel'=> $xlabel,
                                                     'datatable' => $datatable,
-                                                    
+                                                    'celda1' =>$celda1,
+                                                    'celda2' =>$celda2,
+                                                        
                                                     'datosVar2' => $result2,
                                                     'variableVar2'=> $variable2,
                                                     'varKeyVar2'=> $variableDB2,
@@ -2817,6 +2829,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -2891,6 +2905,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -2959,6 +2975,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -3031,6 +3049,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -3115,7 +3135,9 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
-        
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
+                                                        
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
                                                         'varKeyVar2'=> $variableDB2,
@@ -3191,7 +3213,9 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
-
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
+                                                        
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
                                                         'varKeyVar2'=> $variableDB2,
@@ -3265,7 +3289,9 @@ class EvolutionController extends Controller
                                                      'ylabel'=> $ylabel,
                                                      'xlabel'=> $xlabel,
                                                      'datatable' => $datatable,
-    
+                                                     'celda1' =>$celda1,
+                                                     'celda2' =>$celda2,
+                                                        
                                                      'datosVar2' => $result2,
                                                      'variableVar2'=> $variable2,
                                                      'varKeyVar2'=> $variableDB2,
@@ -3343,6 +3369,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -3417,6 +3445,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -3489,6 +3519,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -3567,6 +3599,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -3641,6 +3675,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -3713,6 +3749,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -3797,7 +3835,9 @@ class EvolutionController extends Controller
                                                             'ylabel'=> $ylabel,
                                                             'xlabel'=> $xlabel,
                                                             'datatable' => $datatable,
-        
+                                                            'celda1' =>$celda1,
+                                                            'celda2' =>$celda2,
+                                                        
                                                             'datosVar2' => $result2,
                                                             'variableVar2'=> $variable2,
                                                             'varKeyVar2'=> $variableDB2,
@@ -3873,7 +3913,9 @@ class EvolutionController extends Controller
                                                             'ylabel'=> $ylabel,
                                                             'xlabel'=> $xlabel,
                                                             'datatable' => $datatable,
-        
+                                                            'celda1' =>$celda1,
+                                                            'celda2' =>$celda2,
+                                                        
                                                             'datosVar2' => $result2,
                                                             'variableVar2'=> $variable2,
                                                             'varKeyVar2'=> $variableDB2,
@@ -3947,7 +3989,9 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
-    
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
+                                                        
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
                                                         'varKeyVar2'=> $variableDB2,
@@ -4025,6 +4069,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -4099,6 +4145,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -4171,6 +4219,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -4249,6 +4299,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -4323,6 +4375,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -4395,6 +4449,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -4473,7 +4529,9 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
-
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
+                                                        
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
                                                         'varKeyVar2'=> $variableDB2,
@@ -4541,7 +4599,9 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
-
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
+                                                        
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
                                                         'varKeyVar2'=> $variableDB2,
@@ -4607,7 +4667,9 @@ class EvolutionController extends Controller
                                                     'ylabel'=> $ylabel,
                                                     'xlabel'=> $xlabel,
                                                     'datatable' => $datatable,
-
+                                                    'celda1' =>$celda1,
+                                                    'celda2' =>$celda2,
+                                                        
                                                     'datosVar2' => $result2,
                                                     'variableVar2'=> $variable2,
                                                     'varKeyVar2'=> $variableDB2,
@@ -4676,6 +4738,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -4742,6 +4806,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -4805,6 +4871,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -4875,6 +4943,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -4941,6 +5011,8 @@ class EvolutionController extends Controller
                                                         'ylabel'=> $ylabel,
                                                         'xlabel'=> $xlabel,
                                                         'datatable' => $datatable,
+                                                        'celda1' =>$celda1,
+                                                        'celda2' =>$celda2,
                                                         
                                                         'datosVar2' => $result2,
                                                         'variableVar2'=> $variable2,
@@ -5004,7 +5076,9 @@ class EvolutionController extends Controller
                                                     'ylabel'=> $ylabel,
                                                     'xlabel'=> $xlabel,
                                                     'datatable' => $datatable,
-                                                    
+                                                    'celda1' =>$celda1,
+                                                    'celda2' =>$celda2,
+                                                        
                                                     'datosVar2' => $result2,
                                                     'variableVar2'=> $variable2,
                                                     'varKeyVar2'=> $variableDB2,

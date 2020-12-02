@@ -46,16 +46,20 @@
             type="button"
             class="close"
             data-dismiss="modal"
+            id="btn-close"
             aria-label="Close"
           >
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <p id="mensaje">MODULO EN DESARROLLO</p>
+          <p id="mensaje"> <strong>  MODULO EN DESARROLLO </strong> <br>
+                                     Módulo en desarrollo, sera redireccionado al inicio al cerrar esta ventana
+        
+          </p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">
+          <button type="button" class="btn btn-danger" data-dismiss="modal" id="btn-close1">
             Close
           </button>
         </div>
@@ -696,6 +700,16 @@
 @stop
 @section('js')
   <script> 
+
+    $("#modalMensaje").modal("show");
+    $("#btn-close").click(function(){
+      window.location = "{{route('home')}}";
+    })
+
+    $("#btn-close1").click(function(){
+      window.location = "{{route('home')}}";
+    })
+
     //funcion para mostrar elemento HTML
     function mostrar(elemento) {
       $(elemento).show();
@@ -780,7 +794,7 @@
    // $("#celdaswidget").CardWidget("collapse");
 
     $(document).ready(function () {
-      $("#modalMensaje").modal("show");
+     
       $("#formdata").submit(function (event) {
         event.preventDefault();
         formdatos = $(this).serializeArray();

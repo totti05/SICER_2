@@ -219,21 +219,6 @@
     </div>
   </div>
 
-
-  {{--
-    <div id="alerta" class="alert alert-danger alert-dismissible">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
-        ×
-      </button>
-      <h5><i class="icon fas fa-ban"></i> Alert!</h5>
-      <p id="alertaMsj">
-        Danger alert preview. This alert is dismissable. A wonderful serenity has
-        taken possession of my entire soul, like these sweet mornings of spring
-        which I enjoy with my whole heart.
-      </p>
-    </div>
-  --}}
-
   <!-- Card para el formulario-->
   <div class="card">
     <div class="card-header bg-gradient-navy">
@@ -1558,7 +1543,7 @@
                   text:
                     response.variable +
                     " - " +
-                    response.variableVar2,
+                    response.variableVar2 + " / " + response.celda1 + " - " + response.celda2,
                 },
                 tooltips: {
                 mode: "nearest",
@@ -1628,7 +1613,7 @@
                 responsive: true,
                 title: {
                   display: true,
-                  text: response.variable,
+                  text: response.variable + " / " + response.celda1 + " - " + response.celda2,
                 },
                 tooltips: {
                 mode: "nearest",
@@ -1710,7 +1695,7 @@
                                     lineTension: 0
                                 }, */
                   {
-                    label: "banda1",
+                    label: "referencia mínima",
                     data: banda1,
                     yAxisID: "y-axis-1",
                     borderWidth: 1,
@@ -1719,11 +1704,11 @@
                     pointBackgroundColor: "red",
                     pointBorderColor: "red",
                     pointStyle: "line",
-                    fill: +2,
+                    fill: false,
                     lineTension: 0,
                   },
                   {
-                    label: "banda2",
+                    label: "referencia máxima",
                     data: banda2,
                     yAxisID: "y-axis-1",
                     borderWidth: 1,
@@ -1760,7 +1745,7 @@
                                     lineTension: 0
                                 }, */
                   {
-                    label: "banda1Var2",
+                    label: "referencia mínima 2",
                     data: banda1Var2,
                     yAxisID: "y-axis-2",
                     borderWidth: 1,
@@ -1769,11 +1754,11 @@
                     pointBorderColor: "#brown",
                     pointBackgroundColor: "#brown",
                     pointStyle: "line",
-                    fill: +2,
+                    fill: false,
                     lineTension: 0,
                   },
                   {
-                    label: "banda2Var2",
+                    label: "referencia máxima 2",
                     data: banda2Var2,
                     yAxisID: "y-axis-2",
                     borderWidth: 1,
@@ -1818,7 +1803,7 @@
                                     lineTension: 0
                                 }, */
                   {
-                    label: "banda1",
+                    label: "referencia mínima",
                     data: banda1,
                     yAxisID: "y-axis-1",
                     borderWidth: 1,
@@ -1831,7 +1816,7 @@
                     lineTension: 0,
                   },
                   {
-                    label: "banda2",
+                    label: "referencia máxima",
                     data: banda2,
                     yAxisID: "y-axis-1",
                     borderWidth: 1,

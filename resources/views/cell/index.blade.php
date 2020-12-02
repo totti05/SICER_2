@@ -34,30 +34,34 @@
 @stop
 @section('content')
   <div class="modal" tabindex="-1" role="dialog" id="modalMensaje">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Alerta de SICER</h5>
-          <button
-            type="button"
-            class="close"
-            data-dismiss="modal"
-            aria-label="Close"
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p id="mensaje">MODULO EN DESARROLLO</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">
-            Close
-          </button>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Alerta de SICER</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              id="btn-close"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p id="mensaje"> <strong>  MODULO EN DESARROLLO </strong> <br>
+                                      Módulo en desarrollo, sera redireccionado al inicio al cerrar esta ventana
+          
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal" id="btn-close1">
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
 
   {{--
@@ -771,6 +775,15 @@
 @stop
 @section('js')
   <script> 
+    $("#modalMensaje").modal("show");
+    $("#btn-close").click(function(){
+      window.location = "{{route('home')}}";
+    })
+
+    $("#btn-close1").click(function(){
+      window.location = "{{route('home')}}";
+    })
+
     //funcion para mostrar elemento HTML
     function mostrar(elemento) {
       $(elemento).show();
