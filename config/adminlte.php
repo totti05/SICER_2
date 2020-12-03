@@ -241,6 +241,12 @@ return [
             'icon'    => 'fa fa-fill-drip',
             'icon_color' => 'grey',
          ],
+         [
+            'text'    => 'Variables',
+            'url'  => 'variables',
+            'icon'    => 'fas fa-barcode',
+            'icon_color' => 'cyan',
+         ],
     ],
 
     /*
