@@ -34,49 +34,194 @@
 @stop
 @section('content')
   <div class="modal" tabindex="-1" role="dialog" id="modalMensaje">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Alerta de SICER</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              id="btn-close"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p id="mensaje"> <strong>  MODULO EN DESARROLLO </strong> <br>
-                                      Módulo en desarrollo, sera redireccionado al inicio al cerrar esta ventana
-          
-            </p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal" id="btn-close1">
-              Close
-            </button>
-          </div>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="title">Alerta de SICER</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="mensaje">MODULO EN DESARROLLO</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            Close
+          </button>
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="modal" tabindex="-1" role="dialog" id="modalAyuda">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-gradient-info">
+          <h5 class="modal-title" id="title">Ayuda de SICER</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <div class="container">
+          <p id="mensaje" class="text-justify" > 
+          <div class="row">
+          <h2>Esta es la sección de consulta de variables por celdas del SICER. </h2>
+            En este apartado podrá realizar consultas parametrizadas de las variables en las celdas donde se lleva a cabo el proceso de reducción. <br>
+            A continuación se proporciona una lista de operaciones que puede realizar:  
+          </div>
+          
+          <div class="row border border-info m-2">
+            <div class="col-md-6 mt-2">
+              <ul>
+                  <li>Visualizar gráficas de cada variable </li>
+                  <li>Consulta de variable por celda</li>
+                  <li>Consultar promedio de variables </li>
+                  <li>Consultar desviación estándar de variables </li>
+                  <li>Consultar total de variables (suma) </li>
+                  <li>Consultar un máximo de dos variables en el mismo gráfico</li>
+                  <li>Consultar información de celdas o línea de acuerdo a un rango de operación de las variables</li>
+                </ul>
+            </div>
+            <div class="col-md-6 mb-2 mt-2">
+              <ul>
+                <li>Filtrar consulta de variables por un rango de operación</li>
+                <li>Configurar escala de la gráfica a visualizar</li>
+                <li>Configurar ubicación de las bandas de control de las variables</li>
+                <li>Información individual de celda</li>
+                <li>Agrupar información por rango de fecha</li>
+                <li>Agrupar información por rango de celdas</li>
+                <li>Exportar datos de las gráficas o consultas realizadas</li>
+                <li>Obtener histórico de los datos</li>
+              </ul>  
+            </div>
+          
+          </div>
+            
+            En el formulario encontrará los siguientes campos a rellenar con los que puede parametrizar su consulta. <br>  
+          </p>
+          <div class="row">
+            <div class="col">
+            <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Campo</th>
+                <th scope="col">Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Rango fecha</th>
+                <td>Puede seleccionar en el menú desplegable un rango de fecha o en la opción elegir seleccionar dos puntos a través de los calendarios.</td>
+              </tr>
+              <tr>
+                <th scope="row">Rango de celdas</th>
+                <td>Debe ingresar el número de celda en ambos campos, puede seleccionar el grupo de celdas que desee consultar o consultar una colocando el mismo número de celda en ambos campos.</td>
+              </tr>
+              <tr>
+                <th scope="row">Línea V</th>
+                <td>Puede marcar esta casilla y automáticamente se rellenaran los campos de rango de celdas con la línea que usted ha marcado.</td>
+              </tr>
+              <tr>
+                <th scope="row"> Opción para filtrar</th>
+                <td>Esta opción es utilizada cuando desea filtrar a través del valor de una variable, por ejemplo consultar: "celdas con edad mayor a X cantidad de días". </td>
+              </tr>
+              <tr>
+                <th scope="row">Opción para filtrar - Rango de operación</th>
+                <td>Estos son campos con los que indica el valor de la variable con la que va a filtrar su consulta: <br> 
+                    <strong>Operador:</strong> acá selecciona el operador relacional "mayor", "mayor igual", "menor, "menor igual". <br>
+                    <strong>Límite inferior:</strong> seleccione el límite inferior para el valor de la variable. <br>
+                    <strong>Límite superior:</strong> seleccione el límite superior para el valor de la variable. <br>
+                    <ul>
+                      <li>En caso de querer consultar variables que esten dentro de un rango, no debe seleccionar operador y debe rellenar los campos límite inferior y límite superior. </li>
+                      <li>En caso de querer consultar variables "mayor", "mayor igual", "menor, "menor igual" a un valor, debe seleccionar el operador y el valor se debe colocar en el campo límite inferior, el campo límite superior no debe tener contenido.</li>
+                    </ul>
+                    
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Cálculo a consultar para rango de celdas</th>
+                <td>Para poder realizar una consulta debe seleccionar el cálculo que desea aplicar sobre las variables. Las opciones son: promedio, desviación estándar y total(suma) esto aplica para rangos de celdas o consulta de línea.</td>
+              </tr>
+              <tr>
+                <th scope="row">Variable Y1 y Variable Y2</th>
+                <td> Estas son las variables que puede consultar en esta sección, podrá visualizar el gráfico y debajo los datos del mismo en una tabla, 
+                     puede seleccionar la casilla "variable Y2" para activar las opciones de la segunda variable. <br> <strong> NOTA: </strong> Si desea consultar una sola variable es recomendable desactivar la casilla "variable Y2".</td>
+              </tr>
+              <tr>
+              <th scope="row">Variable Y1 - Rango de operación</th>
+                <td>Estos son campos con los que indica el valor de la variable Y1: <br> 
+                    <strong>Operador:</strong> acá selecciona el operador relacional "mayor", "mayor igual", "menor, "menor igual".<br>
+                    <strong>Límite inferior:</strong> seleccione el límite inferior para el valor de la variable. <br>
+                    <strong>Límite superior:</strong> seleccione el límite superior para el valor de la variable. <br>
+                    <ul>
+                      <li>En caso de querer consultar variables que esten dentro de un rango, no debe seleccionar operador y debe rellenar los campos límite inferior y límite superior. </li>
+                      <li>En caso de querer consultar variables "mayor", "mayor igual", "menor, "menor igual" a un valor, debe seleccionar el operador y el valor se debe colocar en el campo límite inferior, el campo límite superior no debe tener contenido.</li>
+                    </ul>
+                    
+                </td>
+              <tr>
+              <th scope="row">Variable Y2 - Rango de operación</th>
+                <td>Estos son campos con los que indica el valor de la variable Y2: <br> 
+                    <strong>Operador:</strong> acá selecciona el operador relacional "mayor", "mayor igual", "menor, "menor igual" <br>
+                    <strong>Límite inferior:</strong> seleccione el límite inferior para el valor de la variable. <br>
+                    <strong>Límite superior:</strong> seleccione el límite superior para el valor de la variable. <br>
+                    <ul>
+                      <li>En caso de querer consultar variables que esten dentro de un rango, no debe seleccionar operador y debe rellenar los campos límite inferior y límite superior. </li>
+                      <li>En caso de querer consultar variables "mayor", "mayor igual", "menor, "menor igual" a un valor, este valor se coloca en el campo límite inferior. </li>
+                    </ul>
+                    
+                </td>
+              <tr>
+                <th scope="row">Configurar gráfica</th>
+                <td>Al marcar esta casilla se activan las opciones de configuración de gráfica que le permitirán:
+                  <ul>
+                    <li>Configurar la escala del gráfico el valor tanto valor mínimo como valor máximo.</li>
+                    <li>Configurar la posición de la banda de control mínima y máxima de la variable Y1.</li>
+                    <li>Configurar la posición de la banda de control de la variable Y2.</li>                
+                  </ul>
+                  <p><strong>NOTA:</strong> 
+                      Si no tiene seleccionada la casilla "Variable Y2" no se mostrarán las opciones para esta variable.<br>
+                      Si desea consultar una sola variable es recomendable desactivar la casilla "variable Y2". 
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+            </div>        
+          
+          </div>
+        
 
 
-  {{--
-    <div id="alerta" class="alert alert-danger alert-dismissible">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
-        ×
-      </button>
-      <h5><i class="icon fas fa-ban"></i> Alert!</h5>
-      <p id="alertaMsj">
-        Danger alert preview. This alert is dismissable. A wonderful serenity has
-        taken possession of my entire soul, like these sweet mornings of spring
-        which I enjoy with my whole heart.
-      </p>
+            <p id="mensaje">
+              
+            </p>
+          
+          </div>
+
+      
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
     </div>
-  --}}
+  </div>
 
   <!-- Card para el formulario-->
   <div class="card">
@@ -86,6 +231,13 @@
       <div class="card-tools">
         <!-- Buttons, labels, and many other things can be placed here! -->
         <!-- Here is a label for example -->
+        <button
+          type="button"
+          id="helpWidget"
+          class="btn btn-tool"
+        >
+          <i class="far fa-question-circle"></i> 
+        </button>
         <button
           type="button"
           id="chartwidget"
@@ -154,39 +306,14 @@
                   />
                 </div>
                 <!--  / input group -->
-                <span class=""> - </span>
-                <div class="input-group col-md-5">
-                  <input
-                    type="number"
-                    class="form-control"
-                    name="celda2"
-                    min="901"
-                    max="1090"
-                    id="celda2"
-                    aria-describedby="helpId"
-                    placeholder=""
-                  />
-                </div>
-                <!--  / input group -->
               </div>
               <small id="helpId" class="form-text text-muted"
                 >Celdas 901-1090</small
               >
               <!-- /.form row -->
-              <div class="custom-control custom-checkbox">
-                <input
-                  type="checkbox"
-                  name="checkLinea"
-                  class="custom-control-input"
-                  id="checkLinea"
-                />
-                <label class="custom-control-label" for="checkLinea"
-                  >Línea V</label
-                >
-              </div>
             </div>
             <div id="formvarFiltro" class="form-group">
-              <label for="varFiltro">Variable Filtro</label>
+              <label for="varFiltro">Opción para filtrar</label>
               <select id="varFiltro" name="varFiltro" class="form-control">
                 <option value="" selected> </option>
                 <option>Voltaje</option>
@@ -233,7 +360,7 @@
             <div class="form-group">
               <label>Rango de operación</label>
               <br />
-              <label>Rango varFiltro a consultar</label>
+              <label>Rango para variable de filtrado</label>
               <div class="form-row form-inline">
                 <div class="input-group col-md-6">
                   <div class="input-group-prepend">
@@ -281,15 +408,15 @@
               </div>
               <!-- /.form row -->
             </div>
-            <div id="calculo" class="form-group">
-              <label>Calculo a consultar para rango de celdas</label>
+     {{--   <div id="calculo" class="form-group">
+              <label>Cálculo a consultar para rango de celdas</label>
               <select id="calculo" name="calculo" class="form-control">
                 <option value="" selected> </option>
                 <option>Promedio</option>
                 <option>Desviacion estandar</option>
                 <option>Total</option>
               </select>
-            </div>
+            </div> --}}
             <!-- /.form group -->
           </div>
 
@@ -688,7 +815,7 @@
   <!-- voltaje LINE CHART -->
   <div class="card card-navy" id="cardGrafica" style="display: none;">
     <div class="card-header">
-      <h3 class="card-title">Voltaje PRE Chart</h3>
+      <h3 class="card-title">Gráfica</h3>
 
       <div class="card-tools">
         <button
@@ -773,17 +900,9 @@
 
 
 @stop
+
 @section('js')
   <script> 
-    $("#modalMensaje").modal("show");
-    $("#btn-close").click(function(){
-      window.location = "{{route('home')}}";
-    })
-
-    $("#btn-close1").click(function(){
-      window.location = "{{route('home')}}";
-    })
-
     //funcion para mostrar elemento HTML
     function mostrar(elemento) {
       $(elemento).show();
@@ -862,13 +981,15 @@
         );
       }
     );
-
+   
+    $( "#helpWidget" ).click(function() {
+            $("#modalAyuda").modal("show");
+    });
    // $("#chartwidget").CardWidget("collapse");
     //$("#voltajeChartwidget").CardWidget("collapse");
    // $("#celdaswidget").CardWidget("collapse");
 
     $(document).ready(function () {
-      $("#modalMensaje").modal("show");
       $("#formdata").submit(function (event) {
         event.preventDefault();
         formdatos = $(this).serializeArray();
@@ -881,7 +1002,7 @@
     * Here we will create a few charts using ChartJS
     */
 
-    var url = "{{route('evolution.dataChart')}}";
+    var url = "{{route('cell.dataChartp')}}";
     var Dia = new Array();
     var Celdas = new Array();
     var Voltaje = new Array();
@@ -915,17 +1036,6 @@
       }
     });
     //funcion para cambiar valor de inputs cuando cambia un checkbox
-    $("#checkLinea").change(function () {
-      let estado = $("#checkLinea").is(":checked");
-      if (estado) {
-        $("#celda1").val(901);
-        $("#celda2").val(1090);
-      } else {
-        $("#celda1").val("");
-        $("#celda2").val("");
-      }
-    });
-    //funcion para cambiar valor de inputs cuando cambia un checkbox
     $("#checkVariable2").change(function () {
       let estado = $("#checkVariable2").is(":checked");
       if (estado) {
@@ -945,7 +1055,6 @@
    //FUNCION QUE SE ESTA UTILIZANDO PARA GRAFICAR
 
     $(document).ready(function () {
-      $("#modalMensaje").modal("show");
       $("#formData").bind("submit", function () {
         $.ajaxSetup({
           headers: {
@@ -970,10 +1079,6 @@
             /*
             * Se ejecuta al termino de la petición
             * */
-            MENSAJE = "Enviando: " + data;
-            $("#mensaje").html(MENSAJE);
-            $("#alertaMsj").html(MENSAJE);
-            $("#modalMensaje").modal("show");
           },
           success: function (response) {
             /*
@@ -1404,18 +1509,22 @@
                 title: {
                   display: true,
                   text:
-                    
                     response.variable +
                     " - " +
-                    response.variableVar2,
+                    response.variableVar2 + " / " + " celda: " + response.celda1,
                 },
                 tooltips: {
-                  mode: "nearest",
-                  intersect: true,
+                mode: "nearest",
+                intersect: true,
                 },
                 hover: {
                   mode: "nearest",
                   intersect: true,
+                },
+                plugins: {
+                  filler: {
+                      propagate: true
+                  }
                 },
                 scales: {
                   yAxes: [
@@ -1472,15 +1581,20 @@
                 responsive: true,
                 title: {
                   display: true,
-                  text: response.variable,
+                  text: response.variable + " / " + " celda: " + response.celda1,
                 },
                 tooltips: {
-                  mode: "nearest",
-                  intersect: true,
+                mode: "nearest",
+                intersect: true,
                 },
                 hover: {
                   mode: "nearest",
                   intersect: true,
+                },
+                plugins: {
+                  filler: {
+                      propagate: true
+                  }
                 },
                 scales: {
                   yAxes: [
@@ -1527,10 +1641,10 @@
                     data: Datos,
                     yAxisID: "y-axis-1",
                     borderWidth: 1,
-                    backgroundColor: "transparent",
-                    borderColor: "#007bff",
-                    pointBorderColor: "#007bff",
-                    pointBackgroundColor: "#007bff",
+                    backgroundColor: "#83befc",
+                    borderColor: "#0306ad",
+                    pointBorderColor: "#0306ad",
+                    pointBackgroundColor: "#0306ad",
                     fill: false,
                     lineTension: 0,
                   },
@@ -1549,11 +1663,11 @@
                                     lineTension: 0
                                 }, */
                   {
-                    label: "banda1",
+                    label: "referencia mínima",
                     data: banda1,
                     yAxisID: "y-axis-1",
                     borderWidth: 1,
-                    backgroundColor: "transparent",
+                    backgroundColor: "#fad9b6",
                     borderColor: "red",
                     pointBackgroundColor: "red",
                     pointBorderColor: "red",
@@ -1562,7 +1676,7 @@
                     lineTension: 0,
                   },
                   {
-                    label: "banda2",
+                    label: "referencia máxima",
                     data: banda2,
                     yAxisID: "y-axis-1",
                     borderWidth: 1,
@@ -1599,7 +1713,7 @@
                                     lineTension: 0
                                 }, */
                   {
-                    label: "banda1Var2",
+                    label: "referencia mínima 2",
                     data: banda1Var2,
                     yAxisID: "y-axis-2",
                     borderWidth: 1,
@@ -1612,7 +1726,7 @@
                     lineTension: 0,
                   },
                   {
-                    label: "banda2Var2",
+                    label: "referencia máxima 2",
                     data: banda2Var2,
                     yAxisID: "y-axis-2",
                     borderWidth: 1,
@@ -1635,10 +1749,10 @@
                     data: Datos,
                     yAxisID: "y-axis-1",
                     borderWidth: 1,
-                    backgroundColor: "transparent",
-                    borderColor: "#007bff",
-                    pointBorderColor: "#007bff",
-                    pointBackgroundColor: "#007bff",
+                    backgroundColor: "#83befc",
+                    borderColor: "#0306ad",
+                    pointBorderColor: "#0306ad",
+                    pointBackgroundColor: "#0306ad",
                     fill: false,
                     lineTension: 0,
                   },
@@ -1657,20 +1771,20 @@
                                     lineTension: 0
                                 }, */
                   {
-                    label: "banda1",
+                    label: "referencia mínima",
                     data: banda1,
                     yAxisID: "y-axis-1",
                     borderWidth: 1,
-                    backgroundColor: "transparent",
+                    backgroundColor: "#fad9b6",
                     borderColor: "red",
                     pointBackgroundColor: "red",
                     pointBorderColor: "red",
                     pointStyle: "line",
-                    fill: false,
+                    fill: +2,
                     lineTension: 0,
                   },
                   {
-                    label: "banda2",
+                    label: "referencia máxima",
                     data: banda2,
                     yAxisID: "y-axis-1",
                     borderWidth: 1,
@@ -1762,25 +1876,25 @@
                   processing: true,
                   paging: false,
                   language: {
-                      "decimal": "",
-                      "emptyTable": "No hay información",
-                      "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-                      "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-                      "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-                      "infoPostFix": "",
-                      "thousands": ",",
-                      "lengthMenu": "Mostrar _MENU_ Entradas",
-                      "loadingRecords": "Cargando...",
-                      "processing": "Procesando...",
-                      "search": "Buscar:",
-                      "zeroRecords": "Sin resultados encontrados",
-                      "paginate": {
-                          "first": "Primero",
-                          "last": "Ultimo",
-                          "next": "Siguiente",
-                          "previous": "Anterior"
-                      }
-                  },
+                    "decimal": "",
+                    "emptyTable": "No hay información",
+                    "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+                    "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+                    "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+                    "infoPostFix": "",
+                    "thousands": ",",
+                    "lengthMenu": "Mostrar _MENU_ Entradas",
+                    "loadingRecords": "Cargando...",
+                    "processing": "Procesando...",
+                    "search": "Buscar:",
+                    "zeroRecords": "Sin resultados encontrados",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Ultimo",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    }
+                },
                   columns: [
                     { defaultContent: response.calculo },
                     { data: "dia" },
@@ -1883,25 +1997,25 @@
                   processing: true,
                   paging: false,
                   language: {
-                      "decimal": "",
-                      "emptyTable": "No hay información",
-                      "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-                      "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-                      "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-                      "infoPostFix": "",
-                      "thousands": ",",
-                      "lengthMenu": "Mostrar _MENU_ Entradas",
-                      "loadingRecords": "Cargando...",
-                      "processing": "Procesando...",
-                      "search": "Buscar:",
-                      "zeroRecords": "Sin resultados encontrados",
-                      "paginate": {
-                          "first": "Primero",
-                          "last": "Ultimo",
-                          "next": "Siguiente",
-                          "previous": "Anterior"
-                      }
-                  },
+                    "decimal": "",
+                    "emptyTable": "No hay información",
+                    "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+                    "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+                    "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+                    "infoPostFix": "",
+                    "thousands": ",",
+                    "lengthMenu": "Mostrar _MENU_ Entradas",
+                    "loadingRecords": "Cargando...",
+                    "processing": "Procesando...",
+                    "search": "Buscar:",
+                    "zeroRecords": "Sin resultados encontrados",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Ultimo",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    }
+                },
                   columns: [
                     { data: "celda" },
                     { data: "dia" },
@@ -1955,6 +2069,7 @@
 
   </script>
 @stop
+
 
 @section('footer')
     <div class="float-right d-none d-sm-block">
