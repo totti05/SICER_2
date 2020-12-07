@@ -29,7 +29,41 @@
  
 @stop
 @section('content')
-Hola 
+<div class="card">
+  <div class="card-header bg-gradient-navy">
+   <h3 class="card-title">Lista de variables</h3>
+
+    <div class="card-tools">
+      <!-- Buttons, labels, and many other things can be placed here! -->
+      <!-- Here is a label for example -->
+      <button
+        type="button"
+        id="helpWidget"
+        class="btn btn-tool"
+      >
+        <i class="far fa-question-circle"></i> 
+      </button>
+      <button
+        type="button"
+        id="chartwidget"
+        class="btn btn-tool"
+        data-card-widget="collapse"
+      >
+        <i class="fas fa-minus"></i>
+      </button>
+      <button type="button" class="btn btn-tool" data-card-widget="maximize">
+        <i class="fas fa-expand"></i>
+      </button>
+    </div>
+    <!-- /.card-tools -->
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    
+
+  </div>
+</div>
+
 @endsection
 @section('js')
 

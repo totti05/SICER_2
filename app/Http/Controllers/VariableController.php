@@ -13,8 +13,9 @@ class VariableController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('variables.index');
+    {   
+        $variables = Variable::all(); 
+        return view('variables.index', ['variables' => $variables]);
     }
 
     /**
@@ -35,7 +36,22 @@ class VariableController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $variable = new Variable;
+        $variable->variable = $request->input('variable');
+        $variable->neumonico = $request->input('neumonico');
+        $variable->unidad = $request->input('unidad');
+        $variable->descripcion = $request->input('descripcion');
+        $variable->calculo = $request->input('calculo');
+        $variable->procedencia = $request->input('procedencia');
+        $variable->procedencia_area = $request->input('procedencia_area');
+        $variable->tabla_bd = $request->input('tabla_bd');
+        $variable->comentario = $request->input('comentario');
+        $variable->rango_ideal = $request->input('rango_ideal');
+        $variable->rango_inferior = $request->input('rango_inferior');
+        $variable->rango_superior = $request->input('rango_superior');
+        $variable->save();
+        
+        return view('variables.index');
     }
 
     /**
@@ -57,7 +73,7 @@ class VariableController extends Controller
      */
     public function edit(Variable $variable)
     {
-        return view('variables.edit');
+        return view('variables.edit', ['variable' => $variable]);
     }
 
     /**
@@ -69,7 +85,21 @@ class VariableController extends Controller
      */
     public function update(Request $request, Variable $variable)
     {
-        //
+        $variable->variable = $request->input('variable');
+        $variable->neumonico = $request->input('neumonico');
+        $variable->unidad = $request->input('unidad');
+        $variable->descripcion = $request->input('descripcion');
+        $variable->calculo = $request->input('calculo');
+        $variable->procedencia = $request->input('procedencia');
+        $variable->procedencia_area = $request->input('procedencia_area');
+        $variable->tabla_bd = $request->input('tabla_bd');
+        $variable->comentario = $request->input('comentario');
+        $variable->rango_ideal = $request->input('rango_ideal');
+        $variable->rango_inferior = $request->input('rango_inferior');
+        $variable->rango_superior = $request->input('rango_superior');
+        $variable->update();
+        
+        return view('variables.index');
     }
 
     /**
