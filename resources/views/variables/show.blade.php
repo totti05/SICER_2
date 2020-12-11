@@ -59,7 +59,11 @@
   </div>
   <!-- /.card-header -->
   <div class="card-body">
-    
+    <h1>{{ $variable->variable}}</h1>
+    <p>{{$variable->descripcion}}</p>
+
+    <a name="" id="" class="btn btn-danger" href="{{route('variables.index')}}" role="button">Regresar</a>
+
 
   </div>
 </div>

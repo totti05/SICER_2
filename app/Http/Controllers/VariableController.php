@@ -12,6 +12,11 @@ class VariableController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+      //  $this->middleware('auth');
+    }
+
     public function index()
     {   
         $variables = Variable::all(); 
@@ -38,20 +43,24 @@ class VariableController extends Controller
     {
         $variable = new Variable;
         $variable->variable = $request->input('variable');
+        $variable->nombre_var_bd = $request->input('nombre_var_bd');
         $variable->neumonico = $request->input('neumonico');
         $variable->unidad = $request->input('unidad');
         $variable->descripcion = $request->input('descripcion');
-        $variable->calculo = $request->input('calculo');
-        $variable->procedencia = $request->input('procedencia');
-        $variable->procedencia_area = $request->input('procedencia_area');
+        $variable->calculo_variable = $request->input('calculo_variable');
+        $variable->calculo_rango_ref = $request->input('calculo_rango_ref');
+        $variable->referencia_superior = $request->input('referencia_superior');
+        $variable->referencia_inferior = $request->input('referencia_inferior');
+        $variable->referencia_operativa = $request->input('referencia_operativa');
+        $variable->rango_ideal = $request->input('rango_ideal');
+        $variable->max_grafica = $request->input('max_grafica');
+        $variable->min_grafica = $request->input('min_grafica');
+        $variable->modulo = $request->input('modulo');
         $variable->tabla_bd = $request->input('tabla_bd');
         $variable->comentario = $request->input('comentario');
-        $variable->rango_ideal = $request->input('rango_ideal');
-        $variable->rango_inferior = $request->input('rango_inferior');
-        $variable->rango_superior = $request->input('rango_superior');
         $variable->save();
         
-        return view('variables.index');
+        return redirect(route('variables.index'));
     }
 
     /**
@@ -62,7 +71,7 @@ class VariableController extends Controller
      */
     public function show(Variable $variable)
     {
-        return view('variables.show');
+        return view('variables.show', ['variable' => $variable]);
     }
 
     /**
@@ -86,20 +95,24 @@ class VariableController extends Controller
     public function update(Request $request, Variable $variable)
     {
         $variable->variable = $request->input('variable');
+        $variable->nombre_var_bd = $request->input('nombre_var_bd');
         $variable->neumonico = $request->input('neumonico');
         $variable->unidad = $request->input('unidad');
         $variable->descripcion = $request->input('descripcion');
-        $variable->calculo = $request->input('calculo');
-        $variable->procedencia = $request->input('procedencia');
-        $variable->procedencia_area = $request->input('procedencia_area');
+        $variable->calculo_variable = $request->input('calculo_variable');
+        $variable->calculo_rango_ref = $request->input('calculo_rango_ref');
+        $variable->referencia_superior = $request->input('referencia_superior');
+        $variable->referencia_inferior = $request->input('referencia_inferior');
+        $variable->referencia_operativa = $request->input('referencia_operativa');
+        $variable->rango_ideal = $request->input('rango_ideal');
+        $variable->max_grafica = $request->input('max_grafica');
+        $variable->min_grafica = $request->input('min_grafica');
+        $variable->modulo = $request->input('modulo');
         $variable->tabla_bd = $request->input('tabla_bd');
         $variable->comentario = $request->input('comentario');
-        $variable->rango_ideal = $request->input('rango_ideal');
-        $variable->rango_inferior = $request->input('rango_inferior');
-        $variable->rango_superior = $request->input('rango_superior');
         $variable->update();
         
-        return view('variables.index');
+        return redirect(route('variables.index'));
     }
 
     /**
@@ -110,6 +123,8 @@ class VariableController extends Controller
      */
     public function destroy(Variable $variable)
     {
-        //
+        $variable->delete();
+        return redirect(route('variables.index'));
+
     }
 }

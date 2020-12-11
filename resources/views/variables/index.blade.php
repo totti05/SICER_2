@@ -59,37 +59,42 @@
   </div>
   <!-- /.card-header -->
   <div class="card-body">
-    
-    <table class="table table-striped table-responsive table-bordered" id="variables">
-        <thead>
-          <tr>
-            <th>id</th>
-            <th>Variable</th>
-            <th>Descripción</th>
-            <th>acción</th>
-          </tr>
-        </thead>
-        <tbody>
-          @foreach($variables as $variable)
+      <div class="container">
+        <table class="table table-striped table-responsive table-bordered" id="variables">
+          <thead>
             <tr>
-              <td scope="row">{{$variable->id}}</td>
-              <td scope="row">{{$variable->variable}}</td>
-              <td scope="row">{{$variable->descripcion}}</td>
-              <td scope="row"><a class="btn btn-primary" href="{{route('variables.edit', $variable) }}" role="button">Editar</a> <a class="btn btn-danger" href="{{route('variables.destroy', $variable) }}" role="button">Eliminar</a></td>
-              
+              <th>id</th>
+              <th>Variable</th>
+              <th>Descripción</th>
+              <th>acción</th>
             </tr>
-          @endforeach
-        </tbody>
-    </table>
-
+          </thead>
+          <tbody>
+            @foreach($variables as $variable)
+              <tr>
+                <td scope="row">{{$variable->id}}</td>
+                <td scope="row">{{$variable->variable}}</td>
+                <td scope="row">{{$variable->descripcion}}</td>
+                <td scope="row">
+                
+                  <form action="{{route('variables.destroy', $variable) }}" method="post">
+                  <a class="btn btn-primary" href="{{route('variables.show', $variable) }}" role="button">Ver</a> 
+                  <a class="btn btn-primary" href="{{route('variables.edit', $variable) }}" role="button">Editar</a> 
+                  @csrf
+                  @method('DELETE')
+                  <button type="submit" class="btn btn-danger">Eliminar</button>
+                  </form>
+                </td>
+                
+                
+              </tr>
+            @endforeach
+          </tbody>
+        </table>
+        <a name="" id="" class="btn btn-primary" href="{{route('variables.create')}}" role="button">Crear variable</a>
+      </div>
+    </div>
   </div>
-</div>
-
-
-
-<a class="btn btn-primary" href="{{route('variables.create')}}">Crear </a>
-<a class="btn btn-primary" href="{{route('variables.create')}}">Editar </a>
-<a class="btn btn-primary" href="{{route('variables.create')}}">Mostrar </a>
 @endsection
 @section('js')
   <script>
