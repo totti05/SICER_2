@@ -91,7 +91,7 @@
                   <li>Consultar desviación estándar de variables </li>
                   <li>Consultar total de variables (suma) </li>
                   <li>Consultar un máximo de dos variables en el mismo gráfico</li>
-                  <li>Consultar información de celdas o línea de acuerdo a un rango de operación de las variables</li>
+                  <li>Consultar información de celdas de acuerdo a un rango de operación de las variables</li>
                 </ul>
             </div>
             <div class="col-md-6 mb-2 mt-2">
@@ -130,10 +130,6 @@
                 <td>Debe ingresar el número de celda en ambos campos, puede seleccionar el grupo de celdas que desee consultar o consultar una colocando el mismo número de celda en ambos campos.</td>
               </tr>
               <tr>
-                <th scope="row">Línea V</th>
-                <td>Puede marcar esta casilla y automáticamente se rellenaran los campos de rango de celdas con la línea que usted ha marcado.</td>
-              </tr>
-              <tr>
                 <th scope="row"> Opción para filtrar</th>
                 <td>Esta opción es utilizada cuando desea filtrar a través del valor de una variable, por ejemplo consultar: "celdas con edad mayor a X cantidad de días". </td>
               </tr>
@@ -152,7 +148,7 @@
               </tr>
               <tr>
                 <th scope="row">Cálculo a consultar para rango de celdas</th>
-                <td>Para poder realizar una consulta debe seleccionar el cálculo que desea aplicar sobre las variables. Las opciones son: promedio, desviación estándar y total(suma) esto aplica para rangos de celdas o consulta de línea.</td>
+                <td>Para poder realizar una consulta debe seleccionar el cálculo que desea aplicar sobre las variables. Las opciones son: promedio, desviación estándar y total(suma) esto aplica para rangos de celdas.</td>
               </tr>
               <tr>
                 <th scope="row">Variable Y1 y Variable Y2</th>
@@ -562,7 +558,6 @@
                   >
                   <option>Duracion de Efecto anódico</option>
                   <option>Nivel de Metal</option>
-                  <option>Corriente de Linea</option>
                   <option>Potencia nominal</option>
                   <option>(BO+RAJ+BIM+Tetas)</option>
                   <option>Potencia Neta</option>
