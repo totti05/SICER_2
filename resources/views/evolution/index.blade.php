@@ -926,11 +926,17 @@
   <script> 
     //funcion para mostrar elemento HTML
     function mostrar(elemento) {
-      $(elemento).show();
+      if ($(elemento).is(':hidden'))
+        $(elemento).show();
+      else
+        return;
     }
     //funcion para ocultar elemento HTML
     function ocultar(elemento) {
-      $(elemento).hide();
+      if ($(elemento).is(':visible'))
+       $(elemento).hide();
+      else
+        return;
     }
     //funcion para destruir datatable y poder repintar
     const celldestroy = (elemento) => {
@@ -1661,6 +1667,10 @@
                   ],
                 },
               };
+            }
+            // Si no existe una 2da variable esconde la tabla de datos
+            if (response.variableVar2 == null) {
+              ocultar("#celdas2");
             }
 
             // Si existe una 2da variable muestra o no datos de leyenda y de la data de la 2da var
