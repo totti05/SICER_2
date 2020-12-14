@@ -905,11 +905,17 @@
   <script> 
     //funcion para mostrar elemento HTML
     function mostrar(elemento) {
-      $(elemento).show();
+      if ($(elemento).is(':hidden'))
+        $(elemento).show();
+      else
+        return;
     }
     //funcion para ocultar elemento HTML
     function ocultar(elemento) {
-      $(elemento).hide();
+      if ($(elemento).is(':visible'))
+       $(elemento).hide();
+      else
+        return;
     }
     //funcion para destruir datatable y poder repintar
     const celldestroy = (elemento) => {
@@ -1468,35 +1474,39 @@
               });
             }
             // mostrando variables para verificacion
-            console.log("etiqueta");
-            console.log(etiqueta);
-            console.log("Dia");
-            console.log(Dia);
-            console.log("Celdas");
-            console.log(Celdas);
-            console.log("Datos");
-            console.log(Datos);
-            console.log("banda1");
-            console.log(banda1);
-            console.log("banda2");
-            console.log(banda2);
+              console.log("etiqueta");
+              console.log(etiqueta);
+              console.log("Dia");
+              console.log(Dia);
+              console.log("Celdas");
+              console.log(Celdas);
+              console.log("Datos");
+              console.log(Datos);
+              console.log("banda1");
+              console.log(banda1);
+              console.log("banda2");
+              console.log(banda2);
 
-            console.log("DiaVar2");
-            console.log(DiaVar2);
-            console.log("CeldasVar2");
-            console.log(CeldasVar2);
-            console.log("DatosVar2");
-            console.log(DatosVar2);
-            console.log("banda1Var2");
-            console.log(banda1Var2);
-            console.log("banda2Var2");
-            console.log(banda2Var2);
+              console.log("DiaVar2");
+              console.log(DiaVar2);
+              console.log("CeldasVar2");
+              console.log(CeldasVar2);
+              console.log("DatosVar2");
+              console.log(DatosVar2);
+              console.log("banda1Var2");
+              console.log(banda1Var2);
+              console.log("banda2Var2");
+              console.log(banda2Var2);
             // fin de muestra de variables
             mostrar("#cardGrafica");
             mostrar("#cardTablaDatos");
             if (response.variableVar2 != null) {
               console.log("entro");
               mostrar("#celdas2");
+            }
+
+            if (response.variableVar2 == null) {
+              ocultar("#celdas2");
             }
 
             // Si existe una 2da variable muestra o no datos de los ejes y configuraciones de la 2da var
