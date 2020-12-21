@@ -445,7 +445,14 @@
             <div id="formvariable" class="form-group">
               <label for="variable">Variable Y1</label>
               <select id="variable" name="variable" class="form-control">
-                <option selected>Voltaje</option>
+              @foreach($variables as $variable)
+                <option value="">{{$variable->variable}} </option>
+
+
+
+              @endforeach
+              {{--
+             <option selected>Voltaje</option>
                 <option>Efectos anodicos</option>
                 <option>Alimentacion de alumina</option>
                 <option>Temperatura de baño</option>
@@ -480,7 +487,7 @@
                 <option>Desviacion Nb</option>
                 <option>Celdas Conectadas</option>
                 <option>Frecuencia Efectos Anodicos</option>
-                <option>% CaF2 en el baño electrolitico</option>
+                <option>% CaF2 en el baño electrolitico</option>   --}} 
               </select>
             </div>
             <!-- /.form group -->

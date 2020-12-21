@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Celda;
 use App\User;
+use App\Variable;
 use Illuminate\Support\Facades\DB;
 use App\Evolution;
 use Illuminate\Http\Request;
@@ -19,7 +20,8 @@ class EvolutionController extends Controller
      */
     public function index()
     {
-        return view('evolution.index');
+        $variables = Variable::where('modulo', 'Evolucion')->get();
+        return view('evolution.index', ['variables' => $variables]);
     }
 
     /**
