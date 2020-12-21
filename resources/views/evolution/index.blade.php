@@ -446,7 +446,7 @@
               <label for="variable">Variable Y1</label>
               <select id="variable" name="variable" class="form-control">
               @foreach($variables as $variable)
-                <option value="">{{$variable->variable}} </option>
+                <option value="{{$variable->id}}">{{$variable->variable}} </option>
 
 
 
