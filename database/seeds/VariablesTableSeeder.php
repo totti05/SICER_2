@@ -508,9 +508,9 @@ class VariablesTableSeeder extends Seeder
                     'id'=> 25,
                     'variable' => 'Calidad de Baño', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'CalidadB', 
+                    'unidad'=> '', 
+                    'descripcion'=> '', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -528,9 +528,9 @@ class VariablesTableSeeder extends Seeder
                     'id'=> 26,
                     'variable' => 'Cantidad de Baño', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'CantB', 
+                    'unidad'=> '', 
+                    'descripcion'=> '', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -548,9 +548,9 @@ class VariablesTableSeeder extends Seeder
                     'id'=> 27,
                     'variable' => 'Desviacion Acidez', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
+                    'neumonico'=> 'stdacd', 
                     'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'descripcion'=> 'Es la desviación estandar de la acidez de baño', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -561,16 +561,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> 'Limite igual para todos'
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 28,
                     'variable' => 'Desviacion Nb', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'stdnba', 
+                    'unidad'=> 'cm (centimetros)', 
+                    'descripcion'=> 'Desviacion estandar de Nivel de baño', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -581,16 +581,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> 'Limite igual para todos'
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 29,
                     'variable' => 'Ánodos Cambio Quemado por Sobreconducción', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'Bo', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Ánodos Cambio Quemado por Sobreconducción', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -608,9 +608,9 @@ class VariablesTableSeeder extends Seeder
                     'id'=> 30,
                     'variable' => 'Ánodos extras', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'AnodoExt', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Ánodos extras', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -621,16 +621,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 31,
                     'variable' => 'Ánodos Rajados', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'Raj', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Ánodos Rajados', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -641,16 +641,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 32,
                     'variable' => 'Ánodos Tetas', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'Tetas', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Ánodos Tetas', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -661,16 +661,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 33,
                     'variable' => 'Anodos B/A', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'QueA', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'anodos quemados por aire', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -681,16 +681,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 34,
                     'variable' => 'Anodos B/O  cambio Normal', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'C/N', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Anodo quemado por sobreconduccion detectado durante un cambio normal', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -701,16 +701,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 35,
                     'variable' => 'Anodos Bimetalicos', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'BiMet', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Anodo con falla a nivel de bimetalico', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -721,16 +721,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 36,
                     'variable' => 'Celdas C/ Casco Rojo', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'Casco_Rojo', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Celdas conectadas con Casco Rojo', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -741,16 +741,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> 'Son tres graficas, cada complejo se grafica por línea'
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 37,
                     'variable' => 'Celdas C/ Derrame de Alumina', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'Derrame_Al', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Celdas conectadas con derrame de alúmina', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -761,16 +761,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> 'Son tres graficas, cada complejo se grafica por línea'
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 38,
                     'variable' => 'Celdas C/ Tolvas Vacia', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'Tolvas_Vacias', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Celdas conectadas con tolva vacia', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -781,17 +781,17 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> 'Son tres graficas, cada complejo se grafica por línea'
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 39,
                     'variable' => 'Celdas Desincorporadas', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
-                    'calculo_variable'=> null, 
+                    'neumonico'=> 'Desinc', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Cantidad de celdas desconectadas', 
+                    'calculo_variable'=> 'Σ (DesincL1+ DesincL2 + DesincL3+ DesincL4 + DesincL5)', 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
                     'referencia_superior'=> 13, 
@@ -801,16 +801,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> 'Se grafica por tecnología'
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 40,
                     'variable' => 'Celdas Desincorporadas por Alto % Hierro', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'Celdas_DesinHierro', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Celdas Desincorporadas por motivo:  Alto % Hierro', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -821,16 +821,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 41,
                     'variable' => 'Celdas Desincorporadas por Barra Perforada', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'Celdas_DesinBarraP', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Celdas Desincorporadas por motivo:  Alto % Hierro', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -841,16 +841,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 42,
                     'variable' => 'Celdas Desincorporadas por Pared Perforada', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'Celdas_DesinParedP', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Celdas Desincorporadas por motivo: Pared Perforada', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -861,16 +861,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 43,
                     'variable' => 'Celdas Desincorporadas Programada', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'Celdas_DesinProg', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Celdas Desincorporadas por motivo: Programada', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -881,16 +881,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 44,
                     'variable' => 'Celdas Desnatadas', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'Cdesna', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Cantidad de Celdas a las que se le retiró carboncillo', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -901,16 +901,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 45,
                     'variable' => 'Celdas Incorporadas', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'Incorp', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Cantidad de Celdas Nuevas Conectadas', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -921,16 +921,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> 'Se grafica por tecnología'
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 46,
                     'variable' => 'Celdas Conectadas', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'CeldasConectadas', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Celdas que se encuentran en operación', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -941,36 +941,36 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 47,
                     'variable' => 'Corriente Nominal', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'corrientR', 
+                    'unidad'=> 'kA', 
+                    'descripcion'=> 'Corriente de referencia', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
-                    'referencia_inferior'=> 10, 
-                    'referencia_superior'=> 13, 
+                    'referencia_inferior'=> null, 
+                    'referencia_superior'=> null, 
                     'referencia_operativa'=> null,
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> 'Se usa para el calculo de otras variables'
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 48,
                     'variable' => 'Corriente de Linea ', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'corrientP', 
+                    'unidad'=> 'kA (kiloAmperio)', 
+                    'descripcion'=> 'Corriente de la linea', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -981,16 +981,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> 'Se grafica Corriente de Linea y Corriente Nominal'
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 49,
                     'variable' => 'Factor Servicio de Grúas', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'FactorServGruas', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Factor Servicio de Grúas', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -1001,17 +1001,17 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 50,
                     'variable' => 'Frecuencia Desnatado', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
-                    'calculo_variable'=> null, 
+                    'neumonico'=> 'FDESN', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Es la relacion (celdas en operacion /celdas desnatadas en el dia)', 
+                    'calculo_variable'=> 'celdas conectadas/ celdas desnatadas en el dia', 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
                     'referencia_superior'=> 13, 
@@ -1021,17 +1021,17 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> 'Limite igual para todos'
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 51,
                     'variable' => 'Frecuencia Efectos Anodicos ', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
-                    'calculo_variable'=> null, 
+                    'neumonico'=> 'FrecEA', 
+                    'unidad'=> '(EA/CD)', 
+                    'descripcion'=> ' Repeticiones de Efectos Anódicos en una línea', 
+                    'calculo_variable'=> 'Σ Efectos anodicos en la linea / Cantidad Celdas activas en la línea', 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
                     'referencia_superior'=> 13, 
@@ -1041,16 +1041,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> 'Grafica del total por línea y sin repetidos'
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 52,
                     'variable' => 'Inestabilidad de Celdas', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'Inest', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Cantidad de Celdas que se encuentran Inestables', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -1061,17 +1061,17 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);    
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 53,
                     'variable' => 'Potencia Neta', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
-                    'calculo_variable'=> null, 
+                    'neumonico'=> 'Potencia Neta', 
+                    'unidad'=> 'kW (kilovatio)', 
+                    'descripcion'=> 'es el producto entre la corriente real (corrienteP) y el voltaje de operación (Vpro)', 
+                    'calculo_variable'=> 'Vpro *  corrientP', 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
                     'referencia_superior'=> 13, 
@@ -1081,17 +1081,17 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 54,
                     'variable' => 'Potencia nominal', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
-                    'calculo_variable'=> null, 
+                    'neumonico'=> 'Potencia nominal', 
+                    'unidad'=> 'kW (kilovatio)', 
+                    'descripcion'=> 'Es el producto entre la corriente nominal (corrientR) y el voltaje de referencia (Vpre)', 
+                    'calculo_variable'=> 'Vpre * corrientR', 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
                     'referencia_superior'=> 13, 
@@ -1101,16 +1101,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 55,
                     'variable' => 'Nivel de Metal', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'nMetal', 
+                    'unidad'=> 'cm (centimetros)', 
+                    'descripcion'=> 'Es la altura de la columna de metal en la celda', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -1121,16 +1121,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 56,
                     'variable' => 'Desviacion Nm', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'stdnme', 
+                    'unidad'=> 'cm (centimetros)', 
+                    'descripcion'=> 'Desviacion estandar de Nivel del Metal', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -1141,16 +1141,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> 'Limite igual para todos'
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 57,
                     'variable' => 'Eficiencia de Trasegado (Eficiencia de corriente)', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
+                    'neumonico'=> 'eficcR', 
                     'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'descripcion'=> 'Es la relacion expresada en porcentaje entre la cantidad de metal trasegado y la cantidad de metal teorica', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -1161,14 +1161,14 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 58,
                     'variable' => 'Hierro Metal de Celdas', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
+                    'neumonico'=> 'fe', 
                     'unidad'=> '%', 
                     'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
                     'calculo_variable'=> null, 
@@ -1181,16 +1181,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> 'Limite para P-19'
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 59,
                     'variable' => 'Pureza del Metal en Celdas', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'PurezaM', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> '% de Aluminio en el Metal en las Celda', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -1201,16 +1201,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 60,
                     'variable' => 'Silicio Metal Celdas', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
+                    'neumonico'=> 'si', 
                     'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'descripcion'=> '% de Silicio en el metal de celdas', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -1221,16 +1221,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> 'Limite igual para todos'
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 61,
                     'variable' => 'Consumo Baño Frío en Crisoles', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'ConsBFCrisoles', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Cantidad de Baño Frío consumido en los Crisoles', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -1241,16 +1241,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 62,
                     'variable' => 'Consumo MDC en Crisoles', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'ConsumoMDCrisol', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> '', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -1261,16 +1261,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 63,
                     'variable' => 'Hierro en Crisoles', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'HierroCris', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Cantidad de Hierro en los Crisoles', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -1281,16 +1281,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 64,
                     'variable' => 'Pureza del Metal Crisol', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'PurezaMC', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> '% de Aluminio en el Metal de los Crisoles', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -1301,16 +1301,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 65,
                     'variable' => 'Silicio en Crisoles', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'SilicioCris', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> '', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -1321,16 +1321,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 66,
                     'variable' => 'Criolita de Arranque', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'CriolitaArrq', 
+                    'unidad'=> '', 
+                    'descripcion'=> '', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -1341,16 +1341,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 67,
                     'variable' => 'Peso de Ánodo', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'PesoAnod', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Peso del Ánodo', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -1361,16 +1361,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 68,
                     'variable' => 'Peso de Cabo', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'PesoCabo', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> 'Peso del Cabo', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -1381,16 +1381,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 69,
                     'variable' => '(BO+RAJ+BIM+Tetas)', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'Falla Anodo', 
+                    'unidad'=> 'numero', 
+                    'descripcion'=> '', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -1401,16 +1401,16 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
             DB::connection('sicerl5')->table('variables')->insert(
                 [
                     'id'=> 70,
                     'variable' => 'Voltaje pro', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'Vpro', 
+                    'unidad'=> 'v (Voltio)', 
+                    'descripcion'=> 'Voltaje', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -1428,9 +1428,9 @@ class VariablesTableSeeder extends Seeder
                     'id'=> 71,
                     'variable' => 'Desviacion de temperatura', 
                     'nombre_var_bd'=> 'acidez',
-                    'neumonico'=> 'acidez', 
-                    'unidad'=> '%', 
-                    'descripcion'=> 'Cantidad de fluoruro de aluminio en exceso en el baño electrolitico', 
+                    'neumonico'=> 'stdtemp', 
+                    'unidad'=> 'ºC', 
+                    'descripcion'=> 'Es la desviacion estandar de la temperatura de baño', 
                     'calculo_variable'=> null, 
                     'calculo_rango_ref'=> null,
                     'referencia_inferior'=> 10, 
@@ -1441,7 +1441,7 @@ class VariablesTableSeeder extends Seeder
                     'max_grafica'=> null,  
                     'modulo'=> 'baño_electrolitico',
                     'tabla_bd'=> 'bath', 
-                    'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
+                    'comentario'=> ''
                 ]);
           
 
