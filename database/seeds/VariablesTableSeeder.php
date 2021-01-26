@@ -29,7 +29,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'Celda',
+                    
                     'tabla_bd'=> 'cells', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea.'
                 ]);
@@ -49,7 +49,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> 4.4, 
                     'max_grafica'=> 5.1,  
-                    'modulo'=> 'Celda',
+                    
                     'tabla_bd'=> 'cells', 
                     'comentario'=> 'Se grafica por Complejo, los limites se calculan con el limite maximo o minimo de la 
                                     potencia nomimal según el complejo y la corriente nominal según el complejo.'
@@ -69,7 +69,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> 0, 
                     'max_grafica'=> 4,  
-                    'modulo'=> 'Celda',
+                    
                     'tabla_bd'=> 'cells', 
                     'comentario'=> null
                 ]);
@@ -88,7 +88,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> 0, 
                     'max_grafica'=> 1,  
-                    'modulo'=> 'Celda',
+                    
                     'tabla_bd'=> 'cells', 
                     'comentario'=> null
                 ]
@@ -109,7 +109,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'Celda',
+                    
                     'tabla_bd'=> 'cells', 
                     'comentario'=> null
                 ]
@@ -136,7 +136,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> 8, 
                     'max_grafica'=> 13.5,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
                 ]);
@@ -156,7 +156,7 @@ class VariablesTableSeeder extends Seeder
                 'rango_ideal'=> null, 
                 'min_grafica'=> null, 
                 'max_grafica'=> null,  
-                'modulo'=> 'baño_electrolitico',
+                
                 'tabla_bd'=> 'bath', 
                 'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
             ]);
@@ -176,7 +176,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> 0, 
                     'max_grafica'=> 170,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
                 ]);
@@ -196,7 +196,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
                 ]);
@@ -216,7 +216,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
                 ]);
@@ -236,7 +236,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> 800, 
                     'max_grafica'=> 1350,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
                 ]);
@@ -256,7 +256,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> 0.5, 
                     'max_grafica'=> 1.9,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
                 ]);
@@ -276,7 +276,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> 0, 
                     'max_grafica'=> 2.5,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
                 ]);
@@ -296,7 +296,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
                 ]);
@@ -316,7 +316,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> 1.7, 
                     'max_grafica'=> 3.2,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
                 ]);
@@ -336,7 +336,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
                 ]);
@@ -356,7 +356,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
                 ]);
@@ -376,7 +376,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
                 ]);
@@ -396,7 +396,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
                 ]);
@@ -416,7 +416,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
                 ]);
@@ -436,7 +436,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> 15, 
                     'max_grafica'=> 27,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
                 ]);
@@ -456,7 +456,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> 950, 
                     'max_grafica'=> 990,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
                 ]);
@@ -476,7 +476,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
                 ]);
@@ -499,7 +499,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
                 ]);
@@ -519,7 +519,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
                 ]);
@@ -539,7 +539,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
                 ]);
@@ -559,7 +559,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'Limite igual para todos'
                 ]);
@@ -579,7 +579,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'Limite igual para todos'
                 ]);
@@ -599,7 +599,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
                 ]);
@@ -619,7 +619,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -639,7 +639,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -659,7 +659,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -679,7 +679,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -699,7 +699,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -719,7 +719,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -739,7 +739,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'Son tres graficas, cada complejo se grafica por línea'
                 ]);
@@ -759,7 +759,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'Son tres graficas, cada complejo se grafica por línea'
                 ]);
@@ -779,7 +779,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'Son tres graficas, cada complejo se grafica por línea'
                 ]);
@@ -799,7 +799,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'Se grafica por tecnología'
                 ]);
@@ -819,7 +819,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -839,7 +839,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -859,7 +859,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -879,7 +879,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -899,7 +899,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -919,7 +919,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'Se grafica por tecnología'
                 ]);
@@ -939,7 +939,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -959,7 +959,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'Se usa para el calculo de otras variables'
                 ]);
@@ -979,7 +979,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'Se grafica Corriente de Linea y Corriente Nominal'
                 ]);
@@ -999,7 +999,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -1019,7 +1019,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'Limite igual para todos'
                 ]);
@@ -1039,7 +1039,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'Grafica del total por línea y sin repetidos'
                 ]);
@@ -1059,7 +1059,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);    
@@ -1079,7 +1079,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -1099,7 +1099,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -1119,7 +1119,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -1139,7 +1139,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'Limite igual para todos'
                 ]);
@@ -1159,7 +1159,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -1179,7 +1179,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'Limite para P-19'
                 ]);
@@ -1199,7 +1199,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -1219,7 +1219,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'Limite igual para todos'
                 ]);
@@ -1239,7 +1239,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -1259,7 +1259,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -1279,7 +1279,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -1299,7 +1299,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -1319,7 +1319,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -1339,7 +1339,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -1359,7 +1359,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -1379,7 +1379,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -1399,7 +1399,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);
@@ -1419,7 +1419,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> 'El mismo limite de acidez de baño para Complejo I, II y V linea'
                 ]);
@@ -1439,7 +1439,7 @@ class VariablesTableSeeder extends Seeder
                     'rango_ideal'=> null, 
                     'min_grafica'=> null, 
                     'max_grafica'=> null,  
-                    'modulo'=> 'baño_electrolitico',
+                    
                     'tabla_bd'=> 'bath', 
                     'comentario'=> ''
                 ]);

@@ -28,12 +28,11 @@ class CreateVariablesTable extends Migration
             $table->decimal('rango_ideal', 8, 4)->nullable();
             $table->decimal('min_grafica', 8, 4)->nullable();
             $table->decimal('max_grafica', 8, 4)->nullable();
-            $table->string('modulo', 100)->nullable();
             $table->string('tabla_bd', 100)->nullable();
             $table->text('comentario')->nullable();
             $table->timestamps();
             
-            $table->engine = 'MyISAM';
+           // $table->engine = 'MyISAM';
         });
     }
 
