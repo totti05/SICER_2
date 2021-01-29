@@ -3,21 +3,20 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Variable;
 
-class Module extends Model
+class Module_Variable extends Model
 {
-        /**
+       /**
      * The table associated with the model.
      * 
      * @var string
      */
-    protected $table = 'modules';
+    protected $table = 'module_variable';
 
     /**
      * @var array
      */
-    protected $fillable = ['id','nombre'];
+    protected $fillable = ['module_id','variable_id','descripcion'];
 
     /**
      * Indicates if the model should be timestamped.
@@ -26,16 +25,5 @@ class Module extends Model
      */
     public $timestamps = true;
 
-    /**
-     * The connection name for the model.
-     * 
-     * @var string
-     */
     protected $connection = 'sicerl5';
-
-
-    public function Variables()
-    {
-        return $this->belongsToMany('App\Variable');
-    }
 }

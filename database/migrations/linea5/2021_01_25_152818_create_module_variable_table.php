@@ -20,6 +20,7 @@ class CreateModuleVariableTable extends Migration
             $table->timestamps();
             $table->foreign('variable_id')->references('id')->on('variables');
             $table->foreign('module_id')->references('id')->on('modules');
+            $table->primary(['module_id', 'variable_id']);
             
         });
 
