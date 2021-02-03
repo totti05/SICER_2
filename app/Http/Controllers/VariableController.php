@@ -55,7 +55,6 @@ class VariableController extends Controller
         $variable->rango_ideal = $request->input('rango_ideal');
         $variable->max_grafica = $request->input('max_grafica');
         $variable->min_grafica = $request->input('min_grafica');
-        $variable->modulo = $request->input('modulo');
         $variable->tabla_bd = $request->input('tabla_bd');
         $variable->comentario = $request->input('comentario');
         $variable->save();
@@ -107,7 +106,6 @@ class VariableController extends Controller
         $variable->rango_ideal = $request->input('rango_ideal');
         $variable->max_grafica = $request->input('max_grafica');
         $variable->min_grafica = $request->input('min_grafica');
-        $variable->modulo = $request->input('modulo');
         $variable->tabla_bd = $request->input('tabla_bd');
         $variable->comentario = $request->input('comentario');
         $variable->update();
