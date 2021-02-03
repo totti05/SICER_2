@@ -162,19 +162,6 @@
                             <small id="helpId" class="form-text text-muted">Help text</small>
                           </div>
 
-                          <div class="form-group col-md-3">
-                            <label for="modulo">Módulo o sección</label>
-                            <select id="variable" value="{{$variable->modulo}}" name="modulo" class="form-control">
-                              <option selected value=null> </option>
-                              <option>Información de línea</option>
-                              <option>Evolución de línea</option>
-                              <option>Celda</option>
-                              <option>Baño electrolítico</option>
-                              <option>Falla de ánodos</option>
-                              <option>Metal en crisol</option>
-                            </select>
-                            <small id="helpId" class="form-text text-muted">Help text</small>
-                          </div>
 
                           <div class="form-group col-md-3">
                             <label for="tabla_bd">Tabla base de datos</label>

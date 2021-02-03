@@ -20,7 +20,8 @@ class EvolutionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        //find(2) porquue es el id asignado al modulo evolution 
         $variables = Module::find(2)->Variables()->orderBy('variable')->get();
         return view('evolution.index', ['variables' => $variables]);
     }
@@ -1302,9 +1303,57 @@ class EvolutionController extends Controller
             } 
             if($max == ''){
                 $max =  $var->max_grafica;
-            }   
+            }  
 
+            $variable2 = $request->input('variable2');
+            $variableDB2 = $request->input('variable2');
+            $rangoOp1Var2 = $request->input('var2Rango1');
+            $rangoOp2Var2 = $request->input('var2Rango2');
 
+            $banda1Var2 =  $request->input('banda1Var2');
+            $banda2Var2 = $request->input('banda2Var2');
+            $minVar2 = null;
+            $maxVar2 = null;
+            $ylabelVar2 = null;
+            $xlabelVar2 = null;
+            $result = null;
+            $result2 = null;
+            $datatableVar2 = null;
+
+            if($variable2 != "" ){
+                $var2 =  Variable::find($variable2);
+                $variableDB2 = $var2 ->nombre_var_bd;
+                $ylabelVar2 = $var2 ->unidad; 
+                $xlabelVar2 = 'fecha';
+                if($banda1Var2 == ''){
+                    $banda1Var2 = $var2->referencia_inferior ;
+                } 
+                if($banda2Var2 == ''){
+                    $banda2Var2 = $var2->referencia_superior ;
+                }   
+    
+                if($minVar2 == ''){
+                    $minVar2 = $var2->min_grafica;
+                } 
+                if($maxVar2 == ''){
+                    $maxVar2 =  $var2->max_grafica;
+                }   
+
+                switch ($operador2) {
+                    case 'mayor':
+                        $operador2 = '>';
+                        break;
+                    case 'menor':
+                        $operador2 = '<';
+                        break;
+                    case 'mayorigual':
+                        $operador2 = '>=';
+                        break;
+                    case 'menorigual':
+                        $operador2 = '<=';
+                        break;       
+                }
+            } 
 
             if($varFiltro != "" ){
                 switch($varFiltro){
@@ -1492,59 +1541,8 @@ class EvolutionController extends Controller
                         break;       
                 }
             } 
-            
-
-            
-            
-            $variable2 = $request->input('variable2');
-            $variableDB2 = $request->input('variable2');
-            $rangoOp1Var2 = $request->input('var2Rango1');
-            $rangoOp2Var2 = $request->input('var2Rango2');
-
-            $banda1Var2 =  $request->input('banda1Var2');
-            $banda2Var2 = $request->input('banda2Var2');
-            $minVar2 = null;
-            $maxVar2 = null;
-            $ylabelVar2 = null;
-            $xlabelVar2 = null;
-            $result = null;
-            $result2 = null;
-            $datatableVar2 = null;
-            
-            if($variable2 != "" ){
-                $var2 =  Variable::find($variable2);
-                $variableDB2 = $var2 ->nombre_var_bd;
-                $ylabelVar2 = $var2 ->unidad; 
-                $xlabelVar2 = 'fecha';
-                if($banda1Var2 == ''){
-                    $banda1Var2 = $var2->referencia_inferior ;
-                } 
-                if($banda2Var2 == ''){
-                    $banda2Var2 = $var2->referencia_superior ;
-                }   
+                
     
-                if($minVar2 == ''){
-                    $minVar2 = $var2->min_grafica;
-                } 
-                if($maxVar2 == ''){
-                    $maxVar2 =  $var2->max_grafica;
-                }   
-
-                switch ($operador2) {
-                    case 'mayor':
-                        $operador2 = '>';
-                        break;
-                    case 'menor':
-                        $operador2 = '<';
-                        break;
-                    case 'mayorigual':
-                        $operador2 = '>=';
-                        break;
-                    case 'menorigual':
-                        $operador2 = '<=';
-                        break;       
-                }
-            } 
             if($celda1 != $celda2){
                 if( $calculo == 'Promedio'){
                     
