@@ -22,6 +22,7 @@ Route::resource('/bath', 'BathController');
 Route::resource('/infoline', 'InfolineController');
 Route::resource('/crucible', 'CrucibleController');
 Route::resource('/variables', 'VariableController');
+Route::resource('/modules', 'ModuleController');
 
 
 Route::get('/celldata', 'CellController@CellDataChart')->name('cell.dataChart');

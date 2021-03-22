@@ -247,6 +247,12 @@ return [
             'icon'    => 'fas fa-barcode',
             'icon_color' => 'cyan',
          ],
+         [
+            'text'    => 'Modulos',
+            'url'  => 'modules',
+            'icon'    => 'fas fa-barcode',
+            'icon_color' => 'cyan',
+         ],
     ],
 
     /*
