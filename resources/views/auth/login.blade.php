@@ -66,7 +66,7 @@
                             @csrf
 
                             <div class="form-group row">
-                                <label for="ficha" class="col-md-4 col-form-label text-md-right">N° Ficha</label>
+                                <label for="ficha" class="col-md-4 col-form-label text-md-right">ficha</label>
 
                                 <div class="col-md-6">
                                     <input type="text" name="ficha" id="ficha" class="form-control" >

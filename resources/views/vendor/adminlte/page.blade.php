@@ -96,8 +96,15 @@
                 <ul class="navbar-nav ml-auto @if(config('adminlte.layout_topnav') || View::getSection('layout_topnav'))order-1 order-md-3 navbar-no-expand @endif">
                     @yield('content_top_nav_right')
                     @if(Auth::user())
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"
+                    <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ $user->name}}
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            
+                            <a class="dropdown-item" href="#"
                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                             >
                                 <i class="fa fa-fw fa-power-off"></i> {{ __('adminlte::adminlte.log_out') }}
@@ -108,6 +115,11 @@
                                 @endif
                                 {{ csrf_field() }}
                             </form>
+                        </div>
+                    </div>
+                    </li>                        
+                        <li class="nav-item">
+                            
                         </li>
                     @endif
                     @if(config('adminlte.right_sidebar'))

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     /**
@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-      //  $this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
@@ -24,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {   
+      $user = Auth::user();
       $fecha2=date("Y-m-d");
       $fecha1= date("Y-m-d",strtotime($fecha2."- 1 day"));
       
@@ -59,7 +60,7 @@ class HomeController extends Controller
                               'produccion' => $produccion,
                               'normalizacion' => $normalizacion,
                               'coccion' => $coccion,
-                              
+                              'user' => $user
                               ] );
     }
 
