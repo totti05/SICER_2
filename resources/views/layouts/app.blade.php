@@ -47,15 +47,9 @@
                         <!-- Authentication Links -->
                         @guest
                             
-                            @if (Route::is('register'))
+                            @if (Route::is('password.request'))
                                 
-                                    <a class=" nav-link item" href="{{ route('login') }}">  Ingresar <i class="fas fa-sign-in-alt"></i></a>
-                                
-                            @endif
-
-                            @if (Route::is('login'))
-                                
-                                    <a class=" nav-link item" href="{{ route('register') }}">  Registrar <i class="fas fa-user-edit"></i></a>
+                                    <a class=" nav-link item" href="{{ route('login') }}">  Ingresar <i class="fas fa-user-edit"></i></a>
                                 
                             @endif
                           

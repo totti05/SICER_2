@@ -99,11 +99,11 @@
                     <li class="nav-item">
                     <div class="dropdown">
                         <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{ $user->name}}
+                            {{ Auth::user()->name}}
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            
+                            <a href="{{route('password.reset')}}">Cambiar contraseña</a>
                             <a class="dropdown-item" href="#"
                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                             >

@@ -23,8 +23,7 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {   
-      $user = Auth::user();
+    {  
       $fecha2=date("Y-m-d");
       $fecha1= date("Y-m-d",strtotime($fecha2."- 1 day"));
       
@@ -59,8 +58,7 @@ class HomeController extends Controller
         return view('home', [ 'celdas' => $celdas,
                               'produccion' => $produccion,
                               'normalizacion' => $normalizacion,
-                              'coccion' => $coccion,
-                              'user' => $user
+                              'coccion' => $coccion
                               ] );
     }
 

@@ -1,24 +1,79 @@
 @extends('layouts.app')
+@section('css')
+    <style>
+        
+        body{
+            background-color: ;
+            background-image: url('/vendor/adminlte/dist/img/fondo1-1.jpg');
+            
+            background-size: cover;
+            /* Para dejar la imagen de fondo centrada, vertical y
 
+            horizontalmente */
+
+            background-position: center center;
+
+            /* Para que la imagen de fondo no se repita */
+
+            background-repeat: no-repeat;
+
+            /* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+
+            background-attachment: fixed;
+
+            /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+
+            background-size: cover;
+
+            /* Se muestra un color de fondo mientras se está cargando la imagen
+
+            de fondo o si hay problemas para cargarla */
+
+            background-color: #66999;
+        }
+
+ 
+
+        .card{
+        margin-top: auto;
+        margin-bottom: auto;
+        background-color: rgba(0, 31, 63,0.7) !important;
+        }
+
+
+        .card-header h3{
+        color: white;
+        }
+
+
+        #loginCard{
+
+            margin-top: 40vh;
+        }
+
+    </style>
+@stop
 @section('content')
+
+
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+        <div class="col-md-4">
+            <div class="card" id="loginCard"> 
+                <div class="card-header text-center text-white display-6 "> Recuperar contraseña</div>
 
-                <div class="card-body">
-                    @if (session('status'))
+                <div class="card-body  text-white ">
+                @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
 
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
+                    <form method="POST"  action="{{ route('password.email') }}">
+                    @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-6 col-form-label text-md-right">{{ __('Dirección E-Mail') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -32,16 +87,13 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
+                                    {{ __('Enviar link para cambiar contraseña') }}
                                 </button>
                             </div>
                         </div>
-                    </form>
+                      </form>
                 </div>
-            </div>
         </div>
-    </div>
-</div>
 @endsection
