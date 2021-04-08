@@ -15,6 +15,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        
     }
 
     /**
@@ -22,8 +23,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index( Request $request )
     {  
+      $request->user()->authorizeRoles(['admin','user']);  
       $fecha2=date("Y-m-d");
       $fecha1= date("Y-m-d",strtotime($fecha2."- 1 day"));
       
@@ -58,7 +60,8 @@ class HomeController extends Controller
         return view('home', [ 'celdas' => $celdas,
                               'produccion' => $produccion,
                               'normalizacion' => $normalizacion,
-                              'coccion' => $coccion
+                              'coccion' => $coccion,
+                              'request' => $request->user()
                               ] );
     }
 

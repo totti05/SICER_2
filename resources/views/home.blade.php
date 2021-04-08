@@ -48,10 +48,11 @@
 @section('content')
 <div>
     <div class="row">
+    
         <div class="col-md-2 ml-3">
             <div class="info-box bg-info">
               <span class="info-box-icon"><i class="fas fa-industry"></i></span>
-
+<p>{{$request}}</p>
               <div class="info-box-content">
                 <span class="info-box-text">Línea V</span>
                 <span class="info-box-text">Celdas conectadas: </span>
